@@ -1,0 +1,14 @@
+.custom-grid {
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 20px 20px; 
+    grid-template-areas: 
+        "s-desk s-desk guitar"
+        "s-desk s-desk l-desk"
+        "chair keyboard l-desk"
+        "chair threadmill threadmill"
+        "tv threadmill threadmill"
+        "tv  monitor weight"
+        "piu monitor weight"
+        "piu drawer alarm"; 
+}
