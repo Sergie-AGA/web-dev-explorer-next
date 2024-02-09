@@ -1,14 +1,16 @@
 .custom-grid {
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
-    gap: 20px 20px; 
-    grid-template-areas: 
-        "s-desk s-desk guitar"
-        "s-desk s-desk l-desk"
-        "chair keyboard l-desk"
-        "chair threadmill threadmill"
-        "tv threadmill threadmill"
-        "tv  monitor weight"
-        "piu monitor weight"
-        "piu drawer alarm"; 
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 12px 12px;
+  grid-template-areas:
+    "s-desk s-desk lamp"
+    "s-desk s-desk guitar"
+    "chair keyboard guitar"
+    "chair treadmill treadmill"
+    "piu treadmill treadmill"
+    "piu  monitor monitor"
+    "tv monitor monitor"
+    "scale l-desk drawer"
+    "weight weight alarm"
+    "weight weight adapter";
 }
