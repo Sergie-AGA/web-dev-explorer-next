@@ -2,7 +2,7 @@ import SimpleBadge from "@/components/Badges/SimpleBadge";
 
 import { IProduct } from "../data/products";
 import ProductPriceClientLayer from "./ProductPriceClientLayer";
-import { britishCurrencyFormatter } from "../services/currencyFormatter/currencyFormatter";
+import { britishCurrencyFormatter } from "../utils/currencyFormatter";
 
 interface IProductModal {
   product: IProduct;

@@ -1,7 +1,7 @@
 import "../styles/global.css";
 import "../styles/morphing-card.css";
 import { Open_Sans, Source_Code_Pro } from "next/font/google";
-import { ThemeProvider } from "@/components/Global/Themes/ThemeProvider"
+import { ThemeProvider } from "@/components/Global/Themes/ThemeProvider";
 import GlobalModal from "@/components/Modals/GlobalModal/GlobalModal";
 import TechModal from "@/features/homepage/components/TechModal";
 import FiltersModal from "@/features/homepage/components/FilterModal";
@@ -14,7 +14,6 @@ export const metadata = {
   description: "Exploring features of Web Development",
 };
 
-
 export default function RootLayout({
   children,
 }: {
@@ -25,18 +24,17 @@ export default function RootLayout({
       lang="en"
       className={`${openSans.className} ${sourceCodePro.className}`}
     >
-        
       <body className="min-h-screen">
-      <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-        {children}
-        <GlobalModal />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <GlobalModal />
         </ThemeProvider>
-        </body>
+      </body>
     </html>
   );
 }

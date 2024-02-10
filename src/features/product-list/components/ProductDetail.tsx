@@ -5,7 +5,7 @@ import IconHandler from "@/components/Global/IconHandler/IconHandler";
 import Link from "next/link";
 import ProductPrice from "./ProductPrice";
 import ProductImages from "./ProductImages";
-import { britishCurrencyFormatter } from "../services/currencyFormatter/currencyFormatter";
+import { britishCurrencyFormatter } from "../utils/currencyFormatter";
 
 interface IProductModal {
   product: IProduct;

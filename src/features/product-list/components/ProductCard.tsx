@@ -1,9 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { IProduct } from "../data/products";
 import Image from "next/image";
-import { useCalculatePrice } from "../hooks/useCalculatePrice";
+import { calculatePrice } from "../utils/calculatePrice";
 import Link from "next/link";
-import { britishCurrencyFormatter } from "../services/currencyFormatter/currencyFormatter";
+import { britishCurrencyFormatter } from "../utils/currencyFormatter";
 
 interface IProductCard {
   product: IProduct;
@@ -20,7 +20,7 @@ export default function ProductCard({
   showPrice = true,
   className,
 }: IProductCard) {
-  const { pickUpPrice } = useCalculatePrice(product);
+  const { pickUpPrice } = calculatePrice(product);
 
   return (
     <Link

@@ -2,44 +2,43 @@
 
 /* Morphing card animation */
 @layer utilities {
-    .morphing-card {
-        transition: 0.3s;
-        & * {
-            transition: 1s;
-        }
-        & .morphing-button {
-            transition-duration: 1s;
-            transition-delay: 1.5s;
-            opacity: 0;
-            position: absolute;
-            top: 150px;
-        }
-        & .morphing-image {
-            transition-duration: 3s;
-        }
-        &:hover {
-  
-            & .morphing-image {
-                transform: scale(1.2)
-            }
-            & .morphing-overlay {
-                transition: 0.5s;
-                height: 100%;
-            }
-            & .morphing-title {
-                transition: 2s;
-                transform: translateY(-80px);
-                top: 112px;
-                position: absolute;
-                @apply line-clamp-3;
-            }
-
-            & .morphing-badge {
-                transform: translateY(-150%);
-            }
-            & .morphing-button {
-                opacity: 1;
-            }
-        }
+  .morphing-card {
+    transition: 0.3s;
+    & * {
+      transition: 1s;
     }
+    & .morphing-button {
+      transition-duration: 1s;
+      transition-delay: 1.5s;
+      opacity: 0;
+      position: absolute;
+      top: 150px;
+    }
+    & .morphing-image {
+      transition-duration: 3s;
+    }
+    &:hover {
+      & .morphing-image {
+        transform: scale(1.2);
+      }
+      & .morphing-overlay {
+        transition: 0.5s;
+        height: 100%;
+      }
+      & .morphing-title {
+        transition: 2s;
+        transform: translateY(-80px);
+        top: 112px;
+        position: absolute;
+        @apply line-clamp-3;
+      }
+
+      & .morphing-badge {
+        transform: translateY(-150%);
+      }
+      & .morphing-button {
+        opacity: 1;
+      }
+    }
+  }
 }

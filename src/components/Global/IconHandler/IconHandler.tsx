@@ -1,6 +1,5 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import { DynamicOptions } from "next/dynamic";
 
 type IconType = string;
 

@@ -1,13 +1,12 @@
 import CartContent from "@/features/product-list/components/CartContent";
 import ProductCard from "@/features/product-list/components/ProductCard";
-import { useProducts } from "@/features/product-list/hooks/useProducts";
+import { getProducts } from "@/features/product-list/services/getProducts";
 import "@/features/product-list/styles/product-list.css";
 
-export const revalidate = 20; // 30 min
-// export const revalidate = 60 * 30 // 30 min
+export const revalidate = 60 * 30; // 30 min
 
 export default async function ProductListPoc() {
-  const products = await useProducts();
+  const products = await getProducts();
 
   return (
     <main className="max-width-container py-4">

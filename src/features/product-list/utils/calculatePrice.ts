@@ -5,7 +5,7 @@ const discountMap = {
   1: 0.55,
 };
 
-export function useCalculatePrice(product: IProduct) {
+export function calculatePrice(product: IProduct) {
   const basePrice = product.basePrice;
   const discount = discountMap[product.priceLevel] * product.basePrice;
   const pickUpDiscount = (product.pickUpBonus ? 0.2 : 0) * product.basePrice;

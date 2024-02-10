@@ -8,9 +8,20 @@ interface TechBadgeProps {
   className?: string;
 }
 
-export default function TechBadge({ title, onClick, className }: TechBadgeProps) {
+export default function TechBadge({
+  title,
+  onClick,
+  className,
+}: TechBadgeProps) {
   return (
-    <Link href={`?tech=${title}`} className={cn("cursor-pointer py-1 px-2 rounded-md bg-cyan-950", className)} onClick={onClick}>
+    <Link
+      href={`?tech=${title}`}
+      className={cn(
+        "cursor-pointer py-1 px-2 rounded-md bg-cyan-950",
+        className
+      )}
+      onClick={onClick}
+    >
       {title}
     </Link>
   );

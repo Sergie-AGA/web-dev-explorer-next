@@ -1,9 +1,9 @@
 import ProductDetail from "@/features/product-list/components/ProductDetail";
 import "@/features/product-list/styles/product-list.css";
-import { useCalculatePrice } from "@/features/product-list/hooks/useCalculatePrice";
-import { useProducts } from "@/features/product-list/hooks/useProducts";
+import { calculatePrice } from "@/features/product-list/utils/calculatePrice";
+import { getProducts } from "@/features/product-list/services/getProducts";
 
-export const revalidate = 20;
+export const revalidate = 30 * 60;
 
 interface IProductProps {
   params: {
@@ -12,7 +12,7 @@ interface IProductProps {
 }
 
 export async function generateMetadata(slug: IProductProps) {
-  const products = await useProducts();
+  const products = await getProducts();
 
   const product = products.find(
     (product) => product.slug === slug.params.product
@@ -31,7 +31,7 @@ export async function generateMetadata(slug: IProductProps) {
 // }
 
 export default async function ProductListPoc(slug: IProductProps) {
-  const products = await useProducts();
+  const products = await getProducts();
 
   const product = products.find(
     (product) => product.slug === slug.params.product
@@ -39,7 +39,7 @@ export default async function ProductListPoc(slug: IProductProps) {
   let pickUpPrice;
   let discountedPrice;
   if (product) {
-    const prices = useCalculatePrice(product);
+    const prices = calculatePrice(product);
     pickUpPrice = prices.pickUpPrice;
     discountedPrice = prices.discountedPrice;
   }

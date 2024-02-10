@@ -3,7 +3,7 @@
 import { useCartStore } from "../store/useCartStore";
 import ProductCard from "./ProductCard";
 import { IconShoppingCartOff, IconTrash } from "@tabler/icons-react";
-import { britishCurrencyFormatter } from "../services/currencyFormatter/currencyFormatter";
+import { britishCurrencyFormatter } from "../utils/currencyFormatter";
 
 export default function CartContent() {
   const { cart, removeFromCart, total } = useCartStore((state) => {
