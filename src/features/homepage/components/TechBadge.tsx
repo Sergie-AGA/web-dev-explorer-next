@@ -4,25 +4,41 @@ import Link from "next/link";
 
 interface TechBadgeProps {
   title: string;
+  isLink?: boolean;
   onClick?: () => void | undefined;
   className?: string;
 }
 
 export default function TechBadge({
   title,
+  isLink = false,
   onClick,
   className,
 }: TechBadgeProps) {
   return (
-    <Link
-      href={`?tech=${title}`}
-      className={cn(
-        "cursor-pointer py-1 px-2 rounded-md bg-cyan-950",
-        className
+    <>
+      {isLink ? (
+        <Link
+          href={`?tech=${title}`}
+          className={cn(
+            "cursor-pointer py-1 px-2 rounded-md bg-cyan-950",
+            className
+          )}
+          onClick={onClick}
+        >
+          {title}
+        </Link>
+      ) : (
+        <div
+          className={cn(
+            "cursor-pointer py-1 px-2 rounded-md bg-cyan-950",
+            className
+          )}
+          onClick={onClick}
+        >
+          {title}
+        </div>
       )}
-      onClick={onClick}
-    >
-      {title}
-    </Link>
+    </>
   );
 }

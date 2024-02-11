@@ -98,7 +98,8 @@ export default function ProductDetail({
                 <div className="flex-1">
                   <p>
                     Buy multiple items for an additional Bundle Discount - 10%
-                    off the cheapest items of the cart
+                    off the cheapest items of the cart (applies to more than
+                    one).
                   </p>
                   <p>
                     All items will be cleaned before being handed over. For

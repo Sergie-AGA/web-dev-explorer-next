@@ -15,9 +15,8 @@ import { modalType, useUIStore } from "@/store/useUIStore";
 
 export default function GlobalMenu() {
   const [isOpen, setIsOpen] = useState(false);
-  const { toggleModal, openModal } = useUIStore((state) => {
+  const { openModal } = useUIStore((state) => {
     return {
-      toggleModal: state.toggleModal,
       openModal: state.openModal,
     };
   });

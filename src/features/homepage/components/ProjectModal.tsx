@@ -113,7 +113,7 @@ export default function ProjectModal({ project, children }: IModalData) {
                 ))}
               </div>
             ) : (
-              <p>No notable API's were used for this project</p>
+              <p>No notable API&apos;s were used for this project</p>
             )}
           </div>
         </SimpleTabs>

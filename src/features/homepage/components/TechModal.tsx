@@ -51,6 +51,7 @@ export default function TechModal() {
           <div className="flex flex-wrap gap-2">
             {technologies.frontend.map((tech) => (
               <TechBadge
+                key={tech.title}
                 className={cn({
                   "bg-cyan-600": activeTech?.title == tech.title,
                 })}
@@ -61,6 +62,7 @@ export default function TechModal() {
           <div className="flex flex-wrap gap-2">
             {technologies.backend.map((tech) => (
               <TechBadge
+                key={tech.title}
                 className={cn({
                   "bg-cyan-600": activeTech?.title == tech.title,
                 })}
@@ -71,6 +73,7 @@ export default function TechModal() {
           <div className="flex flex-wrap gap-2">
             {technologies.apis.map((tech) => (
               <TechBadge
+                key={tech.title}
                 className={cn({
                   "bg-cyan-600": activeTech?.title == tech.title,
                 })}

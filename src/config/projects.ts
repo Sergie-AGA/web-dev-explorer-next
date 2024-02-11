@@ -55,7 +55,7 @@ export const projects = [
     image:
       "https://supabase.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-preview.50e72501.jpg&w=3840&q=75",
     frontend: [],
-    backend: [],
+    backend: ["Supabase"],
     apis: [],
     type: "exploration",
     path: "",

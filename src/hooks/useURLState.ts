@@ -1,18 +1,13 @@
 import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
 
-interface ISetParams {
-  [key: string]: any;
-}
-
-export default function useURLState() {
+export default function useURLState({ queryAsArray = false } = {}) {
   const searchParams = useSearchParams();
 
   if (!searchParams.toString()) {
     return;
   }
 
-  return Object.fromEntries(
+  const query = Object.fromEntries(
     searchParams
       .toString()
       .split("&")
@@ -21,4 +16,14 @@ export default function useURLState() {
         return [key, decodeURIComponent(value.replace(/\+/g, "%20"))];
       })
   );
+
+  if (queryAsArray) {
+    for (const key in query) {
+      query[key] = query[key].split(",");
+    }
+
+    return query;
+  }
+
+  return query;
 }
