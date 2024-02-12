@@ -18,7 +18,7 @@ export default async function RootLayout({
   return (
     <div className="site-wrap bg-cyan-950">
       <GlobalHeader title="Product List POC">
-        <ProductCart />
+        <ProductCart className="lg:hidden" />
       </GlobalHeader>
       {children}
       {/* <StackingToastContainer /> */}

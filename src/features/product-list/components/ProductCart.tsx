@@ -11,12 +11,17 @@ import {
 import SimpleBadge from "@/components/Badges/SimpleBadge";
 import CartContent from "./CartContent";
 import ProductCount from "./ProductCount";
+import { cn } from "@/lib/utils";
 
-export default function ProductCart() {
+interface IProductCart {
+  className?: string;
+}
+
+export default function ProductCart({ className }: IProductCart) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <div className="relative">
+        <div className={cn("relative", className)}>
           <SimpleBadge
             badge="IconShoppingCart"
             showTitle={false}

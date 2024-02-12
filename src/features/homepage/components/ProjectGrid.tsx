@@ -12,7 +12,7 @@ interface FilterCriteria {
   apis?: string[];
 }
 
-// TODO: fix filters not working and TS issues here and useURLSTate file
+// TODO: fix filters not working and TS issues here and useURLSTate file. Modal not opening anymore
 
 function filterProjects(
   projects: IProject[],

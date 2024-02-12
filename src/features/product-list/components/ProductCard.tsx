@@ -29,7 +29,7 @@ export default function ProductCard({
       style={{ gridArea: product.slug }}
       className={className}
     >
-      <Card className="w-[100%] h-[100%] rounded-xl overflow-hidden relative bg-cyan-800 mb-4 lg:mb-0 cursor-pointer">
+      <Card className="md:max-w-[300px] lg:max-w-[unset] w-[100%] h-[100%] rounded-xl overflow-hidden relative bg-cyan-800 mb-4 lg:mb-0 cursor-pointer">
         <CardContent className="w-[100%] h-[100%] p-0">
           <Image
             src={`${product.images[0]}`}
