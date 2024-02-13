@@ -1,11 +1,9 @@
 export const projects = [
   {
-    id: 0,
     title: "Product List POC",
     description:
       "A Proof Of Concept for a list of products. Currently being used by me to list things that I am selling",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBH7YRBKAHOnnEAyUkandHlKT3bZiv6hp6LA&usqp=CAU",
+    image: "projects/product-list-poc.png",
     frontend: [
       "React JS",
       "Next JS",
@@ -20,9 +18,10 @@ export const projects = [
     apis: [],
     type: "concept",
     path: "/product-list-poc",
+    showProject: true,
+    showLink: true,
   },
   {
-    id: 1,
     title: "Google Sheets to DB Integration",
     description:
       "This project allows linking Google Sheets to a database and facilitate transmission of data between them",
@@ -33,9 +32,10 @@ export const projects = [
     apis: [],
     type: "tool",
     path: "/sheets-database",
+    showProject: false,
+    showLink: false,
   },
   {
-    id: 2,
     title: "State Mock Endpoint",
     description:
       "This project helps you to make a request to a given endpoint and store results for that point in time, which can be used for debugging purposes",
@@ -45,11 +45,11 @@ export const projects = [
     backend: [],
     apis: [],
     type: "tool",
-    path: "",
+    path: "/state-mock-endpoint",
+    showProject: false,
+    showLink: false,
   },
-
   {
-    id: 3,
     title: "Supabase Explorer",
     description: "Exploring features possible within Supabase",
     image:
@@ -58,12 +58,27 @@ export const projects = [
     backend: ["Supabase"],
     apis: [],
     type: "exploration",
-    path: "",
+    path: "/supabase-explorer",
+    showProject: false,
+    showLink: false,
+  },
+  {
+    title: "DDD + Solid Custom Login Explorer",
+    description:
+      "A fully custom Full-Stack Login feature made with a flavor of Domain-driven Design and Test-driven development",
+    image:
+      "https://supabase.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-preview.50e72501.jpg&w=3840&q=75",
+    frontend: [],
+    backend: [""],
+    apis: [],
+    type: "exploration",
+    path: "/ddd-solid-login",
+    showProject: true,
+    showLink: false,
   },
 ];
 
 export interface IProject {
-  id: number;
   title: string;
   description: string;
   image: string;
@@ -72,4 +87,6 @@ export interface IProject {
   apis: string[];
   type: string;
   path: string;
+  showProjects: boolean;
+  showLink: boolean;
 }

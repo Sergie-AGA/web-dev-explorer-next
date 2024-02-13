@@ -119,7 +119,7 @@ export default function ProjectModal({ project, children }: IModalData) {
         </SimpleTabs>
 
         <DialogFooter className="sm:justify-center">
-          {project.path ? (
+          {project.showLink ? (
             <Button asChild>
               <Link href={project.path}>See Project</Link>
             </Button>

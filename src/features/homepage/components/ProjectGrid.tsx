@@ -65,9 +65,13 @@ export default function ProjectGrid() {
         <ul className="flex justify-between gap-6 flex-wrap">
           {filteredProjects.map((project) => {
             return (
-              <ProjectModal key={project.id} project={project}>
-                <MorphingCard data={project} />
-              </ProjectModal>
+              <>
+                {project.showProject && (
+                  <ProjectModal key={project.path} project={project}>
+                    <MorphingCard key={project.path} data={project} />
+                  </ProjectModal>
+                )}
+              </>
             );
           })}
         </ul>

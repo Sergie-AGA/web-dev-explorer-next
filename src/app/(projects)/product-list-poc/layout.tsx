@@ -1,27 +1,17 @@
-import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader";
-import ProductCart from "@/features/product-list/components/ProductCart";
+"use client";
 
-export const metadata = {
-  title: {
-    template: "%s | Web Dev Explorer",
-    default: "Product List POC",
-  },
-  description:
-    "Proof of concept of a store using Zustand for managing global state and Supabase for the API",
-};
+import { useCartStore } from "@/features/product-list/store/useCartStore";
+import { useEffect, useLayoutEffect } from "react";
 
-export default async function RootLayout({
+export default function RootTemplate({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="site-wrap bg-cyan-950">
-      <GlobalHeader title="Product List POC">
-        <ProductCart className="lg:hidden" />
-      </GlobalHeader>
-      {children}
-      {/* <StackingToastContainer /> */}
-    </div>
-  );
+  const { getLocalStorage, cart } = useCartStore();
+  useEffect(() => {
+    getLocalStorage();
+  }, []);
+
+  return <>{children}</>;
 }
