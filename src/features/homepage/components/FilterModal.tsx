@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react"; // Import FormEvent type
 import { Separator } from "@/components/ui/separator";
-import useURLState from "@/hooks/useURLState";
+import { useURLState } from "@/hooks/useURLState";
 import { cn } from "@/lib/utils";
 import {
   IconFilter,
@@ -29,10 +29,16 @@ export default function FilterModal() {
     backend: [],
     apis: [],
   };
+  const url = useURLState();
+  console.log(
+    "%c Logged!",
+    "background: #01579b; color: white; padding: 2px 4px; border-radius: 4px"
+  );
+  console.log(url);
+  // const initialFilters
 
   const [searchValue, setSearchValue] = useState("");
   const [techs, setTechs] = useState<ITechFilters>(emptyCats);
-  const url = useURLState();
   const router = useRouter();
   function handleTech(category: Category, tech: string) {
     const newTechs = { ...techs };
@@ -55,6 +61,7 @@ export default function FilterModal() {
     const backendQuery =
       techs.backend?.length && `backend=${techs.backend.join(",")}`;
     const apiQuery = techs.apis?.length && `apis=${techs.apis.join(",")}`;
+
     const query = `?${[textQuery, frontendQuery, backendQuery, apiQuery]
       .filter(Boolean)
       .join("&")}`;

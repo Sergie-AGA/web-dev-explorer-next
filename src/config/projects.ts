@@ -66,10 +66,9 @@ export const projects = [
     title: "DDD + Solid Custom Login Explorer",
     description:
       "A fully custom Full-Stack Login feature made with a flavor of Domain-driven Design and Test-driven development",
-    image:
-      "https://supabase.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-preview.50e72501.jpg&w=3840&q=75",
+    image: "https://www.themexpert.com/images/easyblog_articles/702/Login.jpg",
     frontend: [],
-    backend: [""],
+    backend: [],
     apis: [],
     type: "exploration",
     path: "/ddd-solid-login",
@@ -82,11 +81,11 @@ export interface IProject {
   title: string;
   description: string;
   image: string;
-  frontend: string[];
-  backend: string[];
-  apis: string[];
+  frontend: string[] | never[];
+  backend: string[] | never[];
+  apis: string[] | never[];
   type: string;
   path: string;
-  showProjects: boolean;
+  showProject: boolean;
   showLink: boolean;
 }

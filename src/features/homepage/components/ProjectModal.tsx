@@ -14,6 +14,7 @@ import { IProject } from "@/config/projects";
 import Link from "next/link";
 import { useUIStore } from "@/store/useUIStore";
 import { Separator } from "@/components/ui/separator";
+import { generateImageUrl } from "@/utils/imageHelpers";
 
 interface IModalData {
   project: IProject;
@@ -21,6 +22,8 @@ interface IModalData {
 }
 
 export default function ProjectModal({ project, children }: IModalData) {
+  const imageUrl = generateImageUrl(project?.image);
+
   const tabData = [
     {
       title: "Description",
@@ -68,7 +71,7 @@ export default function ProjectModal({ project, children }: IModalData) {
           <div className="flex gap-4">
             <div className="rounded overflow-hidden w-[100px] h-[100px] flex-[0_0_100]">
               <img
-                src={project.image}
+                src={imageUrl}
                 alt="Project Image"
                 className="object-cover w-[100%] h-[100%]"
               />

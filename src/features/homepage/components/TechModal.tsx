@@ -4,7 +4,7 @@ import TechBadge from "@/features/homepage/components/TechBadge";
 import SimpleTabs from "@/components/Tabs/SimpleTabs";
 import { Separator } from "@/components/ui/separator";
 import { ITechnology, technologies } from "@/config/technologies";
-import useURLState from "@/hooks/useURLState";
+import { useURLState } from "@/hooks/useURLState";
 import { cn } from "@/lib/utils";
 
 export default function TechModal() {
@@ -26,16 +26,18 @@ export default function TechModal() {
   const url = useURLState();
   let activeTech: ITechnology | null | undefined = null;
   activeTech = technologies.frontend.find(
-    (tech) => tech.title?.toLowerCase() == url?.tech?.toLowerCase()
+    (tech) => tech.title?.toLowerCase() == (url?.tech as string)?.toLowerCase()
   );
   if (!activeTech) {
     activeTech = technologies.backend.find(
-      (tech) => tech.title?.toLowerCase() == url?.tech?.toLowerCase()
+      (tech) =>
+        tech.title?.toLowerCase() == (url?.tech as string)?.toLowerCase()
     );
   }
   if (!activeTech) {
     activeTech = technologies.apis.find(
-      (tech) => tech.title?.toLowerCase() == url?.tech?.toLowerCase()
+      (tech) =>
+        tech.title?.toLowerCase() == (url?.tech as string)?.toLowerCase()
     );
   }
 

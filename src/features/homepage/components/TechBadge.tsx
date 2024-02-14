@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { useURLState } from "@/hooks/useURLState";
 
 interface TechBadgeProps {
   title: string;
@@ -11,34 +13,24 @@ interface TechBadgeProps {
 
 export default function TechBadge({
   title,
-  isLink = false,
   onClick,
   className,
 }: TechBadgeProps) {
+  function handleNavigate() {
+    // router.push();
+  }
+
   return (
     <>
-      {isLink ? (
-        <Link
-          href={`?tech=${title}`}
-          className={cn(
-            "cursor-pointer py-1 px-2 rounded-md bg-cyan-950",
-            className
-          )}
-          onClick={onClick}
-        >
-          {title}
-        </Link>
-      ) : (
-        <div
-          className={cn(
-            "cursor-pointer py-1 px-2 rounded-md bg-cyan-950",
-            className
-          )}
-          onClick={onClick}
-        >
-          {title}
-        </div>
-      )}
+      <div
+        className={cn(
+          "cursor-pointer py-1 px-2 rounded-md bg-cyan-950",
+          className
+        )}
+        onClick={onClick || handleNavigate}
+      >
+        {title}
+      </div>
     </>
   );
 }

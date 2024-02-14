@@ -3,7 +3,7 @@
 import MorphingCard from "@/components/Cards/MorphingCard/MorphingCard";
 import ProjectModal from "@/features/homepage/components/ProjectModal";
 import { IProject, projects } from "@/config/projects";
-import useURLState from "@/hooks/useURLState";
+import { useURLState } from "@/hooks/useURLState";
 
 interface FilterCriteria {
   text?: string;
@@ -12,51 +12,49 @@ interface FilterCriteria {
   apis?: string[];
 }
 
-// TODO: fix filters not working and TS issues here and useURLSTate file. Modal not opening anymore
-
 function filterProjects(
   projects: IProject[],
   filter: FilterCriteria
 ): IProject[] {
   return projects.filter((project) => {
-    return true;
-    // console.log(
-    //   "%c Logged!",
-    //   "background: #01579b; color: white; padding: 2px 4px; border-radius: 4px"
-    // );
-    // console.log(!filter.frontend);
-    // console.log(filter.frontend);
-    // console.log(project.frontend);
-    // return (
-    //   (!filter.text ||
-    //     project.title.toLowerCase().includes(filter.text.toLowerCase()) ||
-    //     project.description
-    //       .toLowerCase()
-    //       .includes(filter.text.toLowerCase())) &&
-    //   (!filter.frontend ||
-    //     (project.frontend &&
-    //       project.frontend.every((item) => filter.frontend?.includes(item))))
-    // );
-    // // (!filter.backend ||
-    // //   (project.backend &&
-    // //     project.backend.every((item) => filter.backend?.includes(item)))) &&
-    // // (!filter.apis ||
-    // //   (project.apis &&
-    // //     project.apis.every((item) => filter.apis?.includes(item))))
+    return (
+      // Text
+      (!filter.text ||
+        project.title.toLowerCase().includes(filter?.text.toLowerCase()) ||
+        project.description
+          .toLowerCase()
+          .includes(filter?.text.toLowerCase())) &&
+      // Frontend
+      (filter.frontend?.length
+        ? project.frontend?.length &&
+          filter.frontend.every((item) =>
+            (project.frontend as string[])?.includes(item)
+          )
+        : true) &&
+      // Backend
+      (filter.backend?.length
+        ? project.backend?.length &&
+          filter.backend.every((item) =>
+            (project.backend as string[])?.includes(item)
+          )
+        : true) &&
+      // API
+      (filter.apis?.length
+        ? project.apis?.length &&
+          filter.apis.every((item) =>
+            (project.apis as string[])?.includes(item)
+          )
+        : true)
+    );
   });
 }
 
 export default function ProjectGrid() {
   const url = useURLState({ queryAsArray: true });
-  console.log(
-    "%c my url!",
-    "background: #01579b; color: white; padding: 2px 4px; border-radius: 4px"
-  );
-  console.log(url);
 
-  let filteredProjects = projects;
+  let filteredProjects = projects.filter((project) => project.showProject);
   if (url) {
-    filteredProjects = filterProjects(projects, url);
+    filteredProjects = filterProjects(filteredProjects, url);
   }
 
   return (
@@ -65,13 +63,9 @@ export default function ProjectGrid() {
         <ul className="flex justify-between gap-6 flex-wrap">
           {filteredProjects.map((project) => {
             return (
-              <>
-                {project.showProject && (
-                  <ProjectModal key={project.path} project={project}>
-                    <MorphingCard key={project.path} data={project} />
-                  </ProjectModal>
-                )}
-              </>
+              <ProjectModal key={project.path} project={project}>
+                <MorphingCard data={project} />
+              </ProjectModal>
             );
           })}
         </ul>

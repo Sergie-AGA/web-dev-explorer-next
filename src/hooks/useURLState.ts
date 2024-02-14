@@ -1,12 +1,18 @@
 import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
 
-export default function useURLState({ queryAsArray = false } = {}) {
+type QueryObject = { [key: string]: string | string[] };
+
+interface IOptions {
+  queryAsArray?: boolean;
+}
+
+export function useURLState(options?: IOptions) {
   const searchParams = useSearchParams();
 
   if (!searchParams.toString()) {
     return;
   }
-
   const query = Object.fromEntries(
     searchParams
       .toString()
@@ -15,14 +21,14 @@ export default function useURLState({ queryAsArray = false } = {}) {
         const [key, value] = pair.split("=");
         return [key, decodeURIComponent(value.replace(/\+/g, "%20"))];
       })
-  );
+  ) as QueryObject;
 
-  if (queryAsArray) {
+  if (options?.queryAsArray) {
     for (const key in query) {
-      query[key] = query[key].split(",");
+      if (typeof query[key] === "string" && key !== "text") {
+        query[key] = (query[key] as string).split(",");
+      }
     }
-
-    return query;
   }
 
   return query;
