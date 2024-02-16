@@ -12,6 +12,9 @@ export interface IProduct {
   sellingPoints?: string[];
 }
 
+export const imagePlaceholder =
+  "https://cdn.pixabay.com/photo/2016/10/18/18/19/question-mark-1750942_1280.png";
+
 export const products = [
   {
     id: "treadmill",

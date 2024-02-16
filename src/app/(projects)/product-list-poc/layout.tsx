@@ -1,7 +1,7 @@
 "use client";
 
 import { useCartStore } from "@/features/product-list/store/useCartStore";
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 
 export default function RootTemplate({
   children,

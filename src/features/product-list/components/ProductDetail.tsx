@@ -6,6 +6,7 @@ import Link from "next/link";
 import ProductPrice from "./ProductPrice";
 import ProductImages from "./ProductImages";
 import { britishCurrencyFormatter } from "../utils/currencyFormatter";
+import { imagePlaceholder } from "../data/products";
 
 interface IProductModal {
   product: IProduct;
@@ -18,13 +19,21 @@ export default function ProductDetail({
   discountedPrice,
   pickUpPrice,
 }: IProductModal) {
-  const photos = product.images.map((image) => {
-    return {
-      src: `${image}`,
-      width: 600,
-      height: 600,
-    };
-  });
+  const photos = product.images?.length
+    ? product.images.map((image) => {
+        return {
+          src: `${image}`,
+          width: 600,
+          height: 600,
+        };
+      })
+    : [
+        {
+          src: imagePlaceholder,
+          width: 600,
+          height: 600,
+        },
+      ];
 
   return (
     <main>
