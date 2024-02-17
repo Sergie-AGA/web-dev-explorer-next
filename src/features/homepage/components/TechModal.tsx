@@ -3,9 +3,10 @@
 import TechBadge from "@/features/homepage/components/TechBadge";
 import SimpleTabs from "@/components/Tabs/SimpleTabs";
 import { Separator } from "@/components/ui/separator";
-import { ITechnology, technologies } from "@/config/technologies";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ITechnology, technologies, ITechTypes } from "@/config/technologies";
+import { useUIStore } from "@/store/useUIStore";
 
 export default function TechModal() {
   const tabData = [
@@ -23,19 +24,32 @@ export default function TechModal() {
     },
   ];
 
-  const [activeTech, setActiveTech] = useState<ITechnology | null | undefined>(
-    null
-  );
+  const [techDetails, setTechDetails] = useState<
+    ITechnology | null | undefined
+  >(null);
 
-  function handleActiveTech(
-    category: "frontend" | "backend" | "apis",
-    techBadge: ITechnology
-  ) {
+  const { activeTech, setActiveTech } = useUIStore((state) => {
+    return {
+      activeTech: state.activeTech,
+      setActiveTech: state.setActiveTech,
+    };
+  });
+
+  function handleActiveTech(category: ITechTypes, techBadge: string) {
     const techDetails = technologies[category].find(
-      (tech) => tech.title?.toLowerCase() == techBadge.title.toLowerCase()
+      (tech) => tech.title?.toLowerCase() == techBadge.toLowerCase()
     );
-    setActiveTech(techDetails);
+    if (techDetails) {
+      setTechDetails(techDetails);
+      setActiveTech(techBadge, category);
+    }
   }
+
+  useEffect(() => {
+    if (activeTech) {
+      handleActiveTech(activeTech?.type, activeTech?.tech);
+    }
+  }, []);
 
   return (
     <div>
@@ -45,16 +59,16 @@ export default function TechModal() {
       <Separator />
 
       <div className="my-2">
-        <SimpleTabs tabData={tabData}>
+        <SimpleTabs tabData={tabData} initialTab={activeTech?.type}>
           <div className="flex flex-wrap gap-2">
             {technologies.frontend.map((tech) => (
               <TechBadge
                 key={tech.title}
                 className={cn({
-                  "bg-cyan-600": activeTech?.title == tech.title,
+                  "bg-cyan-600": techDetails?.title == tech.title,
                 })}
                 title={tech.title}
-                onClick={() => handleActiveTech("frontend", tech)}
+                onClick={() => handleActiveTech("frontend", tech.title)}
               />
             ))}
           </div>
@@ -63,10 +77,10 @@ export default function TechModal() {
               <TechBadge
                 key={tech.title}
                 className={cn({
-                  "bg-cyan-600": activeTech?.title == tech.title,
+                  "bg-cyan-600": techDetails?.title == tech.title,
                 })}
                 title={tech.title}
-                onClick={() => handleActiveTech("backend", tech)}
+                onClick={() => handleActiveTech("backend", tech.title)}
               />
             ))}
           </div>
@@ -75,10 +89,10 @@ export default function TechModal() {
               <TechBadge
                 key={tech.title}
                 className={cn({
-                  "bg-cyan-600": activeTech?.title == tech.title,
+                  "bg-cyan-600": techDetails?.title == tech.title,
                 })}
                 title={tech.title}
-                onClick={() => handleActiveTech("apis", tech)}
+                onClick={() => handleActiveTech("apis", tech.title)}
               />
             ))}
           </div>
@@ -86,19 +100,19 @@ export default function TechModal() {
       </div>
       <Separator />
       <div className="min-h-[100px] my-2">
-        {activeTech && (
+        {techDetails && (
           <>
             <h4 className="flex items-center gap-2">
-              <span className="text-lg">{activeTech.title}</span> -{" "}
+              <span className="text-lg">{techDetails.title}</span> -{" "}
               <a
-                href={activeTech.link}
+                href={techDetails.link}
                 target="_blank"
                 className="py-1 px-2 rounded bg-cyan-900 cursor-pointer text-sm leading-4"
               >
                 Link
               </a>
             </h4>
-            <p>{activeTech.description}</p>
+            <p>{techDetails.description}</p>
           </>
         )}
       </div>

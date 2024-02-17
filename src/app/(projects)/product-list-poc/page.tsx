@@ -3,8 +3,7 @@ import ProductCard from "@/features/product-list/components/ProductCard";
 import { getProducts } from "@/features/product-list/services/getProducts";
 import "@/features/product-list/styles/product-list.css";
 
-export const revalidate = 20;
-// export const revalidate = 60 * 30; // 30 min
+export const revalidate = 60 * 30; // 30 min
 
 export default async function ProductListPoc() {
   const products = await getProducts();

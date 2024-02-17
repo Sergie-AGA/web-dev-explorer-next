@@ -13,20 +13,23 @@ import { IconBrandGithubFilled } from "@tabler/icons-react";
 import { useUIStore } from "@/store/useUIStore";
 import { Separator } from "@/components/ui/separator";
 import { projectMeta } from "@/config/meta";
+import { ITechTypes } from "@/config/technologies";
 
 interface IModalData {
   children: React.ReactNode;
 }
 
 export default function AboutModal({ children }: IModalData) {
-  const { toggleModal } = useUIStore((state) => {
+  const { toggleModal, setActiveTech } = useUIStore((state) => {
     return {
       isOpen: state.globalModal.isOpen,
       toggleModal: state.toggleModal,
+      setActiveTech: state.setActiveTech,
     };
   });
 
-  function handleTech() {
+  function handleTech(tech: string, type: ITechTypes) {
+    setActiveTech(tech, type);
     toggleModal();
   }
 
@@ -50,28 +53,49 @@ export default function AboutModal({ children }: IModalData) {
           <div className="my-2 flex flex-col gap-2">
             <p className="list-disc list-inside flex gap-2 flex-wrap items-center">
               <span>Frontend:</span>
-              <DialogTrigger asChild onClick={handleTech}>
+              <DialogTrigger
+                asChild
+                onClick={() => handleTech("React JS", "frontend")}
+              >
                 <TechBadge title={"React JS"} />
               </DialogTrigger>
-              <DialogTrigger asChild onClick={handleTech}>
+              <DialogTrigger
+                asChild
+                onClick={() => handleTech("Next JS", "frontend")}
+              >
                 <TechBadge title={"Next JS"} />
               </DialogTrigger>
-              <DialogTrigger asChild onClick={handleTech}>
+              <DialogTrigger
+                asChild
+                onClick={() => handleTech("Typescript", "frontend")}
+              >
                 <TechBadge title={"Typescript"} />
               </DialogTrigger>
-              <DialogTrigger asChild onClick={handleTech}>
+              <DialogTrigger
+                asChild
+                onClick={() => handleTech("Tailwind CSS", "frontend")}
+              >
                 <TechBadge title={"Tailwind CSS"} />
               </DialogTrigger>
-              <DialogTrigger asChild onClick={handleTech}>
+              <DialogTrigger
+                asChild
+                onClick={() => handleTech("Shadcn UI", "frontend")}
+              >
                 <TechBadge title={"Shadcn UI"} />
               </DialogTrigger>
             </p>
             <p className="list-disc list-inside flex gap-2 flex-wrap items-center">
               <span>Backend & Infra:</span>
-              <DialogTrigger asChild onClick={handleTech}>
+              <DialogTrigger
+                asChild
+                onClick={() => handleTech("Supabase", "backend")}
+              >
                 <TechBadge title={"Supabase"} />
               </DialogTrigger>
-              <DialogTrigger asChild onClick={handleTech}>
+              <DialogTrigger
+                asChild
+                onClick={() => handleTech("AWS S3", "backend")}
+              >
                 <TechBadge title={"AWS S3"} />
               </DialogTrigger>
             </p>

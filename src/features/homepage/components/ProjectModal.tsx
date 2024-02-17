@@ -15,6 +15,7 @@ import Link from "next/link";
 import { useUIStore } from "@/store/useUIStore";
 import { Separator } from "@/components/ui/separator";
 import { generateImageUrl } from "@/utils/imageHelpers";
+import { ITechTypes } from "@/config/technologies";
 
 interface IModalData {
   project: IProject;
@@ -43,14 +44,15 @@ export default function ProjectModal({ project, children }: IModalData) {
     },
   ];
 
-  const { toggleModal } = useUIStore((state) => {
+  const { toggleModal, setActiveTech } = useUIStore((state) => {
     return {
-      isOpen: state.globalModal.isOpen,
       toggleModal: state.toggleModal,
+      setActiveTech: state.setActiveTech,
     };
   });
 
-  function handleTech() {
+  function handleTech(tech: string, type: ITechTypes) {
+    setActiveTech(tech, type);
     toggleModal();
   }
 
@@ -84,7 +86,11 @@ export default function ProjectModal({ project, children }: IModalData) {
             {project.frontend?.length ? (
               <div className="flex flex-wrap gap-2">
                 {project.frontend.map((tech) => (
-                  <DialogTrigger key={tech} asChild onClick={handleTech}>
+                  <DialogTrigger
+                    key={tech}
+                    asChild
+                    onClick={() => handleTech(tech, "frontend")}
+                  >
                     <TechBadge title={tech} />
                   </DialogTrigger>
                 ))}
@@ -97,7 +103,11 @@ export default function ProjectModal({ project, children }: IModalData) {
             {project.backend?.length ? (
               <div className="flex flex-wrap gap-2">
                 {project.backend.map((tech) => (
-                  <DialogTrigger key={tech} asChild onClick={handleTech}>
+                  <DialogTrigger
+                    key={tech}
+                    asChild
+                    onClick={() => handleTech(tech, "backend")}
+                  >
                     <TechBadge title={tech} />
                   </DialogTrigger>
                 ))}
@@ -110,7 +120,11 @@ export default function ProjectModal({ project, children }: IModalData) {
             {project.apis?.length ? (
               <div className="flex flex-wrap gap-2">
                 {project.apis.map((tech) => (
-                  <DialogTrigger key={tech} asChild onClick={handleTech}>
+                  <DialogTrigger
+                    key={tech}
+                    asChild
+                    onClick={() => handleTech(tech, "apis")}
+                  >
                     <TechBadge title={tech} />
                   </DialogTrigger>
                 ))}

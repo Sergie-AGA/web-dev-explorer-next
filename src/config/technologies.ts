@@ -4,6 +4,8 @@ export interface ITechnology {
   link: string;
 }
 
+export type ITechTypes = "frontend" | "backend" | "apis";
+
 export const technologies = {
   frontend: [
     {

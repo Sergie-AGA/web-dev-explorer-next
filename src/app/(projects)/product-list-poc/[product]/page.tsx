@@ -3,7 +3,7 @@ import "@/features/product-list/styles/product-list.css";
 import { calculatePrice } from "@/features/product-list/utils/calculatePrice";
 import { getProducts } from "@/features/product-list/services/getProducts";
 
-export const revalidate = 30 * 60;
+export const revalidate = 30 * 60; // 30 min
 
 interface IProductProps {
   params: {
