@@ -1,5 +1,4 @@
 import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/router";
 
 type QueryObject = { [key: string]: string | string[] };
 
@@ -32,4 +31,22 @@ export function useURLState(options?: IOptions) {
   }
 
   return query;
+}
+
+interface UrlParams {
+  [key: string]: string | string[];
+}
+
+export function generateQueryString(urlParams: UrlParams): string {
+  const queryString = Object.keys(urlParams)
+    .map((type) => {
+      if (Array.isArray(urlParams[type])) {
+        return `${type}=${(urlParams[type] as string[]).join(",")}`;
+      } else {
+        return `${type}=${urlParams[type]}`;
+      }
+    })
+    .join("&");
+
+  return `?${queryString}`;
 }

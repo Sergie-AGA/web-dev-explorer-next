@@ -3,7 +3,9 @@
 import MorphingCard from "@/components/Cards/MorphingCard/MorphingCard";
 import ProjectModal from "@/features/homepage/components/ProjectModal";
 import { IProject, projects } from "@/config/projects";
-import { useURLState } from "@/hooks/useURLState";
+import { useURLState, generateQueryString } from "@/hooks/useURLState";
+import TechBadge from "./TechBadge";
+import { useRouter } from "next/navigation";
 
 interface FilterCriteria {
   text?: string;
@@ -51,14 +53,98 @@ function filterProjects(
 
 export default function ProjectGrid() {
   const url = useURLState({ queryAsArray: true });
+  const router = useRouter();
 
   let filteredProjects = projects.filter((project) => project.showProject);
   if (url) {
     filteredProjects = filterProjects(filteredProjects, url);
   }
 
+  function removeFilter(type: string, tech: string) {
+    if (url) {
+      if (type === "text") {
+        delete url.text;
+      } else {
+        if (url[type] && Array.isArray(url[type])) {
+          url[type] = (url[type] as string[]).filter((value) => value !== tech);
+
+          if (url[type].length === 0) {
+            delete url[type];
+          }
+        }
+      }
+
+      const newUrl = generateQueryString(url);
+      router.push(newUrl);
+    }
+  }
+
   return (
     <div>
+      {url && (
+        <div className="flex flex-col gap-2 mb-4">
+          <h2 className="text-lg">Filters Applied:</h2>
+          <div className="flex flex-wrap gap-4">
+            {url.text && (
+              <div className="flex flex-wrap gap-1 items-center pt-6 relative">
+                <span className="text-sm font-bold absolute top-0 left-[50%] translate-x-[-50%]">
+                  Text:
+                </span>
+                <TechBadge
+                  onClick={() => removeFilter("text", url.text as string)}
+                  title={url.text as string}
+                  removable={true}
+                />
+              </div>
+            )}
+            {url.frontend && (
+              <div className="flex flex-wrap gap-1 items-center pt-6 relative">
+                <span className="text-sm font-bold absolute top-0 left-[50%] translate-x-[-50%]">
+                  Frontend:
+                </span>
+                {(url.frontend as string[]).map((tech) => (
+                  <TechBadge
+                    onClick={() => removeFilter("frontend", tech)}
+                    key={tech}
+                    title={tech}
+                    removable={true}
+                  />
+                ))}
+              </div>
+            )}
+            {url.backend && (
+              <div className="flex flex-wrap gap-1 items-center pt-6 relative">
+                <span className="text-sm font-bold absolute top-0 left-[50%] translate-x-[-50%]">
+                  Backend:
+                </span>
+                {(url.backend as string[]).map((tech) => (
+                  <TechBadge
+                    onClick={() => removeFilter("backend", tech)}
+                    key={tech}
+                    title={tech}
+                    removable={true}
+                  />
+                ))}
+              </div>
+            )}
+            {url.apis && (
+              <div className="flex flex-wrap gap-1 items-center pt-6 relative">
+                <span className="text-sm font-bold absolute top-0 left-[50%] translate-x-[-50%]">
+                  APIs:
+                </span>
+                {(url.apis as string[]).map((tech) => (
+                  <TechBadge
+                    onClick={() => removeFilter("apis", tech)}
+                    key={tech}
+                    title={tech}
+                    removable={true}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
       {filteredProjects.length ? (
         <ul className="flex justify-between gap-6 flex-wrap">
           {filteredProjects.map((project) => {

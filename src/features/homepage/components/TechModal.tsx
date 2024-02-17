@@ -4,8 +4,8 @@ import TechBadge from "@/features/homepage/components/TechBadge";
 import SimpleTabs from "@/components/Tabs/SimpleTabs";
 import { Separator } from "@/components/ui/separator";
 import { ITechnology, technologies } from "@/config/technologies";
-import { useURLState } from "@/hooks/useURLState";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 export default function TechModal() {
   const tabData = [
@@ -23,22 +23,18 @@ export default function TechModal() {
     },
   ];
 
-  const url = useURLState();
-  let activeTech: ITechnology | null | undefined = null;
-  activeTech = technologies.frontend.find(
-    (tech) => tech.title?.toLowerCase() == (url?.tech as string)?.toLowerCase()
+  const [activeTech, setActiveTech] = useState<ITechnology | null | undefined>(
+    null
   );
-  if (!activeTech) {
-    activeTech = technologies.backend.find(
-      (tech) =>
-        tech.title?.toLowerCase() == (url?.tech as string)?.toLowerCase()
+
+  function handleActiveTech(
+    category: "frontend" | "backend" | "apis",
+    techBadge: ITechnology
+  ) {
+    const techDetails = technologies[category].find(
+      (tech) => tech.title?.toLowerCase() == techBadge.title.toLowerCase()
     );
-  }
-  if (!activeTech) {
-    activeTech = technologies.apis.find(
-      (tech) =>
-        tech.title?.toLowerCase() == (url?.tech as string)?.toLowerCase()
-    );
+    setActiveTech(techDetails);
   }
 
   return (
@@ -58,6 +54,7 @@ export default function TechModal() {
                   "bg-cyan-600": activeTech?.title == tech.title,
                 })}
                 title={tech.title}
+                onClick={() => handleActiveTech("frontend", tech)}
               />
             ))}
           </div>
@@ -69,6 +66,7 @@ export default function TechModal() {
                   "bg-cyan-600": activeTech?.title == tech.title,
                 })}
                 title={tech.title}
+                onClick={() => handleActiveTech("backend", tech)}
               />
             ))}
           </div>
@@ -80,6 +78,7 @@ export default function TechModal() {
                   "bg-cyan-600": activeTech?.title == tech.title,
                 })}
                 title={tech.title}
+                onClick={() => handleActiveTech("apis", tech)}
               />
             ))}
           </div>

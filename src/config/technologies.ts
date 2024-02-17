@@ -72,16 +72,22 @@ export const technologies = {
   ],
   apis: [
     {
-      title: "Youtube",
+      title: "Stripe",
       description:
-        "Allows developers to integrate YouTube features, such as video playback, search, and user interaction, into their applications through a set of RESTful APIs.",
-      link: "https://developers.google.com/youtube/v3",
+        "Stripe API enables developers to seamlessly integrate online payment processing into their applications, facilitating secure transactions, subscription management, and financial automation.",
+      link: "https://docs.stripe.com/api",
     },
-    {
-      title: "OpenAI",
-      description:
-        "Offers access to state-of-the-art artificial intelligence models for natural language processing, text generation, image recognition, and more, empowering developers to build innovative AI-powered applications and services.",
-      link: "https://openai.com/blog/openai-api",
-    },
+    // {
+    //   title: "Youtube",
+    //   description:
+    //     "Allows developers to integrate YouTube features, such as video playback, search, and user interaction, into their applications through a set of RESTful APIs.",
+    //   link: "https://developers.google.com/youtube/v3",
+    // },
+    // {
+    //   title: "OpenAI",
+    //   description:
+    //     "Offers access to state-of-the-art artificial intelligence models for natural language processing, text generation, image recognition, and more, empowering developers to build innovative AI-powered applications and services.",
+    //   link: "https://openai.com/blog/openai-api",
+    // },
   ],
 };

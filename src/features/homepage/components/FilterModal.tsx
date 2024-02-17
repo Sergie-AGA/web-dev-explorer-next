@@ -29,16 +29,16 @@ export default function FilterModal() {
     backend: [],
     apis: [],
   };
-  const url = useURLState();
-  console.log(
-    "%c Logged!",
-    "background: #01579b; color: white; padding: 2px 4px; border-radius: 4px"
-  );
-  console.log(url);
-  // const initialFilters
+  const url = useURLState({ queryAsArray: true });
 
-  const [searchValue, setSearchValue] = useState("");
-  const [techs, setTechs] = useState<ITechFilters>(emptyCats);
+  const initialFilters = JSON.parse(JSON.stringify(emptyCats));
+
+  initialFilters.frontend = url?.frontend || [];
+  initialFilters.backend = url?.backend || [];
+  initialFilters.apis = url?.apis || [];
+
+  const [searchValue, setSearchValue] = useState(url?.text || "");
+  const [techs, setTechs] = useState<ITechFilters>(initialFilters);
   const router = useRouter();
   function handleTech(category: Category, tech: string) {
     const newTechs = { ...techs };
