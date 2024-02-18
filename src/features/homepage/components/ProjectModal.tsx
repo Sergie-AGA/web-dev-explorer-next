@@ -39,7 +39,7 @@ export default function ProjectModal({ project, children }: IModalData) {
       value: "backend",
     },
     {
-      title: "API's",
+      title: "API&apos;s",
       value: "apis",
     },
   ];

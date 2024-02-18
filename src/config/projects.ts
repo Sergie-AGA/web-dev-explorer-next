@@ -32,7 +32,7 @@ export const projects = [
     apis: [],
     type: "tool",
     path: "/sheets-database",
-    showProject: false,
+    showProject: true,
     showLink: false,
   },
   {

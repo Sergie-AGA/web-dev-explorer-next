@@ -5,6 +5,7 @@ import { IconX } from "@tabler/icons-react";
 
 import TechModal from "@/features/homepage/components/TechModal";
 import FilterModal from "@/features/homepage/components/FilterModal";
+import { Suspense } from "react";
 
 interface IGlobalMenu {
   hasOverlay?: Boolean;
@@ -47,7 +48,7 @@ export default function GlobalModal({ hasOverlay = true }: IGlobalMenu) {
             <button onClick={handleClick} className="absolute top-4 right-4">
               <IconX className="cursor-pointer" size="16" />
             </button>
-            {<ModalComponent />}
+            <Suspense>{<ModalComponent />}</Suspense>
           </section>
         </div>
       )}

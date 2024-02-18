@@ -19,7 +19,7 @@ export default function TechModal() {
       value: "backend",
     },
     {
-      title: "API's",
+      title: "API&apos;s",
       value: "apis",
     },
   ];
