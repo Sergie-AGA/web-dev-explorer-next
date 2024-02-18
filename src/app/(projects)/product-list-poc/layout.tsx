@@ -8,9 +8,12 @@ export default function RootTemplate({
 }: {
   children: React.ReactNode;
 }) {
-  const { getLocalStorage, cart } = useCartStore();
+  const { getLocalStorage, cart, calculateTotals } = useCartStore();
   useEffect(() => {
     getLocalStorage();
+    if (cart.length) {
+      calculateTotals();
+    }
   }, []);
 
   return <>{children}</>;
