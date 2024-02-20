@@ -10,8 +10,9 @@ export default function RootTemplate({
 }) {
   const { getLocalStorage, cart, calculateTotals } = useCartStore();
   useEffect(() => {
-    getLocalStorage();
-    if (cart.length) {
+    const cartFilled = getLocalStorage();
+
+    if (cartFilled) {
       calculateTotals();
     }
   }, []);

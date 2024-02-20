@@ -11,7 +11,7 @@ interface ICartState {
   swapOption: (id: string) => void;
   calculateTotals: () => void;
   setLocalStorage: () => void;
-  getLocalStorage: () => void;
+  getLocalStorage: () => boolean;
 }
 
 interface ICart {
@@ -88,11 +88,16 @@ export const useCartStore = create<ICartState>()((set, get) => ({
 
   getLocalStorage() {
     const localData = localStorage.getItem("product-list-poc");
-
     if (localData) {
       set((state) => ({
         cart: [...JSON.parse(localData)],
       }));
+    }
+
+    if (localData) {
+      return true;
+    } else {
+      return false;
     }
   },
 
