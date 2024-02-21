@@ -38,16 +38,16 @@ export const projects = [
   {
     title: "State Mock Endpoint",
     description:
-      "This project helps you to make a request to a given endpoint and store results for that point in time, which can be used for debugging purposes",
+      "A simple system that makes snapshots of an endpoint now or at a scheduled time, and stores that data for future analysis, which can help for debugging data needs to be captured at a given time.",
     image:
       "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     frontend: [],
-    backend: [],
+    backend: ["Firebase"],
     apis: [],
     type: "tool",
     path: "/state-mock-endpoint",
-    showProject: false,
-    showLink: false,
+    showProject: true,
+    showLink: true,
   },
   {
     title: "Supabase Explorer",
@@ -73,7 +73,7 @@ export const projects = [
     type: "exploration",
     path: "/ddd-solid-login",
     showProject: true,
-    showLink: false,
+    showLink: true,
   },
 ];
 
