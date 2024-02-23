@@ -1,11 +1,12 @@
-"use client";
-
+import LocalModal from "@/components/Modals/LocalModal/LocalModal";
 import UserFlowContainer from "@/features/state-mock-endpoint/components/UserFlow/UserFlowContainer";
 
 export default function StateMockEndpoint() {
   return (
     <main>
-      <UserFlowContainer />
+      <LocalModal startOpen={true}>
+        <UserFlowContainer />
+      </LocalModal>
     </main>
   );
 }

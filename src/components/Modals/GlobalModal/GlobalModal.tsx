@@ -7,12 +7,12 @@ import TechModal from "@/features/homepage/components/TechModal";
 import FilterModal from "@/features/homepage/components/FilterModal";
 import { Suspense } from "react";
 
-interface IGlobalMenu {
+interface IGlobalModal {
   hasOverlay?: Boolean;
 }
 
-export default function GlobalModal({ hasOverlay = true }: IGlobalMenu) {
-  const { isOpen, modalType, toggleModal, openModal } = useUIStore((state) => {
+export default function GlobalModal({ hasOverlay = true }: IGlobalModal) {
+  const { isOpen, modalType, toggleModal } = useUIStore((state) => {
     return {
       isOpen: state.globalModal.isOpen,
       modalType: state.globalModal.type,
