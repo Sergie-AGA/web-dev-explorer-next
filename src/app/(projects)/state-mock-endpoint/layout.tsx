@@ -14,7 +14,7 @@ export default function RootTemplate({
     <html lang="en">
       <body className="min-h-screen site-wrap">
         <GlobalHeader title="State Mock Endpoint" />
-        {children}
+        <main className="max-width-container">{children}</main>
       </body>
     </html>
   );
