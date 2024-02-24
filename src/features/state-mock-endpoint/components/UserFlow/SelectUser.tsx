@@ -3,12 +3,24 @@ import { IconUserCheck, IconUserPlus } from "@tabler/icons-react";
 
 interface ISelectUserProps {
   handleSelection: (type: "new" | "existing") => void;
+  existingUsers: string[];
+  isLoaded: boolean;
 }
 
-export default function SelectUser({ handleSelection }: ISelectUserProps) {
+export default function SelectUser({
+  handleSelection,
+  existingUsers,
+  isLoaded,
+}: ISelectUserProps) {
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="text-[20px] text-center">No User ID Found</h2>
+      <h2 className="text-[20px] text-center">
+        {isLoaded
+          ? existingUsers.length
+            ? "One or more user ID's detected"
+            : "No User ID Found"
+          : "Checking Users..."}
+      </h2>
       <p className="text-neutral-400">Select an option:</p>
       <div className="flex gap-2">
         <Button

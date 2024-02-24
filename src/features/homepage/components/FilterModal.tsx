@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { technologies } from "@/config/technologies";
 import TechBadge from "./TechBadge";
+import SearchInput from "@/components/Global/Form/SearchInput";
 
 interface ITechFilters {
   frontend: string[];
@@ -68,12 +69,12 @@ export default function FilterModal() {
     router.push(query);
   }
 
-  function clearSearch() {
-    setSearchValue("");
-  }
-
   function clearTechs() {
     setTechs(emptyCats);
+  }
+
+  function handleSearch(text: string) {
+    setSearchValue(text);
   }
 
   return (
@@ -89,23 +90,10 @@ export default function FilterModal() {
         onSubmit={handleSubmit}
         className="min-h-[100px] my-4 flex flex-col gap-4 items-start"
       >
-        <div className="relative w-[100%] max-w-[300px]">
-          <input
-            type="text"
-            placeholder="Search by title or description..."
-            className="p-2 pr-6 rounded w-[100%]"
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-          />
-          {searchValue ? (
-            <IconX
-              onClick={clearSearch}
-              className="absolute top-[50%] translate-y-[-50%] right-2 cursor-pointer"
-            />
-          ) : (
-            <IconSearch className="absolute top-[50%] translate-y-[-50%] right-2" />
-          )}
-        </div>
+        <SearchInput
+          handleSearch={handleSearch}
+          searchValue={searchValue as string}
+        />
         <div>
           <h2 className="text-sm">Frontend</h2>
           <div className="flex flex-wrap gap-2">

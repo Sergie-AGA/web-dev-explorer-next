@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import SelectUser from "./SelectUser";
 import NewUser from "./NewUser";
+import ExistingUser from "./ExistingUser";
 
 interface IFlowProps {
   setUser: (id: string) => void;
@@ -12,6 +13,7 @@ export type FlowTypes = "new" | "existing" | "none";
 
 export default function UserFlowContainer({ setUser }: IFlowProps) {
   const [existingUsers, setExistingUsers] = useState<string[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const existingUserIds = JSON.parse(
@@ -22,6 +24,10 @@ export default function UserFlowContainer({ setUser }: IFlowProps) {
     );
 
     setExistingUsers(existingUserIds);
+    setIsLoaded(true);
+    if (existingUserIds.length === 1) {
+      // setUser(existingUserIds[0]);
+    }
   }, []);
 
   function handleSetUser(userID: string) {
@@ -46,8 +52,14 @@ export default function UserFlowContainer({ setUser }: IFlowProps) {
 
   const flowTypeComponents = {
     new: <NewUser handleSelection={handleSelection} setUser={handleSetUser} />,
-    existing: <div />,
-    none: <SelectUser handleSelection={handleSelection} />,
+    existing: <ExistingUser existingUsers={existingUsers} />,
+    none: (
+      <SelectUser
+        isLoaded={isLoaded}
+        existingUsers={existingUsers}
+        handleSelection={handleSelection}
+      />
+    ),
   };
 
   const SelectedComponent = flowTypeComponents[flowType as FlowTypes];
