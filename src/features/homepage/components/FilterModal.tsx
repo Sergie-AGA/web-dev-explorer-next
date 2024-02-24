@@ -91,6 +91,7 @@ export default function FilterModal() {
         className="min-h-[100px] my-4 flex flex-col gap-4 items-start"
       >
         <SearchInput
+          placeholder="Search by title or description..."
           handleSearch={handleSearch}
           searchValue={searchValue as string}
         />

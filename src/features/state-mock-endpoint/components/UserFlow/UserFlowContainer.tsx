@@ -26,22 +26,23 @@ export default function UserFlowContainer({ setUser }: IFlowProps) {
     setExistingUsers(existingUserIds);
     setIsLoaded(true);
     if (existingUserIds.length === 1) {
-      // setUser(existingUserIds[0]);
+      setUser(existingUserIds[0]);
     }
   }, []);
 
   function handleSetUser(userID: string) {
-    setExistingUsers((prevUsers) => {
-      const updatedUsers = [...prevUsers, userID];
+    if (!existingUsers.includes(userID)) {
+      setExistingUsers((prevUsers) => {
+        const updatedUsers = [...prevUsers, userID];
 
-      document.cookie = `StateMockEndpointUserIds=${JSON.stringify(
-        updatedUsers
-      )}; path=/`;
+        document.cookie = `StateMockEndpointUserIds=${JSON.stringify(
+          updatedUsers
+        )}; path=/`;
 
-      setUser(userID);
-
-      return updatedUsers;
-    });
+        return updatedUsers;
+      });
+    }
+    setUser(userID);
   }
 
   const [flowType, setFlowType] = useState<FlowTypes>("none");
@@ -52,7 +53,13 @@ export default function UserFlowContainer({ setUser }: IFlowProps) {
 
   const flowTypeComponents = {
     new: <NewUser handleSelection={handleSelection} setUser={handleSetUser} />,
-    existing: <ExistingUser existingUsers={existingUsers} />,
+    existing: (
+      <ExistingUser
+        setUser={handleSetUser}
+        existingUsers={existingUsers}
+        handleSelection={handleSelection}
+      />
+    ),
     none: (
       <SelectUser
         isLoaded={isLoaded}

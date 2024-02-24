@@ -1,6 +1,7 @@
 "use client";
 
 import LocalModal from "@/components/Modals/LocalModal/LocalModal";
+import Dashboard from "@/features/state-mock-endpoint/components/Dashboard/Dashboard";
 import UserFlowContainer from "@/features/state-mock-endpoint/components/UserFlow/UserFlowContainer";
 import { useState } from "react";
 
@@ -20,7 +21,11 @@ export default function StateMockEndpoint() {
           <UserFlowContainer setUser={setUser} />
         </LocalModal>
       )}
-      {existingUser ? 1 : <p className="text-center">Validating user...</p>}
+      {existingUser ? (
+        <Dashboard userID={existingUser} />
+      ) : (
+        <p className="text-center">Validating user...</p>
+      )}
     </>
   );
 }

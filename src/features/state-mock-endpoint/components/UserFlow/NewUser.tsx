@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { IconCircleArrowRight } from "@tabler/icons-react";
+import { IconArrowBackUp, IconCircleArrowRight } from "@tabler/icons-react";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import { FlowTypes } from "./UserFlowContainer";
@@ -42,7 +42,12 @@ export default function NewUser({
         <Button onClick={() => setUser(newUserID)} variant="secondary">
           I Understand. Save ID and Continue
         </Button>
-        <Button onClick={() => handleSelection("none")} variant="ghost">
+        <Button
+          onClick={() => handleSelection("none")}
+          variant="link"
+          className="flex items-center gap-2 px-0"
+        >
+          <IconArrowBackUp />
           Back to user selection
         </Button>
       </div>

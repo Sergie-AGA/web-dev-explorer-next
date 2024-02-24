@@ -17,28 +17,32 @@ export default function SelectUser({
       <h2 className="text-[20px] text-center">
         {isLoaded
           ? existingUsers.length
-            ? "One or more user ID's detected"
+            ? "One or more user IDs detected"
             : "No User ID Found"
           : "Checking Users..."}
       </h2>
-      <p className="text-neutral-400">Select an option:</p>
-      <div className="flex gap-2">
-        <Button
-          onClick={() => handleSelection("new")}
-          variant={"secondary"}
-          className="flex gap-2"
-        >
-          <IconUserPlus />
-          New User
-        </Button>
-        <Button
-          onClick={() => handleSelection("existing")}
-          variant={"secondary"}
-          className="flex gap-2"
-        >
-          <IconUserCheck /> Existing User
-        </Button>
-      </div>
+      {isLoaded && (
+        <>
+          <p className="text-neutral-400">Select an option:</p>
+          <div className="flex gap-2">
+            <Button
+              onClick={() => handleSelection("new")}
+              variant={"secondary"}
+              className="flex gap-2"
+            >
+              <IconUserPlus />
+              New User
+            </Button>
+            <Button
+              onClick={() => handleSelection("existing")}
+              variant={"secondary"}
+              className="flex gap-2"
+            >
+              <IconUserCheck /> Existing User
+            </Button>
+          </div>
+        </>
+      )}
     </div>
   );
 }
