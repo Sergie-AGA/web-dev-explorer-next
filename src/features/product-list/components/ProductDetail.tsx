@@ -105,12 +105,12 @@ export default function ProductDetail({
               <div className="flex gap-2">
                 <IconHandler icon="IconInfoCircle" />
                 <div className="flex-1">
-                  <p>
+                  <p className="text-xs">
                     Buy multiple items for an additional Bundle Discount - 10%
-                    off the cheapest items of the cart (applies to more than
-                    one).
+                    off the cheapest items of the cart (applies to more than one
+                    item and is based on the original price).
                   </p>
-                  <p>
+                  <p className="text-xs">
                     All items will be cleaned before being handed over. For
                     additional pictures, info and to buy the product, please
                     contact the seller.
