@@ -23,13 +23,6 @@ export async function generateMetadata(slug: IProductProps) {
   };
 }
 
-// export async function generateStaticParams() {
-//     const products = await useProducts()
-//     return products.map((product) => {
-//         return {slug: product.slug}
-//     })
-// }
-
 export default async function ProductListPoc(slug: IProductProps) {
   const products = await getProducts();
 

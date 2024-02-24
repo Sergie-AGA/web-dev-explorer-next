@@ -5,6 +5,7 @@ import { calculatePrice } from "../utils/calculatePrice";
 import Link from "next/link";
 import { britishCurrencyFormatter } from "../utils/currencyFormatter";
 import { imagePlaceholder } from "../data/products";
+import { cn } from "@/lib/utils";
 
 interface IProductCard {
   product: IProduct;
@@ -39,7 +40,12 @@ export default function ProductCard({
             width={800}
             height={800}
           />
-          <div className="h-[100%] w-[100%] bg-black bg-opacity-30 z-10 absolute top-0 left-0 pointer-events-none"></div>
+          <div
+            className={cn(
+              "h-[100%] w-[100%] bg-black bg-opacity-30 z-10 absolute top-0 left-0 pointer-events-none",
+              { "bg-opacity-80": product.status === "sold" }
+            )}
+          ></div>
         </CardContent>
         <CardHeader className="absolute py-1 px-3 rounded-xl bottom-2 left-2 max-w-[calc(100%-16px)] z-50 items-start">
           {showTitle && (
