@@ -4,13 +4,15 @@ import LocalModal from "@/components/Modals/LocalModal/LocalModal";
 import Dashboard from "@/features/state-mock-endpoint/components/Dashboard/Dashboard";
 import UserFlowContainer from "@/features/state-mock-endpoint/components/UserFlow/UserFlowContainer";
 import { useState } from "react";
+import { useUserContext } from "@/features/state-mock-endpoint/context/UserContext";
 
 export default function StateMockEndpoint() {
-  const [existingUser, setExistingUser] = useState("");
+  const { existingUser, updateUser } = useUserContext();
+
   const [isOpen, setIsOpen] = useState(true);
 
   function setUser(userID: string) {
-    setExistingUser(userID);
+    updateUser(userID);
     setIsOpen(false);
   }
 

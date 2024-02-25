@@ -1,9 +1,13 @@
-import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader.tsx";
+import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader";
 import GlobalMenu from "@/components/Menu/GlobalMenu";
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactElement;
+}) {
   return (
-    <div className="site-wrap bg-cyan-900">
+    <div className="min-h-screen site-wrap bg-cyan-900">
       <GlobalHeader>
         <GlobalMenu />
       </GlobalHeader>

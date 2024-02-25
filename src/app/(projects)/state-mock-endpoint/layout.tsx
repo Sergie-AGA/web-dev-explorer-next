@@ -1,4 +1,7 @@
 import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader";
+import SettingsIcon from "@/features/state-mock-endpoint/components/Menus/SettingsIcon";
+import "../../../styles/global.css";
+import { UserProvider } from "@/features/state-mock-endpoint/context/UserContext";
 
 export const metadata = {
   title: "State Mock Endpoint",
@@ -11,11 +14,13 @@ export default function RootTemplate({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen site-wrap">
-        <GlobalHeader title="State Mock Endpoint" />
+    <div className="min-h-screen site-wrap">
+      <UserProvider>
+        <GlobalHeader title="State Mock Endpoint">
+          <SettingsIcon />
+        </GlobalHeader>
         <main className="max-width-container">{children}</main>
-      </body>
-    </html>
+      </UserProvider>
+    </div>
   );
 }

@@ -29,7 +29,7 @@
   input,
   select,
   textarea {
-    @apply font-sans  text-white text-sm md:text-base;
+    @apply font-sans text-white text-sm md:text-base;
   }
 
   h1,

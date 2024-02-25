@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ReactNode } from "react";
 
 interface IHeaderProps {
-  title: string;
+  title?: string;
   children?: ReactNode;
 }
 
