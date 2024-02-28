@@ -25,9 +25,6 @@ export default function UserFlowContainer({ setUser }: IFlowProps) {
 
     setExistingUsers(existingUserIds);
     setIsLoaded(true);
-    if (existingUserIds.length === 1) {
-      setUser(existingUserIds[0]);
-    }
   }, []);
 
   function handleSetUser(userID: string) {

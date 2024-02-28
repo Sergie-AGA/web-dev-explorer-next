@@ -12,6 +12,9 @@ export default function SettingsIcon() {
   function openModal() {
     setIsOpen(true);
   }
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   return (
     <>
@@ -19,8 +22,12 @@ export default function SettingsIcon() {
         <IconSettings />
       </IconButton>
       {isOpen && (
-        <LocalModal startOpen={isOpen} persistent={false}>
-          <SettingsMenu />
+        <LocalModal
+          startOpen={isOpen}
+          persistent={false}
+          closeModal={closeModal}
+        >
+          <SettingsMenu closeModal={closeModal} />
         </LocalModal>
       )}
     </>

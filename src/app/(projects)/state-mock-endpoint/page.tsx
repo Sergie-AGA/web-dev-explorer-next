@@ -7,19 +7,22 @@ import { useState } from "react";
 import { useUserContext } from "@/features/state-mock-endpoint/context/UserContext";
 
 export default function StateMockEndpoint() {
-  const { existingUser, updateUser } = useUserContext();
+  const { existingUser, updateUser, isUserModalOpen, toggleUserModal } =
+    useUserContext();
 
-  const [isOpen, setIsOpen] = useState(true);
+  function closeModal() {
+    toggleUserModal(false);
+  }
 
   function setUser(userID: string) {
     updateUser(userID);
-    setIsOpen(false);
+    toggleUserModal(false);
   }
 
   return (
     <>
-      {isOpen && (
-        <LocalModal startOpen={true} persistent={true}>
+      {isUserModalOpen && (
+        <LocalModal startOpen={true} persistent={true} closeModal={closeModal}>
           <UserFlowContainer setUser={setUser} />
         </LocalModal>
       )}
