@@ -3,7 +3,7 @@
 import TechBadge from "@/features/homepage/components/TechBadge";
 import SimpleTabs from "@/components/Tabs/SimpleTabs";
 import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { useEffect, useState } from "react";
 import { ITechnology, technologies, ITechTypes } from "@/config/technologies";
 import { useUIStore } from "@/store/useUIStore";

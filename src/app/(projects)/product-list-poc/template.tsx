@@ -2,7 +2,7 @@
 
 import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader";
 import ProductCart from "@/features/product-list/components/ProductCart";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { usePathname } from "next/navigation";
 
 export const metadata = {

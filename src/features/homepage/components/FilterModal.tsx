@@ -3,7 +3,7 @@
 import { FormEvent, useState } from "react"; // Import FormEvent type
 import { Separator } from "@/components/ui/separator";
 import { useURLState } from "@/hooks/useURLState";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import {
   IconFilter,
   IconFilterOff,

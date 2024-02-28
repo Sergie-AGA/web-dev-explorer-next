@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { IconEye, IconEyeOff } from "@tabler/icons-react";
 import { useState } from "react";
 

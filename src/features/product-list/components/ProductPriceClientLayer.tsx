@@ -3,7 +3,7 @@
 import { IProduct } from "../data/products";
 import { useCartStore } from "../store/useCartStore";
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 
 interface IPriceClientLayer {
   children: React.ReactNode;

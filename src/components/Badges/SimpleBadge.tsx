@@ -1,6 +1,6 @@
 import IconHandler from "@/components/Global/IconHandler/IconHandler";
 import { MapBadgeToIcon } from "@/components/Cards/MorphingCard/MapBadgeToIcon";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 
 interface BadgeProps {
   badge: string;
