@@ -10,7 +10,11 @@ export default function Dashboard({ userID }: IDashboardProps) {
     <section>
       <h2 className="text-lg flex items-center gap-2">
         Welcome, User
-        <BlurredText text={userID} from="right" className="w-[80%]" />
+        <BlurredText
+          text={userID}
+          from="right"
+          className="via-cyan-950 to-cyan-950"
+        />
       </h2>
       <ItemsList />
     </section>

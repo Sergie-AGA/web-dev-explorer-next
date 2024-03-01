@@ -26,13 +26,13 @@ export default function BlurredText({
   return (
     <div className="flex gap-4">
       <span className="h-[100%] relative">
-        {text}
+        <span>{text}</span>
         <span
           className={cn(
-            "absolute top-0 left-0 w-[100%] h-[100%] blur-[2px] bg-white",
+            "absolute top-0 left-0 w-[110%] h-[100%] blur-[2px] bg-gradient-to-r from-transparent to-white translate-x-[3px]",
             origin,
             className,
-            { "bg-transparent": isVisible }
+            { "opacity-0": isVisible }
           )}
         ></span>
       </span>

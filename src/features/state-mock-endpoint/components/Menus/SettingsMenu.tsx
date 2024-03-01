@@ -93,7 +93,7 @@ export default function SettingsMenu({ closeModal }: ISettingsMenu) {
         <BlurredText
           text={existingUser}
           from="right"
-          className="w-[80%]"
+          className="via-neutral-950 to-neutral-950"
           hasToggle={true}
         />
       </div>
