@@ -63,7 +63,7 @@ export default function ProductDetail({
                 target="_blank"
                 className="px-2 py-1 bg-cyan-800 hover:bg-cyan-700  active:scale-95 scale rounded mb-4 inline-block text-sm"
               >
-                Source Product URL
+                Original Product Link
               </a>
             )}
             <ul>
