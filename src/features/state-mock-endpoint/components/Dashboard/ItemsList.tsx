@@ -1,5 +1,7 @@
+import { format } from "date-fns";
 import { useUserContext } from "../../context/UserContext";
 import { useFirebaseGetAllByID } from "../../hooks/useFirebase";
+import TaskItem from "./TaskItem";
 
 export default function ItemsList() {
   const { existingUser } = useUserContext();
@@ -17,12 +19,21 @@ export default function ItemsList() {
     return <p>Loading...</p>;
   }
 
+  console.log(items);
+
   if (items.length > 0) {
     return (
       <div>
         <ul>
           {items.map((doc) => (
-            <li key={doc.id}>{/* Render your item here */}</li>
+            <TaskItem
+              key={doc.id}
+              title={doc.title}
+              date={format(
+                new Date(doc.executionTimestamp.seconds * 1000),
+                "dd/MM/yyyy - HH:mm"
+              )}
+            />
           ))}
         </ul>
         <button onClick={loadMore}>Load More</button>

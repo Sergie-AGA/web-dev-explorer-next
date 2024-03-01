@@ -3,7 +3,10 @@ export interface IItem {
   userID: string;
   url: string;
   title: string;
-  executionTimestamp: Date;
+  executionTimestamp: {
+    seconds: number;
+    nanoseconds: number;
+  };
   body: IItemBody;
   header: IItemHeader;
   response: IItemResponse;

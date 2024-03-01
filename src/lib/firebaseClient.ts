@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, isSupported } from "firebase/analytics";
 import { getFirestore, serverTimestamp } from "firebase/firestore";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
@@ -18,7 +18,9 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 
-const analytics = getAnalytics(firebaseApp);
+const analytics = isSupported().then((yes) =>
+  yes ? getAnalytics(firebaseApp) : null
+);
 export const firestore = getFirestore(firebaseApp);
 
 export default firebaseApp;
