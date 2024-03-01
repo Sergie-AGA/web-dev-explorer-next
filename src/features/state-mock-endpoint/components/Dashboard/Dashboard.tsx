@@ -1,4 +1,5 @@
 import BlurredText from "@/components/Global/Blur/BlurredText";
+import ItemsList from "./ItemsList";
 
 interface IDashboardProps {
   userID: string;
@@ -11,6 +12,7 @@ export default function Dashboard({ userID }: IDashboardProps) {
         Welcome, User
         <BlurredText text={userID} from="right" className="w-[80%]" />
       </h2>
+      <ItemsList />
     </section>
   );
 }

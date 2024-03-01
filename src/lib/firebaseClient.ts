@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, serverTimestamp } from "firebase/firestore";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/storage";
@@ -22,3 +22,4 @@ const analytics = getAnalytics(firebaseApp);
 export const firestore = getFirestore(firebaseApp);
 
 export default firebaseApp;
+export const FirebaseTime = serverTimestamp;
