@@ -1,14 +1,19 @@
+"use client";
+
 import { format } from "date-fns";
 import { useUserContext } from "../../context/UserContext";
 import { useFirebaseGetAllByID } from "../../hooks/useFirebase";
 import TaskItem from "./TaskItem";
+import NewItemButton from "./NewItemButton";
+import { useState } from "react";
+import LocalModal from "@/components/Modals/LocalModal/LocalModal";
+import LoadMore from "./LoadMore";
 
 export default function ItemsList() {
   const { existingUser } = useUserContext();
-  const { items, error, loading, loadMore } = useFirebaseGetAllByID(
-    existingUser,
-    1
-  );
+  const [isOpen, setIsOpen] = useState(false);
+  const { items, error, loading, loadMore, loadingMore, lastDoc } =
+    useFirebaseGetAllByID(existingUser, 3);
 
   if (error) {
     console.error("Error:", error);
@@ -19,12 +24,20 @@ export default function ItemsList() {
     return <p>Loading...</p>;
   }
 
-  console.log(items);
+  function openModal() {
+    setIsOpen(true);
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   if (items.length > 0) {
     return (
-      <div>
-        <ul>
+      <div className="flex flex-col gap-4">
+        <div>
+          <NewItemButton onClick={openModal} />
+        </div>
+        <ul className="flex flex-col gap-4">
           {items.map((doc) => (
             <TaskItem
               key={doc.id}
@@ -36,7 +49,20 @@ export default function ItemsList() {
             />
           ))}
         </ul>
-        <button onClick={loadMore}>Load More</button>
+        {lastDoc && (
+          <div className="self-end">
+            <LoadMore onClick={loadMore} loadingMore={loadingMore} />
+          </div>
+        )}
+        {isOpen && (
+          <LocalModal
+            startOpen={isOpen}
+            persistent={false}
+            closeModal={closeModal}
+          >
+            qwe
+          </LocalModal>
+        )}
       </div>
     );
   } else {
