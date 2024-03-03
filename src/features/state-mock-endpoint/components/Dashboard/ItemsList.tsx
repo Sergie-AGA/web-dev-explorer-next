@@ -13,7 +13,7 @@ export default function ItemsList() {
   const { existingUser } = useUserContext();
   const [isOpen, setIsOpen] = useState(false);
   const { items, error, loading, loadMore, loadingMore, lastDoc } =
-    useFirebaseGetAllByID(existingUser, 3);
+    useFirebaseGetAllByID(existingUser, 20);
 
   if (error) {
     console.error("Error:", error);
@@ -46,6 +46,9 @@ export default function ItemsList() {
                 new Date(doc.executionTimestamp.seconds * 1000),
                 "dd/MM/yyyy - HH:mm"
               )}
+              header={doc.header}
+              body={doc.body}
+              response={doc.response}
             />
           ))}
         </ul>
