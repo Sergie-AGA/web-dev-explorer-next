@@ -8,6 +8,9 @@ import {
   limit,
   startAfter,
   addDoc,
+  updateDoc,
+  doc,
+  runTransaction,
 } from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
 import { firestore } from "@/lib/firebaseClient";
@@ -20,6 +23,8 @@ type UseFirebaseGetAllResult = {
   error: string | null;
   loadMore: () => void;
   lastDoc: DocumentData | null;
+  refresh: () => void;
+  isMounted: boolean;
 };
 
 export function useFirebaseGetAllByID(
@@ -100,7 +105,45 @@ export function useFirebaseGetAllByID(
     }
   };
 
-  return { items, loading, error, loadMore, loadingMore, lastDoc };
+  // Refresh
+  const refresh = async () => {
+    setItems([]);
+    setLoading(true);
+    setLoadingMore(false);
+    setError(null);
+    setLastDoc(null);
+
+    try {
+      await fetchItems(() =>
+        query(
+          itemsCollection,
+          where("userID", "==", userID),
+          orderBy("executionTimestamp", "desc"),
+          limit(pageSize)
+        )
+      );
+    } catch (error) {
+      console.error("Error refreshing documents:", error);
+      setError(
+        "Error refreshing documents: " +
+          (error instanceof Error ? error.message : "")
+      );
+    } finally {
+      setLoading(false);
+      setLoadingMore(false);
+    }
+  };
+
+  return {
+    items,
+    loading,
+    error,
+    loadMore,
+    loadingMore,
+    lastDoc,
+    refresh,
+    isMounted: isMounted.current,
+  };
 }
 
 // Post
@@ -135,4 +178,82 @@ export function useFirebasePost(): UseFirebasePostResult {
   };
 
   return { postItem, posting, postError };
+}
+
+// Patch
+type UseFirebasePatchResult = {
+  patchItem: (itemID: string, updatedFields: Partial<IItem>) => Promise<void>;
+  patching: boolean;
+  patchError: string | null;
+};
+
+export function useFirebasePatch(): UseFirebasePatchResult {
+  const [patching, setPatching] = useState(false);
+  const [patchError, setPatchError] = useState<string | null>(null);
+
+  const patchItem = async (itemID: string, updatedFields: Partial<IItem>) => {
+    try {
+      setPatching(true);
+
+      const itemsCollection = collection(firestore, "items");
+      const itemDocRef = doc(itemsCollection, itemID);
+
+      // Update the item with the provided fields
+      await updateDoc(itemDocRef, updatedFields);
+    } catch (error) {
+      console.error("Error patching document:", error);
+      setPatchError(
+        "Error patching document: " +
+          (error instanceof Error ? error.message : "")
+      );
+    } finally {
+      setPatching(false);
+    }
+  };
+
+  return { patchItem, patching, patchError };
+}
+
+// Delete
+type UseFirebaseDeleteResult = {
+  deleteItem: (itemID: string) => Promise<boolean>;
+  deleting: boolean;
+  deleteError: string | null;
+};
+
+export function useFirebaseDelete(): UseFirebaseDeleteResult {
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState<string | null>(null);
+
+  const deleteItem = async (itemID: string): Promise<boolean> => {
+    try {
+      setDeleting(true);
+
+      const itemsCollection = collection(firestore, "items");
+      const itemDocRef = doc(itemsCollection, itemID);
+
+      await runTransaction(firestore, async (transaction) => {
+        const itemDoc = await transaction.get(itemDocRef);
+
+        if (!itemDoc.exists()) {
+          throw new Error(`Document with ID ${itemID} not found.`);
+        }
+
+        transaction.delete(itemDocRef);
+      });
+
+      return true;
+    } catch (error) {
+      console.error("Error deleting document:", error);
+      setDeleteError(
+        "Error deleting document: " +
+          (error instanceof Error ? error.message : "")
+      );
+      return false;
+    } finally {
+      setDeleting(false);
+    }
+  };
+
+  return { deleteItem, deleting, deleteError };
 }

@@ -58,13 +58,13 @@ export default function SettingsMenu({ closeModal }: ISettingsMenu) {
 
   const deletionMap = {
     local: (
-      <p className="flex flex-col gap-4">
-        <span>
+      <div className="flex flex-col gap-4">
+        <p>
           This action will permanently remove the saved user from the
           browser&apos;s cookies, but keep the data in the database. You can
           still see the data by manually typing this ID on the user selection
           screen.
-        </span>
+        </p>
         <div className="flex items-center gap-4">
           <Button onClick={deleteCookies} variant="destructive">
             Confirm Data Deletion
@@ -73,7 +73,7 @@ export default function SettingsMenu({ closeModal }: ISettingsMenu) {
             Cancel
           </Button>
         </div>
-      </p>
+      </div>
     ),
     loading: <p>Deletion in progress...</p>,
     reset: (

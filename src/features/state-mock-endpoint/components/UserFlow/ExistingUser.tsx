@@ -36,7 +36,7 @@ export default function NewUser({
           Back to user selection
         </Button>
       </div>
-      <div>
+      <div className="flex flex-col gap-2">
         <h4 className="text-neutral-100 text-lg mb-4">Search for an ID</h4>
         <div className="flex gap-4 flex-col md:flex-row">
           <div className="flex-1">
@@ -51,6 +51,17 @@ export default function NewUser({
             whether it exists or not.
           </p>
         </div>
+        <Button
+          variant="secondary"
+          disabled={!searchID || searchID.length > 50}
+          onClick={() => setUser(searchID)}
+          className="self-start"
+        >
+          Apply
+        </Button>
+        {searchID.length > 50 && (
+          <p className="text-red-400">Id&apos;s cannot be over 50 characters</p>
+        )}
       </div>
 
       <Separator />

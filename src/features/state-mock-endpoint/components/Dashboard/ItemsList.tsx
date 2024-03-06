@@ -2,18 +2,40 @@
 
 import { format } from "date-fns";
 import { useUserContext } from "../../context/UserContext";
-import { useFirebaseGetAllByID } from "../../hooks/useFirebase";
+import {
+  useFirebaseDelete,
+  useFirebaseGetAllByID,
+} from "../../hooks/useFirebase";
 import TaskItem from "./TaskItem";
 import NewItemButton from "./NewItemButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LocalModal from "@/components/Modals/LocalModal/LocalModal";
 import LoadMore from "./LoadMore";
+import { Button } from "@/components/ui/button";
+import { IItem } from "../../types/Item";
 
 export default function ItemsList() {
   const { existingUser } = useUserContext();
   const [isOpen, setIsOpen] = useState(false);
-  const { items, error, loading, loadMore, loadingMore, lastDoc } =
-    useFirebaseGetAllByID(existingUser, 20);
+  const [selectedItem, setSelectedItem] = useState<IItem | null>(null);
+  const [modalType, setModalType] = useState("");
+  const {
+    items,
+    error,
+    loading,
+    loadMore,
+    loadingMore,
+    lastDoc,
+    refresh,
+    isMounted,
+  } = useFirebaseGetAllByID(existingUser, 20);
+  const { deleteItem, deleting, deleteError } = useFirebaseDelete();
+
+  useEffect(() => {
+    if (!isMounted) {
+      refresh();
+    }
+  }, [existingUser]);
 
   if (error) {
     console.error("Error:", error);
@@ -29,6 +51,29 @@ export default function ItemsList() {
   }
   function closeModal() {
     setIsOpen(false);
+    setModalType("");
+    setSelectedItem(null);
+  }
+
+  function handleEditSetup(id: string) {}
+
+  function handleDeleteSetup(task: IItem) {
+    setModalType("delete");
+    setSelectedItem(task);
+    openModal();
+  }
+
+  async function handleDelete() {
+    if (selectedItem?.id) {
+      const deletionResult = await deleteItem(selectedItem.id);
+
+      if (deletionResult) {
+        closeModal();
+        refresh();
+      } else {
+        console.error("Error deleting item:", deleteError);
+      }
+    }
   }
 
   if (items.length > 0) {
@@ -49,6 +94,8 @@ export default function ItemsList() {
               header={doc.header}
               body={doc.body}
               response={doc.response}
+              handleEdit={() => handleEditSetup(doc.id)}
+              handleDelete={() => handleDeleteSetup(doc)}
             />
           ))}
         </ul>
@@ -63,7 +110,18 @@ export default function ItemsList() {
             persistent={false}
             closeModal={closeModal}
           >
-            qwe
+            {modalType == "delete" ? (
+              <div className="flex flex-col gap-4 items-start">
+                <p>Are you sure you want to delete this item?</p>
+                <p>Title: {selectedItem?.title}</p>
+                <Button onClick={handleDelete} variant="destructive">
+                  {deleting ? "Deleting" : "Confirm Deletion"}
+                </Button>
+                <p>{deleteError ? deleteError : ""}</p>
+              </div>
+            ) : (
+              "qwe"
+            )}
           </LocalModal>
         )}
       </div>

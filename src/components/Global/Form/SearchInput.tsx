@@ -16,13 +16,14 @@ export default function SearchInput({
       <input
         type="text"
         placeholder={placeholder}
-        className="p-2 pr-6 rounded w-[100%]"
+        className="p-2 pr-8 rounded w-[100%]"
         value={searchValue}
         onChange={(e) => handleSearch(e.target.value)}
       />
       {searchValue ? (
         <IconX
           onClick={() => handleSearch("")}
+          size="16"
           className="absolute top-[50%] translate-y-[-50%] right-2 cursor-pointer"
         />
       ) : (

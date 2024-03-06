@@ -32,7 +32,7 @@ export const projects = [
     apis: [],
     type: "tool",
     path: "/sheets-database",
-    showProject: true,
+    showProject: false,
     showLink: false,
   },
   {
@@ -72,8 +72,8 @@ export const projects = [
     apis: [],
     type: "exploration",
     path: "/ddd-solid-login",
-    showProject: true,
-    showLink: true,
+    showProject: false,
+    showLink: false,
   },
 ];
 

@@ -10,12 +10,14 @@ import {
 } from "./ItemAccordion";
 import CodeBlock from "@/components/Global/CodeBlock/CodeBlock";
 
-interface ITaskItemProps {
+export interface ITaskItemProps {
   title: string;
   date: string;
   header: {};
   body: {};
   response: {};
+  handleEdit: () => void;
+  handleDelete: () => void;
 }
 
 export default function TaskItem({
@@ -24,6 +26,8 @@ export default function TaskItem({
   header,
   body,
   response,
+  handleEdit,
+  handleDelete,
 }: ITaskItemProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -46,8 +50,20 @@ export default function TaskItem({
               <p className="text-sm text-neutral-400">{date}</p>
             </div>
             <div className="flex gap-4">
-              <IconEdit className="cursor-pointer" />
-              <IconTrash className="cursor-pointer" />
+              <IconEdit
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleEdit();
+                }}
+                className="cursor-pointer"
+              />
+              <IconTrash
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleDelete();
+                }}
+                className="cursor-pointer"
+              />
             </div>
           </div>
         </AccordionTrigger>
@@ -76,7 +92,7 @@ export default function TaskItem({
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="child-3" className="overflow-hidden rounded">
-              <AccordionTrigger>Requisition ReSponse</AccordionTrigger>
+              <AccordionTrigger>Requisition Response</AccordionTrigger>
               <AccordionContent
                 className={cn(
                   "bg-neutral-800 p-4 duration-500 flex flex-col gap-4"
