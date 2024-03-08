@@ -78,7 +78,7 @@ export default function ProductCard({
           ) : null}
         </CardHeader>
       </Card>
-      {showPrice && (
+      {showPrice && product.status == "available" && (
         <span className="absolute top-2 right-2 bg-cyan-950 rounded px-2 py-1 font-bold z-50">
           {discount.toFixed(0)}% OFF
         </span>
