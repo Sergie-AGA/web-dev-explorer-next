@@ -13,6 +13,7 @@ import LocalModal from "@/components/Modals/LocalModal/LocalModal";
 import LoadMore from "./LoadMore";
 import { Button } from "@/components/ui/button";
 import { IItem } from "../../types/Item";
+import ItemEditor from "./ItemEditor";
 
 export default function ItemsList() {
   const { existingUser } = useUserContext();
@@ -120,7 +121,7 @@ export default function ItemsList() {
                 <p>{deleteError ? deleteError : ""}</p>
               </div>
             ) : (
-              "qwe"
+              <ItemEditor />
             )}
           </LocalModal>
         )}
