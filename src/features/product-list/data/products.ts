@@ -4,6 +4,7 @@ export interface IProduct {
   description: string;
   slug: string;
   priceLevel: 1 | 2 | 3;
+  discount?: number;
   basePrice: number;
   originalUrl?: string;
   status: "available" | "sold" | "soon";

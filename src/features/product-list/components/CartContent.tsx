@@ -26,7 +26,7 @@ export default function CartContent() {
   return (
     <div className="flex flex-col mb-4 relative">
       {total.total > 0 && (
-        <div className="border-b-2 border-white border-solid py-2 sticky top-0 z-10 bg-neutral-950 p-4 shadow-[0_6px_3px_8px_rgba(0,0,0,0.3)]">
+        <div className="border-b-2 border-white border-solid py-2 sticky top-0 z-50 bg-neutral-950 p-4 shadow-[0_6px_3px_8px_rgba(0,0,0,0.3)]">
           <h2 className="text-lg flex items-center">
             Total:{" "}
             <span className="text-lg">
