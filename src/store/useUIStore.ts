@@ -1,4 +1,4 @@
-import { ITechnology, ITechTypes } from "@/config/technologies";
+import { ITechTypes } from "@/config/technologies";
 import { create } from "zustand";
 
 interface IUIState {

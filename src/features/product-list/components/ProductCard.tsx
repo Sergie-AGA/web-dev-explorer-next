@@ -5,7 +5,7 @@ import { calculatePrice } from "../utils/calculatePrice";
 import Link from "next/link";
 import { britishCurrencyFormatter } from "../utils/currencyFormatter";
 import { imagePlaceholder } from "../data/products";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 
 interface IProductCard {
   product: IProduct;

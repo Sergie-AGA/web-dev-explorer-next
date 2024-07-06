@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { useState } from "react";
 
 interface IItemProps {
@@ -26,11 +26,11 @@ export default function MenuItem({
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}
       className={cn(
-        " flex  cursor-pointer bg-cyan-600 hover:bg-cyan-700 outline-none group",
+        " flex cursor-pointer bg-cyan-600 hover:bg-cyan-700 outline-none group",
         className
       )}
     >
-      <div className="w-11 h-11 flex flex-col items-center justify-center  duration-200">
+      <div className="w-11 h-11 flex flex-col items-center justify-center duration-200">
         <div
           className={cn(
             "active:scale-75 duration-200 group-active:scale-75",

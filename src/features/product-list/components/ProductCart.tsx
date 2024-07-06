@@ -11,7 +11,7 @@ import {
 import SimpleBadge from "@/components/Badges/SimpleBadge";
 import CartContent from "./CartContent";
 import ProductCount from "./ProductCount";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 
 interface IProductCart {
   className?: string;

@@ -2,7 +2,7 @@
 
 import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader";
 import ProductCart from "@/features/product-list/components/ProductCart";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { usePathname } from "next/navigation";
 
 export const metadata = {
@@ -22,7 +22,7 @@ export default function RootTemplate({
   const path = usePathname();
 
   return (
-    <div className="site-wrap bg-cyan-950">
+    <div className="bg-cyan-950 site-wrap">
       <GlobalHeader title="Product List POC">
         <ProductCart className={cn({ "lg:hidden": path?.length <= 18 })} />
       </GlobalHeader>
