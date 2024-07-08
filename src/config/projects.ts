@@ -14,10 +14,30 @@ export const projects = [
             "Yet-another-react-lightbox",
             "React-photo-album",
         ],
-        backend: ["Supabase", "AWS S3"],
+        backend: ["Supabase", "Vercel"],
         apis: [],
         type: "concept",
         path: "/product-list-poc",
+        showProject: true,
+        showLink: true,
+    },
+    {
+        title: "Gotta Catch 'Em All",
+        description:
+            "Capture Pokémon in a simple game and track your progress while earning achievements, leveling up, and unlocking new features. This projects explores using Supabase Auth, Indexed DB, React Grid Explorer, Storybook JS, and automated tests with Vitest and Cypress JS",
+        image: "projects/product-list-poc.png",
+        frontend: [
+            "React JS",
+            "Next JS",
+            "Typescript",
+            "Tailwind CSS",
+            "ShadcnUI",
+            "React Grid Layout",
+        ],
+        backend: ["Supabase", "Supabase Auth", "IndexedDB", "Vercel"],
+        apis: ["PokéAPI"],
+        type: "exploration",
+        path: "/pokemon",
         showProject: true,
         showLink: true,
     },
@@ -75,7 +95,7 @@ export const projects = [
         showProject: false,
         showLink: false,
     },
-];
+] as IProject[];
 
 export interface IProject {
     title: string;
@@ -84,7 +104,7 @@ export interface IProject {
     frontend: string[] | never[];
     backend: string[] | never[];
     apis: string[] | never[];
-    type: string;
+    type: "exploration" | "concept" | "tool";
     path: string;
     showProject: boolean;
     showLink: boolean;
