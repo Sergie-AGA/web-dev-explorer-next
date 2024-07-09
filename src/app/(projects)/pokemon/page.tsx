@@ -1,3 +1,5 @@
+import MainWrapper from "@/features/pokemon/components/MainWrapper";
+
 export default function Page() {
-  return <div>Yo</div>;
+  return <MainWrapper />;
 }

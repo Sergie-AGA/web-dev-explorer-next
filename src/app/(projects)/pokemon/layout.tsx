@@ -14,7 +14,7 @@ export default function RootTemplate({
 }) {
   return (
     <div className="min-h-screen site-wrap">
-      <GlobalHeader title="Fandom Battle"></GlobalHeader>
+      <GlobalHeader title="Gotta Catch 'Em All"></GlobalHeader>
       <main className="max-width-container">{children}</main>
     </div>
   );
