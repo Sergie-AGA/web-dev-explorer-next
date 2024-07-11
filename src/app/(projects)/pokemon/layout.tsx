@@ -13,9 +13,12 @@ export default function RootTemplate({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen site-wrap">
-      <GlobalHeader title="Gotta Catch 'Em All"></GlobalHeader>
-      <main className="max-width-container">{children}</main>
+    <div className="max-width-container min-h-screen flex flex-col justify-start">
+      <GlobalHeader
+        className="m-0 mt-4 p-0"
+        title="Gotta Catch 'Em All"
+      ></GlobalHeader>
+      <main className="flex flex-col grow">{children}</main>
     </div>
   );
 }

@@ -1,14 +1,25 @@
+import { cn } from "@/utils/utils";
 import Image from "next/image";
 import { ReactNode } from "react";
 
 interface IHeaderProps {
   title?: string;
   children?: ReactNode;
+  className?: string;
 }
 
-export default function GlobalHeader({ title, children }: IHeaderProps) {
+export default function GlobalHeader({
+  title,
+  children,
+  className,
+}: IHeaderProps) {
   return (
-    <header className="max-width-container flex items-center mb-4 md:mb-6">
+    <header
+      className={cn(
+        "max-width-container flex items-center mb-4 md:mb-6",
+        className
+      )}
+    >
       <div className="flex items-center mr-2">
         <Image
           src="/Logo.svg"
