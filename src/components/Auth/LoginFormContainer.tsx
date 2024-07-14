@@ -15,7 +15,7 @@ export default function LoginFormContainer() {
     setProvider("");
   };
 
-  if (provider === "randomteams") {
+  if (provider === "webdevexplorer") {
     return (
       <Card>
         <CardHeader>

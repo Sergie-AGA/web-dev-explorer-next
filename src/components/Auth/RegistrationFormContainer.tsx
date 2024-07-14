@@ -17,7 +17,7 @@ export default function RegistrationFormContainer() {
   if (!isRegistered) {
     return (
       <>
-        <h2 className="mb-2">Sign up for a new KL Teams account</h2>
+        <h2 className="mb-4">Sign up for a new Web Dev Explorer account</h2>
         <RegistrationForm handleRegistration={handleRegistration} />
       </>
     );

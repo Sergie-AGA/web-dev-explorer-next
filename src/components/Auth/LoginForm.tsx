@@ -15,11 +15,8 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { TriangleLeftIcon, FilePlusIcon } from "@radix-ui/react-icons";
-import { LoginBodySchema, loginBodySchema } from "../../services/AuthService";
-import { AuthHandler } from "../../services/AuthService";
-import { ActionButton } from "@/components/Buttons/ActionButton";
-import { useMutation } from "@tanstack/react-query";
-import { ServerError } from "../../services/FetchService";
+import { ActionButton } from "@/components/Buttons/ActionButton/ActionButton";
+import { loginBodySchema, LoginBodySchema } from "./authSchema";
 
 interface LoginFormProps {
   returnAction: () => void;
@@ -34,18 +31,7 @@ export function LoginForm({ returnAction }: LoginFormProps) {
     },
   });
 
-  const { status, data, error, mutate } = useMutation<
-    unknown,
-    ServerError,
-    LoginBodySchema
-  >({
-    mutationKey: ["login"],
-    mutationFn: AuthHandler.login,
-  });
-
-  async function onSubmit(values: LoginBodySchema) {
-    mutate(values);
-  }
+  async function onSubmit(values: LoginBodySchema) {}
 
   return (
     <Form {...form}>

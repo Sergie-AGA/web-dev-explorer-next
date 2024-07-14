@@ -14,30 +14,18 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { PersonIcon } from "@radix-ui/react-icons";
-import {
-  registerBodySchema,
-  RegisterBodySchema,
-} from "../../services/AuthService";
-import { AuthHandler } from "../../services/AuthService";
-import { ActionButton } from "@/components/Buttons/ActionButton";
-import { useMutation } from "@tanstack/react-query";
-import { ServerError } from "../../services/FetchService";
+import { ActionButton } from "@/components/Buttons/ActionButton/ActionButton";
+import { RegisterBodySchema, registerBodySchema } from "./authSchema";
+import { supabase } from "@/lib/supabaseClient";
 
-interface RegistrationResponse {
-  data: {
-    attributes: {
-      email: string;
-    };
-  };
-}
+export function RegistrationForm() {
+  console.log(
+    "%c Logged!",
+    "background: #01579b; color: white; padding: 2px 4px; border-radius: 4px"
+  );
+  console.log(process.env.REACT_APP_SUPABASE_URL);
+  console.log(process.env.REACT_APP_ANON_KEY);
 
-interface RegistrationFormProps {
-  handleRegistration: (email: string) => void;
-}
-
-export function RegistrationForm({
-  handleRegistration,
-}: RegistrationFormProps) {
   const form = useForm<RegisterBodySchema>({
     resolver: zodResolver(registerBodySchema),
     defaultValues: {
@@ -47,26 +35,13 @@ export function RegistrationForm({
     },
   });
 
-  const { status, data, error, mutate } = useMutation<
-    unknown,
-    ServerError,
-    RegisterBodySchema
-  >({
-    mutationKey: ["register"],
-    mutationFn: AuthHandler.register,
-    onSuccess: (response) => {
-      const registrationResponse = response as RegistrationResponse;
-      console.log(
-        "%c Logged!",
-        "background: #01579b; color: white; padding: 2px 4px; border-radius: 4px"
-      );
-      console.log(response);
-      handleRegistration(registrationResponse.data.attributes.email);
-    },
-  });
-
   async function onSubmit(values: RegisterBodySchema) {
-    mutate(values);
+    // let { data, error } = await supabase.auth.signUp({
+    //   email: values.email,
+    //   password: values.password,
+    // });
+
+    console.log(data);
   }
 
   return (
@@ -126,11 +101,11 @@ export function RegistrationForm({
           text="REGISTER"
         />
         <p className="text-destructive text-center">
-          {error
+          {/* {error
             ? error.response?.data?.error
               ? error.response?.data?.error
               : "An error has ocurred"
-            : ""}
+            : ""} */}
         </p>
 
         <Separator />

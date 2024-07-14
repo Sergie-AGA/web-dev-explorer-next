@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-
 import { MixIcon } from "@radix-ui/react-icons";
 
 interface LoginProviderProps {
@@ -17,11 +16,12 @@ export default function LoginProviders({
       </CardHeader>
       <CardContent>
         <Button
+          variant="secondary"
           className="w-full logo-font"
-          onClick={() => onProviderSelect("randomteams")}
+          onClick={() => onProviderSelect("webdevexplorer")}
         >
           <MixIcon className="mr-2 h-4 w-4" />
-          KL Teams Account
+          Web Dev Explorer Account
         </Button>
       </CardContent>
     </Card>
