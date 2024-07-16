@@ -15,9 +15,9 @@ import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { PersonIcon } from "@radix-ui/react-icons";
 import { ActionButton } from "@/components/Buttons/ActionButton/ActionButton";
-import { RegisterBodySchema, registerBodySchema } from "./authSchema";
+import { RegisterBodySchema, registerBodySchema } from "../types/authSchema";
 import { supabase } from "@/lib/supabaseClient";
-import { env } from "@/utils/env";
+import { useState } from "react";
 
 interface RegistrationFormProps {
   handleRegistration: (email: string) => void;
@@ -26,26 +26,30 @@ interface RegistrationFormProps {
 export function RegistrationForm({
   handleRegistration,
 }: RegistrationFormProps) {
+  const [error, setError] = useState("");
+  const [isPending, setIsPending] = useState(false);
+
   const form = useForm<RegisterBodySchema>({
     resolver: zodResolver(registerBodySchema),
-    defaultValues: {
-      email: "",
-      password: "",
-      passwordConfirmation: "",
-    },
   });
 
   async function onSubmit(values: RegisterBodySchema) {
+    setIsPending(true);
     let { data, error } = await supabase.auth.signUp({
       email: values.email,
       password: values.password,
     });
 
-    if (data) {
+    if (error) {
+      defineError(error.message);
+    } else if (data) {
       handleRegistration(values.email);
-    } else if (error) {
-      // Need an error handler
     }
+    setIsPending(false);
+  }
+
+  function defineError(error: string) {
+    setError(error ? `Error: ${error}` : "An error has occurred");
   }
 
   return (
@@ -101,16 +105,11 @@ export function RegistrationForm({
         <ActionButton
           classes="w-full font-bold"
           type="submit"
-          isLoading={status == "pending"}
+          isLoading={isPending}
           text="REGISTER"
         />
-        <p className="text-destructive text-center">
-          {/* {error
-            ? error.response?.data?.error
-              ? error.response?.data?.error
-              : "An error has ocurred"
-            : ""} */}
-        </p>
+
+        <p className="text-red-600 text-center">{error && error}</p>
 
         <Separator />
         <Link href="/login" className="ml-2 ">

@@ -16,13 +16,18 @@ import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { TriangleLeftIcon, FilePlusIcon } from "@radix-ui/react-icons";
 import { ActionButton } from "@/components/Buttons/ActionButton/ActionButton";
-import { loginBodySchema, LoginBodySchema } from "./authSchema";
+import { loginBodySchema, LoginBodySchema } from "../types/authSchema";
+import { useState } from "react";
+import { supabase } from "@/lib/supabaseClient";
 
 interface LoginFormProps {
   returnAction: () => void;
 }
 
 export function LoginForm({ returnAction }: LoginFormProps) {
+  const [error, setError] = useState("");
+  const [isPending, setIsPending] = useState(false);
+
   const form = useForm<LoginBodySchema>({
     resolver: zodResolver(loginBodySchema),
     defaultValues: {
@@ -31,7 +36,24 @@ export function LoginForm({ returnAction }: LoginFormProps) {
     },
   });
 
-  async function onSubmit(values: LoginBodySchema) {}
+  async function onSubmit(values: LoginBodySchema) {
+    setIsPending(true);
+    let { data, error } = await supabase.auth.signInWithPassword({
+      email: values.email,
+      password: values.password,
+    });
+
+    if (error) {
+      defineError(error.message);
+    } else if (data) {
+      // Do something
+    }
+    setIsPending(false);
+  }
+
+  function defineError(error: string) {
+    setError(error ? `Error: ${error}` : "An error has occurred");
+  }
 
   return (
     <Form {...form}>
@@ -75,12 +97,10 @@ export function LoginForm({ returnAction }: LoginFormProps) {
         <ActionButton
           classes="w-full font-bold"
           type="submit"
-          isLoading={status == "pending"}
+          isLoading={isPending}
           text="LOG IN"
         />
-        <p className="text-destructive text-center">
-          {error ? error.response?.data?.error : ""}
-        </p>
+        <p className="text-red-600 text-center">{error && error}</p>
 
         <Separator />
         <p className="flex items-center hover:underline cursor-pointer">

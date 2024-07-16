@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MixIcon } from "@radix-ui/react-icons";
+import { IconUserQuestion } from "@tabler/icons-react";
+import Logo from "../../../components/Branding/Logo/Logo";
 
 interface LoginProviderProps {
   onProviderSelect: (provider: string) => void;
@@ -14,14 +15,22 @@ export default function LoginProviders({
       <CardHeader>
         <CardTitle>Options:</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex flex-col gap-4">
         <Button
-          variant="secondary"
+          variant="cyan"
           className="w-full logo-font"
           onClick={() => onProviderSelect("webdevexplorer")}
         >
-          <MixIcon className="mr-2 h-4 w-4" />
+          <Logo className="mr-2 h-6 w-6" />
           Web Dev Explorer Account
+        </Button>
+        <Button
+          variant="secondary"
+          className="w-full logo-font"
+          onClick={() => onProviderSelect("guest")}
+        >
+          <IconUserQuestion className="mr-2 h-4 w-4" />
+          Log in as guest
         </Button>
       </CardContent>
     </Card>

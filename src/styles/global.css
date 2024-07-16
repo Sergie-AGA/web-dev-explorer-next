@@ -34,7 +34,7 @@
 
   h1,
   .h1 {
-    @apply text-[2rem] md:text-[2.75rem];
+    @apply text-[2rem] md:text-[2.75rem] leading-10;
   }
   h2,
   .h2 {

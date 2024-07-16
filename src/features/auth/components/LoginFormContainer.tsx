@@ -3,6 +3,7 @@ import { LoginForm } from "./LoginForm";
 import LoginProviders from "./LoginProviders";
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import GuestLogin from "./GuestLogin";
 
 export default function LoginFormContainer() {
   const [provider, setProvider] = useState("");
@@ -26,6 +27,8 @@ export default function LoginFormContainer() {
         </CardContent>
       </Card>
     );
+  } else if (provider === "guest") {
+    return <GuestLogin returnAction={handleReturn} />;
   } else {
     return (
       <>

@@ -1,7 +1,7 @@
 "use client";
 
 import Logo from "@/components/Branding/Logo/Logo";
-import LoginFormContainer from "@/components/Auth/LoginFormContainer";
+import LoginFormContainer from "@/features/auth/components/LoginFormContainer";
 
 export default function Login() {
   return (
@@ -9,7 +9,7 @@ export default function Login() {
       <section className="flex gap-4 w-full justify-center max-w-screen-lg flex-col md:flex-row items-center">
         <div className="flex-1 flex flex-col">
           <div className="mb-10">
-            <Logo />
+            <Logo showText={true} />
           </div>
           <p className="text-xl">Choose your Log In Method:</p>
         </div>

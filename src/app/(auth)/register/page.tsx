@@ -1,6 +1,6 @@
 import Logo from "@/components/Branding/Logo/Logo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import RegistrationFormContainer from "@/components/Auth/RegistrationFormContainer";
+import RegistrationFormContainer from "@/features/auth/components/RegistrationFormContainer";
 import { env } from "@/utils/env";
 
 export default function Register() {
@@ -10,7 +10,7 @@ export default function Register() {
         <Card>
           <CardHeader>
             <div className="text-center">
-              <Logo />
+              <Logo showText={true} />
             </div>
           </CardHeader>
           <CardContent>

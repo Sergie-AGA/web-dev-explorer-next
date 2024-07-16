@@ -1,8 +1,14 @@
+import { cn } from "@/utils/utils";
 import Image from "next/image";
 
-export default function Logo() {
+interface LogoProps {
+  showText?: boolean;
+  className?: string;
+}
+
+export default function Logo({ showText = false, className }: LogoProps) {
   return (
-    <div className="flex gap-4 items-center">
+    <div className={cn("flex gap-4 items-center", className)}>
       <Image
         src="/Logo.svg"
         width={48}
@@ -10,7 +16,7 @@ export default function Logo() {
         alt="Project Logo"
         className="w-12 h-12 mr-3"
       />
-      <h1>Web Dev Explorer</h1>
+      {showText && <h1>Web Dev Explorer</h1>}
     </div>
   );
 }
