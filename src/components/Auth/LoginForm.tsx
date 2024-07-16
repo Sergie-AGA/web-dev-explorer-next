@@ -43,7 +43,7 @@ export function LoginForm({ returnAction }: LoginFormProps) {
             <FormItem>
               <FormLabel>E-mail</FormLabel>
               <FormControl>
-                <Input placeholder="random@teams.com" {...field} />
+                <Input placeholder="webdev@explorer.com" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

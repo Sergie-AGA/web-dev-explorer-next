@@ -1,6 +1,7 @@
 import Logo from "@/components/Branding/Logo/Logo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import RegistrationFormContainer from "@/components/Auth/RegistrationFormContainer";
+import { env } from "@/utils/env";
 
 export default function Register() {
   return (

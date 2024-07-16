@@ -17,15 +17,15 @@ import { PersonIcon } from "@radix-ui/react-icons";
 import { ActionButton } from "@/components/Buttons/ActionButton/ActionButton";
 import { RegisterBodySchema, registerBodySchema } from "./authSchema";
 import { supabase } from "@/lib/supabaseClient";
+import { env } from "@/utils/env";
 
-export function RegistrationForm() {
-  console.log(
-    "%c Logged!",
-    "background: #01579b; color: white; padding: 2px 4px; border-radius: 4px"
-  );
-  console.log(process.env.REACT_APP_SUPABASE_URL);
-  console.log(process.env.REACT_APP_ANON_KEY);
+interface RegistrationFormProps {
+  handleRegistration: (email: string) => void;
+}
 
+export function RegistrationForm({
+  handleRegistration,
+}: RegistrationFormProps) {
   const form = useForm<RegisterBodySchema>({
     resolver: zodResolver(registerBodySchema),
     defaultValues: {
@@ -36,12 +36,16 @@ export function RegistrationForm() {
   });
 
   async function onSubmit(values: RegisterBodySchema) {
-    // let { data, error } = await supabase.auth.signUp({
-    //   email: values.email,
-    //   password: values.password,
-    // });
+    let { data, error } = await supabase.auth.signUp({
+      email: values.email,
+      password: values.password,
+    });
 
-    console.log(data);
+    if (data) {
+      handleRegistration(values.email);
+    } else if (error) {
+      // Need an error handler
+    }
   }
 
   return (
@@ -54,7 +58,7 @@ export function RegistrationForm() {
             <FormItem>
               <FormLabel>E-mail</FormLabel>
               <FormControl>
-                <Input placeholder="random@teams.com" {...field} />
+                <Input placeholder="webdev@explorer.com" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
