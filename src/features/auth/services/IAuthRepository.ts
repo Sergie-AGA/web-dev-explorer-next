@@ -8,7 +8,8 @@ export interface IUserData {
   username: string;
 }
 
-export interface IAuthService {
+export interface IAuthRepository {
   register(data: IAccountData): Promise<void>;
   login(data: IAccountData): Promise<IUserData>;
+  listUsers?(): Promise<IUserData[] | null>;
 }

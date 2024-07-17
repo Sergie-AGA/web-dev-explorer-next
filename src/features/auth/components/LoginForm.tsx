@@ -24,7 +24,7 @@ interface LoginFormProps {
   returnAction: () => void;
 }
 
-export function LoginForm({ returnAction }: LoginFormProps) {
+export default function LoginForm({ returnAction }: LoginFormProps) {
   const [error, setError] = useState("");
   const [isPending, setIsPending] = useState(false);
 

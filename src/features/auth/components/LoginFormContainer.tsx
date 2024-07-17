@@ -1,19 +1,28 @@
-"use client";
-import { LoginForm } from "./LoginForm";
-import LoginProviders from "./LoginProviders";
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import LoginProviders from "./LoginProviders";
+import { useAtom } from "jotai";
+import { loginOptionAtom } from "../store/useAuthStore";
 import GuestLogin from "./GuestLogin";
+import LoginForm from "./LoginForm";
 
 export default function LoginFormContainer() {
   const [provider, setProvider] = useState("");
+  const [, setLoginOption] = useAtom(loginOptionAtom);
 
   const handleProviderSelect = (selectedProvider: string) => {
     setProvider(selectedProvider);
+
+    if (selectedProvider === "webdevexplorer") {
+      setLoginOption("webdevexplorer");
+    } else if (selectedProvider === "guest") {
+      setLoginOption("guest");
+    }
   };
 
   const handleReturn = () => {
     setProvider("");
+    setLoginOption("webdevexplorer");
   };
 
   if (provider === "webdevexplorer") {
