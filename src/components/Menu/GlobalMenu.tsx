@@ -4,6 +4,7 @@ import {
   IconBrandJavascript,
   IconFilter,
   IconMenu2,
+  IconUserCircle,
   IconX,
 } from "@tabler/icons-react";
 import MenuItem from "./MenuItem";
@@ -12,6 +13,7 @@ import { useState } from "react";
 import { cn } from "@/utils/utils";
 import AboutModal from "../../features/homepage/components/AboutModal";
 import { modalType, useUIStore } from "@/store/useUIStore";
+import Link from "next/link";
 
 export default function GlobalMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +37,7 @@ export default function GlobalMenu() {
         handleClick={() => handleModal("filter")}
         text="Filters"
         className={cn(" duration-500 translate-x-0 ", {
-          "relative translate-x-[300%] opacity-0": !isOpen,
+          "relative translate-x-[400%] opacity-0": !isOpen,
         })}
       >
         <IconFilter />
@@ -45,7 +47,7 @@ export default function GlobalMenu() {
         handleClick={() => handleModal("tech")}
         text="Techs"
         className={cn(" duration-500 translate-x-0 ", {
-          "relative translate-x-[200%] opacity-0": !isOpen,
+          "relative translate-x-[300%] opacity-0": !isOpen,
         })}
       >
         <IconBrandJavascript />
@@ -56,13 +58,24 @@ export default function GlobalMenu() {
           <MenuItem
             text="About"
             className={cn(" duration-500 translate-x-0 ", {
-              "relative translate-x-[100%] opacity-0": !isOpen,
+              "relative translate-x-[200%] opacity-0": !isOpen,
             })}
           >
             <IconInfoSquare />
           </MenuItem>
         </div>
       </AboutModal>
+
+      <MenuItem
+        text="Account"
+        className={cn(" duration-500 translate-x-0 ", {
+          "relative translate-x-[100%] opacity-0": !isOpen,
+        })}
+      >
+        <Link href="/account">
+          <IconUserCircle />
+        </Link>
+      </MenuItem>
 
       <MenuItem
         handleClick={() => toggleMenu()}

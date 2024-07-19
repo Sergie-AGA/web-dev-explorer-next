@@ -3,6 +3,7 @@ import {
   IAccountData,
   IUserData,
 } from "../../IAuthRepository";
+import { v4 as uuidv4 } from "uuid";
 
 async function openDatabase(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -31,7 +32,8 @@ export const indexedDBRepository: IAuthRepository = {
     return new Promise((resolve, reject) => {
       const transaction = db.transaction("users", "readwrite");
       const objectStore = transaction.objectStore("users");
-      const request = objectStore.add(data);
+      const userID = uuidv4();
+      const request = objectStore.add({ ...data, userID });
 
       request.onsuccess = () => {
         resolve();
@@ -90,5 +92,9 @@ export const indexedDBRepository: IAuthRepository = {
         reject(request.error);
       };
     });
+  },
+
+  logout: async () => {
+    // logout logic
   },
 };

@@ -10,34 +10,56 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { IconHelpHexagon } from "@tabler/icons-react";
-import router from "next/router";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ActionButton } from "@/components/Buttons/ActionButton/ActionButton";
+import { useQueryRedirect } from "@/hooks/useQueryRedirect";
 
 interface IGuestLoginProps {
   returnAction: () => void;
 }
 
 export default function GuestLogin({ returnAction }: IGuestLoginProps) {
-  const { listUsers, register } = useAuth();
+  const { listUsers, register, login } = useAuth();
   const [isRegistering, setIsRegistering] = useState(false);
+  const [username, setUsername] = useState("");
+  const [isPending, setIsPending] = useState(false);
+  const [registrationError, setRegistrationError] = useState("");
+  const queryRedirect = useQueryRedirect();
 
-  const { data: userList, error, loading } = useAsync(() => listUsers!(), []);
-  console.log(
-    "%c user!",
-    "background: #01579b; color: white; padding: 2px 4px; border-radius: 4px"
-  );
-  console.log(userList);
+  const {
+    data: userList,
+    error,
+    loading,
+    execute: refetchUserList,
+  } = useAsync(() => listUsers!(), []);
+
+  useEffect(() => {
+    refetchUserList();
+  }, [isRegistering]);
 
   async function handleGuestAccountCreation() {
-    const a = await register({ username: "guest" });
-    console.log(
-      "%c Logged!",
-      "background: #01579b; color: white; padding: 2px 4px; border-radius: 4px"
-    );
-    console.log(a);
-    // router.push("/onboarding");
+    setIsPending(true);
+    setRegistrationError("");
+    try {
+      await register({ username });
+      setIsRegistering(false);
+      refetchUserList();
+    } catch (error) {
+      console.error("Error creating guest account:", error);
+      setRegistrationError(
+        "An error has occurred. You might be attempting to register an existing guest account"
+      );
+    } finally {
+      setIsPending(false);
+    }
+  }
+
+  async function handleGuestAccountLogin(username: string) {
+    await login({ username });
+    queryRedirect("/account");
   }
 
   return (
@@ -54,7 +76,8 @@ export default function GuestLogin({ returnAction }: IGuestLoginProps) {
             <PopoverContent className="w-80">
               <p>
                 With a guest account your data will be saved inside your browser
-                (using Indexed DB) and cannot be accessed on different devices.
+                without a password (using Indexed DB) and cannot be accessed on
+                different devices.
               </p>
               <br />
               <p>
@@ -72,16 +95,31 @@ export default function GuestLogin({ returnAction }: IGuestLoginProps) {
       </CardHeader>
       <CardContent className="flex flex-col gap-2">
         {isRegistering ? (
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="email">Email</Label>
-            <Input type="email" id="email" placeholder="Email" />
+          <div>
+            <div className="flex flex-col mb-4 gap-2">
+              <Label htmlFor="username">Choose a Username</Label>
+              <Input
+                type="text"
+                id="username"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              {registrationError && (
+                <p className="text-red-500">{registrationError}</p>
+              )}
+            </div>
             <div className="flex gap-4 justify-end">
               <Button variant="ghost" onClick={() => setIsRegistering(false)}>
                 Cancel
               </Button>
-              <Button variant="secondary" onClick={handleGuestAccountCreation}>
-                Log In with guest account
-              </Button>
+              <ActionButton
+                onClick={handleGuestAccountCreation}
+                classes="w-full font-bold"
+                type="submit"
+                isLoading={isPending}
+                text="Register guest account"
+              />
             </div>
           </div>
         ) : loading ? (
@@ -102,6 +140,7 @@ export default function GuestLogin({ returnAction }: IGuestLoginProps) {
                       <li
                         key={key}
                         className="bg-neutral-800 hover:bg-neutral-700 py-1 px-2 rounded cursor-pointer"
+                        onClick={() => handleGuestAccountLogin(user.username)}
                       >
                         {user.username}
                       </li>

@@ -11,5 +11,6 @@ export interface IUserData {
 export interface IAuthRepository {
   register(data: IAccountData): Promise<void>;
   login(data: IAccountData): Promise<IUserData>;
+  logout: () => Promise<void>;
   listUsers?(): Promise<IUserData[] | null>;
 }

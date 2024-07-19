@@ -14,6 +14,7 @@ import { useUIStore } from "@/store/useUIStore";
 import { Separator } from "@/components/ui/separator";
 import { projectMeta } from "@/config/meta";
 import { ITechTypes } from "@/config/technologies";
+import Link from "next/link";
 
 interface IModalData {
   children: React.ReactNode;
@@ -51,7 +52,7 @@ export default function AboutModal({ children }: IModalData) {
           </p>
           <p>In general, the project uses:</p>
           <div className="my-2 flex flex-col gap-2">
-            <p className="list-disc list-inside flex gap-2 flex-wrap items-center">
+            <div className="list-disc list-inside flex gap-2 flex-wrap items-center">
               <span>Frontend:</span>
               <DialogTrigger
                 asChild
@@ -83,7 +84,7 @@ export default function AboutModal({ children }: IModalData) {
               >
                 <TechBadge title={"Shadcn UI"} />
               </DialogTrigger>
-            </p>
+            </div>
             <p className="list-disc list-inside flex gap-2 flex-wrap items-center">
               <span>Backend & Infra:</span>
               <DialogTrigger
@@ -102,7 +103,14 @@ export default function AboutModal({ children }: IModalData) {
           </div>
           <p>
             Libraries which have small impact may not be listed here or in the
-            project data listing
+            project data listing.
+          </p>
+          <p>
+            An account is available for some of the features, including a guest
+            account. As for how this data is used, please refer to the
+            <Button asChild variant="link" className="px-2">
+              <Link href="/policies">Policies Page</Link>
+            </Button>
           </p>
         </div>
 

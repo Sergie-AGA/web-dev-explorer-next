@@ -6,13 +6,14 @@ interface UseAsyncState<T> {
   data?: T;
   error?: Error;
   loading: boolean;
+  execute: () => Promise<void>;
 }
 
 function useAsync<T>(
   asyncFunction: AsyncFunction<T>,
   dependencies: any[] = []
 ): UseAsyncState<T> {
-  const [state, setState] = useState<UseAsyncState<T>>({
+  const [state, setState] = useState<Omit<UseAsyncState<T>, "execute">>({
     data: undefined,
     error: undefined,
     loading: true,
@@ -33,7 +34,7 @@ function useAsync<T>(
     execute();
   }, [execute]);
 
-  return state;
+  return { ...state, execute };
 }
 
 export default useAsync;

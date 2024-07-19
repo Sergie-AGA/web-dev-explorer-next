@@ -7,6 +7,7 @@ interface IButtonProps {
   isLoading?: boolean;
   text: string;
   loadingText?: string;
+  onClick?: () => void;
 }
 
 export function ActionButton({
@@ -15,9 +16,11 @@ export function ActionButton({
   classes,
   text,
   loadingText = "Loading...",
+  onClick,
 }: IButtonProps) {
   return (
     <Button
+      onClick={onClick}
       variant="secondary"
       disabled={isLoading}
       className={classes}

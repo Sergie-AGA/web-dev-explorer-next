@@ -28,7 +28,8 @@
   div,
   input,
   select,
-  textarea {
+  textarea,
+  a {
     @apply font-sans text-white text-sm md:text-base;
   }
 
