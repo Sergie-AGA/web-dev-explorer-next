@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 
 async function openDatabase(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
-    const request = indexedDB.open("MyDatabase", 1);
+    const request = indexedDB.open("WebDevExplorer", 1);
 
     request.onupgradeneeded = (event: IDBVersionChangeEvent) => {
       const db = request.result;

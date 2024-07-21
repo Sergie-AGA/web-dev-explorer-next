@@ -13,6 +13,10 @@
     @apply box-border bg-cyan-950;
   }
 
+  ol li {
+    @apply list-decimal;
+  }
+
   /* TYPOGRAPHY */
   h1,
   h2,

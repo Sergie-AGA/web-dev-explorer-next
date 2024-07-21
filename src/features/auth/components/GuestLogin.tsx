@@ -116,6 +116,7 @@ export default function GuestLogin({ returnAction }: IGuestLoginProps) {
               <ActionButton
                 onClick={handleGuestAccountCreation}
                 classes="w-full font-bold"
+                disabled={!username}
                 type="submit"
                 isLoading={isPending}
                 text="Register guest account"
