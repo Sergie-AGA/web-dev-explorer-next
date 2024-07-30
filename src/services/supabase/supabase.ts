@@ -32,3 +32,28 @@ export const getSingleByValue = async (
   }
   return response.data;
 };
+
+// Get Many by value (multiple IDs)
+export const getManyByValue = async (
+  key: string,
+  column: string,
+  values: any[]
+) => {
+  const response = await supabase.from(tables[key]).select().in(column, values);
+
+  if (response.error) {
+    console.error(`Error fetching data for key ${key}:`, response.error);
+    return [];
+  }
+  return response.data;
+};
+
+// Get Single by ID
+export const getSinglePokemonByID = async (id: number) => {
+  return getSingleByValue("pokemon", "id", id);
+};
+
+// Get many by ID
+export const getManyPokemonByID = async (ids: number[]) => {
+  return getManyByValue("pokemon", "id", ids);
+};
