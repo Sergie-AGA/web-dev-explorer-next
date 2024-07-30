@@ -13,7 +13,7 @@ export default function StarterSelection() {
   });
 
   console.log(
-    "%c Logged!",
+    "%c response!",
     "background: #01579b; color: white; padding: 2px 4px; border-radius: 4px"
   );
   console.log(starters);
@@ -24,31 +24,33 @@ export default function StarterSelection() {
   return (
     <div>
       <h2 className="h3 mb-4 text-center">Select 6 Starters</h2>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 m-auto text-center">
         <h4>Your starting team:</h4>
         <div className="flex items-center"></div>
       </div>
-      {starters?.map((region) => (
-        <div className="flex flex-col gap-4 mb-4" key={region.region}>
-          <h4>{region.region}</h4>
-          <div className="flex gap-4">
-            {region.pokemon.map((starter) => (
-              <div
-                key={starter.id}
-                className="flex flex-col items-center gap-2"
-              >
-                <Image
-                  src={starter.front_image}
-                  width={100}
-                  height={100}
-                  alt={starter.name}
-                />
-                <h5 className="">{starter.name}</h5>
-              </div>
-            ))}
+      <div className="flex justify-center gap-8 flex-wrap">
+        {starters?.map((region) => (
+          <div className="flex flex-col gap-4 mb-4" key={region.region}>
+            <h4>{region.region}</h4>
+            <div className="flex gap-4">
+              {region.pokemon.map((starter) => (
+                <div
+                  key={starter.id}
+                  className="flex flex-col items-center opacity-50 relative rounded bg-neutral-900 hover:opacity-100 cursor-pointer"
+                >
+                  <Image
+                    src={starter.front_image}
+                    width={100}
+                    height={100}
+                    alt={starter.name}
+                  />
+                  <h5 className="text-sm absolute bottom-2">{starter.name}</h5>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

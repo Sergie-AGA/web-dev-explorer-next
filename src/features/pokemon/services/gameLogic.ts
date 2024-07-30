@@ -1,5 +1,6 @@
+import { getManyPokemonByID, insertPokemon } from "./pokemonService";
+import { fetchPokeapiPokemon } from "./pokeapiService";
 import { IPokemonData } from "../types/IPokemon";
-import { getManyPokemonByID } from "../services/pokemonService";
 
 const regions = {
   Kanto: [1, 4, 7],
@@ -18,10 +19,10 @@ type RegionData = {
   pokemon: IPokemonData[];
 };
 
-export const sortStarters = (pokemonData: IPokemonData[]): RegionData[] => {
+function sortStarters(pokemonData: IPokemonData[]): RegionData[] {
   const sortedData: RegionData[] = [];
 
-  for (const [region, ids] of Object.entries(regions)) {
+  Object.entries(regions).forEach(([region, ids]) => {
     const regionPokemon = pokemonData.filter((pokemon) =>
       ids.includes(pokemon.id)
     );
@@ -29,13 +30,28 @@ export const sortStarters = (pokemonData: IPokemonData[]): RegionData[] => {
       region,
       pokemon: regionPokemon,
     });
-  }
+  });
 
   return sortedData;
-};
+}
 
 export const getStarters = async (): Promise<RegionData[]> => {
   const allStarterIds = Object.values(regions).flat();
   const starterData = await getManyPokemonByID(allStarterIds);
-  return sortStarters(starterData);
+
+  const receivedIds = starterData.map((p) => p.id);
+  const missingIds = allStarterIds.filter((id) => !receivedIds.includes(id));
+
+  const missingPokemonPromises = missingIds.map((id) =>
+    fetchPokeapiPokemon(id)
+  );
+  const missingPokemonData = await Promise.all(missingPokemonPromises);
+
+  const combinedData = [...starterData, ...missingPokemonData];
+
+  await insertPokemon(combinedData.filter((p) => missingIds.includes(p.id)));
+
+  const sortedStarters = sortStarters(combinedData);
+
+  return sortedStarters;
 };

@@ -57,3 +57,13 @@ export const getSinglePokemonByID = async (id: number) => {
 export const getManyPokemonByID = async (ids: number[]) => {
   return getManyByValue("pokemon", "id", ids);
 };
+
+// Post multiple entries
+export const postMany = async (key: string, data: any[]) => {
+  const response = await supabase.from(tables[key]).insert(data);
+  if (response.error) {
+    console.error(`Error posting data to ${tables[key]}:`, response.error);
+    return null;
+  }
+  return response.data;
+};
