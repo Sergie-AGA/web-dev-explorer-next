@@ -14,7 +14,7 @@ interface IGameRules {
 
 export default function GameRules({ onDismiss }: IGameRules) {
   return (
-    <Card>
+    <Card className="mb-4">
       <CardHeader>
         <CardTitle className="m-auto text-center">Game Rules</CardTitle>
       </CardHeader>
@@ -43,7 +43,7 @@ export default function GameRules({ onDismiss }: IGameRules) {
           </li>
           <li>
             The Pokémon Power Level changes depending on each Pokémon but can be
-            increased with each level up.
+            increased with each level up. Pokémon do not evolve.
           </li>
           <li>
             Capturing a repeated Pokémon immediately provides a level to that
