@@ -3,7 +3,7 @@
 This is a project that aims to explore, test and aggregate a variety of Web Dev functionalities within different projects.
 In general, the project uses:
 Frontend: React JS, Next JS, Typescript, Tailwind CSS and ShadcnUI
-Backend & Infra: Supabase, AWS S3
+Backend & Infra: Supabase, Vercel
 Libraries which have small impact may not be listed here or in the project data listing
 
 # Additional Repositories
