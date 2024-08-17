@@ -21,16 +21,20 @@ export default function DisplayListing({ data }: IDisplayListing) {
     setActiveComponent(item);
   }
 
+  const ActiveComponent = data.find(
+    (item) => item.value === activeComponent
+  )?.component;
+
   return (
-    <section>
+    <section className="flex flex-col gap-8">
       <div className="flex flex-wrap gap-4 items-center justify-center">
         {data.map((item) => {
           return (
             <Button
               onClick={() => handleActiveComponent(item.value)}
-              variant="secondary"
-              className={cn({
-                "bg-red-900": activeComponent === item.value,
+              variant="custom"
+              className={cn("bg-neutral-800 hover:bg-neutral-900", {
+                "bg-neutral-900": activeComponent === item.value,
               })}
               key={item.value}
             >
@@ -39,7 +43,9 @@ export default function DisplayListing({ data }: IDisplayListing) {
           );
         })}
       </div>
-      <div></div>
+      <div className="bg-neutral-950 py-4 px-8 rounded-lg">
+        {ActiveComponent && <ActiveComponent />}
+      </div>
     </section>
   );
 }

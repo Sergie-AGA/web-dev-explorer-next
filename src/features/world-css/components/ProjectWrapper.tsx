@@ -1,5 +1,6 @@
 import SimpleTabs from "@/components/Tabs/SimpleTabs";
 import DisplayListing from "./DisplayListing";
+import GlitchTextContainer from "./GlitchText/GlitchTextContainer";
 
 export default function ProjectWrapper() {
   const tabData = [
@@ -17,7 +18,7 @@ export default function ProjectWrapper() {
     {
       title: "Glitch Effect",
       value: "glitch",
-      component: "",
+      component: GlitchTextContainer,
     },
     {
       title: "Neon Effect",
