@@ -14,10 +14,5 @@ export default function RootTemplate({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="bg-cyan-950 site-wrap">
-      <GlobalHeader title="World of CSS Effects"></GlobalHeader>
-      {children}
-    </div>
-  );
+  return <div className="bg-cyan-950 site-wrap p-0">{children}</div>;
 }

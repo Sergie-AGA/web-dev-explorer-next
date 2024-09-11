@@ -1,9 +1,13 @@
 import ProjectWrapper from "@/features/world-css/components/ProjectWrapper";
+import ProjectSidebar from "@/features/world-css/components/Sidebar/ProjectSidebar";
 
 export default function Page() {
   return (
-    <main className="flex flex-col items-center p-4">
-      <ProjectWrapper />
-    </main>
+    <div className="flex">
+      <ProjectSidebar />
+      <main>
+        <ProjectWrapper />
+      </main>
+    </div>
   );
 }
