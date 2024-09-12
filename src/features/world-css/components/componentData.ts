@@ -6,7 +6,23 @@ import {
   IconLoader,
   IconBrightnessUp,
   IconSelectAll,
+  TablerIconsProps,
 } from "@tabler/icons-react";
+import { TSidebarType } from "../store/useUIChange";
+
+interface IComponentData {
+  title: string;
+  value: TSidebarType;
+  icon: React.ComponentType<TablerIconsProps>;
+  components: IIndividualComponent[];
+}
+
+interface IIndividualComponent {
+  title: string;
+  value: string;
+  icon: React.ComponentType<TablerIconsProps>;
+  component: React.ComponentType;
+}
 
 export const componentData = [
   {
@@ -47,4 +63,4 @@ export const componentData = [
       },
     ],
   },
-];
+] as IComponentData[];

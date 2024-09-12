@@ -1,5 +1,5 @@
 import { cn } from "@/utils/utils";
-import { useSidebarStore } from "../../store/useSidebarSection";
+import { useSidebarStore } from "../../store/useUIChange";
 
 interface IModalSidebarItemProps {
   children: React.ReactNode;
