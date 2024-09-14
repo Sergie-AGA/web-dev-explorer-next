@@ -1,12 +1,12 @@
-import ProjectWrapper from "@/features/world-css/components/ProjectWrapper";
+import DisplayListing from "@/features/world-css/components/DisplayListing";
 import ProjectSidebar from "@/features/world-css/components/Sidebar/ProjectSidebar";
 
 export default function Page() {
   return (
     <div className="flex">
       <ProjectSidebar />
-      <main>
-        <ProjectWrapper />
+      <main className="flex-1">
+        <DisplayListing />
       </main>
     </div>
   );

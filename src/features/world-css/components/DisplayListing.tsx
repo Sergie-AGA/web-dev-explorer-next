@@ -1,50 +1,28 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/utils/utils";
+import { componentData } from "@/features/world-css/components/componentData";
+import { useSidebarStore } from "../store/useUIChange";
 
-interface IDisplayListing {
-  data: IDisplayItem[];
-}
+export default function DisplayListing() {
+  const { activeSection, activeComponent } = useSidebarStore((state) => ({
+    activeSection: state.activeSection,
+    activeComponent: state.activeComponent,
+  }));
 
-interface IDisplayItem {
-  title: string;
-  value: string;
-  component: React.ComponentType;
-}
+  const section = componentData.find((sec) => sec.value === activeSection);
 
-export default function DisplayListing({ data }: IDisplayListing) {
-  const [activeComponent, setActiveComponent] = useState(data[0].value);
-
-  function handleActiveComponent(item: IDisplayItem["value"]) {
-    setActiveComponent(item);
-  }
-
-  const ActiveComponent = data.find(
-    (item) => item.value === activeComponent
-  )?.component;
+  const ComponentToRender =
+    section?.components.find((comp) => comp.value === activeComponent)
+      ?.component || null;
 
   return (
     <section className="flex flex-col gap-8">
-      <div className="flex flex-wrap gap-4 items-center justify-center">
-        {data.map((item) => {
-          return (
-            <Button
-              onClick={() => handleActiveComponent(item.value)}
-              variant="custom"
-              className={cn("bg-neutral-800 hover:bg-neutral-900", {
-                "bg-neutral-900": activeComponent === item.value,
-              })}
-              key={item.value}
-            >
-              {item.title}
-            </Button>
-          );
-        })}
-      </div>
-      <div className="bg-neutral-950 py-4 px-8 rounded-lg">
-        {ActiveComponent && <ActiveComponent />}
+      <div className="flex flex-col items-center p-4">
+        {ComponentToRender ? (
+          <ComponentToRender />
+        ) : (
+          <p>No component available</p>
+        )}
       </div>
     </section>
   );

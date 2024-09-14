@@ -8,16 +8,16 @@ import {
   IconSelectAll,
   TablerIconsProps,
 } from "@tabler/icons-react";
-import { TSidebarType } from "../store/useUIChange";
+import { TSectionType } from "../store/useUIChange";
 
-interface IComponentData {
+export interface IComponentData {
   title: string;
-  value: TSidebarType;
+  value: TSectionType;
   icon: React.ComponentType<TablerIconsProps>;
   components: IIndividualComponent[];
 }
 
-interface IIndividualComponent {
+export interface IIndividualComponent {
   title: string;
   value: string;
   icon: React.ComponentType<TablerIconsProps>;

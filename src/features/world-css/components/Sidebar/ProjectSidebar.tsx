@@ -18,7 +18,11 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
     >
       {componentData.map((component) => {
         return (
-          <ProjectSidebarItem key={component.value} section={component.title}>
+          <ProjectSidebarItem
+            key={component.value}
+            sectionValue={component.value}
+            sectionTitle={component.title}
+          >
             <component.icon size="30" className="md:hidden" />
             <component.icon size="40" className="hidden md:block" />
           </ProjectSidebarItem>

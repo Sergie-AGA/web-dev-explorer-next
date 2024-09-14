@@ -1,24 +1,25 @@
 import { create } from "zustand";
 
-export type TSidebarType = "sfx" | "art" | "background" | null;
+export type TSectionType = "sfx" | "art" | "background" | null;
+type TComponentType = "glitch" | "neon" | "fade" | "phone";
 
 interface ISidebarState {
-  activeSidebar: TSidebarType;
-  changeActiveSidebar: (sidebar: TSidebarType) => void;
-  activeSection: string;
-  changeActiveSection: (section: string) => void;
+  activeSection: TSectionType;
+  changeActiveSection: (section: TSectionType) => void;
+  activeComponent: TComponentType;
+  changeActiveComponent: (comp: TComponentType) => void;
 }
 
 export const useSidebarStore = create<ISidebarState>()((set) => ({
-  activeSection: "SFX",
+  activeSection: "sfx",
 
   changeActiveSection: (section) => {
     set({ activeSection: section });
   },
 
-  activeSidebar: null,
+  activeComponent: "glitch",
 
-  changeActiveSidebar: (sidebar) => {
-    set({ activeSidebar: sidebar });
+  changeActiveComponent: (comp) => {
+    set({ activeComponent: comp });
   },
 }));
