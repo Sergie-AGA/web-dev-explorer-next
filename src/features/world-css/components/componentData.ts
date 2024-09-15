@@ -8,7 +8,7 @@ import {
   IconSelectAll,
   TablerIconsProps,
 } from "@tabler/icons-react";
-import { TSectionType } from "../store/useUIChange";
+import { TSectionType, TComponentType } from "../store/useUIChange";
 
 export interface IComponentData {
   title: string;
@@ -19,7 +19,7 @@ export interface IComponentData {
 
 export interface IIndividualComponent {
   title: string;
-  value: string;
+  value: TComponentType;
   icon: React.ComponentType<TablerIconsProps>;
   component: React.ComponentType;
 }

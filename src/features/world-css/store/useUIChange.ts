@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 export type TSectionType = "sfx" | "art" | "background" | null;
-type TComponentType = "glitch" | "neon" | "fade" | "phone";
+export type TComponentType = "glitch" | "neon" | "fade" | "phone";
 
 interface ISidebarState {
   activeSection: TSectionType;
