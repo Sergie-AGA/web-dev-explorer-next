@@ -31,19 +31,19 @@ export const componentData = [
     icon: IconSparkles,
     components: [
       {
-        title: "Glitch Effect",
+        title: "Glitch",
         value: "glitch",
         icon: IconSelectAll,
         component: GlitchTextContainer,
       },
       {
-        title: "Neon Effect",
+        title: "Neon",
         value: "neon",
         icon: IconBrightnessUp,
         component: "",
       },
       {
-        title: "Fade Effect",
+        title: "Fade",
         value: "fade",
         icon: IconLoader,
         component: "",

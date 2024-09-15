@@ -17,31 +17,28 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
   const {
     activeSection,
     changeActiveSection,
+    activeSidebar,
+    changeActiveSidebar,
     activeComponent,
     changeActiveComponent,
-  } = useSidebarStore((state) => {
-    return {
-      activeSection: state.activeSection,
-      changeActiveSection: state.changeActiveSection,
-      activeComponent: state.activeComponent,
-      changeActiveComponent: state.changeActiveComponent,
-    };
-  });
+  } = useSidebarStore((state) => ({
+    activeSection: state.activeSection,
+    changeActiveSection: state.changeActiveSection,
+    activeSidebar: state.activeSidebar,
+    changeActiveSidebar: state.changeActiveSidebar,
+    activeComponent: state.activeComponent,
+    changeActiveComponent: state.changeActiveComponent,
+  }));
 
   return (
-    <aside
-      className={cn(
-        "flex h-view h-screen bg-cyan-900 relative z-10 shadow-xl relative z-10",
-        className
-      )}
-    >
-      <section className="flex flex-col w-[180px]">
+    <aside className={cn("flex h-screen shadow-xl relative", className)}>
+      <section className="flex flex-col w-[180px] z-40 relative bg-cyan-900">
         {componentData.map((component) => (
           <ProjectSidebarItem
             key={component.value}
-            isActive={activeSection == component.value}
+            isActive={activeSidebar === component.value}
             sectionTitle={component.title}
-            handleChange={() => changeActiveSection(component.value)}
+            handleChange={() => changeActiveSidebar(component.value)}
           >
             <component.icon size="30" className="md:hidden" />
             <component.icon size="40" className="hidden md:block" />
@@ -49,16 +46,27 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
         ))}
       </section>
 
-      <section className="flex flex-col bg-cyan-700 shadow-md w-[180px]">
-        {componentData
-          .filter((section) => section.value === activeSection)
-          .map((section) =>
-            section.components.map((subComponent) => (
+      <section className="w-[180px] h-full relative z-10">
+        {componentData.map((section) => (
+          <div
+            key={section.value}
+            className={cn(
+              "w-[180px] flex flex-col absolute left-0 top-0 w-full h-full bg-cyan-700 shadow-md transition-transform duration-500",
+              {
+                "translate-x-0 z-30": activeSidebar === section.value,
+                "translate-x-[-180px] z-10": activeSidebar !== section.value,
+              }
+            )}
+          >
+            {section.components.map((subComponent) => (
               <ProjectSidebarItem
                 key={subComponent.value}
                 isActive={activeComponent === subComponent.value}
                 sectionTitle={subComponent.title}
-                handleChange={() => changeActiveComponent(subComponent.value)}
+                handleChange={() => {
+                  changeActiveSection(activeSidebar);
+                  changeActiveComponent(subComponent.value);
+                }}
               >
                 {subComponent.icon && (
                   <>
@@ -67,8 +75,9 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
                   </>
                 )}
               </ProjectSidebarItem>
-            ))
-          )}
+            ))}
+          </div>
+        ))}
       </section>
     </aside>
   );

@@ -1,5 +1,3 @@
-import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader";
-
 export const metadata = {
   title: {
     template: "%s | Web Dev Explorer",
