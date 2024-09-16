@@ -32,7 +32,7 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
 
   return (
     <aside className={cn("flex h-screen shadow-xl relative", className)}>
-      <section className="flex flex-col w-[180px] z-40 relative bg-cyan-900">
+      <section className="flex flex-col w-[180px] z-40 relative bg-cyan-900 shadow-lg">
         {componentData.map((component) => (
           <ProjectSidebarItem
             key={component.value}
@@ -41,7 +41,7 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
             handleChange={() => changeActiveSidebar(component.value)}
           >
             <component.icon size="30" className="md:hidden" />
-            <component.icon size="40" className="hidden md:block" />
+            <component.icon size="34" className="hidden md:block" />
           </ProjectSidebarItem>
         ))}
       </section>
@@ -71,7 +71,7 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
                 {subComponent.icon && (
                   <>
                     <subComponent.icon size="30" className="md:hidden" />
-                    <subComponent.icon size="40" className="hidden md:block" />
+                    <subComponent.icon size="34" className="hidden md:block" />
                   </>
                 )}
               </ProjectSidebarItem>

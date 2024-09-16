@@ -6,9 +6,13 @@ import {
   IconLoader,
   IconBrightnessUp,
   IconSelectAll,
+  IconIcons,
+  IconLayoutGrid,
   TablerIconsProps,
+  IconDeviceMobile,
 } from "@tabler/icons-react";
 import { TSectionType, TComponentType } from "../store/useUIChange";
+import NeonTextContainer from "./NeonText/NeonTextContainer";
 
 export interface IComponentData {
   title: string;
@@ -40,7 +44,7 @@ export const componentData = [
         title: "Neon",
         value: "neon",
         icon: IconBrightnessUp,
-        component: "",
+        component: NeonTextContainer,
       },
       {
         title: "Fade",
@@ -51,14 +55,33 @@ export const componentData = [
     ],
   },
   {
+    title: "Background",
+    value: "background",
+    icon: IconBoxMultiple,
+    components: [
+      {
+        title: "Icons",
+        value: "icons",
+        icon: IconIcons,
+        component: "",
+      },
+      {
+        title: "Squares",
+        value: "squares",
+        icon: IconLayoutGrid,
+        component: "",
+      },
+    ],
+  },
+  {
     title: "CSS Art",
     value: "art",
     icon: IconPalette,
     components: [
       {
-        title: "CSS Phone",
+        title: "Phone",
         value: "phone",
-        icon: "",
+        icon: IconDeviceMobile,
         component: "",
       },
     ],

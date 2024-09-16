@@ -16,6 +16,8 @@ export default function ProjectSidebarItem({
   isActive,
   handleChange,
 }: IModalSidebarItemProps) {
+  const isSmallText = sectionTitle.length > 10;
+
   return (
     <button
       onClick={() => {
@@ -38,6 +40,7 @@ export default function ProjectSidebarItem({
           "translate-x-0 text-2xs md:text-sm duration-300 uppercase font-bold",
           {
             "translate-x-4": isActive,
+            "md:text-xs": isSmallText,
           }
         )}
       >
