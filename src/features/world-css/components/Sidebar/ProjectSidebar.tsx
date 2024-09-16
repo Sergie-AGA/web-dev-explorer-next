@@ -46,7 +46,7 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
         ))}
       </section>
 
-      <section className="w-[180px] h-full relative z-10">
+      <section className="w-[100px] h-full relative z-10">
         {componentData.map((section) => (
           <div
             key={section.value}
@@ -54,7 +54,7 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
               "w-[180px] flex flex-col absolute left-0 top-0 w-full h-full bg-cyan-700 shadow-md transition-transform duration-500",
               {
                 "translate-x-0 z-30": activeSidebar === section.value,
-                "translate-x-[-180px] z-10": activeSidebar !== section.value,
+                "translate-x-[-100px] z-10": activeSidebar !== section.value,
               }
             )}
           >
@@ -63,6 +63,7 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
                 key={subComponent.value}
                 isActive={activeComponent === subComponent.value}
                 sectionTitle={subComponent.title}
+                isSubSidebar={true}
                 handleChange={() => {
                   changeActiveSection(activeSidebar);
                   changeActiveComponent(subComponent.value);
