@@ -35,6 +35,7 @@ export default function ProjectSidebarItem({
       <div
         className={cn("translate-x-0 group-hover:translate-y-0 duration-300", {
           "translate-x-4": isActive && !isSubSidebar,
+          "scale-110": isActive && isSubSidebar,
         })}
       >
         {children}
