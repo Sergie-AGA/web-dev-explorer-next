@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import CssPhone from "./cssPhone";
+import CssPhone from "./CssPhone";
 import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-label";
 
