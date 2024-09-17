@@ -13,7 +13,7 @@ import {
 } from "@tabler/icons-react";
 import { TSectionType, TComponentType } from "../store/useUIChange";
 import NeonTextContainer from "./NeonText/NeonTextContainer";
-import CssPhone from "./CssPhone/CssPhone";
+import CssPhoneContainer from "./CssPhone/CssPhoneContainer";
 
 export interface IComponentData {
   title: string;
@@ -83,7 +83,7 @@ export const componentData = [
         title: "Phone",
         value: "phone",
         icon: IconDeviceMobile,
-        component: CssPhone,
+        component: CssPhoneContainer,
       },
     ],
   },

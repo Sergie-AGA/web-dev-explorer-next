@@ -10,7 +10,7 @@ const CssPhone = ({
     <div className="mx-auto my-4 p-2 bg-black rounded-lg w-[200px] sm:w-[300px]">
       <div className="flex justify-center my-2">
         <div className="w-2.5 h-2.5 bg-blue-900 rounded-full shadow-[0_0_0_3px_#212226] mr-6"></div>
-        <div className="w-12 h-2.5 bg-[#212226] rounded-full mb-4"></div>
+        <div className="w-12 h-2.5 bg-neutral-700 rounded-full mb-4"></div>
       </div>
 
       <div className="bg-white mb-2 relative">
@@ -28,19 +28,30 @@ const CssPhone = ({
           </div>
         </div>
 
-        <div id="screen" className="p-4 h-52 sm:h-80 overflow-auto relative">
-          {sentMessages.map((message, index) => (
-            <div
-              key={index}
-              className={`mb-2 p-2 rounded-lg ${
-                message.sender === "bot"
-                  ? "bg-green-300 text-right ml-auto"
-                  : "bg-blue-300 text-left mr-auto"
-              } max-w-[80%]`}
-            >
-              {message.text}
-            </div>
-          ))}
+        <div
+          id="screen"
+          className="p-4 h-52 sm:h-80 overflow-auto relative no-overflow-anchor"
+        >
+          {sentMessages &&
+            sentMessages.map((message, index) => (
+              <div
+                key={index}
+                className={`mb-2 p-2 rounded-lg relative ${
+                  message.sender === "bot"
+                    ? "bg-teal-700 text-right ml-auto"
+                    : "bg-cyan-700 text-left mr-auto"
+                } max-w-[80%]`}
+              >
+                {message.text}
+                <span
+                  className={`absolute w-0 h-0 border-[8px] ${
+                    message.sender === "bot"
+                      ? "border-teal-700 border-l-transparent border-t-transparent right-[-10px] top-[50%] rotate-[-45deg] translate-x-[-4px] translate-y-[-4px]"
+                      : "border-cyan-700 border-r-transparent border-t-transparent left-[-10px] top-[50%] rotate-45 translate-x-1 translate-y-[-4px]"
+                  }`}
+                />
+              </div>
+            ))}
         </div>
       </div>
 

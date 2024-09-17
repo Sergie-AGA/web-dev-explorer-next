@@ -42,7 +42,7 @@ const CssPhoneContainer = () => {
           />
           <button
             onClick={addUserMessage}
-            className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md"
+            className="mt-2 px-4 py-2 bg-cyan-700 text-white rounded-md"
           >
             Send User Message
           </button>
@@ -59,7 +59,7 @@ const CssPhoneContainer = () => {
           />
           <button
             onClick={addBotMessage}
-            className="mt-2 px-4 py-2 bg-green-500 text-white rounded-md"
+            className="mt-2 px-4 py-2 bg-teal-700 text-white rounded-md"
           >
             Send Bot Message
           </button>
