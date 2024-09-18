@@ -27,7 +27,7 @@ const CssPhoneContainer = () => {
   };
 
   return (
-    <div className="flex flex-col gap-8 items-center py-8">
+    <section className="flex flex-col gap-8 items-center py-8">
       <CssPhone sentMessages={messages} />
 
       <div className="flex gap-4 w-full max-w-[600px]">
@@ -65,7 +65,7 @@ const CssPhoneContainer = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

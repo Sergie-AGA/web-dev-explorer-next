@@ -14,6 +14,8 @@ import {
 import { TSectionType, TComponentType } from "../store/useUIChange";
 import NeonTextContainer from "./NeonText/NeonTextContainer";
 import CssPhoneContainer from "./CssPhone/CssPhoneContainer";
+import SquareBackgroundContainer from "./SquareBackgroundGeneration/SquareBackgroundContainer";
+import IconBackgroundContainer from "./IconBackgroundGeneration/IconBackgroundContainer";
 
 export interface IComponentData {
   title: string;
@@ -64,13 +66,13 @@ export const componentData = [
         title: "Icons",
         value: "icons",
         icon: IconIcons,
-        component: "",
+        component: IconBackgroundContainer,
       },
       {
         title: "Squares",
         value: "squares",
         icon: IconLayoutGrid,
-        component: "",
+        component: SquareBackgroundContainer,
       },
     ],
   },
