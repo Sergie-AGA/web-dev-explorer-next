@@ -17,6 +17,11 @@ type Square = {
   eraseDiv: number;
 };
 
+interface ISquareBackground {
+  isRandomSize: boolean;
+  size: number;
+}
+
 const generateRandomColor = (): string => {
   const hueR = Math.floor(Math.random() * 255);
   const hueG = Math.floor(Math.random() * 255);
@@ -50,7 +55,10 @@ const generateRandomAnimationParams = (): {
   return { rotation, duration, opacity, posDestination };
 };
 
-export default function SquareBackgroundGeneration() {
+export default function SquareBackgroundGeneration({
+  isRandomSize,
+  size,
+}: ISquareBackground) {
   const [squares, setSquares] = useState<Square[]>([]);
 
   useEffect(() => {
@@ -80,20 +88,31 @@ export default function SquareBackgroundGeneration() {
       }
     };
 
-    // Spawn new squares at random intervals
     const spawnInterval = setInterval(() => {
       addSquare();
-    }, Math.floor(Math.random() * 2000) + 1000);
+    }, Math.floor(Math.random() * 1500) + 1000);
 
     return () => {
       clearInterval(spawnInterval);
     };
   }, [squares]);
 
+  useEffect(() => {
+    if (!isRandomSize) {
+      squares.forEach((square) => {
+        const element = document.getElementById(`square-${square.id}`);
+        if (element) {
+          element.style.width = `${size}px`;
+          element.style.height = `${size}px`;
+        }
+      });
+    }
+  }, [size, isRandomSize, squares]);
+
   const createNewSquare = (): Square => {
     const id = uuidv4();
     const { posXOrigin, posYOrigin } = generateRandomPosition();
-    const sizeOrigin = generateRandomSize();
+    const sizeOrigin = isRandomSize ? generateRandomSize() : size;
     const { rotation, duration, opacity, posDestination } =
       generateRandomAnimationParams();
     const color = generateRandomColor();
@@ -139,7 +158,7 @@ export default function SquareBackgroundGeneration() {
             position: "fixed",
             top: `${square.posYOrigin}%`,
             left: `${square.posXOrigin}%`,
-            zIndex: 10,
+            zIndex: 5,
             transition: `transform ${square.duration}s, opacity ${square.duration}s`,
           }}
         ></div>

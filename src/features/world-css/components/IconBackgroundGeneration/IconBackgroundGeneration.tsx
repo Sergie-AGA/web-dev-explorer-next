@@ -33,6 +33,10 @@ type IconType = {
   opacity: number;
 };
 
+interface IIconBackground {
+  size: number;
+}
+
 const iconsList: React.ComponentType<TablerIconsProps>[] = [
   IconDeviceLaptop,
   IconDeviceTvOld,
@@ -58,7 +62,7 @@ const colors = [
   "#0f172a",
 ];
 
-export default function IconBackgroundGeneration() {
+export default function IconBackgroundGeneration({ size }: IIconBackground) {
   const [icons, setIcons] = useState<IconType[]>([]);
 
   useEffect(() => {
@@ -127,7 +131,7 @@ export default function IconBackgroundGeneration() {
 
     const addIconInterval = setInterval(
       addIcon,
-      Math.floor(Math.random() * 2000) + 1000
+      Math.floor(Math.random() * 1500) + 1000
     );
 
     return () => {
@@ -166,7 +170,7 @@ export default function IconBackgroundGeneration() {
           }}
         >
           <FloatingIcon color={item.color}>
-            <item.icon />
+            <item.icon size={size} />
           </FloatingIcon>
         </div>
       ))}
