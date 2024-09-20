@@ -49,12 +49,12 @@ export const componentData = [
         icon: IconBrightnessUp,
         component: NeonTextContainer,
       },
-      {
-        title: "Fade",
-        value: "fade",
-        icon: IconLoader,
-        component: "",
-      },
+      // {
+      //   title: "Fade",
+      //   value: "fade",
+      //   icon: IconLoader,
+      //   component: "",
+      // },
     ],
   },
   {
