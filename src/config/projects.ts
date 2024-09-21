@@ -79,7 +79,7 @@ export const projects = [
     title: "World of CSS Effects",
     description:
       "A place where diverse CSS tricks and techniques are used to achieve unique visual effects. This is a place where you can find reusable CSS snippets ready to be copied and used in a different project, including examples of usage",
-    image: "https://www.themexpert.com/images/easyblog_articles/702/Login.jpg",
+    image: "projects/world-of-css.jpg",
     frontend: ["Tailwind CSS", "CSS"],
     backend: [],
     apis: [],

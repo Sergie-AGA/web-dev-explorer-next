@@ -3,7 +3,7 @@ import {
   IconSparkles,
   IconPalette,
   IconBoxMultiple,
-  IconLoader,
+  IconSwitchHorizontal,
   IconBrightnessUp,
   IconSelectAll,
   IconIcons,
@@ -16,6 +16,7 @@ import NeonTextContainer from "./NeonText/NeonTextContainer";
 import CssPhoneContainer from "./CssPhone/CssPhoneContainer";
 import SquareBackgroundContainer from "./SquareBackgroundGeneration/SquareBackgroundContainer";
 import IconBackgroundContainer from "./IconBackgroundGeneration/IconBackgroundContainer";
+import SwitchingTextContainer from "./SwitchingText/SwitchingTextContainer";
 
 export interface IComponentData {
   title: string;
@@ -49,12 +50,12 @@ export const componentData = [
         icon: IconBrightnessUp,
         component: NeonTextContainer,
       },
-      // {
-      //   title: "Fade",
-      //   value: "fade",
-      //   icon: IconLoader,
-      //   component: "",
-      // },
+      {
+        title: "Switching",
+        value: "switch",
+        icon: IconSwitchHorizontal,
+        component: SwitchingTextContainer,
+      },
     ],
   },
   {
