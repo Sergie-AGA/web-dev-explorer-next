@@ -10,6 +10,8 @@ import {
   IconLayoutGrid,
   TablerIconsProps,
   IconDeviceMobile,
+  IconColorPicker,
+  IconArrowMoveUp,
 } from "@tabler/icons-react";
 import { TSectionType, TComponentType } from "../store/useUIChange";
 import NeonTextContainer from "./NeonText/NeonTextContainer";
@@ -17,6 +19,7 @@ import CssPhoneContainer from "./CssPhone/CssPhoneContainer";
 import SquareBackgroundContainer from "./SquareBackgroundGeneration/SquareBackgroundContainer";
 import IconBackgroundContainer from "./IconBackgroundGeneration/IconBackgroundContainer";
 import SwitchingTextContainer from "./SwitchingText/SwitchingTextContainer";
+import RandomColourTextContainer from "./RandomColourText/RandomColourTextContainer";
 
 export interface IComponentData {
   title: string;
@@ -34,8 +37,8 @@ export interface IIndividualComponent {
 
 export const componentData = [
   {
-    title: "SFX",
-    value: "sfx",
+    title: "Text SFX",
+    value: "tsfx",
     icon: IconSparkles,
     components: [
       {
@@ -56,6 +59,18 @@ export const componentData = [
         icon: IconSwitchHorizontal,
         component: SwitchingTextContainer,
       },
+      {
+        title: "Rdn Colour",
+        value: "ranCol",
+        icon: IconColorPicker,
+        component: RandomColourTextContainer,
+      },
+      // {
+      //   title: "Moving",
+      //   value: "move",
+      //   icon: IconArrowMoveUp,
+      //   component: "",
+      // },
     ],
   },
   {
@@ -65,13 +80,13 @@ export const componentData = [
     components: [
       {
         title: "Icons",
-        value: "icons",
+        value: "bIcons",
         icon: IconIcons,
         component: IconBackgroundContainer,
       },
       {
         title: "Squares",
-        value: "squares",
+        value: "bSquares",
         icon: IconLayoutGrid,
         component: SquareBackgroundContainer,
       },

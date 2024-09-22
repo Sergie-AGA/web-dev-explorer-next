@@ -32,13 +32,15 @@ export default function NeonTextContainer() {
 
   return (
     <section className="flex flex-col gap-4 py-8 max-w-[100%] w-[600px]">
-      <div className="p-4 rounded-md self-center w-[100%]">
-        {messages.length > 0 && (
+      <div className="p-4 rounded-md self-center w-[100%] ">
+        {messages.length > 0 ? (
           <SwitchingText key={messages.join("")}>
             {messages.map((message, index) => (
               <p key={index}>{message}</p>
             ))}
           </SwitchingText>
+        ) : (
+          <p className="min-h-[24px]"></p>
         )}
       </div>
       <div className="flex flex-col gap-2">

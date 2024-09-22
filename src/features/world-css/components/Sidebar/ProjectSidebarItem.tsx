@@ -18,7 +18,7 @@ export default function ProjectSidebarItem({
   isSubSidebar = false,
   handleChange,
 }: IModalSidebarItemProps) {
-  const isSmallText = sectionTitle.length > 10;
+  const isSmallText = sectionTitle.length > 8;
 
   return (
     <button
