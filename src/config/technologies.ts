@@ -45,7 +45,7 @@ export const technologies = {
       link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     },
     {
-      title: "Typescript",
+      title: "TypeScript",
       description:
         "A superset of JavaScript that adds static typing to the language, helping catch errors early in development and improve code maintainability.",
       link: "https://www.typescriptlang.org/",

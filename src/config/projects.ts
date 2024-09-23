@@ -7,7 +7,7 @@ export const projects = [
     frontend: [
       "React JS",
       "Next JS",
-      "Typescript",
+      "TypeScript",
       "Tailwind CSS",
       "ShadcnUI",
       "Zustand",
@@ -80,7 +80,15 @@ export const projects = [
     description:
       "A place where diverse CSS tricks and techniques are used to achieve unique visual effects. This is a place where you can find reusable CSS snippets ready to be copied and used in a different project, including examples of usage",
     image: "projects/world-of-css.jpg",
-    frontend: ["Tailwind CSS", "CSS"],
+    frontend: [
+      "Next JS",
+      "React JS",
+      "TypeScript",
+      "ShadcnUI",
+      "Zustand",
+      "Tailwind CSS",
+      "CSS",
+    ],
     backend: [],
     apis: [],
     type: "exploration",

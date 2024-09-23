@@ -20,6 +20,7 @@ import SquareBackgroundContainer from "./SquareBackgroundGeneration/SquareBackgr
 import IconBackgroundContainer from "./IconBackgroundGeneration/IconBackgroundContainer";
 import SwitchingTextContainer from "./SwitchingText/SwitchingTextContainer";
 import RandomColourTextContainer from "./RandomColourText/RandomColourTextContainer";
+import MovingTextContainer from "./MovingText/MovingTextContainer";
 
 export interface IComponentData {
   title: string;
@@ -65,12 +66,12 @@ export const componentData = [
         icon: IconColorPicker,
         component: RandomColourTextContainer,
       },
-      // {
-      //   title: "Moving",
-      //   value: "move",
-      //   icon: IconArrowMoveUp,
-      //   component: "",
-      // },
+      {
+        title: "Moving",
+        value: "move",
+        icon: IconArrowMoveUp,
+        component: MovingTextContainer,
+      },
     ],
   },
   {
