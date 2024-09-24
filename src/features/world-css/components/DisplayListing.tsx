@@ -17,7 +17,7 @@ export default function DisplayListing() {
 
   return (
     <section className="flex flex-col gap-8">
-      <div className="flex flex-col items-center p-4">
+      <div className="flex flex-col items-center lg:p-4">
         {ComponentToRender ? (
           <ComponentToRender />
         ) : (

@@ -27,10 +27,10 @@ const CssPhoneContainer = () => {
   };
 
   return (
-    <section className="flex flex-col gap-8 items-center py-8">
+    <section className="flex flex-col gap-8 items-center pt-8 pb-16">
       <CssPhone sentMessages={messages} />
 
-      <div className="flex gap-4 w-full max-w-[600px]">
+      <div className="flex flex-col lg:flex-row gap-4 w-full max-w-[600px]">
         <div className="flex flex-col flex-1">
           <Label htmlFor="userMessage">User Message</Label>
           <Input
