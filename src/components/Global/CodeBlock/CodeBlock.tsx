@@ -1,5 +1,5 @@
-import "highlight.js/styles/github.css";
-import "highlight.js/styles/dracula.css"; // Import dark theme
+// import "highlight.js/styles/github.css";
+// import "highlight.js/styles/dracula.css";
 import Highlight from "react-highlight";
 
 interface ICodeBlockProps {

@@ -39,7 +39,13 @@ export const technologies = {
       link: "https://tailwindcss.com/",
     },
     {
-      title: "Typescript",
+      title: "CSS",
+      description:
+        "A style sheet language used for describing the presentation of a document written in HTML or XML, allowing you to control the layout, colors, fonts, and other aspects of the web page's appearance.",
+      link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    },
+    {
+      title: "TypeScript",
       description:
         "A superset of JavaScript that adds static typing to the language, helping catch errors early in development and improve code maintainability.",
       link: "https://www.typescriptlang.org/",
@@ -59,10 +65,10 @@ export const technologies = {
   ],
   backend: [
     {
-      title: "AWS S3",
+      title: "Vercel",
       description:
-        "Amazon Simple Storage Service (S3) is a scalable cloud storage solution designed to store and retrieve any amount of data from anywhere on the web. It's commonly used for static website hosting, data backup, and content distribution.",
-      link: "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+        "A cloud platform for static sites and Serverless Functions that fits perfectly with your workflow. It provides seamless integration with frontend frameworks and helps you to deploy, manage, and scale your applications with ease.",
+      link: "https://vercel.com/",
     },
     {
       title: "Firebase",

@@ -1,11 +1,13 @@
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { cn } from "@/utils/utils";
 
 interface ITabsProps {
   tabData: ITabs[];
   initialTab?: string;
   children: React.ReactNode;
+  className?: string;
 }
 
 interface ITabs {
@@ -17,12 +19,16 @@ export default function SimpleTabs({
   tabData,
   initialTab,
   children,
+  className,
 }: ITabsProps) {
   return (
     <>
       {tabData?.length && (
-        <Tabs defaultValue={initialTab || tabData[0].value}>
-          <TabsList className="duration-300">
+        <Tabs
+          className="flex flex-col items-center"
+          defaultValue={initialTab || tabData[0].value}
+        >
+          <TabsList className={cn("duration-300", className)}>
             {tabData.map((tab, index) => (
               <TabsTrigger
                 className="text-xs sm:text-sm py-0.5 sm:py-1 px-2 sm:px-3"

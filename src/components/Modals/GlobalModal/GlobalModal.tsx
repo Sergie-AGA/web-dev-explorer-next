@@ -43,7 +43,7 @@ export default function GlobalModal({ hasOverlay = true }: IGlobalModal) {
         >
           <section
             onClick={(e) => e.stopPropagation()}
-            className="fixed left-[50%] top-[50%] z-[100] grid translate-x-[-50%] translate-y-[-50%] gap-4 border border-neutral-200 bg-white p-6 shadow-lg duration-200  sm:rounded-lg dark:border-neutral-800 dark:bg-neutral-950 w-[90%] md:w-[80%] max-w-[800px]"
+            className="fixed left-[50%] top-[50%] z-[100] grid translate-x-[-50%] translate-y-[-50%] gap-4 border border-neutral-200 bg-white p-6 shadow-lg duration-200 sm:rounded-lg dark:border-neutral-800 dark:bg-neutral-950 w-[90%] md:w-[80%] max-w-[800px]"
           >
             <button onClick={handleClick} className="absolute top-4 right-4">
               <IconX className="cursor-pointer" size="16" />
