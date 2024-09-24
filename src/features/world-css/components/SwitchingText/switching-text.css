@@ -1,0 +1,22 @@
+.switcher {
+  text-align: center;
+  animation: switch 8s infinite ease-in-out;
+  margin: auto auto 1rem;
+  opacity: 0;
+  width: 100%;
+}
+
+@keyframes switch {
+  0%,
+  5%,
+  100% {
+    filter: blur(180px);
+    opacity: 0;
+  }
+
+  30%,
+  80% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
