@@ -7,6 +7,7 @@ import { useSidebarStore } from "../../store/useUIChange";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IProjectSidebar {
   className?: string;
@@ -44,13 +45,15 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
       )}
     >
       <div className="flex justify-between lg:justify-center items-center gap-4 px-2 py-1 bg-cyan-900 shadow-lg z-50">
-        <Image
-          src="/Logo.svg"
-          width={20}
-          height={20}
-          alt="Project Logo"
-          className="w-12 h-12 mr-3"
-        />
+        <Link href="/">
+          <Image
+            src="/Logo.svg"
+            width={20}
+            height={20}
+            alt="Project Logo"
+            className="w-12 h-12 mr-3"
+          />
+        </Link>
         <IconX
           size="22"
           onClick={handleSidebarChange}

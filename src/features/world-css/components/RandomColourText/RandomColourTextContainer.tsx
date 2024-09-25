@@ -20,7 +20,7 @@ export default function NeonTextContainer() {
       <div className="flex flex-col justify-start gap-4">
         <div className="flex flex-col gap-2">
           <Label htmlFor="neonText">
-            Type your Text and hover over the text above to change colours:
+            Type your Text and hover/tap over the text above to change colours:
           </Label>
           <Input
             className="w-[100%]"
