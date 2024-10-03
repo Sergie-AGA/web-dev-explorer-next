@@ -96,6 +96,32 @@ export const projects = [
     showProject: true,
     showLink: true,
   },
+  {
+    title: "Reusable Backend",
+    description:
+      "This project aggregates links to a few different GitHub repositories which contain a reusable modular backend projects in diverse programming languages and can be used as templates for new applications. It currently includes projects in Node JS and C# .NET",
+    image: "projects/world-of-css.jpg",
+    frontend: ["Next JS", "React JS", "TypeScript", "Tailwind CSS", "Blazor"],
+    backend: [
+      "Node JS",
+      "Typescript",
+      "Fastify",
+      "PostgreSQL",
+      "Vitest",
+      "Supertest",
+      "Prisma",
+      "Docker",
+      "Zod",
+      "C#",
+      ".NET",
+      "ASP.NET",
+    ],
+    apis: [],
+    type: "exploration",
+    path: "/reusable-backend",
+    showProject: true,
+    showLink: true,
+  },
 ];
 
 export interface IProject {
