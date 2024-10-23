@@ -18,10 +18,16 @@ There are other repositories might work as support for this one, containing a di
 ## Project 1 - Product List POC
 
 This project experiments a proof of concept of a store, making use of Supabase to handle the backend and modern React ecosystem to render a Product List where you can add items to a cart and trigger discounts based on specific conditions. This was used by me to sell some of my items in the past.
-Frontend: Next JS, React JS, Typescript, Tailwind CSS, ShadcnUI, Zustand, yet-another-react-lightbox, react-photo-album
+Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, yet-another-react-lightbox, react-photo-album
 Backend: Supabase
 
 ## Project 2 - World of CSS Effects
 
-A place where diverse CSS tricks and techniques are used to achieve unique visual effects. This is a place where you can find reusable CSS snippets ready to be copied and used in a different project, including examples of usage
-Frontend: Next JS, React JS, Typescript, Tailwind CSS, ShadcnUI, Zustand
+A place where diverse CSS tricks and techniques are used to achieve unique visual effects. This is a place where you can find reusable CSS snippets ready to be copied and used in a different project, including examples of usage.
+Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand
+
+## Project 3 - Reusable Backend
+
+This project aggregates links to a few different GitHub repositories which contain a reusable modular backend projects in diverse programming languages and can be used as templates for new applications. It currently includes projects in Node JS, PHP and C#.
+Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand
+Backend: JavaScript, Node JS, Typescript, Fastify, PostgreSQL, Vitest, Supertest, Prisma, Docker, Zod, PHP, Laravel, C#, .NET, ASP.NET,

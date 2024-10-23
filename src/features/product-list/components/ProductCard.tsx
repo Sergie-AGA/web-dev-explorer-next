@@ -1,4 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/Shadcn-ui/card";
 import { IProduct } from "../data/products";
 import Image from "next/image";
 import { calculatePrice } from "../utils/calculatePrice";

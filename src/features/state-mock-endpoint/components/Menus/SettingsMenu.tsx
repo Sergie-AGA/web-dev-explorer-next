@@ -1,9 +1,9 @@
 "use client";
 
 import BlurredText from "@/components/Global/Blur/BlurredText";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/Shadcn-ui/button";
 import { useUserContext } from "../../context/UserContext";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/components/Shadcn-ui/separator";
 import { useState } from "react";
 
 type DeletionMapType = "local" | "permanent" | "loading" | "reset" | "none";

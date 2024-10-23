@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import GlitchText from "./GlitchText";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/Shadcn-ui/input";
 import { Label } from "@radix-ui/react-label";
 
 export default function GlitchTextContainer() {
