@@ -45,6 +45,12 @@ export const technologies = {
       link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     },
     {
+      title: "JavaScript",
+      description:
+        "A versatile and widely-used programming language for creating dynamic and interactive elements on websites. It is essential for web development and works across all major browsers.",
+      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    },
+    {
       title: "TypeScript",
       description:
         "A superset of JavaScript that adds static typing to the language, helping catch errors early in development and improve code maintainability.",
@@ -81,6 +87,36 @@ export const technologies = {
       description:
         "An open-source alternative to Firebase, Supabase provides a suite of tools and services like real-time databases, authentication, and file storage, built on top of PostgreSQL.",
       link: "https://supabase.com/",
+    },
+    {
+      title: "PHP",
+      description:
+        "A server-side scripting language designed for web development but also used as a general-purpose programming language. It powers popular content management systems like WordPress and Laravel.",
+      link: "https://www.php.net/",
+    },
+    {
+      title: "Laravel",
+      description:
+        "A PHP framework known for its elegant syntax, simplifying common tasks like routing, authentication, and database interactions. It offers a modern toolkit for rapid web application development.",
+      link: "https://laravel.com/",
+    },
+    {
+      title: "C#",
+      description:
+        "A modern, object-oriented programming language developed by Microsoft. It is widely used for building applications on the .NET framework, from desktop applications to web services.",
+      link: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+    },
+    {
+      title: ".NET",
+      description:
+        "A free, cross-platform framework developed by Microsoft, supporting a wide range of applications including web, desktop, mobile, cloud, and IoT. It provides a robust environment for building scalable software.",
+      link: "https://dotnet.microsoft.com/",
+    },
+    {
+      title: "ASP.NET",
+      description:
+        "An open-source, server-side web application framework built on the .NET platform. It enables developers to build dynamic web sites, web applications, and web services with ease and flexibility.",
+      link: "https://learn.microsoft.com/en-us/aspnet/",
     },
   ],
   apis: [

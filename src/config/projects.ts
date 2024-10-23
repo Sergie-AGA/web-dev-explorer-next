@@ -7,6 +7,7 @@ export const projects = [
     frontend: [
       "React JS",
       "Next JS",
+      "JavaScript",
       "TypeScript",
       "Tailwind CSS",
       "ShadcnUI",
@@ -43,6 +44,7 @@ export const projects = [
     frontend: [
       "Next JS",
       "React JS",
+      "JavaScript",
       "TypeScript",
       "ShadcnUI",
       "Zustand",
@@ -59,11 +61,12 @@ export const projects = [
   {
     title: "Reusable Backend",
     description:
-      "This project aggregates links to a few different GitHub repositories which contain a reusable modular backend projects in diverse programming languages and can be used as templates for new applications. It currently includes projects in Node JS and C# .NET",
-    image: "projects/world-of-css.jpg",
-    frontend: ["Next JS", "React JS", "TypeScript", "Tailwind CSS", "Blazor"],
+      "This project aggregates links to a few different GitHub repositories which contain a reusable modular backend projects in diverse programming languages and can be used as templates for new applications. It currently includes projects in Node JS, PHP and C#",
+    image: "projects/reusable-backend.png",
+    frontend: ["Next JS", "React JS", "TypeScript", "Tailwind CSS"],
     backend: [
       "Node JS",
+      "JavaScript",
       "Typescript",
       "Fastify",
       "PostgreSQL",
@@ -72,6 +75,8 @@ export const projects = [
       "Prisma",
       "Docker",
       "Zod",
+      "PHP",
+      "Laravel",
       "C#",
       ".NET",
       "ASP.NET",
