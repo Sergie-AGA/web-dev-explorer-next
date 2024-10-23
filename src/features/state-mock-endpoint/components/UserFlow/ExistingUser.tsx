@@ -1,8 +1,8 @@
 "use client";
 
 import SearchInput from "@/components/Global/Form/SearchInput";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/Shadcn-ui/button";
+import { Separator } from "@/components/Shadcn-ui/separator";
 import { useState } from "react";
 import { FlowTypes } from "./UserFlowContainer";
 import { IconArrowBackUp } from "@tabler/icons-react";

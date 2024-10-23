@@ -1,7 +1,9 @@
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/Shadcn-ui/badge";
+import { Button } from "@/components/Shadcn-ui/button";
 import { cn } from "@/utils/utils";
 import {
   IconBrandCSharp,
+  IconBrandGithubFilled,
   IconBrandNodejs,
   IconBrandPhp,
   IconBrandPython,
@@ -68,6 +70,17 @@ export default function GitHubList() {
                   </Badge>
                 </div>
                 <p className="text-gray-400">{repo.description}</p>
+              </div>
+              <div>
+                <Button variant="secondary" asChild>
+                  <a
+                    href={repo.link}
+                    className="flex gap-2 items-center h-[unset]"
+                  >
+                    <IconBrandGithubFilled className="flex-1" />
+                    <small className="text-base">Github</small>
+                  </a>
+                </Button>
               </div>
             </li>
           );

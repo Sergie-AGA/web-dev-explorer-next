@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "@/components/Shadcn-ui/input";
+import { Button } from "@/components/Shadcn-ui/button";
 import { IconX } from "@tabler/icons-react";
 import SwitchingText from "./SwitchingText";
 import { cn } from "@/utils/utils";
