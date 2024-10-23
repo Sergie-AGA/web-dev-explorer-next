@@ -1,3 +1,5 @@
+import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader";
+
 export const metadata = {
   title: {
     template: "%s | Web Dev Explorer",
@@ -12,5 +14,10 @@ export default function RootTemplate({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="bg-cyan-950 site-wrap p-0">{children}</div>;
+  return (
+    <div className="bg-cyan-950 min-height-screen site-wrap">
+      <GlobalHeader title="Reusable Backend"></GlobalHeader>
+      {children}
+    </div>
+  );
 }

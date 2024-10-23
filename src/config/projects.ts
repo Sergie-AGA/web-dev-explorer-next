@@ -22,20 +22,6 @@ export const projects = [
     showLink: true,
   },
   {
-    title: "Google Sheets to DB Integration",
-    description:
-      "This project allows linking Google Sheets to a database and facilitate transmission of data between them",
-    image:
-      "https://miro.medium.com/v2/resize:fit:717/1*pHglcoa-BSouiNT7R2p9yQ.png",
-    frontend: [],
-    backend: [],
-    apis: [],
-    type: "tool",
-    path: "/sheets-database",
-    showProject: false,
-    showLink: false,
-  },
-  {
     title: "State Mock Endpoint",
     description:
       "A simple system that makes snapshots of an endpoint now or at a scheduled time, and stores that data for future analysis, which can help for debugging data needs to be captured at a given time.",
@@ -48,32 +34,6 @@ export const projects = [
     path: "/state-mock-endpoint",
     showProject: false,
     showLink: true,
-  },
-  {
-    title: "Supabase Explorer",
-    description: "Exploring features possible within Supabase",
-    image:
-      "https://supabase.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-preview.50e72501.jpg&w=3840&q=75",
-    frontend: [],
-    backend: ["Supabase"],
-    apis: [],
-    type: "exploration",
-    path: "/supabase-explorer",
-    showProject: false,
-    showLink: false,
-  },
-  {
-    title: "DDD + Solid - Custom Login Explorer",
-    description:
-      "A fully custom Full-Stack Login feature made with a flavor of Domain-driven Design and Test-driven development",
-    image: "https://www.themexpert.com/images/easyblog_articles/702/Login.jpg",
-    frontend: [],
-    backend: [],
-    apis: [],
-    type: "exploration",
-    path: "/ddd-solid-login",
-    showProject: false,
-    showLink: false,
   },
   {
     title: "World of CSS Effects",

@@ -2,8 +2,8 @@ import GitHubList from "@/features/reusable-backend/components/GitHubList";
 
 export default function Page() {
   return (
-    <div>
+    <main>
       <GitHubList />
-    </div>
+    </main>
   );
 }

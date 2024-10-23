@@ -1,3 +1,5 @@
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/utils/utils";
 import {
   IconBrandCSharp,
   IconBrandNodejs,
@@ -17,7 +19,7 @@ const backendRepos = [
   {
     title: "Reusable PHP",
     description:
-      "Reusable PHP modules including a Login feature as a template. It uses PHP and Laravel for the server and SQLite for the backend",
+      "Reusable PHP modules including a Login feature as a template. It uses PHP and Laravel for the server and SQLite for the backend.",
     link: "https://github.com/Sergie-AGA/reusable-php",
     icon: IconBrandPhp,
     status: "development",
@@ -30,6 +32,7 @@ const backendRepos = [
     icon: IconBrandCSharp,
     status: "development",
   },
+  // In Progress
   // {
   //   title: "Reusable Python",
   //   description: "",
@@ -42,9 +45,32 @@ const backendRepos = [
 export default function GitHubList() {
   return (
     <main className="flex flex-col">
-      <ul>
+      <ul className="flex flex-col gap-6 items-center mb-4">
         {backendRepos.map((repo, index) => {
-          return <li key={index}>{repo.title}</li>;
+          return (
+            <li
+              key={index}
+              className="border-cyan-900 border-[2px] border-solid flex items-center gap-4 max-w-[800px] p-4 rounded-lg"
+            >
+              <repo.icon size="40" className="shrink-0" />
+              <div className="flex flex-col gap-1">
+                <div className="flex items-center gap-4">
+                  <h2 className="text-lg font-bold">{repo.title}</h2>
+                  <Badge
+                    className={cn(
+                      "capitalize pointer-events-none",
+                      repo.status == "functional"
+                        ? "bg-emerald-900 text-emerald-400"
+                        : "bg-sky-900 text-sky-400"
+                    )}
+                  >
+                    {repo.status}
+                  </Badge>
+                </div>
+                <p className="text-gray-400">{repo.description}</p>
+              </div>
+            </li>
+          );
         })}
       </ul>
     </main>
