@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/Shadcn-ui/button";
 import {
   Sheet,
   SheetClose,
@@ -7,7 +7,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "@/components/Shadcn-ui/sheet";
 import SimpleBadge from "@/components/Badges/SimpleBadge";
 import CartContent from "./CartContent";
 import ProductCount from "./ProductCount";

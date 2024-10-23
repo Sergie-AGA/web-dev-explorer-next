@@ -2,7 +2,7 @@ import React from "react";
 import {
   ToggleGroup as TG,
   ToggleGroupItem,
-} from "@/components/ui/toggle-group";
+} from "@/components/Shadcn-ui/toggle-group";
 
 interface IToggleGroupProps {
   onClick: (value: string) => void;

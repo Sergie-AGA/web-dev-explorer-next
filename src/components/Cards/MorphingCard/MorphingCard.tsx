@@ -1,6 +1,6 @@
 import SimpleBadge from "@/components/Badges/SimpleBadge";
 import { IProject } from "@/config/projects";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/Shadcn-ui/button";
 import { generateImageUrl } from "@/utils/imageHelpers";
 interface CardProps {
   data: IProject;
@@ -13,7 +13,7 @@ export default function MorphingCard({ data, onClick }: CardProps) {
   return (
     <div
       onClick={onClick}
-      className=" min-w-[250px] min-h-[250px] w-[100%] md:w-[20%] aspect-square rounded-def bg-cyan-700 relative overflow-hidden bg-cover bg-center cursor-pointer morphing-card m-auto rounded"
+      className=" min-w-[250px] min-h-[250px] w-[100%] md:w-[20%] aspect-square rounded-def bg-cyan-700 relative overflow-hidden bg-cover bg-center cursor-pointer morphing-card m-auto rounded shadow-lg"
     >
       <img
         src={imageUrl}

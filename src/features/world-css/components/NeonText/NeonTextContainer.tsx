@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/Shadcn-ui/input";
 import { Label } from "@radix-ui/react-label";
 import NeonText from "./NeonText";
-import { Switch } from "@/components/ui/switch";
+import { Switch } from "@/components/Shadcn-ui/switch";
 
 export default function NeonTextContainer() {
   const [neonText, setNeonText] = useState("This is the neon text effect");

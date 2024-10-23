@@ -3,7 +3,6 @@
 import LocalModal from "@/components/Modals/LocalModal/LocalModal";
 import Dashboard from "@/features/state-mock-endpoint/components/Dashboard/Dashboard";
 import UserFlowContainer from "@/features/state-mock-endpoint/components/UserFlow/UserFlowContainer";
-import { useState } from "react";
 import { useUserContext } from "@/features/state-mock-endpoint/context/UserContext";
 
 export default function StateMockEndpoint() {
