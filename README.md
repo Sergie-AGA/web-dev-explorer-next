@@ -13,6 +13,37 @@ There are other repositories might work as support for this one, containing a di
 - [Web Dev Explorer Node JS](https://github.com/Sergie-AGA/web-dev-explorer-nodejs) - Handles additional backend features, such as:
   Node JS, Typescript, Fastify, PostgreSQL, among many others
 
+# Running the project
+
+This is mainly a Next JS project. Node 18.17+ is recommended for smooth functionality.
+All you should need to run this is installing the modules and running the dev script list on the package.json.
+
+# Documentation
+
+# Global Overview
+
+## Folder Structure
+
+## Features
+
+## Components
+
+## Config
+
+## Hooks
+
+## Lib
+
+## Services
+
+## Store
+
+## Styles
+
+## Utils
+
+## Tailwind Setup
+
 # Projects
 
 ## Project 1 - Product List POC
@@ -31,3 +62,9 @@ Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zus
 This project aggregates links to a few different GitHub repositories which contain a reusable modular backend projects in diverse programming languages and can be used as templates for new applications. It currently includes projects in Node JS, PHP and C#.
 Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand
 Backend: JavaScript, Node JS, Typescript, Fastify, PostgreSQL, Vitest, Supertest, Prisma, Docker, Zod, PHP, Laravel, C#, .NET, ASP.NET,
+
+## In Progress - State Mock Endpoint
+
+# Possible improvements
+
+This project could benefit from having Storybook to improve how reusable components can be handled

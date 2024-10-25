@@ -6,6 +6,8 @@ import { IProject, projects } from "@/config/projects";
 import { useURLState, generateQueryString } from "@/hooks/useURLState";
 import TechBadge from "./TechBadge";
 import { useRouter } from "next/navigation";
+import { useKeyPress } from "@/hooks/useKeyPress";
+import { useRef } from "react";
 
 interface FilterCriteria {
   text?: string;
@@ -54,6 +56,7 @@ function filterProjects(
 export default function ProjectGrid() {
   const url = useURLState({ queryAsArray: true });
   const router = useRouter();
+  const modalRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   let filteredProjects = projects.filter((project) => project.showProject);
   if (url) {
@@ -78,6 +81,18 @@ export default function ProjectGrid() {
       router.push(newUrl);
     }
   }
+
+  const keyCombos = filteredProjects.map((_, index) => ({
+    keys: ["Alt", (index + 1).toString()],
+    callback: () => {
+      const modalRef = modalRefs.current[index];
+      if (modalRef) {
+        modalRef.click();
+      }
+    },
+  }));
+
+  useKeyPress(keyCombos);
 
   return (
     <div>
@@ -147,10 +162,13 @@ export default function ProjectGrid() {
       )}
       {filteredProjects.length ? (
         <ul className="flex justify-between gap-6 flex-wrap">
-          {filteredProjects.map((project) => {
+          {filteredProjects.map((project, index) => {
             return (
               <ProjectModal key={project.path} project={project}>
-                <MorphingCard data={project} />
+                <MorphingCard
+                  data={project}
+                  ref={(el) => (modalRefs.current[index] = el)}
+                />
               </ProjectModal>
             );
           })}

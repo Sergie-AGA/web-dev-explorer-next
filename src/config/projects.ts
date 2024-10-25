@@ -1,4 +1,4 @@
-export const projects = [
+export const projects: IProject[] = [
   {
     title: "Product List POC",
     description:
@@ -81,7 +81,7 @@ export const projects = [
       ".NET",
       "ASP.NET",
     ],
-    apis: [],
+    apis: [] as string[],
     type: "exploration",
     path: "/reusable-backend",
     showProject: true,
@@ -93,9 +93,9 @@ export interface IProject {
   title: string;
   description: string;
   image: string;
-  frontend: string[] | never[];
-  backend: string[] | never[];
-  apis: string[] | never[];
+  frontend: string[] | [];
+  backend: string[] | [];
+  apis: string[] | [];
   type: "exploration" | "concept" | "tool";
   path: string;
   showProject: boolean;

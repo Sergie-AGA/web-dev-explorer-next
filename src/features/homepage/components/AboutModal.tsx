@@ -12,7 +12,6 @@ import {
 import { IconBrandGithubFilled } from "@tabler/icons-react";
 import { useUIStore } from "@/store/useUIStore";
 import { Separator } from "@/components/Shadcn-ui/separator";
-import { projectMeta } from "@/config/meta";
 import { ITechTypes } from "@/config/technologies";
 
 interface IModalData {
@@ -104,12 +103,17 @@ export default function AboutModal({ children }: IModalData) {
             Libraries which have small impact may not be listed here or in the
             project data listing
           </p>
+          <p>
+            You can also use the keyboard shortcuts to open projects. Use
+            &quot;Alt + 1&quot; for the first one, &quot;Alt + 2&quot; for the
+            second and so on up to 9 projects.
+          </p>
         </div>
 
         <DialogFooter className="sm:justify-center">
           <Button variant="secondary" asChild>
             <a
-              href={projectMeta.githubURL}
+              href="https://github.com/Sergie-AGA/web-dev-explorer-next"
               className="flex flex-col gap-2 items-center h-[unset]"
             >
               <IconBrandGithubFilled className="flex-1" />
