@@ -16,7 +16,7 @@ There are other repositories might work as support for this one, containing a di
 ## Running the project
 
 This is mainly a Next JS project. Node 18.17+ is recommended for smooth functionality.
-All you should need to run this is installing the modules and running the dev script list on the package.json.
+All you should need to run this is installing the modules and running the dev script list on the package.json. Projects which use Supabase will error, as the env variables have not been committed.
 
 ## Documentation
 

@@ -41,7 +41,7 @@ export default function MenuItem({
           {children}
         </div>
         <span
-          className={cn("text-[10px] leading-4 opacity-0 duration-100", {
+          className={cn("text-[0.6rem] leading-4 opacity-0 duration-100", {
             "opacity-1": isHovered,
           })}
         >

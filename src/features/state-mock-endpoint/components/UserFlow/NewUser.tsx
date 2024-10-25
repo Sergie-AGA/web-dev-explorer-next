@@ -18,7 +18,7 @@ export default function NewUser({
   return (
     <div className="flex flex-col gap-4">
       <div className="text-center">
-        <h2 className="text-[20px]">New User ID generated:</h2>
+        <h2 className="text-[1.25rem]">New User ID generated:</h2>
         <span className="text-2xl">{newUserID}</span>
       </div>
       <ul>

@@ -68,17 +68,38 @@ Any tests pertaining to global elements will be here. This application uses Jest
 
 ### Themes
 
+A Theme Handler component is used to support multiple themes using, which is used in combination with Tailwind and Shadcn UI to easily allow theming, however, currently, only dark theme is being supported.
+
 ### Utils
+
+Reusable utility code is placed here:
+
+- imageHelper: This function generates an image url based on whether it's located in the project or externally
+- utils: This includes the cn function, which uses a popular patter that combines clsx and Tailwind Merge to create an easy-to-use function when you need to apply tailwind class dynamically and override classes. This pattern comes from Shadcn UI.
 
 ## UI Setup
 
+The styling of this project is done using Tailwind CSS and components and patterns from Shadcn UI.
+
 ### Tailwind CSS
+
+The Tailwind config uses several custom classes to achieve a bespoke look. Colours are controlled using CSS variables defined in the `global.css` file. This file contains many definitions of global styles as well as root variables.
 
 ### Shadcn UI
 
-Accessibility
+Shadncn UI is a powerful UI library that is being used to power some components here. Upon installing each component, slight modifications are sometimes made and then the project is moved to the Shadcn UI folder instead of the default ui folder.
+Moreover, Shadncn UI is accessible, as it uses Radix UI under the hood.
 
 ## Accessibility
+
+Accessibility is achieved in this project in a few different ways:
+
+- Semantic HTML is applied as much as possible
+- Several components possess ARIA attributes. Using Shadcn UI ensures this is even more present
+- Images possess alt attributes
+- Colour contrast is taken into account
+- Text sizing uses the REM unit as much as possible
+- Responsiveness is taken into account for all pages
 
 ## Potential Improvements
 
@@ -88,3 +109,4 @@ Accessibility
 - Some components could be developed with better reusability in mind
 - The useURLState hook could do with some improvements to make it smoother, more reusable and better documented
 - Testing Coverage can be improved
+- There are more accessibility measures which can be applied, such as "Skip to main content" links, increased usage of aria attributes and focus management

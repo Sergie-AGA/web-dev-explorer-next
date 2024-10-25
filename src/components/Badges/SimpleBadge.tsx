@@ -25,7 +25,9 @@ export default function SimpleBadge({
       <div className="flex-1 flex items-center">
         <IconHandler icon={icon} />
       </div>
-      {showTitle && <span className="text-[8px] leading-normal">{badge}</span>}
+      {showTitle && (
+        <span className="text-[0.5rem] leading-normal">{badge}</span>
+      )}
     </div>
   );
 }
