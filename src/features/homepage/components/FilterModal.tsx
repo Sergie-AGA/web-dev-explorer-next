@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/Shadcn-ui/button";
 import { technologies } from "@/config/technologies";
 import TechBadge from "./TechBadge";
-import SearchInput from "@/components/Global/Form/SearchInput";
+import SearchInput from "@/components/Form/SearchInput";
 
 interface ITechFilters {
   frontend: string[];

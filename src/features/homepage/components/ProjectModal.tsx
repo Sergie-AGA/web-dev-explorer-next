@@ -12,7 +12,7 @@ import {
 } from "@/components/Shadcn-ui/dialog";
 import { IProject } from "@/config/projects";
 import Link from "next/link";
-import { useUIStore } from "@/store/useUIStore";
+import { useUIStore } from "@/features/homepage/store/useUIStore";
 import { Separator } from "@/components/Shadcn-ui/separator";
 import { generateImageUrl } from "@/utils/imageHelpers";
 import { ITechTypes } from "@/config/technologies";

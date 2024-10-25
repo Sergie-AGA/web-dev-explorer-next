@@ -27,7 +27,7 @@ export const technologies = {
       link: "https://react-photo-album.com/",
     },
     {
-      title: "ShadcnUI",
+      title: "Shadcn UI",
       description:
         "A collection of re-usable components that you can copy and paste into your apps, built on top of Radix UI and Tailwind CSS",
       link: "https://ui.shadcn.com/",

@@ -8,7 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ItemAccordion";
-import CodeBlock from "@/components/Global/CodeBlock/CodeBlock";
+import CodeBlock from "@/components/CodeBlock/CodeBlock";
 
 export interface ITaskItemProps {
   title: string;

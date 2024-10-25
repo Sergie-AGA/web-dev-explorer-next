@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/utils/utils";
-import { useUIStore } from "@/store/useUIStore";
+import { useUIStore } from "@/features/homepage/store/useUIStore";
 import { IconX } from "@tabler/icons-react";
 
 import TechModal from "@/features/homepage/components/TechModal";

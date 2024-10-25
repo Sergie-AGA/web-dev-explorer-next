@@ -6,7 +6,7 @@ import { Separator } from "@/components/Shadcn-ui/separator";
 import { cn } from "@/utils/utils";
 import { useEffect, useState } from "react";
 import { ITechnology, technologies, ITechTypes } from "@/config/technologies";
-import { useUIStore } from "@/store/useUIStore";
+import { useUIStore } from "@/features/homepage/store/useUIStore";
 
 export default function TechModal() {
   const tabData = [

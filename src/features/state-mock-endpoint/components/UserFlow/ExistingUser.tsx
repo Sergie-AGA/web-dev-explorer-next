@@ -1,6 +1,6 @@
 "use client";
 
-import SearchInput from "@/components/Global/Form/SearchInput";
+import SearchInput from "@/components/Form/SearchInput";
 import { Button } from "@/components/Shadcn-ui/button";
 import { Separator } from "@/components/Shadcn-ui/separator";
 import { useState } from "react";

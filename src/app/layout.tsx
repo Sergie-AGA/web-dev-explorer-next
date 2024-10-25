@@ -1,7 +1,6 @@
 import "../styles/global.css";
-import "../styles/morphing-card.css";
 import { Open_Sans, Source_Code_Pro } from "next/font/google";
-import { ThemeProvider } from "@/components/Global/Themes/ThemeProvider";
+import ThemeHandler from "@/themes/ThemeHandler";
 import GlobalModal from "@/components/Modals/GlobalModal/GlobalModal";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
@@ -23,15 +22,10 @@ export default function RootLayout({
       className={`${openSans.className} ${sourceCodePro.className}`}
     >
       <body className="min-h-screen">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeHandler>
           {children}
           <GlobalModal />
-        </ThemeProvider>
+        </ThemeHandler>
       </body>
     </html>
   );

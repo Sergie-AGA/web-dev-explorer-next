@@ -1,7 +1,7 @@
 import React from "react";
 
 import { IProduct } from "../data/products";
-import IconHandler from "@/components/Global/IconHandler/IconHandler";
+import IconHandler from "@/components/IconHandler/IconHandler";
 import Link from "next/link";
 import ProductPrice from "./ProductPrice";
 import ProductImages from "./ProductImages";

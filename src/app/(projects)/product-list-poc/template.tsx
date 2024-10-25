@@ -1,6 +1,6 @@
 "use client";
 
-import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader";
+import GlobalHeader from "@/components/GlobalHeader/GlobalHeader";
 import ProductCart from "@/features/product-list/components/ProductCart";
 import { cn } from "@/utils/utils";
 import { usePathname } from "next/navigation";

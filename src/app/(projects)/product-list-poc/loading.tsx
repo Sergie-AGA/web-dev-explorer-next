@@ -1,4 +1,4 @@
-import SimpleCardLoader from "@/components/Global/Loaders/SimpleCardLoader";
+import SimpleCardLoader from "@/components/Loaders/SimpleCardLoader";
 
 export default function SkeletonLoading() {
   const loaders = Array.from({ length: 21 });

@@ -10,7 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/Shadcn-ui/dialog";
 import { IconBrandGithubFilled } from "@tabler/icons-react";
-import { useUIStore } from "@/store/useUIStore";
+import { useUIStore } from "@/features/homepage/store/useUIStore";
 import { Separator } from "@/components/Shadcn-ui/separator";
 import { ITechTypes } from "@/config/technologies";
 

@@ -3,6 +3,7 @@ import { IProject } from "@/config/projects";
 import { Button } from "@/components/Shadcn-ui/button";
 import { generateImageUrl } from "@/utils/imageHelpers";
 import { forwardRef } from "react";
+import "./morphing-card.css";
 
 interface CardProps {
   data: IProject;

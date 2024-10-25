@@ -1,6 +1,6 @@
 "use client";
 
-import IconButton from "@/components/Global/Buttons/IconButton";
+import IconButton from "@/components/Buttons/IconButton";
 import LocalModal from "@/components/Modals/LocalModal/LocalModal";
 import { IconSettings } from "@tabler/icons-react";
 import { useState } from "react";

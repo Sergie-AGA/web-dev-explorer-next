@@ -1,4 +1,4 @@
-import IconHandler from "@/components/Global/IconHandler/IconHandler";
+import IconHandler from "@/components/IconHandler/IconHandler";
 import { MapBadgeToIcon } from "@/components/Cards/MorphingCard/MapBadgeToIcon";
 import { cn } from "@/utils/utils";
 
