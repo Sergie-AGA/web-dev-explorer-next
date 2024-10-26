@@ -25,7 +25,7 @@ For a more in-depth documentation on the different features and elements being u
 - [💻 Application Overview](docs/application-overview.md)
 - [🏠 Homepage](docs/homepage.md)
 - [📦 Product List POC](docs/product-list-poc.md)
-- [🌐 World of CSS](docs/world-of-css.md)
+- [🌐 World of CSS](docs/world-of-css-effects.md)
 - [🗂️ Reusable Backend](docs/reusable-backend.md)
 
 ## Project Overview
@@ -43,7 +43,7 @@ Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zus
 
 ### Project 3 - Reusable Backend
 
-This project aggregates links to a few different GitHub repositories which contain a reusable modular backend projects in diverse programming languages and can be used as templates for new applications. It currently includes projects in Node JS, PHP and C#.
+This project aggregates links to a few different GitHub repositories which contain a reusable modular backend projects in diverse programming languages and can be used as templates for new applications. It currently includes a project in Node JS, with PHP and C# being under development.
 Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand
 Backend: JavaScript, Node JS, Typescript, Fastify, PostgreSQL, Vitest, Supertest, Prisma, Docker, Zod, PHP, Laravel, C#, .NET, ASP.NET,
 

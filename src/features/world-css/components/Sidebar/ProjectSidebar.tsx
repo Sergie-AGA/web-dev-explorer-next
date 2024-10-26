@@ -17,14 +17,12 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(true);
 
   const {
-    activeSection,
     changeActiveSection,
     activeSidebar,
     changeActiveSidebar,
     activeComponent,
     changeActiveComponent,
   } = useSidebarStore((state) => ({
-    activeSection: state.activeSection,
     changeActiveSection: state.changeActiveSection,
     activeSidebar: state.activeSidebar,
     changeActiveSidebar: state.changeActiveSidebar,

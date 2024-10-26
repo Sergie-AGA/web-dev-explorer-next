@@ -2,6 +2,8 @@
 
 This is a Next JS application which contains mini-projects that explore different aspects of Web Development. It is structured in a way that it groups each project as a unique feature with its own set of elements, while also allowing reusable global elements.
 
+## Tech Stack
+
 The following tech stack exists across all projects:
 Frontend: React JS, Next JS, Typescript, JavaScript, Tailwind CSS and ShadcnUI
 Backend & Infra: Supabase, Vercel

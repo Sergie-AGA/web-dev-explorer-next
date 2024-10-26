@@ -93,9 +93,9 @@ export default function AboutModal({ children }: IModalData) {
               </DialogTrigger>
               <DialogTrigger
                 asChild
-                onClick={() => handleTech("AWS S3", "backend")}
+                onClick={() => handleTech("Vercel", "backend")}
               >
-                <TechBadge title={"AWS S3"} />
+                <TechBadge title={"Vercel"} />
               </DialogTrigger>
             </p>
           </div>
