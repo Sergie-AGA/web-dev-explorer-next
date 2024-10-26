@@ -1,6 +1,6 @@
 import SimpleBadge from "@/components/Badges/SimpleBadge";
 
-import { IProduct } from "../data/products";
+import { IProduct } from "../config/products";
 import ProductPriceClientLayer from "./ProductPriceClientLayer";
 import { britishCurrencyFormatter } from "../utils/currencyFormatter";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { IProduct } from "../data/products";
+import { IProduct } from "../config/products";
 import { useCartStore } from "../store/useCartStore";
 import { useEffect, useState } from "react";
 import { cn } from "@/utils/utils";

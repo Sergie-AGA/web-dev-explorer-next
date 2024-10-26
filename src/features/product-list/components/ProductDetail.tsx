@@ -1,12 +1,12 @@
 import React from "react";
 
-import { IProduct } from "../data/products";
+import { IProduct } from "../config/products";
 import IconHandler from "@/components/IconHandler/IconHandler";
 import Link from "next/link";
 import ProductPrice from "./ProductPrice";
 import ProductImages from "./ProductImages";
 import { britishCurrencyFormatter } from "../utils/currencyFormatter";
-import { imagePlaceholder } from "../data/products";
+import { imagePlaceholder } from "../config/products";
 
 interface IProductModal {
   product: IProduct;

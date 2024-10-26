@@ -3,13 +3,13 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/components/Shadcn-ui/card";
-import { IProduct } from "../data/products";
+} from "@/components/ShadcnUi/Card";
+import { IProduct } from "../config/products";
 import Image from "next/image";
 import { calculatePrice } from "../utils/calculatePrice";
 import Link from "next/link";
 import { britishCurrencyFormatter } from "../utils/currencyFormatter";
-import { imagePlaceholder } from "../data/products";
+import { imagePlaceholder } from "../config/products";
 import { cn } from "@/utils/utils";
 
 interface IProductCard {

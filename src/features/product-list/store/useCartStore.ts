@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { IProduct } from "../data/products";
+import { IProduct } from "../config/products";
 
 interface ICartState {
   total: ITotal;
