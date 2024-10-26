@@ -66,7 +66,7 @@ See the Tailwind section below for more information.
 
 ### Tests
 
-Any tests pertaining to global elements will be here. This application uses Jest and React Testing Library for Unit Testing and a Cypress for Integration and E2E tests.
+Any tests pertaining to global elements will be here. This application uses Jest for Unit Testing and Cypress for E2E tests.
 
 ### Themes
 

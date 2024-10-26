@@ -21,4 +21,6 @@ Please refer to the specific backend project to see more about how they work.
 
 ## Tests
 
-TBA
+### Unit
+
+A simple Jest test checks whether the components with the `render` prop appear
