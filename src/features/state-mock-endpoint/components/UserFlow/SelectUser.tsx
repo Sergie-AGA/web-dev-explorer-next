@@ -1,4 +1,4 @@
-import { Button } from "@/components/Shadcn-ui/button";
+import { Button } from "@/components/ShadcnUi/Button";
 import { IconUserCheck, IconUserPlus } from "@tabler/icons-react";
 
 interface ISelectUserProps {

@@ -2,18 +2,18 @@
 
 import TechBadge from "@/features/homepage/components/TechBadge";
 import SimpleTabs from "@/components/Tabs/SimpleTabs";
-import { Button } from "@/components/Shadcn-ui/button";
+import { Button } from "@/components/ShadcnUi/Button";
 import {
   Dialog,
   DialogContent,
   DialogFooter,
   DialogHeader,
   DialogTrigger,
-} from "@/components/Shadcn-ui/dialog";
+} from "@/components/ShadcnUi/Dialog";
 import { IProject } from "@/config/projects";
 import Link from "next/link";
 import { useUIStore } from "@/features/homepage/store/useUIStore";
-import { Separator } from "@/components/Shadcn-ui/separator";
+import { Separator } from "@/components/ShadcnUi/Separator";
 import { generateImageUrl } from "@/utils/imageHelpers";
 import { ITechTypes } from "@/config/technologies";
 

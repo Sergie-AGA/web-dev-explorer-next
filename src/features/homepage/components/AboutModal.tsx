@@ -1,17 +1,17 @@
 "use client";
 
 import TechBadge from "@/features/homepage/components/TechBadge";
-import { Button } from "@/components/Shadcn-ui/button";
+import { Button } from "@/components/ShadcnUi/Button";
 import {
   Dialog,
   DialogContent,
   DialogFooter,
   DialogHeader,
   DialogTrigger,
-} from "@/components/Shadcn-ui/dialog";
+} from "@/components/ShadcnUi/Dialog";
 import { IconBrandGithubFilled } from "@tabler/icons-react";
 import { useUIStore } from "@/features/homepage/store/useUIStore";
-import { Separator } from "@/components/Shadcn-ui/separator";
+import { Separator } from "@/components/ShadcnUi/Separator";
 import { ITechTypes } from "@/config/technologies";
 
 interface IModalData {

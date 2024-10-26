@@ -1,4 +1,4 @@
-import { Button } from "@/components/Shadcn-ui/button";
+import { Button } from "@/components/ShadcnUi/Button";
 import { cn } from "@/utils/utils";
 import {
   IconBrandCSharp,

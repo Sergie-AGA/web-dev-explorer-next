@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react"; // Import FormEvent type
-import { Separator } from "@/components/Shadcn-ui/separator";
+import { Separator } from "@/components/ShadcnUi/Separator";
 import { useURLState } from "@/hooks/useURLState";
 import { cn } from "@/utils/utils";
 import {
@@ -11,7 +11,7 @@ import {
   IconX,
 } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/Shadcn-ui/button";
+import { Button } from "@/components/ShadcnUi/Button";
 import { technologies } from "@/config/technologies";
 import TechBadge from "./TechBadge";
 import SearchInput from "@/components/Form/SearchInput";

@@ -1,6 +1,6 @@
 import SimpleBadge from "@/components/Badges/SimpleBadge";
 import { IProject } from "@/config/projects";
-import { Button } from "@/components/Shadcn-ui/button";
+import { Button } from "@/components/ShadcnUi/Button";
 import { generateImageUrl } from "@/utils/imageHelpers";
 import { forwardRef } from "react";
 import "./morphing-card.css";

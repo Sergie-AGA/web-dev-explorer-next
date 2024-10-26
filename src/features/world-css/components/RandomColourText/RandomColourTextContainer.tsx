@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "@/components/Shadcn-ui/input";
+import { Input } from "@/components/ShadcnUi/Input";
 import { Label } from "@radix-ui/react-label";
 import RandomColourText from "./RandomColourText";
 

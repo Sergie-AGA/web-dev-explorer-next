@@ -2,7 +2,7 @@
 
 import TechBadge from "@/features/homepage/components/TechBadge";
 import SimpleTabs from "@/components/Tabs/SimpleTabs";
-import { Separator } from "@/components/Shadcn-ui/separator";
+import { Separator } from "@/components/ShadcnUi/Separator";
 import { cn } from "@/utils/utils";
 import { useEffect, useState } from "react";
 import { ITechnology, technologies, ITechTypes } from "@/config/technologies";
