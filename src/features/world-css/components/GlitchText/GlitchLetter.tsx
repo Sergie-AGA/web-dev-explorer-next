@@ -21,6 +21,7 @@ export default function GlitchLetter({
     const randomTime = Math.floor(Math.random() * 2000) + 1000;
     setTimeout(removeGlitch, randomTime);
   };
+
   const removeGlitch = () => {
     const element = document.querySelector(`#${uniqueID}`);
     if (element) {
@@ -35,7 +36,11 @@ export default function GlitchLetter({
   }
 
   return (
-    <div id={uniqueID} className="glitch-container min-w-[10px]">
+    <div
+      id={uniqueID}
+      data-testid={`glitch-letter-${uniqueID}`}
+      className="glitch-container min-w-[10px]"
+    >
       <span
         aria-hidden="true"
         className={cn(className, "font-mono let1 shadow-letter")}

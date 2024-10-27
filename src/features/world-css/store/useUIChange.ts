@@ -10,7 +10,7 @@ export type TComponentType =
   | "bIcons"
   | "bSquares";
 
-interface ISidebarState {
+export interface ISidebarState {
   activeSidebar: TSectionType;
   changeActiveSidebar: (section: TSectionType) => void;
   activeSection: TSectionType;

@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/utils/utils";
-import { TComponentType, TSectionType } from "../../store/useUIChange";
 
 interface IModalSidebarItemProps {
   children: React.ReactNode;

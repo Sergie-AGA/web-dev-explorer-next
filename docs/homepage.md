@@ -4,7 +4,7 @@ The Homepage displays all active projects in the codebase, filtering options and
 
 ## Tech Stack
 
-Frontend: React JS, Next JS, Typescript, Tailwind CSS and ShadcnUI
+Frontend: React JS, Next JS, Typescript, Tailwind CSS and ShadcnUI, Jest
 
 ## Components
 

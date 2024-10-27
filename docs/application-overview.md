@@ -5,7 +5,7 @@ This is a Next JS application which contains mini-projects that explore differen
 ## Tech Stack
 
 The following tech stack exists across all projects:
-Frontend: React JS, Next JS, Typescript, JavaScript, Tailwind CSS and ShadcnUI
+Frontend: React JS, Next JS, Typescript, JavaScript, Tailwind CSS and ShadcnUI, Jest
 Backend & Infra: Supabase, Vercel
 Libraries which have small impact may not be listed here or in the project data listing.
 
@@ -66,7 +66,8 @@ See the Tailwind section below for more information.
 
 ### Tests
 
-Any tests pertaining to global elements will be here. This application uses Jest for Unit Testing and Cypress for E2E tests.
+Any tests pertaining to global elements will be here. This application uses Jest mainly for Unit Testing but it is also set up to run for Integration and E2E. There are 2 separate config files and NPM scripts for each case
+Cypress has been installed for E2E tests but not yet implemented.
 
 ### Themes
 
@@ -78,6 +79,17 @@ Reusable utility code is placed here:
 
 - imageHelper: This function generates an image url based on whether it's located in the project or externally
 - utils: This includes the cn function, which uses a popular patter that combines clsx and Tailwind Merge to create an easy-to-use function when you need to apply tailwind class dynamically and override classes. This pattern comes from Shadcn UI.
+
+## Testing Approach
+
+We believe that test quality should be prioritised over quantity. Not every single component will be tested, but rather only:
+
+- Pure Functions
+- Reusable components (excluding Shadcn UI)
+- Core interactivity elements and business logic
+
+Coverage target with Jest is 80%.
+E2E test to be implemented...
 
 ## UI Setup
 

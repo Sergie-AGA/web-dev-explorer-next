@@ -4,7 +4,7 @@ A place where diverse CSS tricks and techniques are used to achieve unique visua
 
 ## Tech Stack
 
-Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand
+Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, Jest
 
 ## Components
 
@@ -34,4 +34,9 @@ A Zustand store is used to determine which components render. The property `acti
 
 ## Tests
 
-TBA
+There are tests for the following elements
+
+- Any of the listed effects
+- CssPhoneContainer, as it involves more interactive points
+- ProjectSidebar, since it involves stateful interactivity
+- useUIChange hook, as it uses core business logic

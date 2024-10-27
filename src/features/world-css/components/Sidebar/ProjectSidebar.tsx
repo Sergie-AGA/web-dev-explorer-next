@@ -53,16 +53,15 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
           />
         </Link>
         <IconX
+          data-testid="iconX"
           size="22"
           onClick={handleSidebarChange}
           className={cn(
-            "lg:hidden cursor-pointer z-40 hover:bg-cyan-800 rounded-full",
-            {
-              "rotate-[180deg]": isMobileSidebarOpen,
-            }
+            "lg:hidden cursor-pointer z-40 hover:bg-cyan-800 rounded-full"
           )}
         />
         <IconMenu2
+          data-testid="iconMenu"
           size="30"
           onClick={handleSidebarChange}
           className={cn(

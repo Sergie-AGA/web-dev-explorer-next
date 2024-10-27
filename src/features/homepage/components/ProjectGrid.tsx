@@ -167,7 +167,9 @@ export default function ProjectGrid() {
               <ProjectModal key={project.path} project={project}>
                 <MorphingCard
                   data={project}
-                  ref={(el) => (modalRefs.current[index] = el)}
+                  ref={(el) => {
+                    modalRefs.current[index] = el;
+                  }}
                 />
               </ProjectModal>
             );

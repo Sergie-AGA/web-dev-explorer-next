@@ -43,7 +43,7 @@ export default function ProductCard({
           <Image
             src={`${product.images?.[0] || imagePlaceholder}`}
             alt="product image"
-            className="w-[100%] h-[100%] object-cover  hover:scale-110 duration-[0.5s]"
+            className="w-[100%] h-[100%] object-cover hover:scale-110 duration-[0.5s]"
             width={800}
             height={800}
           />

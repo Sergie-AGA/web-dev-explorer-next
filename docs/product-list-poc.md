@@ -4,7 +4,7 @@ This project experiments a proof of concept of a store, making use of Supabase t
 
 ## Tech Stack
 
-Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, yet-another-react-lightbox, react-photo-album
+Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, yet-another-react-lightbox, react-photo-album, Jest
 Backend: Supabase
 
 ## Business Rules / User Journey
@@ -12,11 +12,11 @@ Backend: Supabase
 Asides from identification elements and other basic functional attributes, a product should contain:
 
 - A base price which is the price it was bought
-- A price level, which reduces the price the product will be sold
+- A price level, which reduces the price the product will be sold by 20%, 40% and 55%
 - An optional discount, which is used instead of the price level for specific discounts
 - An option to pick up the item at my home for a further 20% discount
 
-As a User, I can
+As a User, I can:
 
 - Add a product to the cart choosing if I want to pick up the product myself (if the option exists) for a further 20% discount or if I want it handed to me
 - Remove the product from the cart

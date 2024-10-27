@@ -4,7 +4,7 @@ This project aggregates links to a few different GitHub repositories which conta
 
 ## Tech Stack
 
-Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand
+Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, Jest
 Backend: JavaScript, Node JS, Typescript, Fastify, PostgreSQL, Vitest, Supertest, Prisma, Docker, Zod, PHP, Laravel, C#, .NET, ASP.NET,
 
 ## Components
@@ -20,6 +20,8 @@ A simple fetching function which gets project data from Supabase is available he
 Please refer to the specific backend project to see more about how they work.
 
 ## Tests
+
+This feature uses a simple unit test to check if only the correct elements render
 
 ### Unit
 

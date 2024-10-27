@@ -9,7 +9,7 @@
     "lint": "next lint",
     "test": "jest --config ./jest.config.ts",
     "test:watch": "jest --watchAll",
-    "test:async": "jest --config ./jest-async.config.ts"
+    "test:ie2e": "jest --config ./jest.integration-e2e.config.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
