@@ -16,7 +16,7 @@ export default function SearchInput({
       <input
         type="text"
         placeholder={placeholder}
-        className="p-2 pr-8 rounded w-[100%]"
+        className="p-2 pr-8 rounded w-[100%] bg-input"
         value={searchValue}
         onChange={(e) => handleSearch(e.target.value)}
       />
