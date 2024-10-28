@@ -6,7 +6,7 @@ import {
   waitFor,
 } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import TechModal from "@/features/homepage/components/TechModal";
+import TechModal from "@/features/homepage/components/TechModal/TechModal";
 import { useUIStore } from "@/features/homepage/store/useUIStore";
 
 jest.mock("@/features/homepage/store/useUIStore", () => ({

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import NeonText from "../../components/NeonText/NeonText";
+import NeonText from "./NeonText";
 import "@testing-library/jest-dom";
 
 describe("NeonText", () => {

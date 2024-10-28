@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --config ./jest.config.ts",
+    "test:log": "jest --config ./jest.config.ts > test.log 2>&1",
     "test:watch": "jest --watchAll",
     "test:ie2e": "jest --config ./jest.integration-e2e.config.ts"
   },

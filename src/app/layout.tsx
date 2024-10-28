@@ -9,6 +9,9 @@ const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 export const metadata = {
   title: "Web Dev Explorer",
   description: "Exploring features of Web Development",
+  icons: {
+    icon: "/Logo.svg",
+  },
 };
 
 export default function RootLayout({

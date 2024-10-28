@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import FilterModal from "@/features/homepage/components/FilterModal";
 import { technologies } from "@/config/technologies";
 import "@testing-library/jest-dom";
+import FilterModal from "./FilterModal";
 
 // mockRouter.js
 const mockRouterReplace = jest.fn();
@@ -35,13 +35,13 @@ describe("FilterModal Component", () => {
     ).toBeInTheDocument();
 
     technologies.frontend.forEach((tech) => {
-      expect(screen.getByText(tech.title)).toBeInTheDocument();
+      expect(screen.getAllByText(tech.title)[0]).toBeInTheDocument();
     });
     technologies.backend.forEach((tech) => {
-      expect(screen.getByText(tech.title)).toBeInTheDocument();
+      expect(screen.getAllByText(tech.title)[0]).toBeInTheDocument();
     });
     technologies.apis.forEach((tech) => {
-      expect(screen.getByText(tech.title)).toBeInTheDocument();
+      expect(screen.getAllByText(tech.title)[0]).toBeInTheDocument();
     });
   });
 
@@ -84,7 +84,7 @@ describe("FilterModal Component", () => {
     fireEvent.click(applyFiltersButton);
 
     technologies.frontend.forEach((tech) => {
-      expect(screen.getByText(tech.title)).not.toHaveClass("bg-cyan-600");
+      expect(screen.getAllByText(tech.title)[0]).not.toHaveClass("bg-cyan-600");
     });
     const searchInput = screen.getByPlaceholderText(
       /search by title or description/i

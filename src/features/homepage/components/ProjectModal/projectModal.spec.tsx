@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import ProjectModal from "@/features/homepage/components/ProjectModal";
+import ProjectModal from "@/features/homepage/components/ProjectModal/ProjectModal";
 import { useUIStore } from "@/features/homepage/store/useUIStore";
 import { IProject } from "@/config/projects";
 

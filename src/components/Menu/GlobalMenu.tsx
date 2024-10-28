@@ -10,7 +10,7 @@ import MenuItem from "./MenuItem";
 import { IconInfoSquare } from "@tabler/icons-react";
 import { useState } from "react";
 import { cn } from "@/utils/utils";
-import AboutModal from "../../features/homepage/components/AboutModal";
+import AboutModal from "../../features/homepage/components/AboutModal/AboutModal";
 import { modalType, useUIStore } from "@/features/homepage/store/useUIStore";
 
 export default function GlobalMenu() {

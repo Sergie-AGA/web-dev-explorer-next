@@ -1,5 +1,5 @@
 import { render, screen, act } from "@testing-library/react";
-import SquareBackgroundGeneration from "../../components/SquareBackgroundGeneration/SquareBackgroundGeneration";
+import SquareBackgroundGeneration from "./SquareBackgroundGeneration";
 import "@testing-library/jest-dom";
 
 jest.mock("uuid", () => ({ v4: () => `test-id-${Math.random()}` }));

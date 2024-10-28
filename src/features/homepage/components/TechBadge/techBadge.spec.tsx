@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import TechBadge from "../../components/TechBadge";
+import TechBadge from "./TechBadge";
 
 describe("TechBadge Component", () => {
   const mockOnClick = jest.fn();

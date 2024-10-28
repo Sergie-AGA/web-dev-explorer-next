@@ -1,5 +1,5 @@
 import { render, screen, act } from "@testing-library/react";
-import SwitchingText from "../../components/SwitchingText/SwitchingText";
+import SwitchingText from "./SwitchingText";
 import "@testing-library/jest-dom";
 
 describe("SwitchingText", () => {

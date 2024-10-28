@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import CssPhoneContainer from "../../components/CssPhone/CssPhoneContainer";
+import CssPhoneContainer from "./CssPhoneContainer";
 import "@testing-library/jest-dom";
 
 describe("CssPhoneContainer", () => {

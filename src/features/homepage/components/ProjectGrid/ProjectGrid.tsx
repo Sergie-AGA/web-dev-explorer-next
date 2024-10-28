@@ -1,10 +1,10 @@
 "use client";
 
 import MorphingCard from "@/components/Cards/MorphingCard/MorphingCard";
-import ProjectModal from "@/features/homepage/components/ProjectModal";
+import ProjectModal from "@/features/homepage/components/ProjectModal/ProjectModal";
 import { IProject, projects } from "@/config/projects";
 import { useURLState, generateQueryString } from "@/hooks/useURLState";
-import TechBadge from "./TechBadge";
+import TechBadge from "../TechBadge/TechBadge";
 import { useRouter } from "next/navigation";
 import { useKeyPress } from "@/hooks/useKeyPress";
 import { useRef } from "react";

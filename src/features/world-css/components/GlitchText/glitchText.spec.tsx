@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import GlitchText from "../../components/GlitchText/GlitchText";
+import GlitchText from "./GlitchText";
 import "@testing-library/jest-dom";
 
 describe("GlitchText", () => {

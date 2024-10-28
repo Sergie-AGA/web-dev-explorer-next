@@ -66,7 +66,7 @@ See the Tailwind section below for more information.
 
 ### Tests
 
-Any tests pertaining to global elements will be here. This application uses Jest mainly for Unit Testing but it is also set up to run for Integration and E2E. There are 2 separate config files and NPM scripts for each case
+This application uses Jest mainly for Unit Testing but it is also set up to run for Integration and E2E. There are 2 separate config files and NPM scripts for each case
 Cypress has been installed for E2E tests but not yet implemented.
 
 ### Themes
@@ -88,6 +88,8 @@ We believe that test quality should be prioritised over quantity. Not every sing
 - Reusable components (excluding Shadcn UI)
 - Core interactivity elements
 - Business logic
+
+Unit tests will be placed alongside the unit they are testing. General tests folder will be used for integration and E2E tests.
 
 Additional components might be covered for practice purposes.
 
@@ -120,6 +122,7 @@ Accessibility is achieved in this project in a few different ways:
 ## Potential Improvements
 
 - This project could benefit from having Storybook JS to improve how reusable components can be handled.
+- IconHandler would benefit from a component map instead of dynamic import, as it causes a rerender very often
 - Further usage of ES Lint could also benefit a more robust set of rules to be used here.
 - Documenting some components and features further with easy to use examples can make it quicker for people to reuse some components
 - Some components could be developed with better reusability in mind

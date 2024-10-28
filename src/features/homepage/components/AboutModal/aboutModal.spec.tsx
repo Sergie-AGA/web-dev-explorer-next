@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import AboutModal from "@/features/homepage/components/AboutModal";
+import AboutModal from "@/features/homepage/components/AboutModal/AboutModal";
 import { useUIStore } from "@/features/homepage/store/useUIStore";
 import "@testing-library/jest-dom";
 

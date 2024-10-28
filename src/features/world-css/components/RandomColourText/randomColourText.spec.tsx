@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import RandomColourText from "../../components/RandomColourText/RandomColourText";
+import RandomColourText from "./RandomColourText";
 import "@testing-library/jest-dom";
 
 describe("RandomColourText", () => {

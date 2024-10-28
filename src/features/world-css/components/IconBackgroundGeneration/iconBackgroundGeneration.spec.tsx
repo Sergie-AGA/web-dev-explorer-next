@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, act } from "@testing-library/react";
-import IconBackgroundGeneration from "../../components/IconBackgroundGeneration/IconBackgroundGeneration";
+import IconBackgroundGeneration from "./IconBackgroundGeneration";
 import "@testing-library/jest-dom";
 
 jest.mock("uuid", () => ({ v4: () => `test-id-${Math.random()}` }));

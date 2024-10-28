@@ -1,6 +1,6 @@
 "use client";
 
-import TechBadge from "@/features/homepage/components/TechBadge";
+import TechBadge from "@/features/homepage/components/TechBadge/TechBadge";
 import SimpleTabs from "@/components/Tabs/SimpleTabs";
 import { Separator } from "@/components/ShadcnUi/Separator";
 import { cn } from "@/utils/utils";

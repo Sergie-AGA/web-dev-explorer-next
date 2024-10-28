@@ -1,6 +1,6 @@
 import { renderHook, act } from "@testing-library/react";
 import { ITechTypes } from "@/config/technologies";
-import { useUIStore } from "../../store/useUIStore";
+import { useUIStore } from "./useUIStore";
 
 describe("useUIStore", () => {
   it("should initialize with default values", () => {

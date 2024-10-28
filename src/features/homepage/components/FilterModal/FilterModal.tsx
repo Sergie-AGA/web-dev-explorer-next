@@ -8,8 +8,8 @@ import { IconFilter, IconFilterOff } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ShadcnUi/Button";
 import { technologies } from "@/config/technologies";
-import TechBadge from "./TechBadge";
 import SearchInput from "@/components/Form/SearchInput";
+import TechBadge from "../TechBadge/TechBadge";
 
 interface ITechFilters {
   frontend: string[];

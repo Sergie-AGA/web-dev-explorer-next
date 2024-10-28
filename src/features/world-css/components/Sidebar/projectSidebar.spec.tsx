@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { useSidebarStore } from "../../store/useUIChange";
-import { componentData } from "../../components/componentData";
-import ProjectSidebar from "../../components/Sidebar/ProjectSidebar";
+import { componentData } from "../componentData";
+import ProjectSidebar from "./ProjectSidebar";
 import "@testing-library/jest-dom";
 
 const resetSidebarStore = () => {

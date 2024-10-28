@@ -1,4 +1,4 @@
-import { useSidebarStore } from "../../store/useUIChange";
+import { useSidebarStore } from "./useUIChange";
 
 describe("useSidebarStore", () => {
   afterEach(() => {

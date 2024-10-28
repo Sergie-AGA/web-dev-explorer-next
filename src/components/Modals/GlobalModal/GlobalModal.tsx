@@ -3,8 +3,8 @@ import { cn } from "@/utils/utils";
 import { useUIStore } from "@/features/homepage/store/useUIStore";
 import { IconX } from "@tabler/icons-react";
 
-import TechModal from "@/features/homepage/components/TechModal";
-import FilterModal from "@/features/homepage/components/FilterModal";
+import TechModal from "@/features/homepage/components/TechModal/TechModal";
+import FilterModal from "@/features/homepage/components/FilterModal/FilterModal";
 import { Suspense } from "react";
 
 interface IGlobalModal {

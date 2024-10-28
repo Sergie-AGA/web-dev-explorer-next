@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, act } from "@testing-library/react";
-import MovingText from "../../components/MovingText/MovingText";
+import MovingText from "./MovingText";
 import "@testing-library/jest-dom";
 
 describe("MovingText", () => {

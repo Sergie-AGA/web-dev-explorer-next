@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import CssPhone from "../../components/CssPhone/CssPhone";
+import CssPhone from "./CssPhone";
 import "@testing-library/jest-dom";
 
 describe("CssPhone", () => {

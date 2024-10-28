@@ -5,7 +5,7 @@ import {
   act,
   waitFor,
 } from "@testing-library/react";
-import ProjectGrid from "@/features/homepage/components/ProjectGrid";
+import ProjectGrid from "@/features/homepage/components/ProjectGrid/ProjectGrid";
 import { projects } from "@/config/projects";
 import "@testing-library/jest-dom";
 import { useURLState } from "@/hooks/useURLState";
