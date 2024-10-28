@@ -1,15 +1,10 @@
 "use client";
 
-import { FormEvent, useState } from "react"; // Import FormEvent type
+import { FormEvent, useState } from "react";
 import { Separator } from "@/components/ShadcnUi/Separator";
 import { useURLState } from "@/hooks/useURLState";
 import { cn } from "@/utils/utils";
-import {
-  IconFilter,
-  IconFilterOff,
-  IconSearch,
-  IconX,
-} from "@tabler/icons-react";
+import { IconFilter, IconFilterOff } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ShadcnUi/Button";
 import { technologies } from "@/config/technologies";

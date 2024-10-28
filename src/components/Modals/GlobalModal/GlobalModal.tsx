@@ -37,7 +37,7 @@ export default function GlobalModal({ hasOverlay = true }: IGlobalModal) {
       {isOpen && (
         <div
           onClick={handleClick}
-          className={cn("fixed inset-0 z-[1000]", {
+          className={cn("fixed inset-0 z-[1000] bg-overlay", {
             "bg-transparent pointer-events-none": !hasOverlay,
           })}
         >

@@ -6,7 +6,7 @@ import {
   Dialog,
   DialogContent,
   DialogFooter,
-  DialogHeader,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ShadcnUi/Dialog";
 import { IconBrandGithubFilled } from "@tabler/icons-react";
@@ -39,7 +39,9 @@ export default function AboutModal({ children }: IModalData) {
       <DialogContent className="w-[90vw] md:w-[80vw] max-w-[800px] flex flex-col">
         <div>
           <div className="flex flex-col space-y-1.5 text-center sm:text-left mb-4">
-            <h3 className="text-lg font-semibold leading-none">About</h3>
+            <DialogTitle className="text-lg font-semibold leading-none text-center sm:text-left mb-4">
+              About
+            </DialogTitle>
           </div>
           <Separator />
         </div>

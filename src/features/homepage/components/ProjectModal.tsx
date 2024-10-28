@@ -7,7 +7,6 @@ import {
   Dialog,
   DialogContent,
   DialogFooter,
-  DialogHeader,
   DialogTrigger,
 } from "@/components/ShadcnUi/Dialog";
 import { IProject } from "@/config/projects";
@@ -39,7 +38,7 @@ export default function ProjectModal({ project, children }: IModalData) {
       value: "backend",
     },
     {
-      title: "API's",
+      title: "APIs",
       value: "apis",
     },
   ];

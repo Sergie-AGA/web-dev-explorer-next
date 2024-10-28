@@ -10,7 +10,7 @@ export function useURLState(options?: IOptions) {
   const searchParams = useSearchParams();
 
   if (!searchParams.toString()) {
-    return;
+    return {};
   }
   const query = Object.fromEntries(
     searchParams

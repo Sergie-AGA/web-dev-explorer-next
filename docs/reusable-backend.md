@@ -22,7 +22,3 @@ Please refer to the specific backend project to see more about how they work.
 ## Tests
 
 This feature uses a simple unit test to check if only the correct elements render
-
-### Unit
-
-A simple Jest test checks whether the components with the `render` prop appear

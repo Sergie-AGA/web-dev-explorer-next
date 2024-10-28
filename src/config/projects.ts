@@ -82,7 +82,7 @@ export const projects: IProject[] = [
       "ASP.NET",
     ],
     apis: [] as string[],
-    type: "exploration",
+    type: "tool",
     path: "/reusable-backend",
     showProject: true,
     showLink: true,

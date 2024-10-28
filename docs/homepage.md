@@ -16,4 +16,7 @@ The store called `useUIStore` handles the displaying the modals for filtering an
 
 ## Tests
 
-TBA
+There are tests for the following elements
+
+- useUIStore, which handles core business logic for displaying elements ons creen
+- Basic rendering and interactivity within components

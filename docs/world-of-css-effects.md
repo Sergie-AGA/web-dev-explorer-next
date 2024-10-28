@@ -39,4 +39,4 @@ There are tests for the following elements
 - Any of the listed effects
 - CssPhoneContainer, as it involves more interactive points
 - ProjectSidebar, since it involves stateful interactivity
-- useUIChange hook, as it uses core business logic
+- useUIChange store, as it uses core business logic

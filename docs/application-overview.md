@@ -82,13 +82,15 @@ Reusable utility code is placed here:
 
 ## Testing Approach
 
-We believe that test quality should be prioritised over quantity. Not every single component will be tested, but rather only:
+We believe that test quality should be prioritised over quantity. Not every single component will be tested, but rather these will be prioritised:
 
 - Pure Functions
 - Reusable components (excluding Shadcn UI)
-- Core interactivity elements and business logic
+- Core interactivity elements
+- Business logic
 
-Coverage target with Jest is 80%.
+Additional components might be covered for practice purposes.
+
 E2E test to be implemented...
 
 ## UI Setup
@@ -122,5 +124,5 @@ Accessibility is achieved in this project in a few different ways:
 - Documenting some components and features further with easy to use examples can make it quicker for people to reuse some components
 - Some components could be developed with better reusability in mind
 - The useURLState hook could do with some improvements to make it smoother, more reusable and better documented
-- Testing Coverage can be improved
+- Testing Coverage can be improved if the goal is to test widely, but this is not what this project aims for
 - There are more accessibility measures which can be applied, such as "Skip to main content" links, increased usage of aria attributes and focus management

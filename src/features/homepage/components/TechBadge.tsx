@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { cn } from "@/utils/utils";
 import { IconX } from "@tabler/icons-react";
@@ -12,15 +10,11 @@ interface TechBadgeProps {
   className?: string;
 }
 
-export default function TechBadge({
-  title,
-  onClick,
-  className,
-  removable = false,
-}: TechBadgeProps) {
-  return (
-    <>
-      <div
+const TechBadge = React.forwardRef<HTMLSpanElement, TechBadgeProps>(
+  ({ title, onClick, className, removable = false }, ref) => {
+    return (
+      <span
+        ref={ref}
         className={cn(
           "cursor-pointer py-1 px-2 rounded-md bg-cyan-950 inline-flex items-center gap-2",
           className
@@ -32,10 +26,15 @@ export default function TechBadge({
           <IconX
             size="18"
             onClick={onClick}
+            data-testid="remove-icon"
             className="rounded-[50%] active:scale-90"
           />
         )}
-      </div>
-    </>
-  );
-}
+      </span>
+    );
+  }
+);
+
+TechBadge.displayName = "TechBadge";
+
+export default TechBadge;

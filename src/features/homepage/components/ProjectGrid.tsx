@@ -96,9 +96,9 @@ export default function ProjectGrid() {
 
   return (
     <div>
-      {url && (
+      {Object.keys(url).length > 0 && (
         <div className="flex flex-col gap-2 mb-4">
-          <h2 className="text-lg">Filters Applied:</h2>
+          <h3 className="text-lg">Filters Applied:</h3>
           <div className="flex flex-wrap gap-4">
             {url.text && (
               <div className="flex flex-wrap gap-1 items-center pt-6 relative">
