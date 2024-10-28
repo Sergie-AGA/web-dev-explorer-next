@@ -19,15 +19,20 @@ export default function SearchInput({
         className="p-2 pr-8 rounded w-[100%] bg-input"
         value={searchValue}
         onChange={(e) => handleSearch(e.target.value)}
+        data-testid="search-input"
       />
       {searchValue ? (
         <IconX
           onClick={() => handleSearch("")}
           size="16"
           className="absolute top-[50%] translate-y-[-50%] right-2 cursor-pointer"
+          data-testid="clear-icon"
         />
       ) : (
-        <IconSearch className="absolute top-[50%] translate-y-[-50%] right-2" />
+        <IconSearch
+          className="absolute top-[50%] translate-y-[-50%] right-2"
+          data-testid="search-icon"
+        />
       )}
     </div>
   );

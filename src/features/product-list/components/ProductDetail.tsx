@@ -1,12 +1,12 @@
 import React from "react";
 
 import { IProduct } from "../config/products";
-import IconHandler from "@/components/IconHandler/IconHandler";
 import Link from "next/link";
 import ProductPrice from "./ProductPrice";
 import ProductImages from "./ProductImages";
 import { britishCurrencyFormatter } from "../utils/currencyFormatter";
 import { imagePlaceholder } from "../config/products";
+import { IconArrowLeft, IconInfoCircle } from "@tabler/icons-react";
 
 interface IProductModal {
   product: IProduct;
@@ -41,7 +41,7 @@ export default function ProductDetail({
         href={`/product-list-poc`}
         className="flex items-center mb-4 hover:underline inline-flex"
       >
-        <IconHandler icon="IconArrowLeft" />
+        <IconArrowLeft size={24} color="currentColor" />
         Back to the Product List
       </Link>
 
@@ -103,7 +103,8 @@ export default function ProductDetail({
               ></ProductPrice>
 
               <div className="flex gap-2">
-                <IconHandler icon="IconInfoCircle" />
+                <IconInfoCircle size={24} color="currentColor" />
+
                 <div className="flex-1">
                   <p className="text-xs">
                     Buy multiple items for an additional Bundle Discount - 10%

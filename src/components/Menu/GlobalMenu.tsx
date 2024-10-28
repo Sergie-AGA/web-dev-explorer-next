@@ -15,11 +15,9 @@ import { modalType, useUIStore } from "@/features/homepage/store/useUIStore";
 
 export default function GlobalMenu() {
   const [isOpen, setIsOpen] = useState(false);
-  const { openModal } = useUIStore((state) => {
-    return {
-      openModal: state.openModal,
-    };
-  });
+  const { openModal } = useUIStore((state) => ({
+    openModal: state.openModal,
+  }));
 
   function toggleMenu() {
     setIsOpen((prevIsOpen) => !prevIsOpen);
@@ -30,13 +28,14 @@ export default function GlobalMenu() {
   }
 
   return (
-    <div className={cn(" rounded flex overflow-hidden duration-700 relative")}>
+    <div className={cn("rounded flex overflow-hidden duration-700 relative")}>
       <MenuItem
         handleClick={() => handleModal("filter")}
         text="Filters"
-        className={cn(" duration-500 translate-x-0 ", {
+        className={cn("duration-500 translate-x-0", {
           "relative translate-x-[300%] opacity-0": !isOpen,
         })}
+        data-testid="menu-filters"
       >
         <IconFilter />
       </MenuItem>
@@ -44,9 +43,10 @@ export default function GlobalMenu() {
       <MenuItem
         handleClick={() => handleModal("tech")}
         text="Techs"
-        className={cn(" duration-500 translate-x-0 ", {
+        className={cn("duration-500 translate-x-0", {
           "relative translate-x-[200%] opacity-0": !isOpen,
         })}
+        data-testid="menu-techs"
       >
         <IconBrandJavascript />
       </MenuItem>
@@ -55,9 +55,10 @@ export default function GlobalMenu() {
         <div>
           <MenuItem
             text="About"
-            className={cn(" duration-500 translate-x-0 ", {
+            className={cn("duration-500 translate-x-0", {
               "relative translate-x-[100%] opacity-0": !isOpen,
             })}
+            data-testid="menu-about"
           >
             <IconInfoSquare />
           </MenuItem>
@@ -65,12 +66,17 @@ export default function GlobalMenu() {
       </AboutModal>
 
       <MenuItem
-        handleClick={() => toggleMenu()}
+        handleClick={toggleMenu}
         className={cn("duration-200 delay-0 relative z-20", {
-          "rounded-[50%]  delay-300 duration-300": !isOpen,
+          "rounded-[50%] delay-300 duration-300": !isOpen,
         })}
+        data-testid="menu-toggle"
       >
-        {isOpen ? <IconX /> : <IconMenu2 />}
+        {isOpen ? (
+          <IconX data-testid="icon-close" />
+        ) : (
+          <IconMenu2 data-testid="icon-menu" />
+        )}
       </MenuItem>
     </div>
   );

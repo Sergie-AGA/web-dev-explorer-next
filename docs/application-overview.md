@@ -85,7 +85,7 @@ Reusable utility code is placed here:
 We believe that test quality should be prioritised over quantity. Not every single component will be tested, but rather these will be prioritised:
 
 - Pure Functions
-- Reusable components (excluding Shadcn UI)
+- Reusable components (excluding the ones which originate from libraries, such as Shadcn UI)
 - Core interactivity elements
 - Business logic
 
@@ -121,8 +121,7 @@ Accessibility is achieved in this project in a few different ways:
 
 ## Potential Improvements
 
-- This project could benefit from having Storybook JS to improve how reusable components can be handled.
-- IconHandler would benefit from a component map instead of dynamic import, as it causes a rerender very often
+- This project could benefit from having Storybook JS to improve documentation on how reusable components can be handled.
 - Further usage of ES Lint could also benefit a more robust set of rules to be used here.
 - Documenting some components and features further with easy to use examples can make it quicker for people to reuse some components
 - Some components could be developed with better reusability in mind

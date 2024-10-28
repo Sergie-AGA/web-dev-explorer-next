@@ -1,4 +1,3 @@
-"use client";
 import { cn } from "@/utils/utils";
 import { IconX } from "@tabler/icons-react";
 
@@ -19,7 +18,7 @@ export default function LocalModal({
 }: ILocalModal) {
   function handleClose() {
     if (!persistent) {
-      closeModal;
+      closeModal();
     }
   }
 
@@ -30,10 +29,11 @@ export default function LocalModal({
         className={cn("fixed inset-0 z-[1000] bg-black/80", {
           "bg-transparent pointer-events-none": !hasOverlay,
         })}
+        data-testid="modal-overlay"
       >
         <section
           onClick={(e) => e.stopPropagation()}
-          className="fixed left-[50%] top-[50%] z-[100] grid translate-x-[-50%] translate-y-[-50%] gap-4 border border-neutral-200 bg-card p-6 shadow-lg duration-200  sm:rounded-lg w-[90%] md:w-[80%] max-w-[800px]"
+          className="fixed left-[50%] top-[50%] z-[100] grid translate-x-[-50%] translate-y-[-50%] gap-4 border border-neutral-200 bg-card p-6 shadow-lg duration-200 sm:rounded-lg w-[90%] md:w-[80%] max-w-[800px]"
         >
           {!persistent && (
             <button
