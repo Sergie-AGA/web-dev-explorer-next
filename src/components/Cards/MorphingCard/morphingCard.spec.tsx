@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import MorphingCard from "./MorphingCard";
 import { IProject } from "@/config/projects";
+import "@testing-library/jest-dom";
 
 describe("MorphingCard Component", () => {
   const mockProjectData: IProject = {

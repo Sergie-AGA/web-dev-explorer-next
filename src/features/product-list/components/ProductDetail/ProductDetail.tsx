@@ -1,11 +1,11 @@
 import React from "react";
 
-import { IProduct } from "../config/products";
+import { IProduct } from "../../config/products";
 import Link from "next/link";
-import ProductPrice from "./ProductPrice";
-import ProductImages from "./ProductImages";
-import { britishCurrencyFormatter } from "../utils/currencyFormatter";
-import { imagePlaceholder } from "../config/products";
+import ProductPrice from "../ProductPrice/ProductPrice";
+import ProductImages from "../ProductImages/ProductImages";
+import { britishCurrencyFormatter } from "../../utils/currencyFormatter";
+import { imagePlaceholder } from "../../config/products";
 import { IconArrowLeft, IconInfoCircle } from "@tabler/icons-react";
 
 interface IProductModal {

@@ -16,6 +16,7 @@ export default function SimpleBadge({
 
   return (
     <div
+      data-testid="simple-badge"
       className={cn(
         "flex flex-col text-center items-center bg-cyan-800 w-12 h-12 p-[3px] rounded justify-between",
         className

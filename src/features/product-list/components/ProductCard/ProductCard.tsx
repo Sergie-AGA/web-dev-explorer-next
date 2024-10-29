@@ -4,12 +4,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ShadcnUi/Card";
-import { IProduct } from "../config/products";
+import { IProduct } from "../../config/products";
 import Image from "next/image";
-import { calculatePrice } from "../utils/calculatePrice";
+import { calculatePrice } from "../../utils/calculatePrice";
 import Link from "next/link";
-import { britishCurrencyFormatter } from "../utils/currencyFormatter";
-import { imagePlaceholder } from "../config/products";
+import { britishCurrencyFormatter } from "../../utils/currencyFormatter";
+import { imagePlaceholder } from "../../config/products";
 import { cn } from "@/utils/utils";
 
 interface IProductCard {

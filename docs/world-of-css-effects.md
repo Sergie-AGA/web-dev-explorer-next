@@ -37,6 +37,6 @@ A Zustand store is used to determine which components render. The property `acti
 There are tests for the following elements
 
 - Any of the listed effects
-- CssPhoneContainer, as it involves more interactive points
-- ProjectSidebar, since it involves stateful interactivity
-- useUIChange store, as it uses core business logic
+- `CssPhoneContainer`, as it involves more interactive points
+- `ProjectSidebar`, since it involves stateful interactivity
+- `useUIChange` store, as it uses core business logic

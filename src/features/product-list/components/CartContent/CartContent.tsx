@@ -1,24 +1,26 @@
 "use client";
 
-import { useCartStore } from "../store/useCartStore";
-import ProductCard from "./ProductCard";
+import { useCartStore } from "../../store/useCartStore";
 import { IconShoppingCartOff, IconTrash } from "@tabler/icons-react";
-import { britishCurrencyFormatter } from "../utils/currencyFormatter";
+import { britishCurrencyFormatter } from "../../utils/currencyFormatter";
+import ProductCard from "../ProductCard/ProductCard";
 
 export default function CartContent() {
-  const { cart, removeFromCart, total } = useCartStore((state) => {
-    return {
-      cart: state.cart,
-      removeFromCart: state.removeFromCart,
-      total: state.total,
-    };
-  });
+  const { cart, removeFromCart, total } = useCartStore((state) => ({
+    cart: state.cart,
+    removeFromCart: state.removeFromCart,
+    total: state.total,
+  }));
 
-  if (cart.length == 0) {
+  if (cart.length === 0) {
     return (
       <div className="p-4 flex flex-col gap-4 items-center min-h-[200px] justify-center">
         <p className="text-neutral-500 font-bold">No items in the cart...</p>
-        <IconShoppingCartOff size="60" className="text-neutral-700" />
+        <IconShoppingCartOff
+          size="60"
+          className="text-neutral-700"
+          data-testid="empty-icon"
+        />
       </div>
     );
   }
@@ -34,7 +36,7 @@ export default function CartContent() {
             </span>
           </h2>
           <h3 className="text-sm flex items-center">
-            Total Savings:
+            Total Savings:{" "}
             <span className="text-sm">
               {britishCurrencyFormatter(total.totalSavings)}
             </span>
@@ -50,9 +52,9 @@ export default function CartContent() {
             key={product.product.id}
             className="p-4 flex gap-4 bg-cyan-950 rounded relative"
           >
-            {(product.option == "pickUp" || product.isBundle) && (
+            {(product.option === "pickUp" || product.isBundle) && (
               <div className="absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center gap-2 w-[100%]">
-                {product.option == "pickUp" && (
+                {product.option === "pickUp" && (
                   <small className="px-1 text-xs rounded bg-cyan-800">
                     Pick Up Item
                   </small>
@@ -73,11 +75,10 @@ export default function CartContent() {
                 className="aspect-square mb-2 block"
               />
             </div>
-            <div className="flex-[1_1_60%] ">
+            <div className="flex-[1_1_60%]">
               <h3 className="text-sm font-bold mb-2">
                 {product.product.title}
               </h3>
-
               <span className="block text-3xl text-neutral-200 rounded mb-2">
                 {britishCurrencyFormatter(
                   product.isBundle
@@ -86,7 +87,7 @@ export default function CartContent() {
                 )}
               </span>
               <span className="block text-sm text-neutral-200">
-                Savings:
+                Savings:{" "}
                 {britishCurrencyFormatter(
                   product.isBundle
                     ? product.savings + product.product.basePrice * 0.1
@@ -107,6 +108,7 @@ export default function CartContent() {
             <IconTrash
               onClick={() => removeFromCart(product.product.id)}
               className="cursor-pointer"
+              aria-label="Remove item"
             />
           </div>
         ))}

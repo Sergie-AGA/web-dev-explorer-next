@@ -9,8 +9,8 @@ import {
   SheetTrigger,
 } from "@/components/ShadcnUi/Sheet";
 import SimpleBadge from "@/components/Badges/SimpleBadge";
-import CartContent from "./CartContent";
-import ProductCount from "./ProductCount";
+import CartContent from "../CartContent/CartContent";
+import ProductCount from "../ProductCount/ProductCount";
 import { cn } from "@/utils/utils";
 
 interface IProductCart {
@@ -23,7 +23,7 @@ export default function ProductCart({ className }: IProductCart) {
       <SheetTrigger asChild>
         <div className={cn("relative", className)}>
           <SimpleBadge
-            badge="IconShoppingCart"
+            badge="cart"
             showTitle={false}
             className="rounded cursor-pointer"
           />

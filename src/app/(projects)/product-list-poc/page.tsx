@@ -1,5 +1,5 @@
-import CartContent from "@/features/product-list/components/CartContent";
-import ProductCard from "@/features/product-list/components/ProductCard";
+import CartContent from "@/features/product-list/components/CartContent/CartContent";
+import ProductCard from "@/features/product-list/components/ProductCard/ProductCard";
 import { getProducts } from "@/features/product-list/services/getProducts";
 import "@/features/product-list/styles/product-list.css";
 

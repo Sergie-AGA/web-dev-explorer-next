@@ -1,4 +1,11 @@
-import { IconTool, IconPuzzleFilled, IconZoomCode } from "@tabler/icons-react";
+import {
+  IconTool,
+  IconPuzzleFilled,
+  IconZoomCode,
+  IconShoppingCart,
+  IconCar,
+  IconReportMoney,
+} from "@tabler/icons-react";
 
 export function MapBadgeToIcon(badge: string) {
   const badges: Record<
@@ -8,6 +15,9 @@ export function MapBadgeToIcon(badge: string) {
     tool: IconTool,
     concept: IconPuzzleFilled,
     exploration: IconZoomCode,
+    cart: IconShoppingCart,
+    car: IconCar,
+    money: IconReportMoney,
   };
 
   return badges[badge] || null;

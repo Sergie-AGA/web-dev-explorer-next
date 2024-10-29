@@ -1,8 +1,8 @@
 import SimpleBadge from "@/components/Badges/SimpleBadge";
 
-import { IProduct } from "../config/products";
+import { IProduct } from "../../config/products";
 import ProductPriceClientLayer from "./ProductPriceClientLayer";
-import { britishCurrencyFormatter } from "../utils/currencyFormatter";
+import { britishCurrencyFormatter } from "../../utils/currencyFormatter";
 
 interface IProductModal {
   product: IProduct;
@@ -33,7 +33,7 @@ export default function ProductPrice({
         >
           <SimpleBadge
             className="rounded flex-[0_1_45px]"
-            badge="IconCar"
+            badge="car"
             showTitle={false}
           />
 
@@ -60,7 +60,7 @@ export default function ProductPrice({
         >
           <SimpleBadge
             className="rounded flex-[0_1_45px]"
-            badge="IconReportMoney"
+            badge="money"
             showTitle={false}
           />
           <div className="flex-1">

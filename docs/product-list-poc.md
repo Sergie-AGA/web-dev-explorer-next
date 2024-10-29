@@ -56,4 +56,8 @@ A custom grid style is handled here.
 
 ## Tests
 
-TBA
+Tests were implemented for the following elements:
+
+- All components
+- The `useCartStore` Zustand store
+- The util files `calculatePrice` and `currencyFormatter`

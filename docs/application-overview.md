@@ -128,3 +128,4 @@ Accessibility is achieved in this project in a few different ways:
 - The useURLState hook could do with some improvements to make it smoother, more reusable and better documented
 - Testing Coverage can be improved if the goal is to test widely, but this is not what this project aims for
 - There are more accessibility measures which can be applied, such as "Skip to main content" links, increased usage of aria attributes and focus management
+- Reusable type files could be separated into their own folder in some cases

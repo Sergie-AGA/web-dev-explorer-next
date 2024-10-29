@@ -1,4 +1,4 @@
-import ProductDetail from "@/features/product-list/components/ProductDetail";
+import ProductDetail from "@/features/product-list/components/ProductDetail/ProductDetail";
 import "@/features/product-list/styles/product-list.css";
 import { calculatePrice } from "@/features/product-list/utils/calculatePrice";
 import { getProducts } from "@/features/product-list/services/getProducts";
