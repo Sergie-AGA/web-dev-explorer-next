@@ -147,6 +147,7 @@ export default function SquareBackgroundGeneration({
         <div
           key={square.id}
           id={`square-${square.id}`}
+          data-testid="square-test-id"
           className="rounded-md"
           style={{
             width: `${square.sizeOrigin}px`,

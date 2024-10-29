@@ -1,4 +1,4 @@
-import { IProduct } from "../data/products";
+import { IProduct } from "../config/products";
 const discountMap = {
   3: 0.2,
   2: 0.4,

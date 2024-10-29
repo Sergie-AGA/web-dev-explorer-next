@@ -29,6 +29,7 @@ const RandomColourText: React.FC<RandomColourTextProps> = ({ text }) => {
       {text.split("").map((char, index) => (
         <span
           key={index}
+          data-testid="random-colour-char"
           style={{ color: colors[index], transition: "color 0.3s ease-in-out" }}
           className="h3"
           onMouseEnter={() => handleMouseEnter(index)}

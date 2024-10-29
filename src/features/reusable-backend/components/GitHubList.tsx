@@ -1,4 +1,4 @@
-import { Button } from "@/components/Shadcn-ui/button";
+import { Button } from "@/components/ShadcnUi/Button";
 import { cn } from "@/utils/utils";
 import {
   IconBrandCSharp,
@@ -15,7 +15,7 @@ const iconMap = {
   python: IconBrandPython,
 };
 
-interface IProject {
+export interface IGHProject {
   title: string;
   description: string;
   link: string;
@@ -25,7 +25,7 @@ interface IProject {
 }
 
 interface IGithubListInterface {
-  backendRepos: IProject[];
+  backendRepos: IGHProject[];
 }
 
 export default function GitHubList({ backendRepos }: IGithubListInterface) {

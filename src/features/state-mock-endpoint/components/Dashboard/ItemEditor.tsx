@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Button } from "@/components/Shadcn-ui/button";
+import { Button } from "@/components/ShadcnUi/Button";
 import {
   Form,
   FormControl,
@@ -12,13 +12,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/Shadcn-ui/form";
-import { Textarea } from "@/components/Shadcn-ui/textarea";
-import { Input } from "@/components/Shadcn-ui/input";
+} from "@/components/ShadcnUi/Form";
+import { Textarea } from "@/components/ShadcnUi/Textarea";
+import { Input } from "@/components/ShadcnUi/Input";
 import ToggleGroup from "./ToggleGroup";
 import { useState } from "react";
-import { Label } from "@/components/Shadcn-ui/label";
-import { Switch } from "@/components/Shadcn-ui/switch";
+import { Label } from "@/components/ShadcnUi/Label";
+import { Switch } from "@/components/ShadcnUi/Switch";
 import { IconRefresh } from "@tabler/icons-react";
 
 const FormSchema = z.object({

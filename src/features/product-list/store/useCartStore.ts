@@ -1,7 +1,7 @@
 import { create } from "zustand";
-import { IProduct } from "../data/products";
+import { IProduct } from "../config/products";
 
-interface ICartState {
+export interface ICartState {
   total: ITotal;
   cart: ICart[];
   products: IProduct[];
@@ -14,7 +14,7 @@ interface ICartState {
   getLocalStorage: () => boolean;
 }
 
-interface ICart {
+export interface ICart {
   product: IProduct;
   option: IOption;
   finalPrice: number;
@@ -75,7 +75,9 @@ export const useCartStore = create<ICartState>()((set, get) => ({
     );
 
     const totalSavingsPercentage =
-      ((totalSavings / basePrice) * 100).toFixed(2) + "%";
+      basePrice > 0
+        ? ((totalSavings / basePrice) * 100).toFixed(2) + "%"
+        : "0%";
 
     set((state) => ({
       total: {

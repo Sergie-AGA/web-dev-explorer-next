@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import SquareBackgroundGeneration from "./SquareBackgroundGeneration";
-import { Slider } from "@/components/Shadcn-ui/slider";
-import { Checkbox } from "@/components/Shadcn-ui/checkbox";
+import { Slider } from "@/components/ShadcnUi/Slider";
+import { Checkbox } from "@/components/ShadcnUi/Checkbox";
 import { cn } from "@/utils/utils";
 
 export default function SquareBackgroundContainer() {

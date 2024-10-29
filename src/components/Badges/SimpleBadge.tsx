@@ -1,6 +1,5 @@
-import IconHandler from "@/components/Global/IconHandler/IconHandler";
-import { MapBadgeToIcon } from "@/components/Cards/MorphingCard/MapBadgeToIcon";
 import { cn } from "@/utils/utils";
+import { MapBadgeToIcon } from "../Cards/MorphingCard/MapBadgeToIcon";
 
 interface BadgeProps {
   badge: string;
@@ -13,19 +12,22 @@ export default function SimpleBadge({
   showTitle = true,
   className,
 }: BadgeProps) {
-  const icon = MapBadgeToIcon(badge);
+  const IconComponent = MapBadgeToIcon(badge);
 
   return (
     <div
+      data-testid="simple-badge"
       className={cn(
         "flex flex-col text-center items-center bg-cyan-800 w-12 h-12 p-[3px] rounded justify-between",
         className
       )}
     >
       <div className="flex-1 flex items-center">
-        <IconHandler icon={icon} />
+        {IconComponent && <IconComponent size={24} color="currentColor" />}
       </div>
-      {showTitle && <span className="text-[8px] leading-normal">{badge}</span>}
+      {showTitle && (
+        <span className="text-[0.5rem] leading-normal">{badge}</span>
+      )}
     </div>
   );
 }
