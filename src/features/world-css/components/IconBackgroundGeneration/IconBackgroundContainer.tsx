@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import IconBackgroundGeneration from "./IconBackgroundGeneration";
-import { Slider } from "@/components/Shadcn-ui/slider";
+import { Slider } from "@/components/ShadcnUi/Slider";
 
 export default function IconBackgroundContainer() {
   const [size, setSize] = useState(20);

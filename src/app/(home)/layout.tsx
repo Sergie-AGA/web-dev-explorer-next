@@ -1,4 +1,4 @@
-import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader";
+import GlobalHeader from "@/components/GlobalHeader/GlobalHeader";
 import GlobalMenu from "@/components/Menu/GlobalMenu";
 
 export default function RootLayout({

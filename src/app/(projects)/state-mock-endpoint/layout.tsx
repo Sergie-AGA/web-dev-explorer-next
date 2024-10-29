@@ -1,4 +1,4 @@
-import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader";
+import GlobalHeader from "@/components/GlobalHeader/GlobalHeader";
 import SettingsIcon from "@/features/state-mock-endpoint/components/Menus/SettingsIcon";
 import "../../../styles/global.css";
 import { UserProvider } from "@/features/state-mock-endpoint/context/UserContext";

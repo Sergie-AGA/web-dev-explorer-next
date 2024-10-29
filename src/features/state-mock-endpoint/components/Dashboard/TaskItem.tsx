@@ -8,7 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ItemAccordion";
-import CodeBlock from "@/components/Global/CodeBlock/CodeBlock";
+import CodeBlock from "@/components/CodeBlock/CodeBlock";
 
 export interface ITaskItemProps {
   title: string;
@@ -46,7 +46,7 @@ export default function TaskItem({
         >
           <div className="flex justify-between items-center gap-4 flex-1">
             <div className="flex flex-col gap-1 items-start">
-              <h3 className="text-[16px] font-bold mb-1 leading-4">{title}</h3>
+              <h3 className="text-[1rem] font-bold mb-1 leading-4">{title}</h3>
               <p className="text-sm text-neutral-400">{date}</p>
             </div>
             <div className="flex gap-4">

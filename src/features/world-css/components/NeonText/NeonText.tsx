@@ -1,17 +1,17 @@
 import { cn } from "@/utils/utils";
 import "./neon.css";
 
-interface INeonTitleProps {
+interface INeonTextProps {
   text: string;
   flickerEffect?: boolean;
   tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
 }
 
-export default function NeonTitle({
+export default function NeonText({
   tag = "h1",
   text,
   flickerEffect = false,
-}: INeonTitleProps) {
+}: INeonTextProps) {
   const Tag = tag;
 
   return (

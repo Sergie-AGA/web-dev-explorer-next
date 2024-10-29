@@ -1,7 +1,7 @@
 "use client";
 
-import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader";
-import ProductCart from "@/features/product-list/components/ProductCart";
+import GlobalHeader from "@/components/GlobalHeader/GlobalHeader";
+import ProductCart from "@/features/product-list/components/ProductCart/ProductCart";
 import { cn } from "@/utils/utils";
 import { usePathname } from "next/navigation";
 

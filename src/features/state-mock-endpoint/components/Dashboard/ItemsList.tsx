@@ -11,7 +11,7 @@ import NewItemButton from "./NewItemButton";
 import { useEffect, useState } from "react";
 import LocalModal from "@/components/Modals/LocalModal/LocalModal";
 import LoadMore from "./LoadMore";
-import { Button } from "@/components/Shadcn-ui/button";
+import { Button } from "@/components/ShadcnUi/Button";
 import { IItem } from "../../types/Item";
 import ItemEditor from "./ItemEditor";
 

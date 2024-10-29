@@ -27,7 +27,7 @@ export const technologies = {
       link: "https://react-photo-album.com/",
     },
     {
-      title: "ShadcnUI",
+      title: "Shadcn UI",
       description:
         "A collection of re-usable components that you can copy and paste into your apps, built on top of Radix UI and Tailwind CSS",
       link: "https://ui.shadcn.com/",
@@ -71,6 +71,18 @@ export const technologies = {
   ],
   backend: [
     {
+      title: "TypeScript",
+      description:
+        "A superset of JavaScript that adds static typing to the language, helping catch errors early in development and improve code maintainability.",
+      link: "https://www.typescriptlang.org/",
+    },
+    {
+      title: "Node.js",
+      description:
+        "An open-source, cross-platform JavaScript runtime environment built on Chrome's V8 engine. It enables server-side execution of JavaScript, making it popular for building scalable network applications.",
+      link: "https://nodejs.org/",
+    },
+    {
       title: "Vercel",
       description:
         "A cloud platform for static sites and Serverless Functions that fits perfectly with your workflow. It provides seamless integration with frontend frameworks and helps you to deploy, manage, and scale your applications with ease.",
@@ -87,6 +99,48 @@ export const technologies = {
       description:
         "An open-source alternative to Firebase, Supabase provides a suite of tools and services like real-time databases, authentication, and file storage, built on top of PostgreSQL.",
       link: "https://supabase.com/",
+    },
+    {
+      title: "Fastify",
+      description:
+        "A highly efficient and lightweight web framework for Node.js, designed for low overhead and fast performance. It offers plugins, schema-based validation, and high extensibility for rapid API development.",
+      link: "https://www.fastify.io/",
+    },
+    {
+      title: "PostgreSQL",
+      description:
+        "An open-source, powerful, and highly extensible relational database system known for advanced SQL compliance, stability, and support for complex queries and large datasets.",
+      link: "https://www.postgresql.org/",
+    },
+    {
+      title: "Vitest",
+      description:
+        "A fast unit testing framework built for Vite, offering modern features like instant test runs, rich error reporting, and native TypeScript support, aimed at frontend and JavaScript/TypeScript applications.",
+      link: "https://vitest.dev/",
+    },
+    {
+      title: "Supertest",
+      description:
+        "A library for testing HTTP requests in Node.js, often used with frameworks like Express and Fastify. It allows for simple integration and end-to-end testing of REST APIs.",
+      link: "https://github.com/visionmedia/supertest",
+    },
+    {
+      title: "Prisma",
+      description:
+        "A modern, type-safe ORM for Node.js and TypeScript that simplifies database workflows by providing an intuitive API, automatic migrations, and comprehensive database support.",
+      link: "https://www.prisma.io/",
+    },
+    {
+      title: "Docker",
+      description:
+        "A containerization platform that enables developers to package applications with all dependencies into isolated containers, ensuring consistency across various environments.",
+      link: "https://www.docker.com/",
+    },
+    {
+      title: "Zod",
+      description:
+        "A TypeScript-first schema declaration and validation library, offering a simple and expressive API for defining and validating complex data structures.",
+      link: "https://zod.dev/",
     },
     {
       title: "PHP",

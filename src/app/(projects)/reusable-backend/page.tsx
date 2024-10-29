@@ -1,7 +1,7 @@
 import GitHubList from "@/features/reusable-backend/components/GitHubList";
 import { getReusableBackend } from "@/features/reusable-backend/services/getReusableBackend";
 
-export const revalidate = 0;
+export const revalidate = 60 * 30; // 30 min
 
 export default async function Page() {
   const backendRepos = await getReusableBackend();

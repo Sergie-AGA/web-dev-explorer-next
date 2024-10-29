@@ -1,4 +1,4 @@
-import BlurredText from "@/components/Global/Blur/BlurredText";
+import BlurredText from "@/components/Blur/BlurredText";
 import ItemsList from "./ItemsList";
 
 interface IDashboardProps {

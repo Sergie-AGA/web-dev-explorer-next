@@ -5,7 +5,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/components/Shadcn-ui/tabs";
+} from "@/components/ShadcnUi/Tabs";
 import { cn } from "@/utils/utils";
 
 interface ITabsProps {

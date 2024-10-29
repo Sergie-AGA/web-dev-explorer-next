@@ -1,4 +1,4 @@
-import { Button } from "@/components/Shadcn-ui/button";
+import { Button } from "@/components/ShadcnUi/Button";
 import { IconUserCheck, IconUserPlus } from "@tabler/icons-react";
 
 interface ISelectUserProps {
@@ -14,7 +14,7 @@ export default function SelectUser({
 }: ISelectUserProps) {
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="text-[20px] text-center">
+      <h2 className="text-[1.25rem] text-center">
         {isLoaded
           ? existingUsers.length
             ? "One or more user IDs detected"
