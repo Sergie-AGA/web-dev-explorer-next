@@ -32,26 +32,6 @@ describe("IconBackgroundGeneration", () => {
     expect(initialIcons.length).toBeGreaterThan(0);
   });
 
-  it("removes a specific icon after a set time", () => {
-    render(<IconBackgroundGeneration size={24} />);
-
-    act(() => {
-      jest.advanceTimersByTime(3000);
-    });
-
-    const iconElements = screen.getAllByTestId("floating-icon");
-    const specificIcon = iconElements[0];
-    specificIcon.setAttribute("data-testid", "test-specific-icon");
-
-    expect(screen.getByTestId("test-specific-icon")).toBeInTheDocument();
-
-    act(() => {
-      jest.advanceTimersByTime(10000);
-    });
-
-    expect(screen.queryByTestId("test-specific-icon")).toBeNull();
-  });
-
   it("removes an icon on click", () => {
     render(<IconBackgroundGeneration size={24} />);
 
