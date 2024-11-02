@@ -1,4 +1,4 @@
-describe("GitHubList Component", () => {
+describe("Reusable Backend page", () => {
   beforeEach(() => {
     cy.visit("/reusable-backend");
   });

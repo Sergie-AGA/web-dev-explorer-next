@@ -34,9 +34,11 @@ A Zustand store is used to determine which components render. The property `acti
 
 ## Tests
 
-There are tests for the following elements
+There are Jest tests for the following elements
 
 - Any of the listed effects
 - `CssPhoneContainer`, as it involves more interactive points
 - `ProjectSidebar`, since it involves stateful interactivity
 - `useUIChange` store, as it uses core business logic
+
+There are Cypress tests for checking whether you can change between sessions of the application

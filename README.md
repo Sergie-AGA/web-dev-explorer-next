@@ -27,6 +27,11 @@ For a more in-depth documentation on the different features and elements being u
 - [🌐 World of CSS](docs/world-of-css-effects.md)
 - [🗂️ Reusable Backend](docs/reusable-backend.md)
 
+## Disclaimers
+
+- This project is under the MIT License. Any suggestions are welcome, but since this is a project I use for learning purposes I will not accept external PRs into the code. However, feel free to grab code snippets if you want and use them in any way you want without need for attribution (though crediting me where it may be applicable is always appreciated)
+- A lot of features here will be made during my first attempt at exploring a specific technology. Unless it is within the scope of the project to implement best practices, I will usually not return to a feature to improve the code quality, meaning some concepts will not necessarily be using the best standards in the market for a feature. Therefore, these features are only an insight into some of the technologies I have experimented with and do not necessarily reflect my approach to using them
+
 ## Project Overview
 
 ### Project 1 - Product List POC

@@ -21,4 +21,7 @@ Please refer to the specific backend project to see more about how they work.
 
 ## Tests
 
-This feature uses a simple unit test to check if only the correct elements render
+This feature uses :
+
+1. A simple Jest unit test to check if only the correct elements render;
+2. A simple Cypress E2E test to check if a user can visit the page and visualise elements the correct way
