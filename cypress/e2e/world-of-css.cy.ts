@@ -3,7 +3,7 @@ describe("World of CSS Page", () => {
     cy.visit("/world-of-css-effects");
   });
 
-  it("Changes the current active session", () => {
+  it("Changes the current active section", () => {
     // Get current effect
     // Get current sidebar
     // Click on item, show new sidebar
@@ -14,15 +14,29 @@ describe("World of CSS Page", () => {
   });
 
   it("Handles the Glitch effect correctly", () => {
-    // Click on Glitch effect
-    // Modify input text
-    // Verify GlitchLetter component is rendered with three spans per letter and has specific class
+    cy.get('[data-testid="sidebar-glitch"]').then(($el) => {
+      if (!$el.hasClass("pointer-events-none")) {
+        cy.wrap($el).click();
+      }
+    });
+    cy.get('[data-testid="iconX"]').click();
+    cy.get("input").clear().type("My test");
+    cy.get("div.glitch-container").each(($div) => {
+      cy.wrap($div).find("span").should("have.length", 3);
+    });
   });
-  it("Handles the Neon effect correctly", () => {
-    // Click on Neon effect
-    // Modify input text
-    // Verify NeonLetter component is rendered with specific class
-    // Toggle switch, check css class exists
+  it.only("Handles the Neon effect correctly", () => {
+    cy.get('[data-testid="sidebar-neon"]').then(($el) => {
+      if (!$el.hasClass("pointer-events-none")) {
+        cy.wrap($el).click();
+      }
+    });
+    cy.get('[data-testid="iconX"]').click();
+    cy.get("input").clear().type("My test");
+    cy.get('button[role="switch"]').click();
+    cy.get(".neonText")
+      .should("have.class", "neon-flicker")
+      .and("have.text", "My test");
   });
   it("Handles the Switching effect correctly", () => {
     // Click on Switching effect

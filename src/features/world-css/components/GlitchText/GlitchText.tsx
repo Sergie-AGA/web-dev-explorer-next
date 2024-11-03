@@ -20,7 +20,7 @@ const GlitchText: React.FC<IGlitchTextProps> = ({
   const textArray = text.split("");
 
   return (
-    <Tag className={cn(className, "flex ")}>
+    <Tag className={cn(className, "flex ")} data-testid="glitch-text">
       {textArray.map((letter, index) => (
         <GlitchLetter
           key={index}
