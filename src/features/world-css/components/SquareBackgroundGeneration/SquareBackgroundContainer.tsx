@@ -27,6 +27,7 @@ export default function SquareBackgroundContainer() {
             id="terms"
             checked={isRandomSize}
             onCheckedChange={handleCheckboxChange}
+            data-testid="square-checkbox"
           />
           <label
             htmlFor="terms"
@@ -47,6 +48,7 @@ export default function SquareBackgroundContainer() {
             min={35}
             step={1}
             onValueChange={handleSliderChange}
+            data-testid="square-slider"
           />
         </div>
       </div>

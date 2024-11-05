@@ -125,19 +125,75 @@ describe("World of CSS Page", () => {
         });
       });
   });
+
   it("Handles the Icon Background Generation effect correctly", () => {
-    // Click on Icon Background Generation effect
-    // Verify items are being rendered
-    // Verify items are disappearing
-    // Modify slider size and verify size changed
+    cy.get('[data-testid="sidebar-background"]').then(($el) => {
+      if (!$el.hasClass("pointer-events-none")) {
+        cy.wrap($el).click();
+      }
+    });
+
+    cy.get('[data-testid="sidebar-bIcons"]').then(($el) => {
+      if (!$el.hasClass("pointer-events-none")) {
+        cy.wrap($el).click();
+      }
+    });
+
+    cy.get('[data-testid="iconX"]').click();
+
+    cy.get('[data-testid="floating-icon"]', { timeout: 5000 })
+      .first()
+      .should("exist")
+      .find("svg")
+      .should("have.attr", "width", "20");
+
+    cy.get('[data-testid="icon-slider"]')
+      .click()
+      .trigger("mousedown")
+      .trigger("mousemove", { clientX: 100, force: true })
+      .trigger("mouseup");
+
+    cy.get('[data-testid="floating-icon"]')
+      .first()
+      .find("svg")
+      .should("have.attr", "width", "50");
   });
+
   it("Handles the Square Background Generation effect correctly", () => {
-    // Click on Square Background Generation effect
-    // Verify items are being rendered
-    // Verify items are disappearing
-    // Toggle checkbox, modify slider size and verify size changed
+    cy.get('[data-testid="sidebar-background"]').then(($el) => {
+      if (!$el.hasClass("pointer-events-none")) {
+        cy.wrap($el).click();
+      }
+    });
+    cy.get('[data-testid="sidebar-bSquares"]').then(($el) => {
+      if (!$el.hasClass("pointer-events-none")) {
+        cy.wrap($el).click();
+      }
+    });
+    cy.get('[data-testid="iconX"]').click();
+
+    cy.get('[data-testid="square-test-id"]', { timeout: 5000 })
+      .first()
+      .should("exist");
+
+    cy.get('[data-testid="square-checkbox"]').click();
+    cy.get('[data-testid="square-slider"]')
+      .click()
+      .trigger("mousedown")
+      .trigger("mousemove", { clientX: 100 })
+      .trigger("mouseup");
+
+    cy.get('[data-testid="square-test-id"]')
+      .should("have.length.gt", 0)
+      .should(($squares) => {
+        $squares.each((_, square) => {
+          expect(square.style.width).to.equal("100px");
+          expect(square.style.height).to.equal("100px");
+        });
+      });
   });
-  it.only("Handles the CSS Phone effect correctly", () => {
+
+  it("Handles the CSS Phone effect correctly", () => {
     cy.get('[data-testid="sidebar-art"]').then(($el) => {
       if (!$el.hasClass("pointer-events-none")) {
         cy.wrap($el).click();
