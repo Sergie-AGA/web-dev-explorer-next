@@ -11,7 +11,7 @@ interface TechBadgeProps {
 }
 
 const TechBadge = React.forwardRef<HTMLSpanElement, TechBadgeProps>(
-  ({ title, onClick, className, removable = false }, ref) => {
+  ({ title, onClick, className, removable = false, ...props }, ref) => {
     return (
       <span
         ref={ref}
@@ -20,6 +20,7 @@ const TechBadge = React.forwardRef<HTMLSpanElement, TechBadgeProps>(
           className
         )}
         onClick={!removable ? onClick : undefined}
+        {...props}
       >
         {title}
         {removable && (

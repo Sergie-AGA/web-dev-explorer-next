@@ -54,7 +54,12 @@ export default function TechModal() {
   return (
     <div>
       <div className="flex flex-col space-y-1.5 text-center sm:text-left mb-4">
-        <h3 className="text-lg font-semibold leading-none">Technologies</h3>
+        <h3
+          className="text-lg font-semibold leading-none"
+          data-testid="tech-modal-title"
+        >
+          Technologies
+        </h3>
       </div>
       <Separator />
 
@@ -69,6 +74,7 @@ export default function TechModal() {
                 })}
                 title={tech.title}
                 onClick={() => handleActiveTech("frontend", tech.title)}
+                data-testid="frontend-tech-badge"
               />
             ))}
           </div>
@@ -99,7 +105,10 @@ export default function TechModal() {
         </SimpleTabs>
       </div>
       <Separator />
-      <div className="min-h-[100px] my-2">
+      <div
+        className="min-h-[100px] my-2"
+        data-testid="tech-modal-description-area"
+      >
         {techDetails && (
           <>
             <h4 className="flex items-center gap-2">

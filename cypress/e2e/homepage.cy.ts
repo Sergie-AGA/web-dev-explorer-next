@@ -3,25 +3,58 @@ describe("Homepage", () => {
     cy.visit("/");
   });
 
-  it("Navigatest to all existing projects", () => {
-    // Open each project modal
-    // Navigate between tabs
-    // Navigate to project
+  it("Navigates to an existing project", () => {
+    cy.get('[data-testid="morphing-card"]').first().click();
+    cy.get('[data-testid="project-modal"]')
+      .find('[data-testid="tab-test-1"]')
+      .click();
+
+    cy.get('[data-testid="project-modal"]')
+      .find('[data-testid="tab-test-0"]')
+      .click();
+
+    cy.url().then((initialUrl) => {
+      cy.get("body").then(($body) => {
+        if ($body.find('[data-testid="see-project-button"]').length > 0) {
+          cy.get('[data-testid="see-project-button"]').click();
+          cy.url({ timeout: 8000 }).should("not.equal", initialUrl);
+        } else {
+          cy.get('[data-testid="coming-soon"]').should(
+            "contain.text",
+            "Coming soon..."
+          );
+        }
+      });
+    });
   });
 
-  it("Handles the About Modal", () => {
-    // Open modal
-    // Open tech modal from clicking on tech
+  it("Handles the About Modal and links to tech modal", () => {
+    cy.get('[data-testid="icon-menu"]').click();
+    cy.get('[data-testid="menu-about"]').click();
+    cy.get('[data-testid="about-modal-title"]')
+      .contains("About")
+      .should("be.visible");
+
+    cy.get('[data-testid="react-tech-badge"]').click();
+    cy.get('[data-testid="tech-modal-title"]')
+      .contains("Technologies")
+      .should("be.visible");
   });
 
-  it("Handles the tech modal", () => {
-    // Render information about each technology
-    // Swap between tabs
-    // Render information about new tech on click
+  it.only("Handles the tech modal", () => {
+    cy.get('[data-testid="icon-menu"]').click();
+    cy.get('[data-testid="menu-techs"]').click();
+    cy.get('[data-testid="frontend-tech-badge"]').contains("React JS").click();
+
+    cy.get('[data-testid="tech-modal-description-area"]').should(
+      "contain.text",
+      "A popular JavaScript library"
+    );
   });
 
   it("Handles filtering project", () => {
-    // Open filter modal
+    cy.get('[data-testid="icon-menu"]').click();
+    cy.get('[data-testid="menu-filters"]').click();
     // Filter by text
     // Apply filter generates filtered list, check for correct url
     // Click on tag makes it enable
