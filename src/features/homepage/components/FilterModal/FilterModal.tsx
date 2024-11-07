@@ -102,6 +102,7 @@ export default function FilterModal() {
                   "bg-cyan-600": techs.frontend?.includes(tech.title),
                 })}
                 title={tech.title}
+                data-testid="frontend-tech-filter-badge"
               />
             ))}
           </div>
@@ -139,7 +140,11 @@ export default function FilterModal() {
           </div>
         </div>
         <div className="mt-4 flex flex-col md:flex-row gap-4 items-center w-[100%]">
-          <Button variant="outline" className="flex gap-2">
+          <Button
+            variant="outline"
+            className="flex gap-2"
+            data-testid="apply-filter-button"
+          >
             <IconFilter />
             Apply Filters
           </Button>

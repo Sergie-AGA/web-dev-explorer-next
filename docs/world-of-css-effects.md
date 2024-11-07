@@ -41,4 +41,4 @@ There are Jest tests for the following elements
 - `ProjectSidebar`, since it involves stateful interactivity
 - `useUIChange` store, as it uses core business logic
 
-There are Cypress tests for checking whether you can change between sessions of the application
+There are E2E Cypress tests for interacting with each of the existing effects

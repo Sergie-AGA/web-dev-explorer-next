@@ -41,7 +41,7 @@ describe("Homepage", () => {
       .should("be.visible");
   });
 
-  it.only("Handles the tech modal", () => {
+  it("Handles the tech modal", () => {
     cy.get('[data-testid="icon-menu"]').click();
     cy.get('[data-testid="menu-techs"]').click();
     cy.get('[data-testid="frontend-tech-badge"]').contains("React JS").click();
@@ -55,14 +55,48 @@ describe("Homepage", () => {
   it("Handles filtering project", () => {
     cy.get('[data-testid="icon-menu"]').click();
     cy.get('[data-testid="menu-filters"]').click();
-    // Filter by text
-    // Apply filter generates filtered list, check for correct url
-    // Click on tag makes it enable
-    // Filtering makes only that enabled
-    // Clear tech removes tags, apply tags, check url
+
+    cy.get('[data-testid="search-input"]').click().type("product list poc");
+    cy.get('[data-testid="frontend-tech-filter-badge"]')
+      .contains("Next JS")
+      .click();
+
+    cy.get('[data-testid="apply-filter-button"]').click();
+    cy.get('[data-testid="close-global-modal"]').click();
+
+    cy.get('[data-testid="filters-applied-section"]').should("exist");
+
+    cy.location("pathname").should("eq", "/");
+    cy.location("search").should(
+      "eq",
+      "?text=product%20list%20poc&frontend=Next%20JS"
+    );
+
+    cy.get('[data-testid="morphing-card"]').should("have.length", 1);
+
+    cy.get('[data-testid="menu-filters"]').click();
+    cy.get('[data-testid="clear-icon"]').click();
+    cy.get('[data-testid="apply-filter-button"]').click();
+    cy.get('[data-testid="close-global-modal"]').click();
+
+    cy.get('[data-testid="morphing-card"]').should(
+      "have.length.greaterThan",
+      1
+    );
   });
 
   it("Handles removing filters", () => {
-    // Click on filter removal rerenders all projects and label is gone, check url
+    cy.visit("/?text=product%20list%20poc");
+    cy.get('[data-testid="morphing-card"]').should("have.length", 1);
+
+    cy.get('[data-testid="remove-icon"]').each(($el) => {
+      cy.wrap($el).click();
+    });
+
+    cy.location("search").should("be.empty");
+    cy.get('[data-testid="morphing-card"]').should(
+      "have.length.greaterThan",
+      1
+    );
   });
 });

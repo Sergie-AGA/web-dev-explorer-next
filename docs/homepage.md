@@ -16,7 +16,15 @@ The store called `useUIStore` handles the displaying the modals for filtering an
 
 ## Tests
 
-There are tests for the following elements
+There are Jest unit tests for the following elements:
 
-- useUIStore, which handles core business logic for displaying elements ons creen
+- useUIStore, which handles core business logic for displaying elements on screen
 - Basic rendering and interactivity within components
+
+There are Cypress E2E tests for the following elements:
+
+- Navigating to existing elements
+- Interacting with the about modal
+- Interacting with the technologies modal
+- Interacting with the filter modal
+- Applying and removing filters

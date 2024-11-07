@@ -67,7 +67,7 @@ export const projects: IProject[] = [
     backend: [
       "Node JS",
       "JavaScript",
-      "Typescript",
+      "TypeScript",
       "Fastify",
       "PostgreSQL",
       "Vitest",
