@@ -17,6 +17,7 @@ export default function ProductPriceClientLayer({
   product,
   discountedValue,
   option,
+  ...props
 }: IPriceClientLayer) {
   const [isActive, setIsActive] = useState(false);
 
@@ -84,6 +85,7 @@ export default function ProductPriceClientLayer({
         " max-w-[500px] cursor-pointer rounded bg-cyan-900 hover:bg-cyan-700 p-4 overflow-hidden flex gap-4 border-4 border-solid border-cyan-900 hover:border-cyan-700",
         { "border-cyan-300 hover:border-cyan-300 hover:bg-cyan-900 ": isActive }
       )}
+      {...props}
     >
       {children}
     </li>

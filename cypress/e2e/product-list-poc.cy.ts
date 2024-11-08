@@ -4,16 +4,29 @@ describe("Product List POC Page", () => {
   });
 
   it("Viewing products details", () => {
-    // Navigate to a product page
-    // Read info on screen
-    // Click on image for full screen view
-    // Navigate through full screen
-    // Link back to homepage
+    cy.get('[data-testid="product-lamp"]').click();
+    cy.location("pathname").should("eq", "/product-list-poc/lamp");
+
+    cy.get('[data-testid="product-title"]').should("contain.text", "Desk Lamp");
+
+    cy.get('[data-testid="product-back-button"]').click();
+    cy.location("pathname").should("eq", "/product-list-poc");
   });
 
   it("Allows managing cart products", () => {
-    // Add product to cart
-    // Swap cart option if it exists
-    // Open cart button
+    cy.get('[data-testid="product-lamp"]').click();
+
+    cy.get('[data-testid="discount-standard-price"]').click();
+    cy.get('[data-testid="product-back-button"]').click();
+    cy.get('[data-testid="product-l-desk"]').click();
+    cy.get('[data-testid="discount-pick-up-price"]').click();
+
+    cy.get('[data-testid="product-count"]').should("contain.text", "2");
+    cy.get('[data-testid="cart-icon"]').click();
+
+    cy.get('[data-testid="product-cart-item"]').should("have.length", 2);
+
+    cy.get('[data-testid="product-remove-icon"]').first().click();
+    cy.get('[data-testid="product-cart-item"]').should("have.length", 1);
   });
 });

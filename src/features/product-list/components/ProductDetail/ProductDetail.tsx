@@ -40,13 +40,16 @@ export default function ProductDetail({
       <Link
         href={`/product-list-poc`}
         className="flex items-center mb-4 hover:underline inline-flex"
+        data-testid="product-back-button"
       >
         <IconArrowLeft size={24} color="currentColor" />
         Back to the Product List
       </Link>
 
       <div className="bg-cyan-950 flex flex-col lg:flex-row gap-8">
-        <h1 className="lg:hidden text-2xl">{product.title}</h1>
+        <h1 className="lg:hidden text-2xl" data-testid="product-title">
+          {product.title}
+        </h1>
 
         <div className="flex-[0_1_60%]">
           <ProductImages photos={photos} />

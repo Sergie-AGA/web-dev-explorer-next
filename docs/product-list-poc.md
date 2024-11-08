@@ -4,7 +4,7 @@ This project experiments a proof of concept of a store, making use of Supabase t
 
 ## Tech Stack
 
-Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, yet-another-react-lightbox, react-photo-album, Jest
+Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, yet-another-react-lightbox, react-photo-album, Jest, Cypress
 Backend: Supabase
 
 ## Business Rules / User Journey
@@ -56,8 +56,13 @@ A custom grid style is handled here.
 
 ## Tests
 
-Tests were implemented for the following elements:
+Jest unit tests were implemented for the following elements:
 
 - All components
 - The `useCartStore` Zustand store
 - The util files `calculatePrice` and `currencyFormatter`
+
+Cypress E2E tests were implemented for the following user journeys:
+
+- Visiting a product page and navigating back
+- Adding and removing products from the cart

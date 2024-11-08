@@ -4,7 +4,7 @@ A place where diverse CSS tricks and techniques are used to achieve unique visua
 
 ## Tech Stack
 
-Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, Jest
+Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, Jest, Cypress
 
 ## Components
 

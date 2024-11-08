@@ -14,6 +14,8 @@ export const projects: IProject[] = [
       "Zustand",
       "Yet-another-react-lightbox",
       "React-photo-album",
+      "Jest",
+      "Cypress",
     ],
     backend: ["Supabase", "Vercel"],
     apis: [],
@@ -50,6 +52,8 @@ export const projects: IProject[] = [
       "Zustand",
       "Tailwind CSS",
       "CSS",
+      "Jest",
+      "Cypress",
     ],
     backend: ["Vercel"],
     apis: [],
@@ -63,7 +67,14 @@ export const projects: IProject[] = [
     description:
       "This project aggregates links to a few different GitHub repositories which contain a reusable modular backend projects in diverse programming languages and can be used as templates for new applications. It currently includes projects in Node JS, PHP and C#",
     image: "projects/reusable-backend.png",
-    frontend: ["Next JS", "React JS", "TypeScript", "Tailwind CSS"],
+    frontend: [
+      "Next JS",
+      "React JS",
+      "TypeScript",
+      "Tailwind CSS",
+      "Jest",
+      "Cypress",
+    ],
     backend: [
       "Node JS",
       "JavaScript",

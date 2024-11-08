@@ -4,7 +4,7 @@ This project aggregates links to a few different GitHub repositories which conta
 
 ## Tech Stack
 
-Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, Jest
+Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, Jest, Cypress
 Backend: JavaScript, Node JS, Typescript, Fastify, PostgreSQL, Vitest, Supertest, Prisma, Docker, Zod, PHP, Laravel, C#, .NET, ASP.NET,
 
 ## Components
