@@ -12,8 +12,7 @@
     "test:watch": "jest --watchAll",
     "test:ie2e": "jest --config ./jest.integration-e2e.config.ts",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "postbuild-storybook": "sed -i 's#<head>#<head>\\n<base href='/storybook/'>#' ./storybook-static/index.html"
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
