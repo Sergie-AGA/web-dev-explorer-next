@@ -14,9 +14,5 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ["..\\public"],
-  webpackFinal: async (config, { configType }) => {
-    config.output.publicPath = "/storybook/";
-    return config;
-  },
 };
 export default config;
