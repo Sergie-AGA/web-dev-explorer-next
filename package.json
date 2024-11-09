@@ -12,7 +12,7 @@
     "test:watch": "jest --watchAll",
     "test:ie2e": "jest --config ./jest.integration-e2e.config.ts",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build -o dist/storybook"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
