@@ -33,6 +33,7 @@
     --chart-5: 27 87% 67%;
   }
 
+  :root,
   .dark-theme {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -88,6 +89,10 @@
   select,
   textarea {
     @apply font-sans text-foreground text-sm md:text-base;
+  }
+
+  pre {
+    @apply !bg-background;
   }
 
   h1,
