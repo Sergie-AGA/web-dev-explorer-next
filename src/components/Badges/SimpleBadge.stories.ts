@@ -39,6 +39,6 @@ export const CustomClass: Story = {
   args: {
     badge: "tool",
     showTitle: true,
-    className: "bg-emerald-600",
+    className: "bg-emerald-700",
   },
 };

@@ -2,7 +2,7 @@
 
 This is a project that aims to explore, test and aggregate a variety of Web Dev functionalities within different projects.
 In general, the project uses:
-Frontend: React JS, Next JS, Typescript, Tailwind CSS and ShadcnUI
+Frontend: React JS, Next JS, Typescript, Tailwind CSS, ShadcnUI, Storybook JS and various automated testing tools
 Backend & Infra: Supabase, Vercel
 Libraries which have small impact may not be listed here or in the project data listing
 
@@ -50,6 +50,12 @@ Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zus
 This project aggregates links to a few different GitHub repositories which contain a reusable modular backend projects in diverse programming languages and can be used as templates for new applications. It currently includes a project in Node JS, with PHP and C# being under development.
 Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, Jest, Cypress
 Backend: JavaScript, Node JS, Typescript, Fastify, PostgreSQL, Vitest, Supertest, Prisma, Docker, Zod, PHP, Laravel, C#, .NET, ASP.NET,
+
+### Project 4 - Storybook Explorer
+
+This project displays the Storybook JS implementation used in this project and explores its capabilities with addons and different options to create an organised UI documentation for the most important and reusable components in this project.
+Frontend: Storybook JS, TypeScript, React JS
+Backend: GitHub Pages, GitHub Actions
 
 ### In Progress - State Mock Endpoint
 

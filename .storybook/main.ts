@@ -8,11 +8,12 @@ const config: StorybookConfig = {
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
     "storybook-dark-mode",
+    "@storybook/addon-a11y",
   ],
   framework: {
     name: "@storybook/nextjs",
     options: {},
   },
-  staticDirs: ["../public"],
+  staticDirs: ["../storybook-static"],
 };
 export default config;

@@ -15,6 +15,7 @@ import { useUIStore } from "@/features/homepage/store/useUIStore";
 import { Separator } from "@/components/ShadcnUi/Separator";
 import { generateImageUrl } from "@/utils/imageHelpers";
 import { ITechTypes } from "@/config/technologies";
+import { IconExternalLink } from "@tabler/icons-react";
 
 interface IModalData {
   project: IProject;
@@ -140,7 +141,18 @@ export default function ProjectModal({ project, children }: IModalData) {
         <DialogFooter className="sm:justify-center">
           {project.showLink ? (
             <Button data-testid="see-project-button" asChild>
-              <Link href={project.path}>See Project</Link>
+              {project.path.startsWith("http") ? (
+                <a
+                  href={project.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  See Project{" "}
+                  <IconExternalLink size={16} style={{ marginLeft: "4px" }} />
+                </a>
+              ) : (
+                <Link href={project.path}>See Project</Link>
+              )}
             </Button>
           ) : (
             <span data-testid="coming-soon">Coming soon...</span>

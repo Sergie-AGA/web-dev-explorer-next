@@ -95,12 +95,6 @@ export const technologies = {
       link: "https://nodejs.org/",
     },
     {
-      title: "Vercel",
-      description:
-        "A cloud platform for static sites and Serverless Functions that fits perfectly with your workflow. It provides seamless integration with frontend frameworks and helps you to deploy, manage, and scale your applications with ease.",
-      link: "https://vercel.com/",
-    },
-    {
       title: "Firebase",
       description:
         "Firebase is a comprehensive app development platform provided by Google. It includes various services such as Realtime Database, Firestore, Authentication, Hosting, and more. Firebase makes it easy to build, deploy, and scale applications with features like real-time updates, authentication, and serverless functions.",
@@ -187,22 +181,22 @@ export const technologies = {
   ],
   apis: [
     {
-      title: "Stripe",
+      title: "Vercel",
       description:
-        "Stripe API enables developers to seamlessly integrate online payment processing into their applications, facilitating secure transactions, subscription management, and financial automation.",
-      link: "https://docs.stripe.com/api",
+        "A cloud platform for static sites and Serverless Functions that fits perfectly with your workflow. It provides seamless integration with frontend frameworks and helps you to deploy, manage, and scale your applications with ease.",
+      link: "https://vercel.com/",
     },
-    // {
-    //   title: "Youtube",
-    //   description:
-    //     "Allows developers to integrate YouTube features, such as video playback, search, and user interaction, into their applications through a set of RESTful APIs.",
-    //   link: "https://developers.google.com/youtube/v3",
-    // },
-    // {
-    //   title: "OpenAI",
-    //   description:
-    //     "Offers access to state-of-the-art artificial intelligence models for natural language processing, text generation, image recognition, and more, empowering developers to build innovative AI-powered applications and services.",
-    //   link: "https://openai.com/blog/openai-api",
-    // },
+    {
+      title: "GitHub Pages",
+      description:
+        "A service provided by GitHub to host static websites directly from your GitHub repository. Ideal for personal, project, or organization sites. It serves content directly from GitHub repositories.",
+      link: "https://docs.github.com/en/pages",
+    },
+    {
+      title: "GitHub Actions",
+      description:
+        "A workflow automation tool by GitHub that lets you build, test, and deploy your code directly from your GitHub repository. GitHub Actions supports CI/CD pipelines and can be customized to automate a variety of tasks across multiple languages and frameworks.",
+      link: "https://docs.github.com/en/actions",
+    },
   ],
 };
