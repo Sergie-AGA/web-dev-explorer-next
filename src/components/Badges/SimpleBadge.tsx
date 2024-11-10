@@ -8,7 +8,6 @@ interface BadgeProps {
 }
 
 /**
- * # Simple Badge
  * A Simple Badge renders a badge with an icon and optionally displays the title. It uses a mapping function to render a specific icon depending on the text you give that
  *
  * ```javascript
@@ -28,7 +27,6 @@ export default function SimpleBadge({
   className,
 }: BadgeProps) {
   const IconComponent = MapBadgeToIcon(badge);
-
   return (
     <div
       data-testid="simple-badge"

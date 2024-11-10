@@ -91,8 +91,17 @@
     @apply font-sans text-foreground text-sm md:text-base;
   }
 
-  pre {
-    @apply !bg-background;
+  /* To interact with Storybook, add more classes to ./.storybook/tailwindClasses.ts */
+  .sbdocs pre,
+  .sbdocs .docs-story,
+  .sbdocs td,
+  .sbdocs table {
+    @apply !bg-cyan-950;
+  }
+
+  .sbdocs .token.punctuation,
+  .sbdocs .token.operator {
+    @apply !text-foreground;
   }
 
   h1,

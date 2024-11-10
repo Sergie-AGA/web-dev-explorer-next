@@ -7,7 +7,6 @@ const meta = {
   component: SimpleBadge,
   parameters: {
     layout: "centered",
-    docs: {},
   },
   tags: ["autodocs"],
   argTypes: {
