@@ -91,19 +91,6 @@
     @apply font-sans text-foreground text-sm md:text-base;
   }
 
-  /* To interact with Storybook, add more classes to ./.storybook/tailwindClasses.ts */
-  .sbdocs pre,
-  .sbdocs .docs-story,
-  .sbdocs td,
-  .sbdocs table {
-    @apply !bg-cyan-950;
-  }
-
-  .sbdocs .token.punctuation,
-  .sbdocs .token.operator {
-    @apply !text-foreground;
-  }
-
   h1,
   .h1 {
     @apply text-[2rem] md:text-[2.75rem];
@@ -160,5 +147,22 @@
   /* Util */
   .no-overflow-anchor {
     overflow-anchor: none;
+  }
+
+  /* To interact with Storybook, add more classes to ./.storybook/tailwindClasses.ts */
+  .sbdocs pre,
+  .sbdocs .docs-story,
+  .sbdocs td,
+  .sbdocs table {
+    @apply !bg-cyan-950;
+  }
+
+  .sbdocs .token.punctuation,
+  .sbdocs .token.operator {
+    @apply !text-foreground;
+  }
+
+  .sbdocs .token.function {
+    @apply !text-[#F1FA8C];
   }
 }

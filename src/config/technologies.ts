@@ -80,6 +80,18 @@ export const technologies = {
         "A JavaScript end-to-end testing framework that enables developers to write, execute, and debug tests directly in the browser. It provides an easy and reliable way to test the entire user experience for modern web applications.",
       link: "https://www.cypress.io/",
     },
+    {
+      title: "Storybook",
+      description:
+        "An open-source tool for developing UI components in isolation, Storybook provides a sandbox environment to build, test, and showcase components outside of the main application. It supports frameworks like React, Vue, Angular, and more, making it a popular choice for creating and documenting component libraries with live, interactive examples.",
+      link: "https://storybook.js.org/",
+    },
+    {
+      title: "Markdown & MDX",
+      description:
+        "Markdown is a lightweight markup language used for creating formatted text using plain text, ideal for documentation, README files, and website content. MDX extends Markdown by allowing JSX syntax, enabling the inclusion of interactive components alongside Markdown content. This combination is popular for documentation and component libraries, offering both simplicity and interactivity.",
+      link: "https://mdxjs.com/",
+    },
   ],
   backend: [
     {

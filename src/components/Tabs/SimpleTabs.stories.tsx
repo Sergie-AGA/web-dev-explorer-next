@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import SimpleTabs from "./SimpleTabs";
 
 const meta = {
-  title: "Global/SimpleTabs",
+  title: "Global/Components/Simple Tabs",
   component: SimpleTabs,
   parameters: {
     layout: "centered",

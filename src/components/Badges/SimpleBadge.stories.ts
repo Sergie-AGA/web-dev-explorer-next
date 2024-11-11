@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import SimpleBadge from "./SimpleBadge";
 
 const meta = {
-  title: "Global/SimpleBadge",
+  title: "Global/Components/Simple Badge",
   component: SimpleBadge,
   parameters: {
     layout: "centered",

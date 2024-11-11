@@ -2,8 +2,9 @@
 
 This is a project that aims to explore, test and aggregate a variety of Web Dev functionalities within different projects.
 In general, the project uses:
-Frontend: React JS, Next JS, Typescript, Tailwind CSS, ShadcnUI, Storybook JS and various automated testing tools
+Frontend: React JS, Next JS, Typescript, Tailwind CSS, ShadcnUI, and various automated testing tools
 Backend & Infra: Supabase, Vercel
+Documentation: and documented with Storybook JS and Markdown files
 Libraries which have small impact may not be listed here or in the project data listing
 
 ## Additional Repositories
@@ -24,8 +25,13 @@ For a more in-depth documentation on the different features and elements being u
 - [💻 Application Overview](docs/application-overview.md)
 - [🏠 Homepage](docs/homepage.md)
 - [📦 Product List POC](docs/product-list-poc.md)
+- [📖 Storybook](docs/storybook.md)
 - [🌐 World of CSS](docs/world-of-css-effects.md)
 - [🗂️ Reusable Backend](docs/reusable-backend.md)
+
+## Storybook
+
+Better usage examples can be found in the [Storybook documentation hosted on GitHub Pages](https://sergie-aga.github.io/web-dev-explorer-next/)
 
 ## Disclaimers
 

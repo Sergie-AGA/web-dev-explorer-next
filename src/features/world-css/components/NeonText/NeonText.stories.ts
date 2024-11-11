@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import NeonText from "@/features/world-css/components/NeonText/NeonText";
 
 const meta = {
-  title: "World of CSS Effects/NeonText",
+  title: "World of CSS Effects/Components/Neon Text",
   component: NeonText,
   parameters: {
     layout: "centered",

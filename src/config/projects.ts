@@ -30,7 +30,7 @@ export const projects: IProject[] = [
       "This project displays the Storybook JS implementation used in this project and explores its capabilities with addons and different options to create an organised UI documentation for the most important and reusable components in this project.",
     image:
       "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    frontend: ["Storybook JS", "TypeScript", "React JS"],
+    frontend: ["Storybook JS", "TypeScript", "React JS", "Markdown & MDX"],
     backend: [],
     apis: ["GitHub Pages", "GitHub Actions"],
     type: "exploration",

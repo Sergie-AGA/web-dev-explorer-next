@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import GlitchText from "./GlitchText";
 
 const meta = {
-  title: "World of CSS Effects/GlitchText",
+  title: "World of CSS Effects/Components/Glitch Text",
   component: GlitchText,
   parameters: {
     layout: "centered",
