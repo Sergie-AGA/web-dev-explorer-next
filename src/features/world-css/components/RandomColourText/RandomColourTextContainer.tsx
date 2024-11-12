@@ -14,7 +14,7 @@ export default function NeonTextContainer() {
 
   return (
     <section className="flex flex-col gap-4 py-8 max-w-[100%] w-[600px]">
-      <div className="p-4 rounded-md self-center">
+      <div className="p-4 rounded-md self-center" data-testid="random-colour">
         <RandomColourText text={text} />
       </div>
       <div className="flex flex-col justify-start gap-4">

@@ -39,10 +39,12 @@ const CssPhoneContainer = () => {
             value={userMessage}
             onChange={(e) => setUserMessage(e.target.value)}
             placeholder="Type a message..."
+            data-testid="user-input"
           />
           <button
             onClick={addUserMessage}
             className="mt-2 px-4 py-2 bg-cyan-700 text-white rounded-md"
+            data-testid="user-button"
           >
             Send User Message
           </button>
@@ -56,10 +58,12 @@ const CssPhoneContainer = () => {
             value={botMessage}
             onChange={(e) => setBotMessage(e.target.value)}
             placeholder="Type a message..."
+            data-testid="bot-input"
           />
           <button
             onClick={addBotMessage}
             className="mt-2 px-4 py-2 bg-teal-700 text-white rounded-md"
+            data-testid="bot-button"
           >
             Send Bot Message
           </button>

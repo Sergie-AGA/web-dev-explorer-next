@@ -28,7 +28,7 @@ export default function CartContent() {
   return (
     <div className="flex flex-col mb-4 relative">
       {total.total > 0 && (
-        <div className="border-b-2 border-white border-solid py-2 sticky top-0 z-50 bg-neutral-950 p-4 shadow-[0_6px_3px_8px_rgba(0,0,0,0.3)]">
+        <div className="border-b-2 border-white border-solid py-2 sticky top-0 z-50 p-4 shadow-[0_6px_3px_8px_rgba(0,0,0,0.3)]">
           <h2 className="text-lg flex items-center">
             Total:{" "}
             <span className="text-lg">
@@ -51,6 +51,7 @@ export default function CartContent() {
           <div
             key={product.product.id}
             className="p-4 flex gap-4 bg-cyan-950 rounded relative"
+            data-testid="product-cart-item"
           >
             {(product.option === "pickUp" || product.isBundle) && (
               <div className="absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center gap-2 w-[100%]">
@@ -109,6 +110,7 @@ export default function CartContent() {
               onClick={() => removeFromCart(product.product.id)}
               className="cursor-pointer"
               aria-label="Remove item"
+              data-testid="product-remove-icon"
             />
           </div>
         ))}

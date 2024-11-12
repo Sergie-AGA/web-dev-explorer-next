@@ -39,7 +39,10 @@ export default function AboutModal({ children }: IModalData) {
       <DialogContent className="w-[90vw] md:w-[80vw] max-w-[800px] flex flex-col">
         <div>
           <div className="flex flex-col space-y-1.5 text-center sm:text-left mb-4">
-            <DialogTitle className="text-lg font-semibold leading-none text-center sm:text-left mb-4">
+            <DialogTitle
+              className="text-lg font-semibold leading-none text-center sm:text-left mb-4"
+              data-testid="about-modal-title"
+            >
               About
             </DialogTitle>
           </div>
@@ -58,7 +61,7 @@ export default function AboutModal({ children }: IModalData) {
                 asChild
                 onClick={() => handleTech("React JS", "frontend")}
               >
-                <TechBadge title={"React JS"} />
+                <TechBadge data-testid="react-tech-badge" title={"React JS"} />
               </DialogTrigger>
               <DialogTrigger
                 asChild

@@ -37,13 +37,14 @@ export default function ProductCard({
       href={`/product-list-poc/${product.slug}`}
       style={{ gridArea: product.slug }}
       className={cn(className, "relative")}
+      data-testid={`product-${product.slug}`}
     >
       <Card className="lg:max-w-[unset] w-[100%] h-[100%] rounded-xl overflow-hidden relative bg-cyan-800 mb-4 lg:mb-0 cursor-pointer">
         <CardContent className="w-[100%] h-[100%] p-0">
           <Image
             src={`${product.images?.[0] || imagePlaceholder}`}
             alt="product image"
-            className="w-[100%] h-[100%] object-cover hover:scale-110 duration-[0.5s]"
+            className="w-[100%] h-[100%] object-cover hover:scale-110 duration-500"
             width={800}
             height={800}
           />

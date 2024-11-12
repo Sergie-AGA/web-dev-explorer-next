@@ -68,6 +68,18 @@ export const technologies = {
         "A simple and flexible state management library for React applications, offering a minimalistic API while supporting complex state requirements through hooks.",
       link: "https://docs.pmnd.rs/zustand/getting-started/introduction",
     },
+    {
+      title: "Jest",
+      description:
+        "A JavaScript testing framework designed to ensure correctness of any JavaScript codebase. It is widely used for unit tests in JavaScript applications and provides powerful mocking capabilities, making it ideal for frontend and backend testing.",
+      link: "https://jestjs.io/",
+    },
+    {
+      title: "Cypress",
+      description:
+        "A JavaScript end-to-end testing framework that enables developers to write, execute, and debug tests directly in the browser. It provides an easy and reliable way to test the entire user experience for modern web applications.",
+      link: "https://www.cypress.io/",
+    },
   ],
   backend: [
     {

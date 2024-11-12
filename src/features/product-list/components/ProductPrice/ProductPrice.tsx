@@ -30,6 +30,7 @@ export default function ProductPrice({
           product={product}
           discountedValue={discountedValuePickUp}
           option="pickUp"
+          data-testid="discount-pick-up-price"
         >
           <SimpleBadge
             className="rounded flex-[0_1_45px]"
@@ -57,6 +58,7 @@ export default function ProductPrice({
           product={product}
           discountedValue={discountedValueStandard}
           option="discount"
+          data-testid="discount-standard-price"
         >
           <SimpleBadge
             className="rounded flex-[0_1_45px]"

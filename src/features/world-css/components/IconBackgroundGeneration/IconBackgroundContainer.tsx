@@ -21,6 +21,7 @@ export default function IconBackgroundContainer() {
           max={100}
           step={1}
           onValueChange={handleSliderChange}
+          data-testid="icon-slider"
         />
       </div>
       <IconBackgroundGeneration size={size} />

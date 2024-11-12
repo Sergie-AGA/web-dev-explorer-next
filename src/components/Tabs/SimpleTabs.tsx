@@ -39,6 +39,7 @@ export default function SimpleTabs({
                 className="text-xs sm:text-sm py-0.5 sm:py-1 px-2 sm:px-3"
                 key={index}
                 value={tab.value}
+                data-testid={`tab-test-${index}`}
               >
                 {tab.title}
               </TabsTrigger>

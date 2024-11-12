@@ -21,7 +21,7 @@ export default function ProductCart({ className }: IProductCart) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <div className={cn("relative", className)}>
+        <div className={cn("relative", className)} data-testid="cart-icon">
           <SimpleBadge
             badge="cart"
             showTitle={false}
