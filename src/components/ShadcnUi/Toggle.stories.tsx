@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Toggle } from "./Toggle";
 
 const meta = {
-  title: "ShadcnUI/Toggle",
+  title: "Shadcn UI/Toggle",
   component: Toggle,
   parameters: {
     layout: "centered",

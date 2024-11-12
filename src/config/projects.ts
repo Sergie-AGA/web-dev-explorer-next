@@ -2,7 +2,7 @@ export const projects: IProject[] = [
   {
     title: "Product List POC",
     description:
-      "A Proof Of Concept for a list of products. Currently being used by me to list things that I am selling",
+      "A Proof Of Concept for a list of products. It was used by me to list things that I was selling, but currently any items listed there are purely for illustrative purposes",
     image: "projects/product-list-poc.png",
     frontend: [
       "React JS",
