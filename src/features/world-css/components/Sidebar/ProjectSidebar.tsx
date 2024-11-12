@@ -80,6 +80,7 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
               isActive={activeSidebar === component.value}
               sectionTitle={component.title}
               handleChange={() => changeActiveSidebar(component.value)}
+              elID={component.value}
             >
               <component.icon size="30" className="md:hidden" />
               <component.icon size="34" className="hidden md:block" />
@@ -109,6 +110,7 @@ export default function ProjectSidebar({ className }: IProjectSidebar) {
                     changeActiveSection(activeSidebar);
                     changeActiveComponent(subComponent.value);
                   }}
+                  elID={subComponent.value}
                 >
                   {subComponent.icon && (
                     <>

@@ -45,7 +45,11 @@ export default function GlobalModal({ hasOverlay = true }: IGlobalModal) {
             className="fixed left-[50%] top-[50%] z-[100] grid translate-x-[-50%] translate-y-[-50%] gap-4 border border-neutral-200 bg-card p-6 shadow-lg duration-200 sm:rounded-lg w-[90%] md:w-[80%] max-w-[800px]"
           >
             <button onClick={handleClick} className="absolute top-4 right-4">
-              <IconX className="cursor-pointer" size="16" />
+              <IconX
+                className="cursor-pointer"
+                size="16"
+                data-testid="close-global-modal"
+              />
             </button>
             <Suspense>{<ModalComponent />}</Suspense>
           </section>

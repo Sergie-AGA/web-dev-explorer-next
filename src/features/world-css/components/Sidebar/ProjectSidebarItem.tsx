@@ -7,6 +7,7 @@ interface IModalSidebarItemProps {
   sectionTitle: string;
   isActive: boolean;
   isSubSidebar?: boolean;
+  elID: string;
   handleChange: () => void;
 }
 
@@ -15,6 +16,7 @@ export default function ProjectSidebarItem({
   sectionTitle,
   isActive,
   isSubSidebar = false,
+  elID,
   handleChange,
 }: IModalSidebarItemProps) {
   const isSmallText = sectionTitle.length > 8;
@@ -30,6 +32,7 @@ export default function ProjectSidebarItem({
         { "pr-4 md:pr-8": !isSubSidebar },
         { "flex-col items-center shadow-sm": isSubSidebar }
       )}
+      data-testid={`sidebar-${elID}`}
     >
       <div
         className={cn("translate-x-0 group-hover:translate-y-0 duration-300", {

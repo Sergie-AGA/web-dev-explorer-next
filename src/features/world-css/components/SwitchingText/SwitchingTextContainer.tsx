@@ -62,12 +62,19 @@ export default function NeonTextContainer() {
             placeholder="Add a new message"
             maxLength={50}
           />
-          <Button variant="secondary" type="submit">
+          <Button
+            variant="secondary"
+            type="submit"
+            data-testid="switch-text-button"
+          >
             Add
           </Button>
         </form>
       </div>
-      <ul className="mt-4 flex flex-col gap-2">
+      <ul
+        className="mt-4 flex flex-col gap-2"
+        data-testid="switching-text-list"
+      >
         <p>Message List:</p>
         {messages.length > 0
           ? messages.map((message, index) => (

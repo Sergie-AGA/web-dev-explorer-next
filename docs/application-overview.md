@@ -67,7 +67,7 @@ See the Tailwind section below for more information.
 ### Tests
 
 This application uses Jest mainly for Unit Testing but it is also set up to run for Integration and E2E. There are 2 separate config files and NPM scripts for each case
-Cypress has been installed for E2E tests but not yet implemented.
+Cypress handles E2E tests
 
 ### Themes
 

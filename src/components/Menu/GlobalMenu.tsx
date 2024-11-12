@@ -35,9 +35,8 @@ export default function GlobalMenu() {
         className={cn("duration-500 translate-x-0", {
           "relative translate-x-[300%] opacity-0": !isOpen,
         })}
-        data-testid="menu-filters"
       >
-        <IconFilter />
+        <IconFilter data-testid="menu-filters" />
       </MenuItem>
 
       <MenuItem
@@ -46,9 +45,8 @@ export default function GlobalMenu() {
         className={cn("duration-500 translate-x-0", {
           "relative translate-x-[200%] opacity-0": !isOpen,
         })}
-        data-testid="menu-techs"
       >
-        <IconBrandJavascript />
+        <IconBrandJavascript data-testid="menu-techs" />
       </MenuItem>
 
       <AboutModal>
@@ -58,9 +56,8 @@ export default function GlobalMenu() {
             className={cn("duration-500 translate-x-0", {
               "relative translate-x-[100%] opacity-0": !isOpen,
             })}
-            data-testid="menu-about"
           >
-            <IconInfoSquare />
+            <IconInfoSquare data-testid="menu-about" />
           </MenuItem>
         </div>
       </AboutModal>

@@ -59,7 +59,10 @@ export default function ProjectModal({ project, children }: IModalData) {
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
 
-      <DialogContent className="w-[90%] md:w-[80%] max-w-[600px] flex flex-col">
+      <DialogContent
+        data-testid="project-modal"
+        className="w-[90%] md:w-[80%] max-w-[600px] flex flex-col"
+      >
         <div>
           <div className="flex flex-col space-y-1.5 text-center sm:text-left mb-4">
             <h3 className="text-lg font-semibold leading-none">
@@ -136,11 +139,11 @@ export default function ProjectModal({ project, children }: IModalData) {
 
         <DialogFooter className="sm:justify-center">
           {project.showLink ? (
-            <Button asChild>
+            <Button data-testid="see-project-button" asChild>
               <Link href={project.path}>See Project</Link>
             </Button>
           ) : (
-            <span>Coming soon...</span>
+            <span data-testid="coming-soon">Coming soon...</span>
           )}
         </DialogFooter>
       </DialogContent>

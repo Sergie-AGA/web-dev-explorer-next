@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export type TSectionType = "tsfx" | "art" | "background" | null;
+export type TSectionType = "tsfx" | "art" | "background";
 export type TComponentType =
   | "glitch"
   | "neon"
