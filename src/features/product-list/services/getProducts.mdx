@@ -1,0 +1,59 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Product List POC/Services/Get Products" />
+
+# Get Products Service
+
+The `getProducts` function retrieves a list of products from the `Product Listing POC` table in Supabase. This service handles database interaction, returning an array of products or an empty array in case of an error.
+
+## Usage
+
+This function uses an asynchronous call to fetch data, returning either the fetched products or an empty array if an error occurs. Ensure that Supabase is properly configured in your project to use this service.
+
+### Example Scenarios
+
+- **If you want to fetch and log all products**:
+
+  ```js
+  import { getProducts } from "@/services/getProducts";
+
+  const fetchProducts = async () => {
+    const products = await getProducts();
+    console.log(products); // Output: Array of products or []
+  };
+
+  fetchProducts();
+  ```
+
+- **If you want to handle products data in a component**:
+
+  ```js
+  import { useEffect, useState } from "react";
+  import { getProducts } from "@/services/getProducts";
+
+  const ProductList = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+      const fetchData = async () => {
+        const productList = await getProducts();
+        setProducts(productList);
+      };
+      fetchData();
+    }, []);
+
+    return (
+      <div>
+        {products.length > 0 ? (
+          products.map((product) => <div key={product.id}>{product.name}</div>)
+        ) : (
+          <p>No products found</p>
+        )}
+      </div>
+    );
+  };
+
+  export default ProductList;
+  ```
+
+This service enables quick and consistent access to product data from the Supabase database.

@@ -8,6 +8,7 @@ module.exports = {
     "./app/**/*.{js,jsx,ts,tsx}",
     "./src/**/*.{js,jsx,ts,tsx}",
     "./.storybook/tailwindClasses.ts",
+    "./.storybook/Colours.mdx",
   ],
   prefix: "",
   theme: {

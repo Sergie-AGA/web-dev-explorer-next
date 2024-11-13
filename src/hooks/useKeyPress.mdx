@@ -1,0 +1,63 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Global/Hooks/useKeyPress" />
+
+# useKeyPress Hook
+
+The `useKeyPress` hook allows you to handle specific key combinations in a React component by passing in an array of key combinations and their associated callback functions.
+
+### Descriptions
+
+- **`keyCombos`** (`KeyCombo[]`): An array of key combinations. Each `KeyCombo` consists of:
+  - **`keys`** (`KeyType[]`): An array of keys in the combination. This can include specific keys like `"Shift"`, `"Control"`, `"Alt"`, `"Meta"`, or other string values for regular keys.
+  - **`callback`** (`CallbackType`): A function to be executed when the specified key combination is pressed. This function receives the keyboard event as an argument.
+
+### Example Scenarios
+
+- **If you want to execute a callback on a single key press (e.g., "Enter")**:
+
+  ```js
+  useKeyPress([
+    {
+      keys: ["Enter"],
+      callback: (event) => {
+        console.log("Enter key pressed");
+      },
+    },
+  ]);
+  ```
+
+- **If you want to handle a combination of keys (e.g., "Control" + "S")**:
+
+  ```js
+  useKeyPress([
+    {
+      keys: ["Control", "S"],
+      callback: (event) => {
+        event.preventDefault();
+        console.log("Control + S pressed");
+      },
+    },
+  ]);
+  ```
+
+- **If you want to execute different callbacks for multiple combinations**:
+
+  ```js
+  useKeyPress([
+    {
+      keys: ["Alt", "A"],
+      callback: (event) => {
+        console.log("Alt + A pressed");
+      },
+    },
+    {
+      keys: ["Shift", "Enter"],
+      callback: (event) => {
+        console.log("Shift + Enter pressed");
+      },
+    },
+  ]);
+  ```
+
+This hook provides flexibility in handling complex keyboard shortcuts by allowing custom key combinations and associated actions within a React component.
