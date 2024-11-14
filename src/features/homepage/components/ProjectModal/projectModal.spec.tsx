@@ -23,6 +23,18 @@ const mockProject: IProject = {
   type: "exploration",
   showProject: true,
 };
+const externalMockProject: IProject = {
+  title: "Test Project",
+  description: "Test project description",
+  image: "test-image.jpg",
+  frontend: ["React", "Tailwind"],
+  backend: ["Node.js"],
+  apis: ["REST API"],
+  showLink: true,
+  path: "https://google.com",
+  type: "exploration",
+  showProject: true,
+};
 
 describe("ProjectModal Component", () => {
   beforeEach(() => {
@@ -74,5 +86,20 @@ describe("ProjectModal Component", () => {
     const link = screen.getByText("See Project");
     expect(link).toBeInTheDocument();
     expect(link.closest("a")).toHaveAttribute("href", "/test-project");
+  });
+
+  it("renders a specific icon when the project has an external link", () => {
+    render(
+      <ProjectModal project={externalMockProject}>
+        <button>Open Modal</button>
+      </ProjectModal>
+    );
+    act(() => {
+      fireEvent.click(screen.getByText("Open Modal"));
+    });
+    const link = screen.getByText("See Project");
+    expect(
+      link.querySelector('[data-testid="project-external-link-icon"]')
+    ).toBeInTheDocument();
   });
 });

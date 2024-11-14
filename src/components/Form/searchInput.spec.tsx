@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import SearchInput from "./SearchInput";
-import "@testing-library/jest-dom";
 
 describe("SearchInput Component", () => {
   const handleSearchMock = jest.fn();

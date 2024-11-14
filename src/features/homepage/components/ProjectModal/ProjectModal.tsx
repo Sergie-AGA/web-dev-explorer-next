@@ -148,7 +148,11 @@ export default function ProjectModal({ project, children }: IModalData) {
                   rel="noopener noreferrer"
                 >
                   See Project{" "}
-                  <IconExternalLink size={16} style={{ marginLeft: "4px" }} />
+                  <IconExternalLink
+                    data-testid="project-external-link-icon"
+                    size={16}
+                    style={{ marginLeft: "4px" }}
+                  />
                 </a>
               ) : (
                 <Link href={project.path}>See Project</Link>

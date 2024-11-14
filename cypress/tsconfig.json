@@ -32,14 +32,10 @@
     ".next/types/**/*.ts",
     "jest.config.js",
     "**/*.test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "cypress",
+    "cypress/**/*.cy.ts",
+    "cypress/**/*.cy.tsx"
   ],
-  "exclude": [
-    "node_modules",
-    ".next",
-    "out",
-    "build",
-    "./cypress.config.ts",
-    "cypress"
-  ]
+  "exclude": ["node_modules", ".next", "out", "build"]
 }
