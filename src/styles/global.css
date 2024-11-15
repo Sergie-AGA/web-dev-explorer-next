@@ -158,11 +158,16 @@
   }
 
   .sbdocs .token.punctuation,
-  .sbdocs .token.operator {
+  .sbdocs .token.operator,
+  .sbdocs .rejt-value {
     @apply !text-foreground;
   }
 
   .sbdocs .token.function {
     @apply !text-[#F1FA8C];
+  }
+
+  .sbdocs .css-bzpine button {
+    @apply !bg-card;
   }
 }

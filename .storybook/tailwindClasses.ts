@@ -5,4 +5,6 @@ const tailwindClasses = [
   "punctuation",
   "operator",
   "function",
+  "rejt-value",
+  "css-bzpine",
 ];

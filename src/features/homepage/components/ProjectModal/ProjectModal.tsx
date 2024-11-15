@@ -39,8 +39,8 @@ export default function ProjectModal({ project, children }: IModalData) {
       value: "backend",
     },
     {
-      title: "APIs",
-      value: "apis",
+      title: "Other",
+      value: "other",
     },
   ];
 
@@ -120,13 +120,13 @@ export default function ProjectModal({ project, children }: IModalData) {
             )}
           </div>
           <div>
-            {project.apis?.length ? (
+            {project.other?.length ? (
               <div className="flex flex-wrap gap-2">
-                {project.apis.map((tech) => (
+                {project.other.map((tech) => (
                   <DialogTrigger
                     key={tech}
                     asChild
-                    onClick={() => handleTech(tech, "apis")}
+                    onClick={() => handleTech(tech, "other")}
                   >
                     <TechBadge title={tech} />
                   </DialogTrigger>

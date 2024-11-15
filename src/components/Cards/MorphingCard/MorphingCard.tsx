@@ -5,12 +5,12 @@ import { generateImageUrl } from "@/utils/imageHelpers";
 import { forwardRef } from "react";
 import "./morphing-card.css";
 
-interface CardProps {
+export interface ICardProps {
   data: IProject;
   onClick?: () => void | undefined;
 }
 
-const MorphingCard = forwardRef<HTMLDivElement, CardProps>(
+const MorphingCard = forwardRef<HTMLDivElement, ICardProps>(
   ({ data, onClick }, ref) => {
     const imageUrl = generateImageUrl(data?.image);
 

@@ -4,7 +4,7 @@ export interface ITechnology {
   link: string;
 }
 
-export type ITechTypes = "frontend" | "backend" | "apis";
+export type ITechTypes = "frontend" | "backend" | "other";
 
 export const technologies = {
   frontend: [
@@ -191,7 +191,7 @@ export const technologies = {
       link: "https://learn.microsoft.com/en-us/aspnet/",
     },
   ],
-  apis: [
+  other: [
     {
       title: "Vercel",
       description:

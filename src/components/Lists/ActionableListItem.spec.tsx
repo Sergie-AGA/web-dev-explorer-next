@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import ActionableListItem, {
-  ActionableListItemProps,
+  IActionableListItemProps,
 } from "./ActionableListItem";
 
 describe("ActionableListItem", () => {
-  const mockProps: ActionableListItemProps = {
+  const mockProps: IActionableListItemProps = {
     title: "Test Title",
     description: "This is a description",
     link: "https://example.com",

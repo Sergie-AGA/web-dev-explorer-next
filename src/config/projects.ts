@@ -18,7 +18,7 @@ export const projects: IProject[] = [
       "Cypress",
     ],
     backend: ["Supabase"],
-    apis: ["Vercel"],
+    other: ["Vercel"],
     type: "concept",
     path: "/product-list-poc",
     showProject: true,
@@ -32,7 +32,7 @@ export const projects: IProject[] = [
       "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     frontend: ["Storybook JS", "TypeScript", "React JS", "Markdown & MDX"],
     backend: [],
-    apis: ["GitHub Pages", "GitHub Actions"],
+    other: ["GitHub Pages", "GitHub Actions"],
     type: "exploration",
     path: "https://sergie-aga.github.io/web-dev-explorer-next/?path=/docs/configure-your-project--docs",
     showProject: true,
@@ -46,7 +46,7 @@ export const projects: IProject[] = [
       "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     frontend: [],
     backend: ["Firebase"],
-    apis: ["Vercel"],
+    other: ["Vercel"],
     type: "tool",
     path: "/state-mock-endpoint",
     showProject: false,
@@ -70,7 +70,7 @@ export const projects: IProject[] = [
       "Cypress",
     ],
     backend: ["Vercel"],
-    apis: [],
+    other: [],
     type: "exploration",
     path: "/world-of-css-effects",
     showProject: true,
@@ -106,7 +106,7 @@ export const projects: IProject[] = [
       ".NET",
       "ASP.NET",
     ],
-    apis: ["Vercel"],
+    other: ["Vercel"],
     type: "tool",
     path: "/reusable-backend",
     showProject: true,
@@ -120,7 +120,7 @@ export interface IProject {
   image: string;
   frontend: string[] | [];
   backend: string[] | [];
-  apis: string[] | [];
+  other: string[] | [];
   type: "exploration" | "concept" | "tool";
   path: string;
   showProject: boolean;

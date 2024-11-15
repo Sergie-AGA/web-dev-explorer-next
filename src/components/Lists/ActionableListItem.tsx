@@ -1,7 +1,7 @@
 import { Button } from "@/components/ShadcnUi/Button";
 import { cn } from "@/utils/utils";
 
-export interface ActionableListItemProps {
+export interface IActionableListItemProps {
   title: string;
   description: string;
   link: string;
@@ -23,7 +23,7 @@ export default function ActionableListItem({
   buttonText,
   buttonIcon: ButtonIcon,
   isButtonDisabled = false,
-}: ActionableListItemProps) {
+}: IActionableListItemProps) {
   return (
     <li className="border-cyan-900 border-[2px] border-solid flex flex-col md:flex-row items-center gap-4 w-[100%] max-w-[800px] p-4 rounded-lg">
       {IconComponent && <IconComponent size="40" className="shrink-0" />}
