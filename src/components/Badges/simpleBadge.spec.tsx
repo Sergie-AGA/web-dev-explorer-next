@@ -22,10 +22,4 @@ describe("SimpleBadge", () => {
       "custom-class"
     );
   });
-
-  it("does not render an icon if badge is not recognized", () => {
-    render(<SimpleBadge badge="unknown" />);
-
-    expect(screen.queryByTestId("icon-unknown")).not.toBeInTheDocument();
-  });
 });

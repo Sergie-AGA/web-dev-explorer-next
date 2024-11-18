@@ -13,6 +13,27 @@ export interface IActionableListItemProps {
   isButtonDisabled?: boolean;
 }
 
+/**
+ * ActionableListItem renders a list item with an icon, title, description, a customizable label, and a button that links to a specified URL.
+ *
+ * ```javascript
+ * import ActionableListItem from "@/components/Lists/ActionableListItem";
+ * import { FaExternalLinkAlt } from "react-icons/fa";
+ * import { FaRocket } from "react-icons/fa";
+ *
+ * <ActionableListItem
+ *   title="Launch Project"
+ *   description="Start your project with all necessary tools and guides."
+ *   link="https://example.com/project"
+ *   icon={FaRocket}
+ *   label="Active"
+ *   labelType="green"
+ *   buttonText="Open"
+ *   buttonIcon={FaExternalLinkAlt}
+ *   isButtonDisabled={false}
+ * />
+ * ```
+ */
 export default function ActionableListItem({
   title,
   description,

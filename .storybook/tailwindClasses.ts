@@ -7,4 +7,6 @@ const tailwindClasses = [
   "function",
   "rejt-value",
   "css-bzpine",
+  "keyword",
+  "module",
 ];

@@ -10,6 +10,22 @@ export interface ICardProps {
   onClick?: () => void | undefined;
 }
 
+/**
+ * MorphingCard renders an interactive card with a morphing effect, displaying a project image, a badge indicating the project type, and a title overlay with an optional action button.
+ *
+ * ```javascript
+ * import MorphingCard from "@/components/Cards/MorphingCard/MorphingCard";
+ *
+ * <MorphingCard
+ *   data={{
+ *     title: "Project Alpha",
+ *     type: "design",
+ *     image: "/images/project-alpha.jpg",
+ *   }}
+ *   onClick={() => alert("Card clicked!")}
+ * />
+ * ```
+ */
 const MorphingCard = forwardRef<HTMLDivElement, ICardProps>(
   ({ data, onClick }, ref) => {
     const imageUrl = generateImageUrl(data?.image);

@@ -6,6 +6,29 @@ interface ISearchProps {
   placeholder?: string;
 }
 
+/**
+ * SearchInput Component
+ *
+ * A flexible search input component with integrated clear and search icons.
+ * It supports live search functionality with dynamic updates.
+ *
+ * ```tsx
+ * import SearchInput from "@/components/SearchInput";
+ *
+ * const [searchValue, setSearchValue] = useState("");
+ *
+ * const handleSearch = (text: string) => {
+ *   setSearchValue(text);
+ *   // Add custom search logic here
+ * };
+ *
+ * <SearchInput
+ *   searchValue={searchValue}
+ *   handleSearch={handleSearch}
+ *   placeholder="Search items..."
+ * />
+ * ```
+ */
 export default function SearchInput({
   handleSearch,
   searchValue,
