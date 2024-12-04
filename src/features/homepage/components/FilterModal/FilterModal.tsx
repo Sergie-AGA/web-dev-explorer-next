@@ -124,7 +124,7 @@ export default function FilterModal() {
           </div>
         </div>
         <div>
-          <h2 className="text-sm">API&apos;s</h2>
+          <h2 className="text-sm">Others</h2>
           <div className="flex flex-wrap gap-2">
             {technologies.other.map((tech) => (
               <TechBadge

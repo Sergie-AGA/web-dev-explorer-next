@@ -87,7 +87,7 @@ export const technologies = {
       link: "https://storybook.js.org/",
     },
     {
-      title: "Markdown & MDX",
+      title: "Markdown",
       description:
         "Markdown is a lightweight markup language used for creating formatted text using plain text, ideal for documentation, README files, and website content. MDX extends Markdown by allowing JSX syntax, enabling the inclusion of interactive components alongside Markdown content. This combination is popular for documentation and component libraries, offering both simplicity and interactivity.",
       link: "https://mdxjs.com/",

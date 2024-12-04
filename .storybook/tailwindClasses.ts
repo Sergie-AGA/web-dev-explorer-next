@@ -9,4 +9,5 @@ const tailwindClasses = [
   "css-bzpine",
   "keyword",
   "module",
+  "attr-value",
 ];

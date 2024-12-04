@@ -5,7 +5,7 @@ This project displays the Storybook JS implementation used in this project and e
 ## Tech Stack
 
 Frontend: Storybook, TypeScript, MDX
-Backend: GitHub Pages
+Others: GitHub Pages (hosting)
 
 ## Usage
 

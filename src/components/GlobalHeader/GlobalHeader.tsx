@@ -7,6 +7,20 @@ interface IHeaderProps {
   children?: ReactNode;
 }
 
+/**
+ * GlobalHeader Component
+ *
+ * A header component for global usage, featuring a logo, title, and optional children (e.g., actions or navigation elements).
+ *
+ * ```tsx
+ * import GlobalHeader from "@/components/GlobalHeader";
+ *
+ * <GlobalHeader title="My Application">
+ *   <button className="btn">Sign In</button>
+ * </GlobalHeader>
+ * ```
+ *
+ */
 export default function GlobalHeader({ title, children }: IHeaderProps) {
   return (
     <header className="max-width-container flex items-center mb-4 md:mb-6">

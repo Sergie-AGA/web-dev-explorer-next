@@ -171,7 +171,8 @@
     @apply !bg-card;
   }
 
-  .sbdocs .keyword-module {
-    @apply !text-cyan-200;
+  .sbdocs .keyword,
+  .sbdocs .attr-value {
+    @apply !text-cyan-300;
   }
 }
