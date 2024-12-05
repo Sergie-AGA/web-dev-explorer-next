@@ -53,9 +53,6 @@ importers:
       '@radix-ui/react-toggle-group':
         specifier: ^1.1.0
         version: 1.1.0(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@storybook/addon-a11y':
-        specifier: ^8.4.2
-        version: 8.4.2(storybook@8.4.2)
       '@supabase/supabase-js':
         specifier: ^2.39.3
         version: 2.45.6
@@ -101,6 +98,9 @@ importers:
       highlight.js:
         specifier: ^11.9.0
         version: 11.10.0
+      i18next:
+        specifier: ^24.0.5
+        version: 24.0.5(typescript@5.6.3)
       next:
         specifier: 14.2.4
         version: 14.2.4(@babel/core@7.26.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -131,6 +131,9 @@ importers:
       react-photo-album:
         specifier: ^2.3.0
         version: 2.4.1(react@18.2.0)
+      survey-react-ui:
+        specifier: ^1.12.13
+        version: 1.12.13(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(survey-core@1.12.13)
       tailwind-merge:
         specifier: ^2.2.0
         version: 2.5.4
@@ -168,6 +171,9 @@ importers:
       '@mdx-js/typescript-plugin':
         specifier: ^0.0.6
         version: 0.0.6
+      '@storybook/addon-a11y':
+        specifier: ^8.4.2
+        version: 8.4.2(storybook@8.4.2)
       '@storybook/addon-essentials':
         specifier: 8.4.2
         version: 8.4.2(@types/react@18.3.12)(storybook@8.4.2)(webpack-sources@3.2.3)
@@ -4319,6 +4325,14 @@ packages:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
 
+  i18next@24.0.5:
+    resolution: {integrity: sha512-1jSdEzgFPGLZRsQwydoMFCBBaV+PmrVEO5WhANllZPX4y2JSGTxUjJ+xVklHIsiS95uR8gYc/y0hYZWevucNjg==}
+    peerDependencies:
+      typescript: ^5
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
@@ -6334,6 +6348,16 @@ packages:
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  survey-core@1.12.13:
+    resolution: {integrity: sha512-FEL5cz8gaDvIxpWlYjZqgv5W25KYPG9EBJX5vah2vCVNNZi+AEHoHJC1+j0ZdFZzu/fsix/db65x8Tw1qfqKtg==}
+
+  survey-react-ui@1.12.13:
+    resolution: {integrity: sha512-ha12Kq1FX76zE1BbDOlhcIqn4Ob+48F8qnxZu/nfhXsn5E33NrvPfgRLmHaiTiHbgqEDkzyPyo+MupUA/ahtiw==}
+    peerDependencies:
+      react: ^16.5.0 || ^17.0.1 || ^18.2.0
+      react-dom: ^16.5.0 || ^17.0.1 || ^18.2.0
+      survey-core: 1.12.13
 
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
@@ -11988,6 +12012,12 @@ snapshots:
 
   human-signals@2.1.0: {}
 
+  i18next@24.0.5(typescript@5.6.3):
+    dependencies:
+      '@babel/runtime': 7.26.0
+    optionalDependencies:
+      typescript: 5.6.3
+
   iconv-lite@0.6.3:
     dependencies:
       safer-buffer: 2.1.2
@@ -14615,6 +14645,14 @@ snapshots:
       has-flag: 4.0.0
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  survey-core@1.12.13: {}
+
+  survey-react-ui@1.12.13(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(survey-core@1.12.13):
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      survey-core: 1.12.13
 
   symbol-tree@3.2.4: {}
 

@@ -26,6 +26,28 @@ export const projects: IProject[] = [
     showLink: true,
   },
   {
+    title: "Survey Builder",
+    description:
+      "This project explores the functionalities of Survey JS to build custom surveys, forms and quizzes, and I18n to make the project available on different languages.",
+    image: "/projects/storybook.png",
+    frontend: [
+      "React JS",
+      "Next JS",
+      "JavaScript",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Survey JS",
+      "I18n",
+    ],
+    backend: [],
+    other: ["Vercel"],
+    type: "exploration",
+    path: "/survey",
+    showProject: true,
+    showLink: true,
+  },
+  {
     title: "Storybook Explorer",
     description:
       "This project displays the Storybook JS implementation used in this project and explores its capabilities with addons and different options to create an organised UI documentation for the most important and reusable components in this project.",
