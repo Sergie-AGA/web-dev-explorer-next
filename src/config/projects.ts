@@ -26,7 +26,7 @@ export const projects: IProject[] = [
     showLink: true,
   },
   {
-    title: "Survey Builder",
+    title: "Form Builder",
     description:
       "This project explores the functionalities of Survey JS to build custom surveys, forms and quizzes, and I18n to make the project available on different languages.",
     image: "/projects/storybook.png",
@@ -43,7 +43,7 @@ export const projects: IProject[] = [
     backend: [],
     other: ["Vercel"],
     type: "exploration",
-    path: "/survey",
+    path: "/form-builder",
     showProject: true,
     showLink: true,
   },
