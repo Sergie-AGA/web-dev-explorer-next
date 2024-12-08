@@ -1,0 +1,134 @@
+"use client";
+
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "@/components/ShadcnUi/Sidebar";
+import {
+  DndContext,
+  useDraggable,
+  DragOverlay,
+  MouseSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import Link from "next/link";
+import { cn } from "@/utils/utils";
+import { useState } from "react";
+import {
+  IconLetterT,
+  IconCheckbox,
+  IconCircleDot,
+  IconSelector,
+  IconFileDescription,
+  IconCalendar,
+  IconSwipeRight,
+  IconFileUpload,
+  IconListNumbers,
+} from "@tabler/icons-react";
+
+const items = [
+  { title: "Text", id: "text", icon: IconLetterT },
+  { title: "Checkbox", id: "checkbox", icon: IconCheckbox },
+  { title: "Radio", id: "radio", icon: IconCircleDot },
+  { title: "Dropdown", id: "dropdown", icon: IconSelector },
+  { title: "Textarea", id: "textarea", icon: IconFileDescription },
+  { title: "Date Picker", id: "date-picker", icon: IconCalendar },
+  { title: "Range Slider", id: "range-slider", icon: IconSwipeRight },
+  { title: "File Upload", id: "file-upload", icon: IconFileUpload },
+  { title: "Number Input", id: "number-input", icon: IconListNumbers },
+];
+
+function DraggableItem({
+  id,
+  title,
+  Icon,
+}: {
+  id: string;
+  title: string;
+  Icon: any;
+}) {
+  const { attributes, listeners, setNodeRef, transform } = useDraggable({ id });
+  const style = {
+    transform: `translate3d(${transform?.x ?? 0}px, ${transform?.y ?? 0}px, 0)`,
+  };
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      {...attributes}
+      {...listeners}
+      className="flex items-center w-full font-bold cursor-grab"
+    >
+      <Icon size={20} className="mr-2" />
+      {title}
+    </div>
+  );
+}
+
+export function FormsSidebar() {
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
+  const activeItem = items.find((item) => item.id === activeId);
+
+  return (
+    <DndContext
+      sensors={sensors}
+      onDragStart={(event) => setActiveId(event.active.id as string)}
+      onDragEnd={(event) => {
+        setActiveId(null);
+        console.log("Dropped", event);
+      }}
+      onDragCancel={() => setActiveId(null)}
+    >
+      <Sidebar className="bg-card shadow-sm">
+        <SidebarContent>
+          <SidebarGroup>
+            <SidebarGroupLabel className="flex items-center gap-4 h-[40px] mb-2">
+              <Link href="/">
+                <img
+                  src="/Logo.svg"
+                  alt="Project Logo"
+                  className="w-12 h-12 mr-3"
+                />
+              </Link>
+              <h1 className="text-center text-lg font-bold">Form Builder</h1>
+            </SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {items.map((item) => (
+                  <SidebarMenuItem key={item.id}>
+                    <SidebarMenuButton asChild>
+                      <div className={cn("flex items-center w-full")}>
+                        <DraggableItem
+                          id={item.id}
+                          title={item.title}
+                          Icon={item.icon}
+                        />
+                      </div>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        </SidebarContent>
+      </Sidebar>
+      <DragOverlay>
+        {activeItem && (
+          <div className="font-bold bg-white p-2 rounded shadow flex items-center">
+            <activeItem.icon size={20} className="mr-2" />
+            {activeItem.title}
+          </div>
+        )}
+      </DragOverlay>
+    </DndContext>
+  );
+}
