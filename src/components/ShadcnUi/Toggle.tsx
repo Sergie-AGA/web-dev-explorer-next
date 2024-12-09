@@ -28,6 +28,18 @@ const toggleVariants = cva(
   }
 );
 
+/**
+ * The Toggle component is an interactive button that switches between two states, such as "on" and "off." It supports multiple sizes and variants, allowing for customizable appearance and behavior.
+ *
+ * ```javascript
+ * import { Toggle } from "@/components/ShadcnUIToggle";
+ *
+ * <Toggle variant="outline" size="lg" pressed={true} className="custom-toggle">
+ *   Outline Toggle
+ * </Toggle>
+ * ```
+ */
+
 const Toggle = React.forwardRef<
   React.ElementRef<typeof TogglePrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root> &

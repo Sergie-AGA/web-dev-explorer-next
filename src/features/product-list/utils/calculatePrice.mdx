@@ -1,0 +1,64 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Product List POC/Utils/Calculate Price" />
+
+# Calculate Price Utility
+
+The `calculatePrice` function computes two types of prices for a product: `discountedPrice` and `pickUpPrice`. It uses a base discount system with adjustable levels and a pickup bonus discount when applicable.
+
+## Parameters
+
+- **`product`** (`IProduct`): An object representing a product. This object should contain:
+  - `basePrice`: The base price of the product.
+  - `discount`: Optional custom discount as a decimal (e.g., 0.3 for 30%).
+  - `priceLevel`: The level of discount applied based on the number of items, with the following values:
+    - `1` - 55% discount
+    - `2` - 40% discount
+    - `3` - 20% discount
+  - `pickUpBonus`: A boolean indicating if an additional pickup discount should apply (20% discount).
+
+## Usage Examples
+
+- **If you want to calculate a standard discount without pickup**:
+
+  ```js
+  import { calculatePrice } from "@/utils/calculatePrice";
+
+  const product = {
+    basePrice: 100,
+    priceLevel: 2, // 40% discount from discountMap
+  };
+
+  const { discountedPrice, pickUpPrice } = calculatePrice(product);
+  console.log(discountedPrice); // Output: 60
+  console.log(pickUpPrice); // Output: 60 (no pickup bonus)
+  ```
+
+- **If you want to calculate a discount with a custom discount rate**:
+
+  ```js
+  const product = {
+    basePrice: 200,
+    discount: 0.25, // Custom 25% discount
+  };
+
+  const { discountedPrice, pickUpPrice } = calculatePrice(product);
+  console.log(discountedPrice); // Output: 150
+  console.log(pickUpPrice); // Output: 150 (no pickup bonus)
+  ```
+
+- **If you want to include a pickup bonus in the price**:
+
+  ```js
+  const product = {
+    basePrice: 150,
+    priceLevel: 1, // 55% discount
+    pickUpBonus: true, // Additional 20% pickup discount
+  };
+
+  const { discountedPrice, pickUpPrice } = calculatePrice(product);
+  console.log(discountedPrice); // Output: 67.5 (basePrice - 55%)
+  console.log(pickUpPrice); // Output: 37.5 (additional pickup discount)
+  ```
+
+This utility function provides flexibility in handling discounts by combining `discountMap` levels and custom discounts, enabling you to dynamically calculate prices based on various criteria.

@@ -1,0 +1,59 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Reusable Backend/Services/Get Reusable Backend" />
+
+# Get Reusable Backend Service
+
+The `getReusableBackend` function retrieves data from the `Reusable Backend` table in Supabase. It provides an interface for fetching modular backend configurations or templates stored within the database, returning an array of entries or an empty array if an error occurs.
+
+## Usage
+
+This function uses an asynchronous call to fetch data from Supabase, returning either the data or an empty array in case of an error. Make sure Supabase is properly configured in your project to utilize this service.
+
+### Example Scenarios
+
+- **If you want to fetch and log all reusable backend configurations**:
+
+  ```js
+  import { getReusableBackend } from "@/services/getReusableBackend";
+
+  const fetchReusableBackends = async () => {
+    const backendConfigs = await getReusableBackend();
+    console.log(backendConfigs); // Output: Array of backend configurations or []
+  };
+
+  fetchReusableBackends();
+  ```
+
+- **If you want to use the data in a component**:
+
+  ```js
+  import { useEffect, useState } from "react";
+  import { getReusableBackend } from "@/services/getReusableBackend";
+
+  const BackendList = () => {
+    const [backends, setBackends] = useState([]);
+
+    useEffect(() => {
+      const fetchData = async () => {
+        const backendList = await getReusableBackend();
+        setBackends(backendList);
+      };
+      fetchData();
+    }, []);
+
+    return (
+      <div>
+        {backends.length > 0 ? (
+          backends.map((backend) => <div key={backend.id}>{backend.name}</div>)
+        ) : (
+          <p>No reusable backends found</p>
+        )}
+      </div>
+    );
+  };
+
+  export default BackendList;
+  ```
+
+This service provides a simple way to access and display reusable backend configurations stored in the Supabase database.

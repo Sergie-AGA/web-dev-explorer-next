@@ -13,7 +13,7 @@ interface FilterCriteria {
   text?: string;
   frontend?: string[];
   backend?: string[];
-  apis?: string[];
+  other?: string[];
 }
 
 function filterProjects(
@@ -43,10 +43,10 @@ function filterProjects(
           )
         : true) &&
       // API
-      (filter.apis?.length
-        ? project.apis?.length &&
-          filter.apis.every((item) =>
-            (project.apis as string[])?.includes(item)
+      (filter.other?.length
+        ? project.other?.length &&
+          filter.other.every((item) =>
+            (project.other as string[])?.includes(item)
           )
         : true)
     );
@@ -145,14 +145,14 @@ export default function ProjectGrid() {
                 ))}
               </div>
             )}
-            {url.apis && (
+            {url.other && (
               <div className="flex flex-wrap gap-1 items-center pt-6 relative">
                 <span className="text-sm font-bold absolute top-0 left-[50%] translate-x-[-50%]">
-                  APIs:
+                  Other:
                 </span>
-                {(url.apis as string[]).map((tech) => (
+                {(url.other as string[]).map((tech) => (
                   <TechBadge
-                    onClick={() => removeFilter("apis", tech)}
+                    onClick={() => removeFilter("other", tech)}
                     key={tech}
                     title={tech}
                     removable={true}

@@ -1,0 +1,56 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Global/Hooks/useURLState" />
+
+# useURLState Hook
+
+The `useURLState` hook retrieves and parses query parameters from the URL, allowing you to manage URL-based state within a React application. An optional configuration allows certain query values to be returned as arrays.
+
+### Descriptions
+
+- **`useURLState`**: Returns a parsed object of query parameters based on the URL. Accepts an optional configuration:
+
+  - **`queryAsArray`** (`boolean`): If true, parses certain query values as arrays. For example, "category=books,fiction" would return `{ category: ["books", "fiction"] }`.
+
+- **`generateQueryString`**: Generates a query string based on an input object. If values in the object are arrays, they are joined by commas for URL compatibility.
+
+### Example Scenarios
+
+- **If you want to parse URL parameters into an object**:
+
+  ```js
+  import { useURLState } from "@/hooks/useURLState";
+
+  const query = useURLState();
+  console.log(query); // { foo: "bar", baz: "qux" }
+  ```
+
+- **If you want to parse URL parameters with array values**:
+
+  ```js
+  import { useURLState } from "@/hooks/useURLState";
+
+  const query = useURLState({ queryAsArray: true });
+  console.log(query); // { category: ["books", "fiction"] }
+  ```
+
+- **If you want to generate a query string from an object**:
+
+  ```js
+  import { generateQueryString } from "@/hooks/useURLState";
+
+  const queryString = generateQueryString({
+    category: ["books", "fiction"],
+    type: "novel",
+  });
+  console.log(queryString); // "?category=books,fiction&type=novel"
+  ```
+
+- **If you want to handle text values as single strings even with `queryAsArray` enabled**:
+
+  ```js
+  const query = useURLState({ queryAsArray: true });
+  console.log(query); // { text: "hello", category: ["books", "fiction"] }
+  ```
+
+These utilities simplify working with URL-based state, making it easier to manage query parameters and update URLs programmatically.

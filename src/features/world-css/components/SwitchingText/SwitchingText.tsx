@@ -7,6 +7,20 @@ interface ISwitcherTextProps {
   children: React.ReactNode[];
 }
 
+/**
+ * Cycles through provided children elements, switching visible text at a set interval. Each child is displayed in sequence with a fading animation effect.
+ *
+ * ```javascript
+ * import SwitchingText from "@/features/world-css/components/SwitchingText/SwitchingText";
+ *
+ * <SwitchingText>
+ *   <span>First Message</span>
+ *   <span>Second Message</span>
+ *   <span>Third Message</span>
+ * </SwitchingText>
+ * ```
+ */
+
 export default function SwitchingText({ children }: ISwitcherTextProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 

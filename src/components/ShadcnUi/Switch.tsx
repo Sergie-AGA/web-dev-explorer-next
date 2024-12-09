@@ -5,6 +5,16 @@ import * as SwitchPrimitives from "@radix-ui/react-switch";
 
 import { cn } from "@/utils/utils";
 
+/**
+ * The Shadcn UI Switch component is a customizable toggle switch that allows users to switch between two states, such as on/off. It includes styling for both checked and unchecked states and can be disabled if needed.
+ *
+ * ```javascript
+ * import { Switch } from "@/components/ShadcnUI/Switch";
+ *
+ * <Switch checked={true} disabled={false} className="custom-class" />
+ * ```
+ */
+
 const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>

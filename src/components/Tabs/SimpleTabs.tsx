@@ -20,6 +20,25 @@ interface ITabs {
   title: string;
 }
 
+/**
+ * SimpleTabs provides a tabbed interface allowing users to switch between different content sections. Each tab is customizable, with optional initial selection and styling.
+ *
+ * ```javascript
+ * import SimpleTabs from "@/components/Tabs/SimpleTabs";
+ *
+ * <SimpleTabs
+ *   tabData={[
+ *     { value: "tab1", title: "Tab 1" },
+ *     { value: "tab2", title: "Tab 2" }
+ *   ]}
+ *   initialTab="tab1"
+ *   className="custom-tabs"
+ * >
+ *   <div>Content for Tab 1</div>
+ *   <div>Content for Tab 2</div>
+ * </SimpleTabs>
+ * ```
+ */
 export default function SimpleTabs({
   tabData,
   initialTab,

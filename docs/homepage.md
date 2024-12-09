@@ -10,7 +10,7 @@ Frontend: React JS, Next JS, Typescript, Tailwind CSS and ShadcnUI, Jest, Cypres
 
 The homepage uses mostly global elements but also specific components for its context
 
-## Services
+## Store
 
 The store called `useUIStore` handles the displaying the modals for filtering and tech information as well as storing which "tech" is active, so you can click on a technology from a project modal and open the modal containing information about it.
 

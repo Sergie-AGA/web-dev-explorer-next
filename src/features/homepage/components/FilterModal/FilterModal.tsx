@@ -14,16 +14,16 @@ import TechBadge from "../TechBadge/TechBadge";
 interface ITechFilters {
   frontend: string[];
   backend: string[];
-  apis: string[];
+  other: string[];
 }
 
-type Category = "frontend" | "backend" | "apis";
+type Category = "frontend" | "backend" | "other";
 
 export default function FilterModal() {
   const emptyCats = {
     frontend: [],
     backend: [],
-    apis: [],
+    other: [],
   };
   const url = useURLState({ queryAsArray: true });
 
@@ -31,7 +31,7 @@ export default function FilterModal() {
 
   initialFilters.frontend = url?.frontend || [];
   initialFilters.backend = url?.backend || [];
-  initialFilters.apis = url?.apis || [];
+  initialFilters.other = url?.other || [];
 
   const [searchValue, setSearchValue] = useState(url?.text || "");
   const [techs, setTechs] = useState<ITechFilters>(initialFilters);
@@ -56,7 +56,7 @@ export default function FilterModal() {
       techs.frontend?.length && `frontend=${techs.frontend.join(",")}`;
     const backendQuery =
       techs.backend?.length && `backend=${techs.backend.join(",")}`;
-    const apiQuery = techs.apis?.length && `apis=${techs.apis.join(",")}`;
+    const apiQuery = techs.other?.length && `other=${techs.other.join(",")}`;
 
     const query = `?${[textQuery, frontendQuery, backendQuery, apiQuery]
       .filter(Boolean)
@@ -124,15 +124,15 @@ export default function FilterModal() {
           </div>
         </div>
         <div>
-          <h2 className="text-sm">API&apos;s</h2>
+          <h2 className="text-sm">Others</h2>
           <div className="flex flex-wrap gap-2">
-            {technologies.apis.map((tech) => (
+            {technologies.other.map((tech) => (
               <TechBadge
-                onClick={() => handleTech("apis", tech.title)}
+                onClick={() => handleTech("other", tech.title)}
                 key={tech.title}
                 isLink={false}
                 className={cn({
-                  "bg-cyan-600": techs.apis?.includes(tech.title),
+                  "bg-cyan-600": techs.other?.includes(tech.title),
                 })}
                 title={tech.title}
               />
