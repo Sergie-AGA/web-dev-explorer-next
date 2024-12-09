@@ -4,6 +4,16 @@ interface RandomColourTextProps {
   text: string;
 }
 
+/**
+ * Renders text with each character changing to a random color on hover. Colors are reset for each hover interaction, creating a dynamic color effect for each letter.
+ *
+ * ```javascript
+ * import RandomColourText from "@/features/world-css/components/RandomColourText/RandomColourText";
+ *
+ * <RandomColourText text="Colorful Text!" />
+ * ```
+ */
+
 const RandomColourText: React.FC<RandomColourTextProps> = ({ text }) => {
   const [colors, setColors] = useState<string[]>(
     new Array(text.length).fill("")

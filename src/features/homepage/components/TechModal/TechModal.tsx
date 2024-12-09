@@ -19,8 +19,8 @@ export default function TechModal() {
       value: "backend",
     },
     {
-      title: "APIs",
-      value: "apis",
+      title: "Other",
+      value: "other",
     },
   ];
 
@@ -91,14 +91,14 @@ export default function TechModal() {
             ))}
           </div>
           <div className="flex flex-wrap gap-2">
-            {technologies.apis.map((tech) => (
+            {technologies.other.map((tech) => (
               <TechBadge
                 key={tech.title}
                 className={cn({
                   "bg-cyan-600": techDetails?.title == tech.title,
                 })}
                 title={tech.title}
-                onClick={() => handleActiveTech("apis", tech.title)}
+                onClick={() => handleActiveTech("other", tech.title)}
               />
             ))}
           </div>

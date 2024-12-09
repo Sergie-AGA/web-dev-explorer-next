@@ -11,6 +11,16 @@ interface IGlitchTextProps {
   fixed?: boolean;
 }
 
+/**
+ * The GlitchText component renders text with a glitch effect, allowing customization of the text tag, glitch behavior, and additional styles. Each letter is rendered individually to achieve the glitch effect.
+ *
+ * ```javascript
+ * import GlitchText from "@/features/world-css/components/GlitchText/GlitchText";
+ *
+ * <GlitchText tag="h1" text="Glitchy Text" fixed={true} className="custom-class" />
+ * ```
+ */
+
 const GlitchText: React.FC<IGlitchTextProps> = ({
   tag: Tag,
   text,

@@ -33,6 +33,7 @@
     --chart-5: 27 87% 67%;
   }
 
+  :root,
   .dark-theme {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -146,5 +147,32 @@
   /* Util */
   .no-overflow-anchor {
     overflow-anchor: none;
+  }
+
+  /* To interact with Storybook, add more classes to ./.storybook/tailwindClasses.ts */
+  .sbdocs pre,
+  .sbdocs .docs-story,
+  .sbdocs td,
+  .sbdocs table {
+    @apply !bg-cyan-950;
+  }
+
+  .sbdocs .token.punctuation,
+  .sbdocs .token.operator,
+  .sbdocs .rejt-value {
+    @apply !text-foreground;
+  }
+
+  .sbdocs .token.function {
+    @apply !text-[#F1FA8C];
+  }
+
+  .sbdocs .css-bzpine button {
+    @apply !bg-card;
+  }
+
+  .sbdocs .keyword,
+  .sbdocs .attr-value {
+    @apply !text-cyan-300;
   }
 }

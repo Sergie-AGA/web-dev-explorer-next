@@ -34,7 +34,7 @@ jest.mock("@/config/technologies", () => ({
         description: "A backend runtime",
       },
     ],
-    apis: [
+    other: [
       {
         title: "REST API",
         link: "https://restapi.org",

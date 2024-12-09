@@ -4,7 +4,7 @@ export interface ITechnology {
   link: string;
 }
 
-export type ITechTypes = "frontend" | "backend" | "apis";
+export type ITechTypes = "frontend" | "backend" | "other";
 
 export const technologies = {
   frontend: [
@@ -80,6 +80,18 @@ export const technologies = {
         "A JavaScript end-to-end testing framework that enables developers to write, execute, and debug tests directly in the browser. It provides an easy and reliable way to test the entire user experience for modern web applications.",
       link: "https://www.cypress.io/",
     },
+    {
+      title: "Storybook",
+      description:
+        "An open-source tool for developing UI components in isolation, Storybook provides a sandbox environment to build, test, and showcase components outside of the main application. It supports frameworks like React, Vue, Angular, and more, making it a popular choice for creating and documenting component libraries with live, interactive examples.",
+      link: "https://storybook.js.org/",
+    },
+    {
+      title: "Markdown",
+      description:
+        "Markdown is a lightweight markup language used for creating formatted text using plain text, ideal for documentation, README files, and website content. MDX extends Markdown by allowing JSX syntax, enabling the inclusion of interactive components alongside Markdown content. This combination is popular for documentation and component libraries, offering both simplicity and interactivity.",
+      link: "https://mdxjs.com/",
+    },
   ],
   backend: [
     {
@@ -93,12 +105,6 @@ export const technologies = {
       description:
         "An open-source, cross-platform JavaScript runtime environment built on Chrome's V8 engine. It enables server-side execution of JavaScript, making it popular for building scalable network applications.",
       link: "https://nodejs.org/",
-    },
-    {
-      title: "Vercel",
-      description:
-        "A cloud platform for static sites and Serverless Functions that fits perfectly with your workflow. It provides seamless integration with frontend frameworks and helps you to deploy, manage, and scale your applications with ease.",
-      link: "https://vercel.com/",
     },
     {
       title: "Firebase",
@@ -185,24 +191,24 @@ export const technologies = {
       link: "https://learn.microsoft.com/en-us/aspnet/",
     },
   ],
-  apis: [
+  other: [
     {
-      title: "Stripe",
+      title: "Vercel",
       description:
-        "Stripe API enables developers to seamlessly integrate online payment processing into their applications, facilitating secure transactions, subscription management, and financial automation.",
-      link: "https://docs.stripe.com/api",
+        "A cloud platform for static sites and Serverless Functions that fits perfectly with your workflow. It provides seamless integration with frontend frameworks and helps you to deploy, manage, and scale your applications with ease.",
+      link: "https://vercel.com/",
     },
-    // {
-    //   title: "Youtube",
-    //   description:
-    //     "Allows developers to integrate YouTube features, such as video playback, search, and user interaction, into their applications through a set of RESTful APIs.",
-    //   link: "https://developers.google.com/youtube/v3",
-    // },
-    // {
-    //   title: "OpenAI",
-    //   description:
-    //     "Offers access to state-of-the-art artificial intelligence models for natural language processing, text generation, image recognition, and more, empowering developers to build innovative AI-powered applications and services.",
-    //   link: "https://openai.com/blog/openai-api",
-    // },
+    {
+      title: "GitHub Pages",
+      description:
+        "A service provided by GitHub to host static websites directly from your GitHub repository. Ideal for personal, project, or organization sites. It serves content directly from GitHub repositories.",
+      link: "https://docs.github.com/en/pages",
+    },
+    {
+      title: "GitHub Actions",
+      description:
+        "A workflow automation tool by GitHub that lets you build, test, and deploy your code directly from your GitHub repository. GitHub Actions supports CI/CD pipelines and can be customized to automate a variety of tasks across multiple languages and frameworks.",
+      link: "https://docs.github.com/en/actions",
+    },
   ],
 };

@@ -1,0 +1,138 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="World of CSS Effects/Store/Sidebar Store" />
+
+# Sidebar Store
+
+The `useSidebarStore` is a Zustand store for managing the state of the sidebar, including the active sidebar, section, and component in your application.
+
+### Usage
+
+If you want to get and set the current active sidebar, section, and component states:
+
+```js
+import { useSidebarStore } from "@/features/world-css/store/useUIChange";
+
+const {
+  activeSidebar,
+  changeActiveSidebar,
+  activeSection,
+  changeActiveSection,
+  activeComponent,
+  changeActiveComponent,
+} = useSidebarStore((state) => ({
+  activeSidebar: state.activeSidebar,
+  changeActiveSidebar: state.changeActiveSidebar,
+  activeSection: state.activeSection,
+  changeActiveSection: state.changeActiveSection,
+  activeComponent: state.activeComponent,
+  changeActiveComponent: state.changeActiveComponent,
+}));
+```
+
+### Properties
+
+Below are the fields within the `useSidebarStore` along with their types and usage examples:
+
+---
+
+#### `activeSidebar: TSectionType`
+
+Represents the current active sidebar section.
+
+- **Type**: `"tsfx" | "art" | "background"`
+- **Default**: `"tsfx"`
+
+**Usage Example**:
+
+```js
+const activeSidebar = useSidebarStore((state) => state.activeSidebar);
+console.log(activeSidebar); // Outputs the currently active sidebar section
+```
+
+---
+
+#### `changeActiveSidebar: (section: TSectionType) => void`
+
+Function to set the active sidebar section.
+
+- **Parameter**: `section` - one of `"tsfx" | "art" | "background"`
+
+**Usage Example**:
+
+```js
+const changeActiveSidebar = useSidebarStore(
+  (state) => state.changeActiveSidebar
+);
+changeActiveSidebar("art"); // Sets activeSidebar to "art"
+```
+
+---
+
+#### `activeSection: TSectionType`
+
+Tracks the current active section within the sidebar.
+
+- **Type**: `"tsfx" | "art" | "background"`
+- **Default**: `"tsfx"`
+
+**Usage Example**:
+
+```js
+const activeSection = useSidebarStore((state) => state.activeSection);
+console.log(activeSection); // Outputs the current active section
+```
+
+---
+
+#### `changeActiveSection: (section: TSectionType) => void`
+
+Function to update the active section.
+
+- **Parameter**: `section` - one of `"tsfx" | "art" | "background"`
+
+**Usage Example**:
+
+```js
+const changeActiveSection = useSidebarStore(
+  (state) => state.changeActiveSection
+);
+changeActiveSection("background"); // Sets activeSection to "background"
+```
+
+---
+
+#### `activeComponent: TComponentType`
+
+Represents the current active component.
+
+- **Type**: `"glitch" | "neon" | "fade" | "phone" | "ranCol" | "bIcons" | "bSquares"`
+- **Default**: `"glitch"`
+
+**Usage Example**:
+
+```js
+const activeComponent = useSidebarStore((state) => state.activeComponent);
+console.log(activeComponent); // Outputs the current active component
+```
+
+---
+
+#### `changeActiveComponent: (comp: TComponentType) => void`
+
+Function to set the active component.
+
+- **Parameter**: `comp` - one of `"glitch" | "neon" | "fade" | "phone" | "ranCol" | "bIcons" | "bSquares"`
+
+**Usage Example**:
+
+```js
+const changeActiveComponent = useSidebarStore(
+  (state) => state.changeActiveComponent
+);
+changeActiveComponent("neon"); // Sets activeComponent to "neon"
+```
+
+---
+
+This store allows centralized management of the sidebar state, making it easier to access and update the currently active elements across the application.

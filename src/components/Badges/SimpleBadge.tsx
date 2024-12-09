@@ -2,18 +2,31 @@ import { cn } from "@/utils/utils";
 import { MapBadgeToIcon } from "../Cards/MorphingCard/MapBadgeToIcon";
 
 interface BadgeProps {
-  badge: string;
+  badge: "tool" | "concept" | "exploration" | "cart" | "car" | "money";
   showTitle?: boolean;
   className?: string;
 }
 
+/**
+ * A Simple Badge renders a badge with an icon and optionally displays the title. It uses a mapping function to render a specific icon depending on the text you give that
+ *
+ * ```javascript
+ * import SimpleBadge from "@/components/Badges/SimpleBadge";
+ *
+ * <SimpleBadge
+ *   badge="cart"
+ *   showTitle={false}
+ *   className="rounded cursor-pointer"
+ * />
+ * ```
+ *
+ */
 export default function SimpleBadge({
   badge,
   showTitle = true,
   className,
 }: BadgeProps) {
   const IconComponent = MapBadgeToIcon(badge);
-
   return (
     <div
       data-testid="simple-badge"

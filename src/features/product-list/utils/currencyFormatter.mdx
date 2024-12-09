@@ -1,0 +1,32 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Product List POC/Utils/British Currency Formatter" />
+
+# British Currency Formatter
+
+The `britishCurrencyFormatter` utility is a pre-configured instance of JavaScript’s `Intl.NumberFormat` for formatting numbers as British pounds (GBP). This formatter ensures consistent, localized currency formatting across the application.
+
+## Usage
+
+To format a number as GBP, simply pass the amount to `britishCurrencyFormatter`.
+
+### Example Scenarios
+
+- **If you want to format a number as British pounds**:
+
+  ```js
+  import { britishCurrencyFormatter } from "@/utils/britishCurrencyFormatter";
+
+  const price = 2500;
+  const formattedPrice = britishCurrencyFormatter(price);
+  console.log(formattedPrice); // Output: "£2,500.00"
+  ```
+
+- **If you have a product price and want it displayed in GBP format**:
+
+  ```js
+  const productPrice = 49.99;
+  console.log(britishCurrencyFormatter(productPrice)); // Output: "£49.99"
+  ```
+
+This formatter ensures that all currency values are displayed consistently in British pounds, following the UK’s formatting conventions.
