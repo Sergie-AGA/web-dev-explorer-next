@@ -56,7 +56,7 @@ export default function ActionableListItem({
               "capitalize pointer-events-none inline-flex items-center rounded-md px-2.5 py-0.5 text-xs",
               labelType === "green"
                 ? "bg-emerald-900 text-emerald-400"
-                : "bg-sky-900 text-sky-400"
+                : "bg-sky-900 text-sky-300"
             )}
           >
             {label}

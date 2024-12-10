@@ -10,18 +10,9 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ShadcnUi/Sidebar";
-import {
-  DndContext,
-  useDraggable,
-  DragOverlay,
-  MouseSensor,
-  TouchSensor,
-  useSensor,
-  useSensors,
-} from "@dnd-kit/core";
+import { useDraggable, DragOverlay } from "@dnd-kit/core";
 import Link from "next/link";
 import { cn } from "@/utils/utils";
-import { useState } from "react";
 import {
   IconLetterT,
   IconCheckbox,
@@ -73,21 +64,15 @@ function DraggableItem({
   );
 }
 
-export function FormsSidebar() {
-  const [activeId, setActiveId] = useState<string | null>(null);
-  const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
+export default function FormsSidebar({
+  activeId,
+}: {
+  activeId: string | null;
+}) {
   const activeItem = items.find((item) => item.id === activeId);
 
   return (
-    <DndContext
-      sensors={sensors}
-      onDragStart={(event) => setActiveId(event.active.id as string)}
-      onDragEnd={(event) => {
-        setActiveId(null);
-        console.log("Dropped", event);
-      }}
-      onDragCancel={() => setActiveId(null)}
-    >
+    <>
       <Sidebar className="bg-card shadow-sm">
         <SidebarContent>
           <SidebarGroup>
@@ -129,6 +114,6 @@ export function FormsSidebar() {
           </div>
         )}
       </DragOverlay>
-    </DndContext>
+    </>
   );
 }

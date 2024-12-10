@@ -61,7 +61,7 @@ Backend: JavaScript, Node JS, Typescript, Fastify, PostgreSQL, Vitest, Supertest
 
 This project displays the Storybook JS implementation used in this project and explores its capabilities with addons and different options to create an organised UI documentation for the most important and reusable components in this project.
 Frontend: Storybook JS, TypeScript, React JS
-Backend: GitHub Pages, GitHub Actions
+Others: GitHub Pages, GitHub Actions
 
 ### In Progress - State Mock Endpoint
 

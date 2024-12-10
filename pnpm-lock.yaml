@@ -152,6 +152,9 @@ importers:
       react-photo-album:
         specifier: ^2.3.0
         version: 2.4.1(react@18.2.0)
+      survey-core:
+        specifier: ^1.12.13
+        version: 1.12.13
       survey-react-ui:
         specifier: ^1.12.13
         version: 1.12.13(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(survey-core@1.12.13)
@@ -176,6 +179,9 @@ importers:
       zod:
         specifier: ^3.23.8
         version: 3.23.8
+      zukeeper:
+        specifier: ^1.0.2
+        version: 1.0.2
       zustand:
         specifier: ^4.5.0
         version: 4.5.5(@types/react@18.3.12)(react@18.2.0)
@@ -193,7 +199,7 @@ importers:
         specifier: ^0.0.6
         version: 0.0.6
       '@storybook/addon-a11y':
-        specifier: ^8.4.2
+        specifier: 8.4.2
         version: 8.4.2(storybook@8.4.2)
       '@storybook/addon-essentials':
         specifier: 8.4.2
@@ -7040,6 +7046,9 @@ packages:
 
   zod@3.23.8:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+
+  zukeeper@1.0.2:
+    resolution: {integrity: sha512-mffz8JpzC96B3Gpoixklfl2/wY4KsYxZvgPRLFMIqAvEQeMPTjLYG8oUWXm9eoItU/nQ5Lt0G2b0GcZRDGzVgA==}
 
   zustand@4.5.5:
     resolution: {integrity: sha512-+0PALYNJNgK6hldkgDq2vLrw5f6g/jCInz52n9RTpropGgeAf/ioFUCdtsjCqu4gNhW9D01rUQBROoRjdzyn2Q==}
@@ -15426,6 +15435,8 @@ snapshots:
   yocto-queue@1.1.1: {}
 
   zod@3.23.8: {}
+
+  zukeeper@1.0.2: {}
 
   zustand@4.5.5(@types/react@18.3.12)(react@18.2.0):
     dependencies:
