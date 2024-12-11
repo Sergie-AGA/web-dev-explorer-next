@@ -10,21 +10,23 @@ export type SurveyElement = {
 
 interface ISurveyEditorState {
   elements: SurveyElement[];
+  editingElementId: string | null;
 
   addElement: (element: SurveyElement) => void;
-
   updateElement: (
     id: string,
     updatedProperties: Partial<SurveyElement>
   ) => void;
-
   removeElement: (id: string) => void;
-
   clearElements: () => void;
+
+  setEditingElement: (id: string | null) => void;
+  getEditingElement: () => SurveyElement | null;
 }
 
-const surveyEditorStore: StateCreator<ISurveyEditorState> = (set) => ({
+const surveyEditorStore: StateCreator<ISurveyEditorState> = (set, get) => ({
   elements: [],
+  editingElementId: null,
 
   addElement: (element) =>
     set((state) => ({
@@ -49,6 +51,16 @@ const surveyEditorStore: StateCreator<ISurveyEditorState> = (set) => ({
     })),
 
   clearElements: () => set(() => ({ elements: [] })),
+
+  setEditingElement: (id) => set({ editingElementId: id }),
+
+  getEditingElement: () => {
+    const state = get();
+    return (
+      state.elements.find((element) => element.id === state.editingElementId) ||
+      null
+    );
+  },
 });
 
 export const useFormBuilderStore = create<ISurveyEditorState>()(

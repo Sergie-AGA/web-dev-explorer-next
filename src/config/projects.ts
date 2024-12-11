@@ -42,7 +42,7 @@ export const projects: IProject[] = [
     ],
     backend: [],
     other: ["Vercel"],
-    type: "exploration",
+    type: "tool",
     path: "/form-builder",
     showProject: true,
     showLink: true,

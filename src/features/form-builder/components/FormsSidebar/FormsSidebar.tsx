@@ -108,7 +108,7 @@ export default function FormsSidebar({
       </Sidebar>
       <DragOverlay>
         {activeItem && (
-          <div className="font-bold bg-white p-2 rounded shadow flex items-center">
+          <div className="font-bold bg-card text-card-foreground p-2 rounded shadow flex items-center">
             <activeItem.icon size={20} className="mr-2" />
             {activeItem.title}
           </div>

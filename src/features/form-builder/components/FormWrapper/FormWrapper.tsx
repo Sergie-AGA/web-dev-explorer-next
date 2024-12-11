@@ -29,7 +29,6 @@ export default function FormWrapper() {
         title: `New ${activeId.charAt(0).toUpperCase() + activeId.slice(1)}`,
       };
       addElement(element);
-      console.log(`Dropped ${activeId} on FormArea`, element);
     }
     setActiveId(null);
   };
