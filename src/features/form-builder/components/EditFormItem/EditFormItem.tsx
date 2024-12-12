@@ -16,16 +16,17 @@ export default function EditFormItem({
   isOpen: boolean;
   onClose: () => void;
 }) {
-  const getEditingElement = useFormBuilderStore(
-    (state) => state.getEditingElement
+  const editingElementId = useFormBuilderStore(
+    (state) => state.editingElementId
   );
+  const elements = useFormBuilderStore((state) => state.elements);
   const updateElement = useFormBuilderStore((state) => state.updateElement);
 
-  const editingElement = getEditingElement();
+  const editingElement =
+    elements.find((element) => element.id === editingElementId) || null;
 
   const handleTitleBlur = (newTitle: string) => {
     if (!editingElement) return;
-
     updateElement(editingElement.id, { title: newTitle });
   };
 

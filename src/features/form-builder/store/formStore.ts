@@ -21,10 +21,9 @@ interface ISurveyEditorState {
   clearElements: () => void;
 
   setEditingElement: (id: string | null) => void;
-  getEditingElement: () => SurveyElement | null;
 }
 
-const surveyEditorStore: StateCreator<ISurveyEditorState> = (set, get) => ({
+const surveyEditorStore: StateCreator<ISurveyEditorState> = (set) => ({
   elements: [],
   editingElementId: null,
 
@@ -36,12 +35,7 @@ const surveyEditorStore: StateCreator<ISurveyEditorState> = (set, get) => ({
   updateElement: (id, updatedProperties) =>
     set((state) => ({
       elements: state.elements.map((element) =>
-        element.id === id
-          ? {
-              ...element,
-              ...updatedProperties,
-            }
-          : element
+        element.id === id ? { ...element, ...updatedProperties } : element
       ),
     })),
 
@@ -53,14 +47,6 @@ const surveyEditorStore: StateCreator<ISurveyEditorState> = (set, get) => ({
   clearElements: () => set(() => ({ elements: [] })),
 
   setEditingElement: (id) => set({ editingElementId: id }),
-
-  getEditingElement: () => {
-    const state = get();
-    return (
-      state.elements.find((element) => element.id === state.editingElementId) ||
-      null
-    );
-  },
 });
 
 export const useFormBuilderStore = create<ISurveyEditorState>()(
