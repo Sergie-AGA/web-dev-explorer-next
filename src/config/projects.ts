@@ -28,7 +28,7 @@ export const projects: IProject[] = [
   {
     title: "Form Builder",
     description:
-      "This project explores the functionalities of Survey JS to build custom surveys, forms and quizzes, and I18n to make the project available on different languages.",
+      "This project explores the functionalities of Survey JS and I18n to make the project available on different languages. It consists of 2 parts: 1) A form Builder to build custom surveys with simple properties, forms and quizzes; 2) Example Forms using more complex data",
     image: "/projects/storybook.png",
     frontend: [
       "React JS",

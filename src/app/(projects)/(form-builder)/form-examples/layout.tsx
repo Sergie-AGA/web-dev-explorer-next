@@ -1,9 +1,9 @@
 export const metadata = {
   title: {
     template: "%s | Web Dev Explorer",
-    default: "Form Builder",
+    default: "Form Examples",
   },
-  description: "A tool that explores building forms dynamically",
+  description: "Exploring examples of custom forms with Survey JS",
 };
 
 export default function RootTemplate({

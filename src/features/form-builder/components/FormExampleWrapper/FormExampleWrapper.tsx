@@ -2,7 +2,6 @@
 "use client";
 
 import { SidebarProvider } from "@/components/ShadcnUi/Sidebar";
-import FormSidebar from "../FormSidebar/FormSidebar";
 import FormArea from "../FormArea/FormArea";
 import {
   DndContext,
@@ -14,6 +13,7 @@ import {
 import { useState } from "react";
 import { useFormBuilderStore } from "../../store/formStore";
 import FormTopBar from "../FormTopBar/FormTopBar";
+import FormExampleSidebar from "../FormExampleSidebar/FormExampleSidebar";
 
 export default function FormWrapper() {
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -42,7 +42,7 @@ export default function FormWrapper() {
           onDragEnd={handleDrop}
           onDragCancel={() => setActiveId(null)}
         >
-          <FormSidebar activeId={activeId} />
+          <FormExampleSidebar />
           <main className="flex-1 min-h-screen flex flex-col relative overflow-hidden">
             <FormTopBar />
             <FormArea />
