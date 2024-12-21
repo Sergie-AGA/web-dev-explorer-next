@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader";
 import "../../../styles/global.css";
 import { TanstackProvider } from "@/context/tanstack";
+import GlobalHeader from "@/components/GlobalHeader/GlobalHeader";
 
 export const metadata = {
   title: "Gotta Catch 'Em All",

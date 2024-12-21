@@ -18,11 +18,10 @@ const buttonVariants = cva(
           "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
         secondary:
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-          secondaryActive:
+        secondaryActive:
           "bg-neutral-300 text-neutral-900 shadow-sm hover:bg-neutral-300/80 dark:bg-neutral-950 dark:text-neutral-50 dark:hover:bg-neutral-950/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-          "bg-neutral-100 text-neutral-900 shadow-sm hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80",
       },
       size: {
         default: "h-9 px-4 py-2",
@@ -44,6 +43,17 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
+/**
+ * The Shadcn UI Button component renders a versatile, styled button element with configurable size, variant, and additional customization options. It supports rendering as different HTML elements and can include icons or other child elements.
+ *
+ * ```javascript
+ * import { Button } from "@/components/ShadcnUI/Button";
+ *
+ * <Button variant="destructive" size="lg" className="custom-class">
+ *   Delete
+ * </Button>
+ * ```
+ */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";

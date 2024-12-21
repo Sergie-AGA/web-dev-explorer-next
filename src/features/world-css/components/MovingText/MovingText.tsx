@@ -4,6 +4,16 @@ interface MovingTextProps {
   text: string;
 }
 
+/**
+ * Renders text where each character moves randomly on hover, returning to its original position after a brief delay.
+ *
+ * ```javascript
+ * import MovingText from "@/features/world-css/components/MovingText/MovingText";
+ *
+ * <MovingText text="Catch Me If You Can!" />
+ * ```
+ */
+
 const MovingText: React.FC<MovingTextProps> = ({ text }) => {
   const [positions, setPositions] = useState<{ x: number; y: number }[]>(
     new Array(text.length).fill({ x: 0, y: 0 })

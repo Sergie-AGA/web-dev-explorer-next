@@ -1,6 +1,15 @@
 import React from "react";
 import Image from "next/image";
 
+/**
+ * Displays a simulated phone UI with chat messages. Messages appear on the screen in a styled layout, distinguishing between messages sent by the bot and the user.
+ *
+ * ```javascript
+ * import CssPhone from "@/features/world-css/components/CssPhone/CssPhone";
+ *
+ * <CssPhone sentMessages={[{ text: "Hello!", sender: "bot" }, { text: "Hi!", sender: "user" }]} />
+ * ```
+ */
 const CssPhone = ({
   sentMessages,
 }: {

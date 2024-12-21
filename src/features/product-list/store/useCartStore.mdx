@@ -1,0 +1,98 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Product List POC/Stores/Cart Store" />
+
+# Cart Store
+
+The `useCartStore` is a Zustand store that manages the cart state within the application. This includes handling products, managing cart operations, calculating totals, and syncing the cart state with local storage.
+
+### Usage
+
+If you want to import and use all elements of the store:
+
+```js
+import { useCartStore } from "@/store/useCartStore";
+
+const {
+  total,
+  cart,
+  products,
+  setProducts,
+  addToCart,
+  removeFromCart,
+  swapOption,
+  calculateTotals,
+  setLocalStorage,
+  getLocalStorage,
+} = useCartStore((state) => ({
+  total: state.total,
+  cart: state.cart,
+  products: state.products,
+  setProducts: state.setProducts,
+  addToCart: state.addToCart,
+  removeFromCart: state.removeFromCart,
+  swapOption: state.swapOption,
+  calculateTotals: state.calculateTotals,
+  setLocalStorage: state.setLocalStorage,
+  getLocalStorage: state.getLocalStorage,
+}));
+```
+
+### Descriptions
+
+- **`total`** (`ITotal`): An object representing the overall totals for the cart.
+  - **`total`**: The total price of items in the cart after discounts.
+  - **`totalSavings`**: Total savings calculated across items.
+  - **`totalSavingsPercentage`**: The percentage of savings relative to the base price.
+- **`cart`** (`ICart[]`): An array of items currently in the cart, each item including details like the product, chosen option, final price, savings, and bundle status.
+
+- **`products`** (`IProduct[]`): An array of all available products.
+
+- **`setProducts`** (`(products: IProduct[]) => void`): Sets the list of products.
+
+- **`addToCart`** (`(ProductData: ICart) => void`): Adds an item to the cart and recalculates totals. Syncs with local storage.
+
+- **`removeFromCart`** (`(id: string) => void`): Removes an item from the cart by ID and updates totals.
+
+- **`swapOption`** (`(id: string) => void`): Changes the option type for an item in the cart.
+
+- **`calculateTotals`**: Recalculates total cost, savings, and percentage savings for items in the cart.
+
+- **`setLocalStorage`**: Stores the current cart state in local storage.
+
+- **`getLocalStorage`**: Loads the cart from local storage if available.
+
+### Example Scenarios
+
+- **If you want to add a product to the cart**:
+
+  ```js
+  addToCart({
+    product: selectedProduct,
+    option: "discount",
+    finalPrice: 100,
+    savings: 20,
+    percentageSavings: "20%",
+  });
+  ```
+
+- **If you want to remove an item from the cart**:
+
+  ```js
+  removeFromCart(selectedProductId);
+  ```
+
+- **If you want to toggle the option type for a cart item**:
+
+  ```js
+  swapOption(selectedProductId); // Changes the option for the specified product
+  ```
+
+- **If you want to load and save cart state to local storage**:
+
+  ```js
+  getLocalStorage(); // Load cart data from local storage if available
+  setLocalStorage(); // Save the current cart state to local storage
+  ```
+
+This store manages complex cart operations, ensuring calculations and state persistence across sessions.

@@ -5,7 +5,7 @@ This is a Next JS application which contains mini-projects that explore differen
 ## Tech Stack
 
 The following tech stack exists across all projects:
-Frontend: React JS, Next JS, Typescript, JavaScript, Tailwind CSS and ShadcnUI, Jest
+Frontend: React JS, Next JS, Typescript, JavaScript, Tailwind CSS, ShadcnUI
 Backend & Infra: Supabase, Vercel
 Libraries which have small impact may not be listed here or in the project data listing.
 
@@ -119,9 +119,13 @@ Accessibility is achieved in this project in a few different ways:
 - Text sizing uses the REM unit as much as possible
 - Responsiveness is taken into account for all pages
 
+## Documentation
+
+A few markdown files are used to provide general guidelines on each project
+Storybook is used to provide more detailed documentation on components, hooks, stores, utils and services used in this project
+
 ## Potential Improvements
 
-- This project could benefit from having Storybook JS to improve documentation on how reusable components can be handled.
 - Further usage of ES Lint could also benefit a more robust set of rules to be used here.
 - Documenting some components and features further with easy to use examples can make it quicker for people to reuse some components
 - Some components could be developed with better reusability in mind
@@ -129,3 +133,4 @@ Accessibility is achieved in this project in a few different ways:
 - Testing Coverage can be improved if the goal is to test widely, but this is not what this project aims for
 - There are more accessibility measures which can be applied, such as "Skip to main content" links, increased usage of aria attributes and focus management
 - Reusable type files could be separated into their own folder in some cases
+- Git was used without a high standard for a highly clean branch history

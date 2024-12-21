@@ -4,7 +4,7 @@ import { getStarters } from "../../services/starterLogic";
 import Image from "next/image";
 import { IPokemonData } from "../../types/IPokemon";
 import { IconHelpHexagonFilled, IconX } from "@tabler/icons-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ShadcnUi/Button";
 
 export default function StarterSelection() {
   const {

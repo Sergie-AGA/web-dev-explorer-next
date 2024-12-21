@@ -40,7 +40,7 @@ describe("FilterModal Component", () => {
     technologies.backend.forEach((tech) => {
       expect(screen.getAllByText(tech.title)[0]).toBeInTheDocument();
     });
-    technologies.apis.forEach((tech) => {
+    technologies.other.forEach((tech) => {
       expect(screen.getAllByText(tech.title)[0]).toBeInTheDocument();
     });
   });

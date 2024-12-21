@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "../ui/button";
 import { cn } from "@/utils/utils";
+import { Button } from "../ShadcnUi/Button";
 
 interface ITabsProps {
   tabData: ITab[];

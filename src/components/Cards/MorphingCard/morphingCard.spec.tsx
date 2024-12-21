@@ -10,7 +10,7 @@ describe("MorphingCard Component", () => {
     image: "sample-image.jpg",
     frontend: ["React", "Next.js"],
     backend: ["Node.js", "Express"],
-    apis: ["Open AI"],
+    other: ["Open AI"],
     type: "exploration",
     path: "/sample-path",
     showProject: true,

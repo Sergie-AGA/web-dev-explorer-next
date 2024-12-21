@@ -1,0 +1,60 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Homepage/Store/UI Store" />
+
+# UI Store
+
+The `useUIStore` is a Zustand store that manages UI state across the application. This store handles the visibility and type of modals, as well as the currently active technology in focus.
+
+### Usage
+
+```js
+import { useUIStore } from "@/store/useUIStore";
+
+const { globalModal, toggleModal, openModal, activeTech, setActiveTech } =
+  useUIStore((state) => ({
+    globalModal: state.globalModal,
+    toggleModal: state.toggleModal,
+    openModal: state.openModal,
+    activeTech: state.activeTech,
+    setActiveTech: state.setActiveTech,
+  }));
+```
+
+### Descriptions
+
+- **`globalModal`** (`{ isOpen: boolean; type: modalType }`): Represents the state of the global modal. It includes:
+  - **`isOpen`**: Boolean value indicating whether the modal is open.
+  - **`type`**: Defines the type of modal, which can be `"tech"` or `"filter"`.
+- **`toggleModal`** (`(type?: modalType) => void`): Toggles the visibility of the modal. If a `type` is provided, it sets the modal type accordingly.
+
+- **`openModal`** (`(type?: modalType) => void`): Opens the modal directly and sets its type to the specified value (default is `"tech"`).
+
+- **`activeTech`** (`{ type: ITechTypes; tech: string } | null`): Stores the currently active technology in focus. Includes:
+
+  - **`type`**: The type of technology, specified by the `ITechTypes` enum.
+  - **`tech`**: A string representing the technology name.
+
+- **`setActiveTech`** (`(tech: string, type: ITechTypes) => void`): Sets the `activeTech` state with the specified technology name and type.
+
+### Example Scenarios
+
+- **If you want to toggle the global modal visibility**:
+
+  ```js
+  toggleModal("filter"); // Toggles the modal and sets type to "filter"
+  ```
+
+- **If you want to open the modal with a specific type**:
+
+  ```js
+  openModal("tech"); // Opens the modal and sets the type to "tech"
+  ```
+
+- **If you want to set the active technology**:
+
+  ```js
+  setActiveTech("React", "frontend"); // Sets the active tech to "React" with type "frontend"
+  ```
+
+This store provides a structured way to manage UI state globally, allowing you to easily toggle and open modals, as well as set and retrieve the current active technology.

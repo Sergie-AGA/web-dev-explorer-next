@@ -2,7 +2,7 @@ export const projects: IProject[] = [
   {
     title: "Product List POC",
     description:
-      "A Proof Of Concept for a list of products. Currently being used by me to list things that I am selling",
+      "A Proof Of Concept for a list of products. It was used by me to list things that I was selling, but currently any items listed there are purely for illustrative purposes",
     image: "projects/product-list-poc.png",
     frontend: [
       "React JS",
@@ -16,11 +16,25 @@ export const projects: IProject[] = [
       "React-photo-album",
       "Jest",
       "Cypress",
+      "Markdown",
     ],
-    backend: ["Supabase", "Vercel"],
-    apis: [],
+    backend: ["Supabase"],
+    other: ["Vercel"],
     type: "concept",
     path: "/product-list-poc",
+    showProject: true,
+    showLink: true,
+  },
+  {
+    title: "Storybook Explorer",
+    description:
+      "This project displays the Storybook JS implementation used in this project and explores its capabilities with addons and different options to create an organised UI documentation for the most important and reusable components in this project.",
+    image: "/projects/storybook.png",
+    frontend: ["Storybook JS", "TypeScript", "React JS", "Markdown"],
+    backend: [],
+    other: ["GitHub Pages", "GitHub Actions"],
+    type: "exploration",
+    path: "https://sergie-aga.github.io/web-dev-explorer-next/",
     showProject: true,
     showLink: true,
   },
@@ -31,8 +45,8 @@ export const projects: IProject[] = [
     image:
       "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     frontend: [],
-    backend: ["Firebase", "Vercel"],
-    apis: [],
+    backend: ["Firebase"],
+    other: ["Vercel"],
     type: "tool",
     path: "/state-mock-endpoint",
     showProject: false,
@@ -54,9 +68,10 @@ export const projects: IProject[] = [
       "CSS",
       "Jest",
       "Cypress",
+      "Markdown",
     ],
-    backend: ["Vercel"],
-    apis: [],
+    backend: [],
+    other: ["Vercel"],
     type: "exploration",
     path: "/world-of-css-effects",
     showProject: true,
@@ -74,6 +89,7 @@ export const projects: IProject[] = [
       "Tailwind CSS",
       "Jest",
       "Cypress",
+      "Markdown",
     ],
     backend: [
       "Node JS",
@@ -91,9 +107,8 @@ export const projects: IProject[] = [
       "C#",
       ".NET",
       "ASP.NET",
-      "Vercel",
     ],
-    apis: [] as string[],
+    other: ["Vercel"],
     type: "tool",
     path: "/reusable-backend",
     showProject: true,
@@ -102,23 +117,23 @@ export const projects: IProject[] = [
   {
     title: "Gotta Catch 'Em All",
     description:
-        "Capture Pokémon in a simple game and track your progress while earning achievements, leveling up, and unlocking new features. This projects explores using Supabase Auth, Indexed DB, React Grid Explorer, Storybook JS, and automated tests with Vitest and Cypress JS",
+      "Capture Pokémon in a simple game and track your progress while earning achievements, leveling up, and unlocking new features. This projects explores using Supabase Auth, Indexed DB, React Grid Explorer, Storybook JS, and automated tests with Vitest and Cypress JS",
     image: "projects/product-list-poc.png",
     frontend: [
-        "React JS",
-        "Next JS",
-        "Typescript",
-        "Tailwind CSS",
-        "ShadcnUI",
-        "React Grid Layout",
+      "React JS",
+      "Next JS",
+      "Typescript",
+      "Tailwind CSS",
+      "ShadcnUI",
+      "React Grid Layout",
     ],
     backend: ["Supabase", "Supabase Auth", "IndexedDB", "Vercel"],
-    apis: ["PokéAPI"],
+    other: ["PokéAPI"],
     type: "exploration",
     path: "/pokemon",
-    showProject: false,
-    showLink: false,
-},
+    showProject: true,
+    showLink: true,
+  },
 ];
 
 export interface IProject {
@@ -127,7 +142,7 @@ export interface IProject {
   image: string;
   frontend: string[] | [];
   backend: string[] | [];
-  apis: string[] | [];
+  other: string[] | [];
   type: "exploration" | "concept" | "tool";
   path: string;
   showProject: boolean;
