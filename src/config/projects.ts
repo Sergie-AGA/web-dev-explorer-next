@@ -99,6 +99,26 @@ export const projects: IProject[] = [
     showProject: true,
     showLink: true,
   },
+  {
+    title: "Gotta Catch 'Em All",
+    description:
+        "Capture Pokémon in a simple game and track your progress while earning achievements, leveling up, and unlocking new features. This projects explores using Supabase Auth, Indexed DB, React Grid Explorer, Storybook JS, and automated tests with Vitest and Cypress JS",
+    image: "projects/product-list-poc.png",
+    frontend: [
+        "React JS",
+        "Next JS",
+        "Typescript",
+        "Tailwind CSS",
+        "ShadcnUI",
+        "React Grid Layout",
+    ],
+    backend: ["Supabase", "Supabase Auth", "IndexedDB", "Vercel"],
+    apis: ["PokéAPI"],
+    type: "exploration",
+    path: "/pokemon",
+    showProject: false,
+    showLink: false,
+},
 ];
 
 export interface IProject {
