@@ -80,7 +80,7 @@ export const projects: IProject[] = [
   {
     title: "Reusable Backend",
     description:
-      "This project aggregates links to a few different GitHub repositories which contain a reusable modular backend projects in diverse programming languages and can be used as templates for new applications. It currently includes projects in Node JS, PHP and C#",
+      "This is a Node JS template application using DDD and TDD with a log in functionality made from scratch with Fastify JS, Prisma JS and PostgreSQL. The page hosted in this project just contains basic information about what the actual project does. Follow the GitHub Link inside of it to see the live project",
     image: "projects/reusable-backend.png",
     frontend: [
       "Next JS",
@@ -102,11 +102,6 @@ export const projects: IProject[] = [
       "Prisma",
       "Docker",
       "Zod",
-      "PHP",
-      "Laravel",
-      "C#",
-      ".NET",
-      "ASP.NET",
     ],
     other: ["Vercel"],
     type: "tool",
@@ -131,8 +126,8 @@ export const projects: IProject[] = [
     other: ["PokéAPI"],
     type: "exploration",
     path: "/pokemon",
-    showProject: true,
-    showLink: true,
+    showProject: false,
+    showLink: false,
   },
 ];
 

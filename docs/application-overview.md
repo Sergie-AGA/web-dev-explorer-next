@@ -134,3 +134,4 @@ Storybook is used to provide more detailed documentation on components, hooks, s
 - There are more accessibility measures which can be applied, such as "Skip to main content" links, increased usage of aria attributes and focus management
 - Reusable type files could be separated into their own folder in some cases
 - Git was used without a high standard for a highly clean branch history
+- Abandoned projects are kept in the codebase for future reference in separate folders. Some of these files can be better reused

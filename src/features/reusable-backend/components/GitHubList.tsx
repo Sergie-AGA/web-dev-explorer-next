@@ -1,27 +1,6 @@
+import { IGHProject } from "@/app/(projects)/reusable-backend/page";
 import ActionableListItem from "@/components/Lists/ActionableListItem";
-import {
-  IconBrandCSharp,
-  IconBrandGithubFilled,
-  IconBrandNodejs,
-  IconBrandPhp,
-  IconBrandPython,
-} from "@tabler/icons-react";
-
-const iconMap = {
-  nodejs: IconBrandNodejs,
-  php: IconBrandPhp,
-  csharp: IconBrandCSharp,
-  python: IconBrandPython,
-};
-
-export interface IGHProject {
-  title: string;
-  description: string;
-  link: string;
-  icon: keyof typeof iconMap;
-  status: "functional" | "development";
-  render: boolean;
-}
+import { IconBrandGithubFilled } from "@tabler/icons-react";
 
 interface IGithubListInterface {
   backendRepos: IGHProject[];
@@ -32,7 +11,6 @@ export default function GitHubList({ backendRepos }: IGithubListInterface) {
     <main className="flex flex-col">
       <ul className="flex flex-col gap-6 items-center mb-4">
         {backendRepos.map((repo, index) => {
-          const IconComponent = iconMap[repo.icon];
           if (repo.render) {
             return (
               <ActionableListItem
@@ -41,7 +19,7 @@ export default function GitHubList({ backendRepos }: IGithubListInterface) {
                 label={repo.status}
                 labelType={repo.status == "development" ? "blue" : "green"}
                 link={repo.link}
-                icon={IconComponent}
+                icon={repo.icon}
                 buttonText="GitHub"
                 buttonIcon={IconBrandGithubFilled}
                 isButtonDisabled={repo.status == "development"}

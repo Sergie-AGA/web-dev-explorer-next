@@ -1,10 +1,28 @@
 import GitHubList from "@/features/reusable-backend/components/GitHubList";
-import { getReusableBackend } from "@/features/reusable-backend/services/getReusableBackend";
+import { FC } from "react";
+import { IconBrandNodejs } from "@tabler/icons-react";
 
-export const revalidate = 60 * 30; // 30 min
+export interface IGHProject {
+  title: string;
+  description: string;
+  link: string;
+  icon: FC<React.SVGProps<SVGSVGElement>>;
+  status: "functional" | "development";
+  render: boolean;
+}
+
+const githubProject: IGHProject = {
+  title: "Reusable Node JS",
+  description:
+    "Reusable Node JS modules including a Login feature as a template. It uses Typescript and Fastify JS for the server and Prisma and PostgreSQL for the database. Best practices such as variations of TDD and DDD are also implemented.",
+  icon: IconBrandNodejs,
+  link: "https://github.com/Sergie-AGA/reusable-nodejs",
+  status: "functional",
+  render: true,
+};
 
 export default async function Page() {
-  const backendRepos = await getReusableBackend();
+  const backendRepos = [githubProject];
 
   return (
     <main>
