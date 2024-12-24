@@ -1,6 +1,6 @@
 import { ReloadIcon } from "@radix-ui/react-icons";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/utils/utils";
+import { Button } from "@/components/ShadcnUi/Button";
 
 interface IButtonProps {
   classes: string;

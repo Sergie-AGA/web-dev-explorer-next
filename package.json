@@ -1,6 +1,6 @@
 {
   "name": "web-dev-explorer-next",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,6 +11,7 @@
     "test:log": "jest --config ./jest.config.ts > test.log 2>&1",
     "test:watch": "jest --watchAll",
     "test:ie2e": "jest --config ./jest.integration-e2e.config.ts",
+    "cypress": "cypress open",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o dist/storybook"
   },

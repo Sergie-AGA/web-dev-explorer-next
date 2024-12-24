@@ -1,10 +1,15 @@
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import LoginProviders from "./LoginProviders";
 import { useAtom } from "jotai";
 import { loginOptionAtom } from "../store/useAuthStore";
 import GuestLogin from "./GuestLogin";
 import LoginForm from "./LoginForm";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ShadcnUi/Card";
 
 export default function LoginFormContainer() {
   const [provider, setProvider] = useState("");

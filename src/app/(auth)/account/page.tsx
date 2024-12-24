@@ -1,11 +1,11 @@
 "use client";
 
-import GlobalHeader from "@/components/Global/GlobalHeader/GlobalHeader";
 import { useAuth } from "@/features/auth/hooks/useAuth";
 import { useAtom } from "jotai";
 import { userDataAtom } from "@/features/auth/store/useAuthStore";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import GlobalHeader from "@/components/GlobalHeader/GlobalHeader";
+import { Button } from "@/components/ShadcnUi/Button";
 
 export default function Login() {
   const { logout } = useAuth();

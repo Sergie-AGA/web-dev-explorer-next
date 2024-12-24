@@ -1,6 +1,13 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import Link from "next/link";
+import { TriangleLeftIcon, FilePlusIcon } from "@radix-ui/react-icons";
+import { ActionButton } from "@/components/Buttons/ActionButton/ActionButton";
+import { loginBodySchema, LoginBodySchema } from "../types/authSchema";
+import { useState } from "react";
+import { supabase } from "@/lib/supabaseClient";
 import {
   Form,
   FormControl,
@@ -9,16 +16,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
-import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
-import { TriangleLeftIcon, FilePlusIcon } from "@radix-ui/react-icons";
-import { ActionButton } from "@/components/Buttons/ActionButton/ActionButton";
-import { loginBodySchema, LoginBodySchema } from "../types/authSchema";
-import { useState } from "react";
-import { supabase } from "@/lib/supabaseClient";
+} from "@/components/ShadcnUi/Form";
+import { Input } from "@/components/ShadcnUi/Input";
+import { Separator } from "@radix-ui/react-separator";
 
 interface LoginFormProps {
   returnAction: () => void;
@@ -99,6 +99,7 @@ export default function LoginForm({ returnAction }: LoginFormProps) {
           type="submit"
           isLoading={isPending}
           text="LOG IN"
+          disabled={false}
         />
         <p className="text-red-600 text-center">{error && error}</p>
 

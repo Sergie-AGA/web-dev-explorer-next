@@ -1,7 +1,12 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { IconUserQuestion } from "@tabler/icons-react";
 import Logo from "../../../components/Branding/Logo/Logo";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ShadcnUi/Card";
+import { Button } from "@/components/ShadcnUi/Button";
 
 interface LoginProviderProps {
   onProviderSelect: (provider: string) => void;

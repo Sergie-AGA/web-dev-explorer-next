@@ -1,21 +1,26 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "../../../components/ui/button";
 import useAsync from "@/hooks/useAsync";
 import { useAuth } from "../hooks/useAuth";
+import { IconHelpHexagon } from "@tabler/icons-react";
+import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { ActionButton } from "@/components/Buttons/ActionButton/ActionButton";
+import { useQueryRedirect } from "@/hooks/useQueryRedirect";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ShadcnUi/Card";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { IconHelpHexagon } from "@tabler/icons-react";
-import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { ActionButton } from "@/components/Buttons/ActionButton/ActionButton";
-import { useQueryRedirect } from "@/hooks/useQueryRedirect";
+} from "@radix-ui/react-popover";
+import { Button } from "@/components/ShadcnUi/Button";
+import { Label } from "@radix-ui/react-label";
+import { Input } from "@/components/ShadcnUi/Input";
 
 interface IGuestLoginProps {
   returnAction: () => void;
@@ -73,7 +78,7 @@ export default function GuestLogin({ returnAction }: IGuestLoginProps) {
                 <IconHelpHexagon className="cursor-pointer hover:text-red" />
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-80">
+            <PopoverContent className="w-80 bg-card rounded-md p-4">
               <p>
                 With a guest account your data will be saved inside your browser
                 without a password (using Indexed DB) and cannot be accessed on
