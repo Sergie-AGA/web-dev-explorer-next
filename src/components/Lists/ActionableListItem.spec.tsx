@@ -36,7 +36,7 @@ describe("ActionableListItem", () => {
 
     rerender(<ActionableListItem {...mockProps} labelType="blue" />);
     expect(screen.getByText(mockProps.label)).toHaveClass(
-      "bg-sky-900 text-sky-400"
+      "bg-sky-900 text-sky-300"
     );
   });
 
