@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ShadcnUi/Button";
 import { RegistrationForm } from "./RegistrationForm";
 import { useState } from "react";
 import Link from "next/link";

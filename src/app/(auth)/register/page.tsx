@@ -1,5 +1,5 @@
 import Logo from "@/components/Branding/Logo/Logo";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ShadcnUi/Card";
 import RegistrationFormContainer from "@/features/auth/components/RegistrationFormContainer";
 import { env } from "@/utils/env";
 

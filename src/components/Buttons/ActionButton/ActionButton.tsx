@@ -9,7 +9,7 @@ interface IButtonProps {
   text: string;
   loadingText?: string;
   onClick?: () => void;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 export function ActionButton({
@@ -19,7 +19,7 @@ export function ActionButton({
   text,
   loadingText = "Loading...",
   onClick,
-  disabled,
+  disabled = false,
 }: IButtonProps) {
   return (
     <Button

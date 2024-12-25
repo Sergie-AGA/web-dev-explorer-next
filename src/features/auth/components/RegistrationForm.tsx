@@ -8,16 +8,16 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from "@/components/ShadcnUi/Form";
+import { Input } from "@/components/ShadcnUi/Input";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
 import { PersonIcon } from "@radix-ui/react-icons";
 import { ActionButton } from "@/components/Buttons/ActionButton/ActionButton";
 import { RegisterBodySchema, registerBodySchema } from "../types/authSchema";
 import { supabase } from "@/lib/supabaseClient";
 import { useState } from "react";
+import { Separator } from "@/components/ShadcnUi/Separator";
 
 interface RegistrationFormProps {
   handleRegistration: (email: string) => void;
