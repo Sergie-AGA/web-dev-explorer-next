@@ -1,23 +1,23 @@
 # Reusable Backend
 
-This project aggregates links to a few different GitHub repositories which contain a reusable modular backend projects in diverse programming languages and can be used as templates for new applications. It currently includes a project in Node JS, with PHP and C# being under development.
+This is a Node JS template application using DDD and TDD with a log in functionality made from scratch with Fastify JS, Prisma JS and PostgreSQL. The page hosted in this project just contains basic information about what the actual project does. Follow the GitHub Link inside of it to see the live project. This project has been converted from a different type of project, so some components may contain legacy elements.
 
 ## Tech Stack
 
 Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, Jest, Cypress
-Backend: JavaScript, Node JS, Typescript, Fastify, PostgreSQL, Vitest, Supertest, Prisma, Docker, Zod, PHP, Laravel, C#, .NET, ASP.NET,
+Backend: JavaScript, Node JS, Typescript, Fastify, PostgreSQL, Vitest, Supertest, Prisma, Docker, Zod
 
 ## Components
 
-This work for this project is heavier in the backend repositories. The frontend displayed here is a simple list displaying a brief introduction to each project and a link to it.
+This work for this project is heavier in the backend repositories. The frontend displayed here is a simple introduction to the project and a link to it.
 
 ## Services
 
-A simple fetching function which gets project data from Supabase is available here.
+A simple fetching function which gets project data from Supabase is available here. This is no longer required for the current version of the project
 
 ## Backend Implementation
 
-Please refer to the specific backend project to see more about how they work.
+Please refer to the specific backend project to see more about how it works.
 
 ## Tests
 
