@@ -2,7 +2,6 @@
 "use client";
 
 import { SidebarProvider } from "@/components/ShadcnUi/Sidebar";
-import FormArea from "../FormArea/FormArea";
 import {
   DndContext,
   MouseSensor,
@@ -14,10 +13,14 @@ import { useState } from "react";
 import { useFormBuilderStore } from "../../store/formStore";
 import FormTopBar from "../FormTopBar/FormTopBar";
 import FormExampleSidebar from "../FormExampleSidebar/FormExampleSidebar";
+import FormExampleArea from "../FormExampleArea/FormExampleArea";
+import { TFormExampleKey } from "../FormExampleSidebar/formExamples";
 
 export default function FormWrapper() {
   const [activeId, setActiveId] = useState<string | null>(null);
   const addElement = useFormBuilderStore((state) => state.addElement);
+  const [activeSurvey, setActiveSurvey] =
+    useState<TFormExampleKey>("basicSurvey");
 
   const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
 
@@ -33,6 +36,10 @@ export default function FormWrapper() {
     setActiveId(null);
   };
 
+  function handleActiveSurvey(id: TFormExampleKey) {
+    setActiveSurvey(id);
+  }
+
   return (
     <div className="flex">
       <SidebarProvider>
@@ -42,10 +49,10 @@ export default function FormWrapper() {
           onDragEnd={handleDrop}
           onDragCancel={() => setActiveId(null)}
         >
-          <FormExampleSidebar />
+          <FormExampleSidebar onClick={handleActiveSurvey} />
           <main className="flex-1 min-h-screen flex flex-col relative overflow-hidden">
             <FormTopBar />
-            <FormArea />
+            <FormExampleArea formID={activeSurvey} />
           </main>
         </DndContext>
       </SidebarProvider>

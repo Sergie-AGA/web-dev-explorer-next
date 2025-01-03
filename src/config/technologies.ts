@@ -98,12 +98,12 @@ export const technologies = {
         "A versatile JavaScript library for building surveys, forms, and quizzes with ease. SurveyJS provides a powerful editor, extensive customization options, and seamless integration with modern frameworks like React, Angular, and Vue. It simplifies the process of creating interactive and responsive surveys for web applications.",
       link: "https://surveyjs.io/",
     },
-    {
-      title: "I18n",
-      description:
-        "A set of techniques and tools for internationalization (i18n), enabling applications to support multiple languages and regional settings. Popular libraries like i18next and React-Intl provide easy-to-use APIs for managing translations, formatting dates and numbers, and adapting content for a global audience.",
-      link: "https://www.i18next.com/",
-    },
+    // {
+    //   title: "I18n",
+    //   description:
+    //     "A set of techniques and tools for internationalization (i18n), enabling applications to support multiple languages and regional settings. Popular libraries like i18next and React-Intl provide easy-to-use APIs for managing translations, formatting dates and numbers, and adapting content for a global audience.",
+    //   link: "https://www.i18next.com/",
+    // },
   ],
   backend: [
     {

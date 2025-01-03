@@ -17,16 +17,27 @@ import {
   IconChecklist,
   IconStar,
 } from "@tabler/icons-react";
+import { TFormExampleKey } from "./formExamples";
 
-const items = [
-  { title: "Basic Form", id: "basic-form", icon: IconFileDescription },
-  { title: "Quiz", id: "quiz-survey", icon: IconChecklist },
-  { title: "Scored Survey", id: "scored-survey", icon: IconStar },
+const items: {
+  title: string;
+  id: TFormExampleKey;
+  icon: React.ComponentType;
+}[] = [
+  { title: "Basic Form", id: "basicSurvey", icon: IconFileDescription },
+  { title: "Quiz", id: "quizSurvey", icon: IconChecklist },
+  { title: "Scored Survey", id: "scoredSurvey", icon: IconStar },
 ];
 
-export default function FormExampleSidebar() {
-  const handleClick = (id: string) => {
-    console.log(`Clicked on ${id}`);
+interface IFormExampleSidebarProps {
+  onClick: (id: TFormExampleKey) => void;
+}
+
+export default function FormExampleSidebar({
+  onClick,
+}: IFormExampleSidebarProps) {
+  const handleClick = (id: TFormExampleKey) => {
+    onClick(id);
   };
 
   return (
