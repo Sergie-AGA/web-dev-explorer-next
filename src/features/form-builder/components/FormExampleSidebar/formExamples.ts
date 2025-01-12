@@ -1,3 +1,5 @@
+import { SurveyModel, QuestionCheckboxModel } from "survey-core";
+
 const basicSurvey = {
   title: "Customer Feedback Survey",
   description:
@@ -29,10 +31,10 @@ const basicSurvey = {
     },
   ],
 };
-
 const quizSurvey = {
-  title: "JavaScript Quiz",
-  description: "Test your JavaScript knowledge with this quiz.",
+  title: "Advanced JavaScript Quiz",
+  description:
+    "Test your advanced JavaScript knowledge with this comprehensive quiz.",
   pages: [
     {
       name: "page1",
@@ -53,42 +55,138 @@ const quizSurvey = {
         },
       ],
     },
+    {
+      name: "page2",
+      elements: [
+        {
+          type: "checkbox",
+          name: "question4",
+          title: "Which of the following are JavaScript data types?",
+          choices: ["String", "Number", "Boolean", "Character"],
+          correctAnswer: ["String", "Number", "Boolean"],
+        },
+        {
+          type: "dropdown",
+          name: "question5",
+          title:
+            "Which method is used to parse a JSON string into a JavaScript object?",
+          choices: [
+            "JSON.parse()",
+            "JSON.stringify()",
+            "JSON.toObject()",
+            "JSON.fromString()",
+          ],
+          correctAnswer: "JSON.parse()",
+        },
+      ],
+    },
   ],
   completedHtml:
     "<h4>You have answered correctly <b>{correctedAnswers}</b> questions from <b>{questionCount}</b>.</h4>",
 };
 
 const scoredSurvey = {
-  title: "Personality Test",
-  description: "Answer the questions to find out your personality type.",
+  title: "Scored Survey",
+  description:
+    "Test your knowledge with this scored survey. Each question has different point values.",
   pages: [
     {
       name: "page1",
       elements: [
         {
-          type: "radiogroup",
+          type: "checkbox",
           name: "question1",
-          title: "Do you prefer to work in a team or alone?",
+          title: "Which of the following are programming languages?",
           choices: [
-            { value: "team", text: "In a team", score: 10 },
-            { value: "alone", text: "Alone", score: 5 },
+            { value: "JavaScript", text: "JavaScript", score: 2 },
+            { value: "HTML", text: "HTML", score: 0 },
+            { value: "CSS", text: "CSS", score: 0 },
+            { value: "Python", text: "Python", score: 2 },
           ],
         },
         {
-          type: "radiogroup",
+          type: "checkbox",
           name: "question2",
-          title: "Do you like to take risks?",
+          title: "Which of the following are JavaScript frameworks?",
           choices: [
-            { value: "yes", text: "Yes", score: 10 },
-            { value: "no", text: "No", score: 5 },
+            { value: "React", text: "React", score: 2 },
+            { value: "Angular", text: "Angular", score: 2 },
+            { value: "Vue", text: "Vue", score: 2 },
+            { value: "Django", text: "Django", score: 0 },
+          ],
+        },
+      ],
+    },
+    {
+      name: "page2",
+      elements: [
+        {
+          type: "checkbox",
+          name: "question3",
+          title: "Which of the following are databases?",
+          choices: [
+            { value: "MySQL", text: "MySQL", score: 2 },
+            { value: "MongoDB", text: "MongoDB", score: 2 },
+            { value: "SQLite", text: "SQLite", score: 2 },
+            { value: "Express", text: "Express", score: 0 },
+          ],
+        },
+        {
+          type: "checkbox",
+          name: "question4",
+          title: "Which of the following are cloud service providers?",
+          choices: [
+            { value: "AWS", text: "AWS", score: 2 },
+            { value: "Azure", text: "Azure", score: 2 },
+            { value: "Google Cloud", text: "Google Cloud", score: 2 },
+            { value: "Heroku", text: "Heroku", score: 0 },
           ],
         },
       ],
     },
   ],
-  completedHtml: "<h4>Your total score is <b>{totalScore}</b>.</h4>",
+  completedHtml: `<h4>Thank you for completing the scored survey.</h4>`,
 };
 
 export const formExamples = { basicSurvey, quizSurvey, scoredSurvey };
+
+export const calculateTotalScore = (formData: SurveyModel, data: any) => {
+  let totalScore = 0;
+
+  formData.pages.forEach((page) => {
+    page.elements.forEach((element) => {
+      if (element.getType() === "checkbox" && data[element.name]) {
+        data[element.name].forEach((answer: string) => {
+          const choice = (element as QuestionCheckboxModel).choices.find(
+            (choice) => choice.value === answer
+          );
+          if (choice && choice.jsonObj.score) {
+            totalScore += choice.jsonObj.score;
+          }
+        });
+      }
+    });
+  });
+
+  const maxScore = formData.pages.reduce((acc, page) => {
+    return (
+      acc +
+      page.elements.reduce((acc, element) => {
+        if (element.getType() === "checkbox") {
+          return (
+            acc +
+            (element as QuestionCheckboxModel).choices.reduce(
+              (acc, choice) => acc + (choice.jsonObj.score || 0),
+              0
+            )
+          );
+        }
+        return acc;
+      }, 0)
+    );
+  }, 0);
+
+  return { totalScore, maxScore };
+};
 
 export type TFormExampleKey = keyof typeof formExamples;

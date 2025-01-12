@@ -49,7 +49,10 @@ export default function FormWrapper() {
           onDragEnd={handleDrop}
           onDragCancel={() => setActiveId(null)}
         >
-          <FormExampleSidebar onClick={handleActiveSurvey} />
+          <FormExampleSidebar
+            onClick={handleActiveSurvey}
+            activeForm={activeSurvey}
+          />
           <main className="flex-1 min-h-screen flex flex-col relative overflow-hidden">
             <FormTopBar />
             <FormExampleArea formID={activeSurvey} />

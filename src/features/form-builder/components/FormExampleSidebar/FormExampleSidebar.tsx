@@ -16,13 +16,14 @@ import {
   IconFileDescription,
   IconChecklist,
   IconStar,
+  TablerIconsProps,
 } from "@tabler/icons-react";
 import { TFormExampleKey } from "./formExamples";
 
 const items: {
   title: string;
   id: TFormExampleKey;
-  icon: React.ComponentType;
+  icon: React.ComponentType<TablerIconsProps>;
 }[] = [
   { title: "Basic Form", id: "basicSurvey", icon: IconFileDescription },
   { title: "Quiz", id: "quizSurvey", icon: IconChecklist },
@@ -30,10 +31,12 @@ const items: {
 ];
 
 interface IFormExampleSidebarProps {
+  activeForm: TFormExampleKey;
   onClick: (id: TFormExampleKey) => void;
 }
 
 export default function FormExampleSidebar({
+  activeForm,
   onClick,
 }: IFormExampleSidebarProps) {
   const handleClick = (id: TFormExampleKey) => {
@@ -62,7 +65,8 @@ export default function FormExampleSidebar({
                     <SidebarMenuButton asChild>
                       <div
                         className={cn(
-                          "flex items-center w-full cursor-pointer"
+                          "flex items-center w-full cursor-pointer",
+                          { "bg-primary": activeForm == item.id }
                         )}
                         onClick={() => handleClick(item.id)}
                       >
