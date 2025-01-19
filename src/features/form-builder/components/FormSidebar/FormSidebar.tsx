@@ -20,21 +20,16 @@ import {
   IconSelector,
   IconFileDescription,
   IconCalendar,
-  IconSwipeRight,
-  IconFileUpload,
   IconListNumbers,
 } from "@tabler/icons-react";
 
 const items = [
   { title: "Text", id: "text", icon: IconLetterT },
   { title: "Checkbox", id: "checkbox", icon: IconCheckbox },
-  { title: "Radio", id: "radio", icon: IconCircleDot },
+  { title: "Radio", id: "radiogroup", icon: IconCircleDot },
   { title: "Dropdown", id: "dropdown", icon: IconSelector },
-  { title: "Textarea", id: "textarea", icon: IconFileDescription },
-  { title: "Date Picker", id: "date-picker", icon: IconCalendar },
-  { title: "Range Slider", id: "range-slider", icon: IconSwipeRight },
-  { title: "File Upload", id: "file-upload", icon: IconFileUpload },
-  { title: "Number Input", id: "number-input", icon: IconListNumbers },
+  { title: "Textarea", id: "comment", icon: IconFileDescription },
+  { title: "Date Picker", id: "datepicker", icon: IconCalendar },
 ];
 
 function DraggableItem({

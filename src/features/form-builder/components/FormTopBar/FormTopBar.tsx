@@ -40,7 +40,23 @@ export default function FormTopBar({ className }: { className?: string }) {
           </PopoverTrigger>
           <PopoverContent className="w-[500px] max-w-[90vw]">
             {isExamplePage ? (
-              "hey"
+              <>
+                <h3 className="text-xl text-center">Form Examples Info</h3>
+                <ul>
+                  <li className="list-disc list-inside">
+                    Select an example form to see how Survey JS handles
+                    different types of data
+                  </li>
+                  <li className="list-disc list-inside">
+                    Quizzes rely on a property defining an alternative to be the
+                    correct one
+                  </li>
+                  <li className="list-disc list-inside">
+                    Scored Surveys attribute a score to each alternative and
+                    rely on custom logic to define the final score
+                  </li>
+                </ul>
+              </>
             ) : (
               <>
                 <h3 className="text-xl text-center">Form Builder Info</h3>
@@ -50,12 +66,16 @@ export default function FormTopBar({ className }: { className?: string }) {
                     form
                   </li>
                   <li className="list-disc list-inside">
-                    Click on an element to edit it
+                    Click on the title of an element to edit it
                   </li>
                   <li className="list-disc list-inside">
                     Press "Complete" to view the JSON being used in the form,
                     which can be used by developers to generate a similar form
                     with Survey JS
+                  </li>
+                  <li className="list-disc list-inside">
+                    This builder only allows limited implementations of Survey
+                    JS not covering all of its features
                   </li>
                 </ul>
               </>

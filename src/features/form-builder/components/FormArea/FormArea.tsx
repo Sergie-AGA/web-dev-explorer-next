@@ -31,6 +31,7 @@ export default function FormArea() {
       name: element.id,
       type: element.type,
       title: element.title,
+      choices: element.choices,
       ...element.properties,
     })),
   };
@@ -43,15 +44,19 @@ export default function FormArea() {
     (_, options: { question: Question; htmlElement: HTMLElement }) => {
       const { question, htmlElement } = options;
 
-      htmlElement.onclick = () => {
-        const elementJson = question.toJSON();
-        setEditingElement(elementJson.name);
-        setIsSheetOpen(true);
-      };
+      const titleElement = htmlElement.querySelector(".sd-title");
+      if (titleElement) {
+        titleElement.classList.add("cursor-pointer", "hover:underline");
+        (titleElement as HTMLElement).onclick = () => {
+          const elementJson = question.toJSON();
+          setEditingElement(elementJson.name);
+          setIsSheetOpen(true);
+        };
+      }
     }
   );
 
-  survey.onComplete.add((sender: Model) => {
+  survey.onComplete.add((_: Model) => {
     setIsDialogOpen(true);
   });
 
@@ -71,11 +76,11 @@ export default function FormArea() {
       />
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent>
-          <DialogHeader>
+        <DialogContent className="max-h-[80vh] w-[80vw] max-w-[800px] flex flex-col">
+          <DialogHeader className="flex-1 shrink-0">
             <DialogTitle>Form JSON</DialogTitle>
           </DialogHeader>
-          <pre className="bg-card border border-border p-4 rounded">
+          <pre className="bg-card border border-border p-4 rounded overflow-auto grow">
             {elements && JSON.stringify(elements, null, 2)}
           </pre>
         </DialogContent>

@@ -6,6 +6,7 @@ export type SurveyElement = {
   type: string;
   title: string;
   properties?: Record<string, any>;
+  choices?: string[];
 };
 
 interface ISurveyEditorState {
@@ -44,15 +45,17 @@ const surveyEditorStore: StateCreator<ISurveyEditorState> = (set) => ({
       elements: state.elements.filter((element) => element.id !== id),
     })),
 
-  clearElements: () => set(() => ({ elements: [] })),
+  clearElements: () =>
+    set(() => ({
+      elements: [],
+    })),
 
-  setEditingElement: (id) => set({ editingElementId: id }),
+  setEditingElement: (id) =>
+    set(() => ({
+      editingElementId: id,
+    })),
 });
 
-export const useFormBuilderStore = create<ISurveyEditorState>()(
+export const useFormBuilderStore = create<ISurveyEditorState>(
   zukeeper(surveyEditorStore)
 );
-
-if (typeof window !== "undefined") {
-  (window as any).surveyStore = useFormBuilderStore;
-}
