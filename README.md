@@ -2,7 +2,7 @@
 
 This is a project that aims to explore, test and aggregate a variety of Web Dev functionalities within different projects.
 In general, the project uses:
-Frontend: React JS, Next JS, Typescript, Tailwind CSS, ShadcnUI, and various automated testing tools
+Frontend: React JS, Next JS, Typescript, Tailwind CSS, Shadcn UI, and various automated testing tools
 Backend & Infra: Supabase, Vercel
 Documentation: and documented with Storybook JS and Markdown files
 Libraries which have small impact may not be listed here or in the project data listing
@@ -43,18 +43,18 @@ Better usage examples can be found in the [Storybook documentation hosted on Git
 ### Project 1 - Product List POC
 
 This project experiments a proof of concept of a store, making use of Supabase to handle the backend and modern React ecosystem to render a Product List where you can add items to a cart and trigger discounts based on specific conditions. This was used by me to sell some of my personal belongings in the past.
-Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, yet-another-react-lightbox, react-photo-album, Jest, Cypress
+Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, Shadcn UI, Zustand, yet-another-react-lightbox, react-photo-album, Jest, Cypress
 Backend: Supabase
 
 ### Project 2 - World of CSS Effects
 
 A place where diverse CSS tricks and techniques are used to achieve unique visual effects. This is a place where you can find reusable CSS snippets ready to be copied and used in a different project, including examples of usage.
-Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, Jest, Cypress
+Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, Shadcn UI, Zustand, Jest, Cypress
 
 ### Project 3 - Reusable Backend
 
 This is a Node JS template application using DDD and TDD with a log in functionality made from scratch with Fastify JS, Prisma JS and PostgreSQL. The page hosted in this project just contains basic information about what the actual project does. Follow the GitHub Link inside of it to see the live project. This project has been converted from a different type of project, so some components may contain legacy elements
-Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, Jest, Cypress
+Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, Shadcn UI, Zustand, Jest, Cypress
 Backend: JavaScript, Node JS, Typescript, Fastify, PostgreSQL, Vitest, Supertest, Prisma, Docker, Zod
 
 ### Project 4 - Storybook Explorer
@@ -62,6 +62,11 @@ Backend: JavaScript, Node JS, Typescript, Fastify, PostgreSQL, Vitest, Supertest
 This project displays the Storybook JS implementation used in this project and explores its capabilities with addons and different options to create an organised UI documentation for the most important and reusable components in this project.
 Frontend: Storybook JS, TypeScript, React JS
 Others: GitHub Pages, GitHub Actions
+
+### Project 5 - Form Builder
+
+This project explores the functionalities of Survey JS to create a range of dynamic surveys. It consists of 2 parts: 1) A form Builder to build custom surveys with simple properties, forms and quizzes; 2) Example Forms using slightly more complex data.
+Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, Shadcn UI, Survey JS
 
 ## Abandoned Projects
 
