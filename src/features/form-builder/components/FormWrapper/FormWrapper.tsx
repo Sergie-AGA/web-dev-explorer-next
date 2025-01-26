@@ -23,9 +23,13 @@ export default function FormWrapper() {
 
   const handleDrop = (event: any) => {
     if (event.over?.id === "form-area" && activeId) {
+      const randomDate = Date.now();
+      const id = `${activeId}-${randomDate}`;
+
       const element = {
-        id: `${activeId}-${Date.now()}`,
+        id,
         type: activeId,
+        name: id,
         title: `New ${activeId.charAt(0).toUpperCase() + activeId.slice(1)}`,
       };
       addElement(element);

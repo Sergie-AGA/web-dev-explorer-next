@@ -46,7 +46,7 @@ export default function FormExampleArea({ formID }: IFormExampleProps) {
   }
 
   return (
-    <section className="m-4 p-4">
+    <section>
       <Survey model={survey} />
     </section>
   );

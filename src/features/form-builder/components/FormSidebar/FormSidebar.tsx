@@ -29,7 +29,6 @@ const items = [
   { title: "Radio", id: "radiogroup", icon: IconCircleDot },
   { title: "Dropdown", id: "dropdown", icon: IconSelector },
   { title: "Textarea", id: "comment", icon: IconFileDescription },
-  { title: "Date Picker", id: "datepicker", icon: IconCalendar },
 ];
 
 function DraggableItem({

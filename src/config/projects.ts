@@ -29,7 +29,7 @@ export const projects: IProject[] = [
     title: "Form Builder",
     description:
       "This project explores the functionalities of Survey JS to create a range of dynamic surveys. It consists of 2 parts: 1) A form Builder to build custom surveys with simple properties, forms and quizzes; 2) Example Forms using more complex data",
-    image: "/projects/storybook.png",
+    image: "/projects/form-builder.png",
     frontend: [
       "React JS",
       "Next JS",
