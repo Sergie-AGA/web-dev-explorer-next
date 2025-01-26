@@ -88,6 +88,10 @@
     @apply box-border bg-cyan-950;
   }
 
+  ol li {
+    @apply list-decimal;
+  }
+
   /* TYPOGRAPHY */
   h1,
   h2,
@@ -103,13 +107,13 @@
   div,
   input,
   select,
-  textarea {
+  textarea, a {
     @apply font-sans text-foreground text-sm md:text-base;
   }
 
   h1,
   .h1 {
-    @apply text-[2rem] md:text-[2.75rem];
+    @apply text-[2rem] md:text-[2.75rem] leading-10;
   }
   h2,
   .h2 {

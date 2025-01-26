@@ -172,36 +172,36 @@ export const technologies = {
         "A TypeScript-first schema declaration and validation library, offering a simple and expressive API for defining and validating complex data structures.",
       link: "https://zod.dev/",
     },
-    {
-      title: "PHP",
-      description:
-        "A server-side scripting language designed for web development but also used as a general-purpose programming language. It powers popular content management systems like WordPress and Laravel.",
-      link: "https://www.php.net/",
-    },
-    {
-      title: "Laravel",
-      description:
-        "A PHP framework known for its elegant syntax, simplifying common tasks like routing, authentication, and database interactions. It offers a modern toolkit for rapid web application development.",
-      link: "https://laravel.com/",
-    },
-    {
-      title: "C#",
-      description:
-        "A modern, object-oriented programming language developed by Microsoft. It is widely used for building applications on the .NET framework, from desktop applications to web services.",
-      link: "https://learn.microsoft.com/en-us/dotnet/csharp/",
-    },
-    {
-      title: ".NET",
-      description:
-        "A free, cross-platform framework developed by Microsoft, supporting a wide range of applications including web, desktop, mobile, cloud, and IoT. It provides a robust environment for building scalable software.",
-      link: "https://dotnet.microsoft.com/",
-    },
-    {
-      title: "ASP.NET",
-      description:
-        "An open-source, server-side web application framework built on the .NET platform. It enables developers to build dynamic web sites, web applications, and web services with ease and flexibility.",
-      link: "https://learn.microsoft.com/en-us/aspnet/",
-    },
+    // {
+    //   title: "PHP",
+    //   description:
+    //     "A server-side scripting language designed for web development but also used as a general-purpose programming language. It powers popular content management systems like WordPress and Laravel.",
+    //   link: "https://www.php.net/",
+    // },
+    // {
+    //   title: "Laravel",
+    //   description:
+    //     "A PHP framework known for its elegant syntax, simplifying common tasks like routing, authentication, and database interactions. It offers a modern toolkit for rapid web application development.",
+    //   link: "https://laravel.com/",
+    // },
+    // {
+    //   title: "C#",
+    //   description:
+    //     "A modern, object-oriented programming language developed by Microsoft. It is widely used for building applications on the .NET framework, from desktop applications to web services.",
+    //   link: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+    // },
+    // {
+    //   title: ".NET",
+    //   description:
+    //     "A free, cross-platform framework developed by Microsoft, supporting a wide range of applications including web, desktop, mobile, cloud, and IoT. It provides a robust environment for building scalable software.",
+    //   link: "https://dotnet.microsoft.com/",
+    // },
+    // {
+    //   title: "ASP.NET",
+    //   description:
+    //     "An open-source, server-side web application framework built on the .NET platform. It enables developers to build dynamic web sites, web applications, and web services with ease and flexibility.",
+    //   link: "https://learn.microsoft.com/en-us/aspnet/",
+    // },
   ],
   other: [
     {

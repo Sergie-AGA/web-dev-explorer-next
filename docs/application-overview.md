@@ -13,7 +13,7 @@ Further tools are used on each separate project. Please refer to their own separ
 
 ## Folder Structure
 
-The folder structure applied here is inspired by both [Bulletproof React](https://github.com/alan2207/bulletproof-react/tree/master) and Web Dev Simplified's (Advanced React Folder Structure)[https://blog.webdevsimplified.com/2022-07/react-folder-structure/], while also having some freedom for slight modifications. This means that most folders directly inside the `src` folder are only reserved for global functionality, while the features folder contains each project and each one of them mimics the `src` folder and can have components, hooks, services and everything else, but scoped to that feature.
+The folder structure applied here is inspired by both [Bulletproof React](https://github.com/alan2207/bulletproof-react/tree/master) and Web Dev Simplified's [Advanced React Folder Structure](https://blog.webdevsimplified.com/2022-07/react-folder-structure/), while also having some freedom for slight modifications. This means that most folders directly inside the `src` folder are only reserved for global functionality, while the features folder contains each project and each one of them mimics the `src` folder and can have components, hooks, services and everything else, but scoped to that feature.
 
 ### App
 
@@ -133,3 +133,5 @@ Storybook is used to provide more detailed documentation on components, hooks, s
 - Testing Coverage can be improved if the goal is to test widely, but this is not what this project aims for
 - There are more accessibility measures which can be applied, such as "Skip to main content" links, increased usage of aria attributes and focus management
 - Reusable type files could be separated into their own folder in some cases
+- Git was used without a high standard for a highly clean branch history
+- Abandoned projects are kept in the codebase for future reference in separate folders. Some of these files can be better reused

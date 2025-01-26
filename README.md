@@ -53,9 +53,9 @@ Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zus
 
 ### Project 3 - Reusable Backend
 
-This project aggregates links to a few different GitHub repositories which contain a reusable modular backend projects in diverse programming languages and can be used as templates for new applications. It currently includes a project in Node JS, with PHP and C# being under development.
+This is a Node JS template application using DDD and TDD with a log in functionality made from scratch with Fastify JS, Prisma JS and PostgreSQL. The page hosted in this project just contains basic information about what the actual project does. Follow the GitHub Link inside of it to see the live project. This project has been converted from a different type of project, so some components may contain legacy elements
 Frontend: Next JS, React JS, JavaScript, Typescript, Tailwind CSS, ShadcnUI, Zustand, Jest, Cypress
-Backend: JavaScript, Node JS, Typescript, Fastify, PostgreSQL, Vitest, Supertest, Prisma, Docker, Zod, PHP, Laravel, C#, .NET, ASP.NET,
+Backend: JavaScript, Node JS, Typescript, Fastify, PostgreSQL, Vitest, Supertest, Prisma, Docker, Zod
 
 ### Project 4 - Storybook Explorer
 
@@ -63,6 +63,11 @@ This project displays the Storybook JS implementation used in this project and e
 Frontend: Storybook JS, TypeScript, React JS
 Others: GitHub Pages, GitHub Actions
 
-### In Progress - State Mock Endpoint
+## Abandoned Projects
 
-In Progress...
+Abandoned projects are kept in the code if they reached some decent level of progress before being abandoned so that the code is still available to be used and maybe for a future completion of the project.
+
+The following projects have been abandoned after some progress:
+
+- State Mock Endpoint: A place where you can store what an endpoint is currently returning at a given point in time using Firebase
+- Gotta Catch 'Em All: A game using the PokéAPI to battle and capture against Pokémon
